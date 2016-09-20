@@ -12,6 +12,11 @@
   padding: 1rem 3rem;
   text-transform: uppercase;
   transition: all $transitionDuration;
+  user-select: none;
+  &:active {
+    background-color: darken($primaryColor2, 10%) !important;
+    border: solid 2px darken($primaryColor2, 10%) !important;
+  }
   &:hover {
     background-color: $primaryColor2;
   }
