@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollArrow from '../ScrollArrow/ScrollArrow';
 import Section from '../Section/Section';
 import classes from './Home.scss';
 
@@ -22,10 +23,7 @@ const Home = () => (
         <div>Join Us</div>
       </div>
 
-      <div className={classes.facts}>
-        <span />
-        <span>facts</span>
-      </div>
+      <ScrollArrow className={classes.facts} label="facts" onClick={this.scrollToFacts} />
     </div>
     <Section>Mission & Vision</Section>
     <Section>Process</Section>
@@ -33,5 +31,7 @@ const Home = () => (
     <Section>Footer</Section>
   </div>
 );
+
+Home.scrollToFacts = () => { console.log('scroll'); };
 
 export default Home;

@@ -23,8 +23,9 @@
   "devDependencies": {
     "babel-eslint": "^6.1.2",
     "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
     "chai-immutable": "^1.6.0",
-    "css-modules-require-hook": "^4.0.2",
+    "css-modules-require-hook": "^4.0.3",
     "enzyme": "^2.4.1",
     "eslint": "^3.3.1",
     "eslint-config-airbnb": "^10.0.1",
