@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Home = () => (
+const JoinUs = () => (
   <div>Join Us</div>
 );
 
-export default Home;
+export default JoinUs;
