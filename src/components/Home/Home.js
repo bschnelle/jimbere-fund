@@ -5,7 +5,6 @@ import Section from '../Section/Section';
 import classes from './Home.scss';
 
 const Home = () => {
-  const joinUs = () => { console.log('join us'); };
   const scrollToFacts = () => { console.log('scroll'); };
 
   return (
@@ -25,7 +24,7 @@ const Home = () => {
         </div>
 
         <div className={classes.actions}>
-          <Button label="Join Us" onClick={joinUs} />
+          <Button label="Join Us" to="join-us" />
         </div>
 
         <ScrollArrow className={classes.facts} label="facts" onClick={scrollToFacts} />
