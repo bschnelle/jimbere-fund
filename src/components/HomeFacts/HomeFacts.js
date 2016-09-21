@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Fact from '../Fact/Fact';
 import Section from '../Section/Section';
 import classes from './HomeFacts.scss';
 
-const HomeFacts = () => {
+const HomeFacts = (props) => {
   const facts = [
     { body: 'GDP per capita', header: '$800' },
     { body: 'Access to electricity', header: '10%' },
@@ -14,13 +14,17 @@ const HomeFacts = () => {
   ];
 
   return (
-    <Section className={classes.section}>
+    <Section className={classes.section} id={props.id}>
       <h1>Facts</h1>
       <div className={classes.facts}>
         {facts.map((fact, index) => <Fact {...fact} className={classes.fact} key={index} />)}
       </div>
     </Section>
   );
+};
+
+HomeFacts.propTypes = {
+  id: PropTypes.string.isRequired
 };
 
 export default HomeFacts;

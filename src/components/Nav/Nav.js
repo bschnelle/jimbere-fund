@@ -40,7 +40,7 @@ class Nav extends Component {
         <div className={classes.content}>
           <ul>
             {links.map((link) =>
-              <NavItem {...link} className={classes.navItem} onClick={toggleMenu} />
+              <NavItem {...link} className={classes.navItem} key={link.to} onClick={toggleMenu} />
             )}
           </ul>
         </div>

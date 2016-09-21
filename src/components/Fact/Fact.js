@@ -16,7 +16,7 @@ const Fact = (props) => {
 
 Fact.propTypes = {
   body: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   header: PropTypes.string.isRequired
 };
 
