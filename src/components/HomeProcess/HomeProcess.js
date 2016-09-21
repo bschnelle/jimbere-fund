@@ -14,7 +14,7 @@ const HomeProcess = () => (
       </div>
       <div>
         <p>
-          Our mission is to empower people and communities in the D.R. Congo to create
+          Our mission is to empower the people and communities of the D.R. Congo to create
           economic opportunities and improve their livelihoods. We strive to make
           vulnerable communities stronger and more resilient through community-driven
           interventions.

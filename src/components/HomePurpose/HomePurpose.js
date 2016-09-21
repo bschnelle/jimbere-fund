@@ -9,7 +9,7 @@ const HomePurpose = () => (
         <h1>Purpose</h1>
         <p>
           Jimbere Fund is on a mission to revitalize distressed communities in Congo.
-          We support communities by designing, implementing and managing high-impact
+          We support those communities by designing, implementing and managing high-impact
           projects that grow local economies, create jobs and lift people out of
           extreme poverty in a sustainable way.
         </p>
@@ -23,7 +23,7 @@ const HomePurpose = () => (
         <div>
           <h3>Mission</h3>
           <p>
-            Our mission is to empower people and communities in the D.R. Congo to create
+            Our mission is to empower the people and communities of the D.R. Congo to create
             economic opportunities and improve their livelihoods. We strive to make
             vulnerable communities stronger and more resilient through community-driven
             interventions.
