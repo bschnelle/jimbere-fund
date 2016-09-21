@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import MenuIconButton from '../MenuIconButton/MenuIconButton';
 import classes from './Nav.scss';
 
@@ -15,6 +16,14 @@ class Layout extends Component {
   }
 
   render() {
+    const links = [
+      { label: 'Home', to: '/' },
+      { label: 'Projects', to: '/projects' },
+      { label: 'Blog', to: '/blog' },
+      { label: 'Donate', to: '/donate' },
+      { label: 'Join Us', to: '/join-us' },
+      { label: 'Contact', to: '/contact' }
+    ];
     let className = classes.nav;
     if (this.state.open) className += ` ${classes.open}`;
 
@@ -29,12 +38,19 @@ class Layout extends Component {
 
         <div className={classes.content}>
           <ul>
-            <li>Home</li>
-            <li>Donate</li>
-            <li>Projects</li>
-            <li>Blog</li>
-            <li>Join Us</li>
-            <li>Contact</li>
+            {links.map((link) => (
+              <li>
+                <Link
+                  activeClassName={classes.active}
+                  key={link.to}
+                  onClick={this.toggleMenu}
+                  onlyActiveOnIndex
+                  to={link.to}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
