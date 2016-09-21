@@ -27,37 +27,6 @@
       list-style: none;
       margin-left: 10%;
       text-transform: uppercase;
-      > li {
-        margin: 1rem;
-        opacity: 0;
-        position: relative;
-        transform: translateY(50px);
-
-        > a {
-          color: inherit;
-          text-decoration: none;
-
-          &::before {
-            background-color: $primaryColor1;
-            bottom: 0;
-            content: "";
-            display: block;
-            height: .5rem;
-            position: absolute;
-            transform: scaleX(0);
-            transition: transform $transitionDuration;
-            transform-origin: left;
-            width: 100%;
-            z-index: -1;
-          }
-
-          &:hover, &.active {
-            &::before {
-              transform: scaleX(1);
-            }
-          }
-        }
-      }
     }
   }
 
@@ -83,7 +52,8 @@
     transform: none;
     transition-delay: 300ms;
     visibility: visible;
-    > ul > li {
+
+    .navItem {
       opacity: 1;
       transform: none;
 

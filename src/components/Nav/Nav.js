@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 import MenuIconButton from '../MenuIconButton/MenuIconButton';
+import NavItem from '../NavItem/NavItem';
 import classes from './Nav.scss';
 
-class Layout extends Component {
+class Nav extends Component {
 
   constructor(props) {
     super(props);
@@ -38,19 +38,9 @@ class Layout extends Component {
 
         <div className={classes.content}>
           <ul>
-            {links.map((link) => (
-              <li>
-                <Link
-                  activeClassName={classes.active}
-                  key={link.to}
-                  onClick={this.toggleMenu}
-                  onlyActiveOnIndex
-                  to={link.to}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {links.map((link) =>
+              <NavItem {...link} className={classes.navItem} onClick={this.toggleMenu} />
+            )}
           </ul>
         </div>
       </div>
@@ -58,4 +48,4 @@ class Layout extends Component {
   }
 }
 
-export default Layout;
+export default Nav;
