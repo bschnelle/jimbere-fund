@@ -1,0 +1,14 @@
+@import '../../styles/config';
+
+.fact {
+  flex: 0 0 33.333%;
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section {
+  background-color: #fff;
+}
