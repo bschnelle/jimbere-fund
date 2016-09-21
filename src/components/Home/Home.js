@@ -6,7 +6,7 @@ import Section from '../Section/Section';
 
 const Home = () => {
   const scrollToFacts = () => {
-    const duration = 500;
+    const duration = 750;
     const el = document.getElementById('facts');
     const startingY = window.pageYOffset;
     const diff = el.offsetTop - startingY;
