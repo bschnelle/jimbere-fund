@@ -16,6 +16,7 @@ class Nav extends Component {
   }
 
   render() {
+    const { state: { open }, toggleMenu } = this;
     const links = [
       { label: 'Home', to: '/' },
       { label: 'Projects', to: '/projects' },
@@ -25,21 +26,21 @@ class Nav extends Component {
       { label: 'Contact', to: '/contact' }
     ];
     let className = classes.nav;
-    if (this.state.open) className += ` ${classes.open}`;
+    if (open) className += ` ${classes.open}`;
 
     return (
       <div className={className}>
         <div className={classes.expand} />
         <MenuIconButton
           className={classes.menuIconButton}
-          onClick={this.toggleMenu}
-          open={this.state.open}
+          onClick={toggleMenu}
+          open={open}
         />
 
         <div className={classes.content}>
           <ul>
             {links.map((link) =>
-              <NavItem {...link} className={classes.navItem} onClick={this.toggleMenu} />
+              <NavItem {...link} className={classes.navItem} onClick={toggleMenu} />
             )}
           </ul>
         </div>
