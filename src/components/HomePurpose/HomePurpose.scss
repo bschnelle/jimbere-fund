@@ -1,0 +1,50 @@
+@import '../../styles/config';
+
+.section {
+  background-color: $primaryColor3;
+
+
+
+  .purpose {
+    display: flex;
+    justify-content: center;
+
+    > div {
+      display: flex;
+      flex: 0 0 50%;
+      flex-wrap: wrap;
+      max-width: 800px;
+
+      > div {
+        flex: 0 0 50%;
+
+        &:nth-of-type(1) > p {
+          margin-right: 1rem;
+        }
+        &:nth-of-type(2) > p {
+          margin-left: 1rem;
+        }
+
+        > h3 {
+          text-align: center;
+        }
+
+        > p {
+          text-align: justify;
+        }
+      }
+
+      > h1 {
+        flex: 0 0 100%;
+        text-align: center;
+      }
+
+      > p {
+        flex: 0 0 100%;
+        font-size: 1.2rem;
+        margin: 0;
+        text-align: justify;
+      }
+    }
+  }
+}

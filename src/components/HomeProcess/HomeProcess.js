@@ -1,10 +1,10 @@
 import React from 'react';
 import Section from '../Section/Section';
-import classes from './HomeMissionAndVision.scss';
+import classes from './HomeProcess.scss';
 
-const HomeMissionAndVision = () => (
+const HomeProcess = () => (
   <Section className={classes.section}>
-    <h1>Mission & Vision</h1>
+    <h1>Process</h1>
     <div className={classes.missionAndVision}>
       <div>
         <p>
@@ -24,4 +24,4 @@ const HomeMissionAndVision = () => (
   </Section>
 );
 
-export default HomeMissionAndVision;
+export default HomeProcess;

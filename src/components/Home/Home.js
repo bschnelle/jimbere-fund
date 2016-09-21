@@ -1,7 +1,8 @@
 import React from 'react';
 import HomeFacts from '../HomeFacts/HomeFacts';
 import HomeLanding from '../HomeLanding/HomeLanding';
-import HomeMissionAndVision from '../HomeMissionAndVision/HomeMissionAndVision';
+import HomeProcess from '../HomeProcess/HomeProcess';
+import HomePurpose from '../HomePurpose/HomePurpose';
 import Section from '../Section/Section';
 // import classes from './Home.scss';
 
@@ -36,8 +37,8 @@ const Home = () => {
     <div>
       <HomeLanding onScrollClick={scrollToFacts} />
       <HomeFacts id="facts" />
-      <HomeMissionAndVision />
-      <Section>Process</Section>
+      <HomePurpose />
+      <HomeProcess />
       <Section>Story</Section>
       <Section>Footer</Section>
     </div>
