@@ -9,17 +9,33 @@
   display: inline-block;
   font-family: $headerFont;
   font-size: 1.5rem;
+  height: 63px;
   margin: 1rem;
   padding: 1rem 3rem;
+  position: relative;
   text-decoration: none;
   text-transform: uppercase;
   transition: all $transitionDuration;
   user-select: none;
+
   &:active {
     background-color: darken($primaryColor2, 10%) !important;
     border: solid 2px darken($primaryColor2, 10%) !important;
   }
+
   &:hover {
     background-color: $primaryColor2;
+  }
+
+  .loader {
+    background-color: #fff;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 200ms;
+    width: 100%;
   }
 }

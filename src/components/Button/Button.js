@@ -8,12 +8,18 @@ const Button = (props) => {
 
   return props.to
   ? <Link className={className} to={props.to}>{props.label}</Link>
-  : <div className={className} onClick={props.onClick}>{props.label}</div>;
+  : (
+    <div className={className} onClick={props.onClick}>
+      {typeof props.loading !== 'undefined' && <div className={classes.loader} />}
+      {props.label}
+    </div>
+  );
 };
 
 Button.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string.isRequired,
+  loading: PropTypes.bool,
   onClick: PropTypes.func,
   to: PropTypes.string
 };

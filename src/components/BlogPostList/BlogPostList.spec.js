@@ -29,14 +29,6 @@ describe('BlogPostList', () => {
         expect(wrapper.find(FlipMove)).to.have.length(1);
       });
 
-      it('isn\'t rendered if props.posts is undefined', () => {
-        posts = undefined;
-        const wrapper = shallow(
-          <BlogPostList loadMore={loadMore} moreAvailable={more} posts={posts} />
-        );
-        expect(wrapper.find(FlipMove)).to.have.length(0);
-      });
-
       describe('with the following props', () => {
         it('className = .posts', () => {
           const wrapper = shallow(

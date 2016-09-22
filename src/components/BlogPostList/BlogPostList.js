@@ -7,20 +7,18 @@ import classes from './BlogPostList.scss';
 
 const BlogPostList = (props) => (
   <div>
-    {props.posts && props.posts.size && (
-      <FlipMove
-        className={classes.posts}
-        enterAnimation="fade"
-        staggerDelayBy={50}
-        staggerDurationBy={50}
-      >
-        {props.posts.map((post) =>
-          <div className={classes.post} key={post.get('ID')}>
-            <BlogPostListItem post={post} />
-          </div>
-        )}
-      </FlipMove>
-    )}
+    <FlipMove
+      className={classes.posts}
+      enterAnimation="fade"
+      staggerDelayBy={50}
+      staggerDurationBy={50}
+    >
+      {props.posts.map((post) =>
+        <div className={classes.post} key={post.get('ID')}>
+          <BlogPostListItem post={post} />
+        </div>
+      )}
+    </FlipMove>
 
     {props.moreAvailable && (
       <div className={classes.loadMore}>
