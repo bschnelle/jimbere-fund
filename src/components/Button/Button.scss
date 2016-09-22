@@ -1,8 +1,8 @@
 @import '../../styles/config';
 
 .button {
-  background-color: transparentize($primaryColor1, .2);
-  border: solid 2px $primaryColor1;
+  background-color: transparentize($primaryColor2, .2);
+  border: solid 2px $primaryColor2;
   border-radius: 1px;
   color: $alternateTextColor;
   cursor: pointer;
@@ -15,10 +15,10 @@
   transition: all $transitionDuration;
   user-select: none;
   &:active {
-    background-color: darken($primaryColor1, 10%) !important;
-    border: solid 2px darken($primaryColor1, 10%) !important;
+    background-color: darken($primaryColor2, 10%) !important;
+    border: solid 2px darken($primaryColor2, 10%) !important;
   }
   &:hover {
-    background-color: $primaryColor1;
+    background-color: $primaryColor2;
   }
 }

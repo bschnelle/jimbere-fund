@@ -3,8 +3,10 @@ import classes from './Blog.scss';
 
 const Blog = (props) => (
   <div className={classes.blog}>
-    <div className={classes.splashTitle}>Blog</div>
-    <div className={classes.content}>{props.children}</div>
+    <div className={classes.content}>
+      <h1 className={classes.title}>Blog</h1>
+      {props.children}
+    </div>
   </div>
 );
 

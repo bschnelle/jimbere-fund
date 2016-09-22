@@ -1,26 +1,18 @@
 @import '../../styles/config';
 
 .blog {
-  padding: 6rem 3rem;
+  background: url(/images/mooning.png);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 3rem;
 
   .content {
-    position: relative;
-  }
-
-  // TODO svg for "BLOG"
-  .splashTitle {
-    background-color: #ddd;
-    color: $alternateTextColor;
-    font-family: $headerFont;
-    font-size: 45rem;
-    font-weight: 700;
-    left: 0px;
-    height: 100vw;
-    position: fixed;
-    right: 0px;
-    text-align: center;
-    text-transform: uppercase;
-    top: 0px;
-    z-index: 0;
+    max-width: 1200px;
+    .title {
+      font-weight: 400;
+      letter-spacing: .35rem;
+      text-transform: uppercase;
+    }
   }
 }
