@@ -13,7 +13,7 @@ const NavItem = (props) => {
         activeClassName={classes.active}
         key={to}
         onClick={onClick}
-        onlyActiveOnIndex
+        onlyActiveOnIndex={to === '/'}
         to={to}
       >
         {label}

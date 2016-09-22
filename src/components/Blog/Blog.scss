@@ -3,20 +3,8 @@
 .blog {
   padding: 6rem 3rem;
 
-  .post {
-    align-items: center;
-    display: flex;
-    flex: 0 0 33.333%;
-    justify-content: center;
-    padding: 3rem;
-  }
-
-  .posts {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  .content {
     position: relative;
-    top: 10vh;
   }
 
   // TODO svg for "BLOG"
