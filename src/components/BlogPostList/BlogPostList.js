@@ -10,8 +10,14 @@ const BlogPostList = (props) => (
         <BlogPostListItem post={post} />
       </div>
     )}
-    {props.loading && <h1>LOADING</h1>}
-    {props.moreAvailable && <button onClick={props.loadMore}>Click</button>}
+
+    {props.moreAvailable && (
+      <div className={classes.loadMore}>
+      {props.loading
+      ? <h3>LOADING</h3>
+      : <button onClick={props.loadMore}>Click</button>}
+      </div>
+    )}
   </div>
 );
 
