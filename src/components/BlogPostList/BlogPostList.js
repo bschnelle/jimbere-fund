@@ -10,10 +10,15 @@ const BlogPostList = (props) => (
         <BlogPostListItem post={post} />
       </div>
     )}
+    {props.loading && <h1>LOADING</h1>}
+    {props.moreAvailable && <button onClick={props.loadMore}>Click</button>}
   </div>
 );
 
 BlogPostList.propTypes = {
+  loading: PropTypes.bool,
+  loadMore: PropTypes.func.isRequired,
+  moreAvailable: PropTypes.bool.isRequired,
   posts: PropTypes.instanceOf(iList)
 };
 

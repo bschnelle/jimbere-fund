@@ -15,46 +15,47 @@ const blogSvc = blogService.default;
 const initialState = fromJS({
   activePost: undefined,
   error: false,
-  fetchingPosts: false,
   found: undefined,
-  meta: {},
+  loading: false,
+  moreAvailable: true,
   posts: []
 });
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case GET_POST: {
-      return state.set('fetchingPost', true);
+      return state.set('loading', true);
     }
 
     case GET_POST_FAILURE: {
-      return state.merge({ error: true, fetchingPost: false });
+      return state.merge({ error: true, loading: false });
     }
 
     case GET_POST_SUCCESS: {
-      const { content, slug } = action;
+      /* const { content, slug } = action;
       const index = state.get('posts').findIndex((post) => post.get('slug') === slug);
       const newState = state.updateIn(['posts', index], (post) => post.set('content', content));
       return newState.merge({
         activePost: slug,
-        fetchingPost: false
-      });
+        loading: false
+      }); */
+      return state;
     }
 
     case GET_POSTS: {
-      return state.set('fetchingPosts', true);
+      return state.set('loading', true);
     }
 
     case GET_POSTS_FAILURE: {
-      return state.merge({ error: true, fetchingPosts: false });
+      return state.merge({ error: true, loading: false });
     }
 
     case GET_POSTS_SUCCESS: {
       const newState = state.update('posts', (posts) => posts.concat(fromJS(action.posts)));
       return newState.merge({
-        fetchingPosts: false,
         found: action.found,
-        meta: fromJS(action.meta)
+        loading: false,
+        moreAvailable: newState.get('posts').size < action.found
       });
     }
 
@@ -76,11 +77,11 @@ export function getPost(id) {
 
 export function getPosts() {
   return (dispatch, getState) => {
-    const pageHandle = getState().blog.getIn(['meta', 'page_handle']);
+    const offset = getState().blog.get('posts').size;
 
     dispatch({ type: GET_POSTS });
-    return blogSvc.getPosts(pageHandle)
-      .then(({ found, posts, meta }) => dispatch({ type: GET_POSTS_SUCCESS, found, posts, meta }))
+    return blogSvc.getPosts(offset)
+      .then(({ found, posts }) => dispatch({ type: GET_POSTS_SUCCESS, found, posts }))
       .catch(() => dispatch({ type: GET_POSTS_FAILURE }));
   };
 }

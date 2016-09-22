@@ -8,6 +8,8 @@ class BlogPostListContainer extends Component {
 
   static propTypes = {
     getPosts: PropTypes.func.isRequired,
+    loading: PropTypes.bool,
+    moreAvailable: PropTypes.bool.isRequired,
     posts: PropTypes.instanceOf(iList)
   }
 
@@ -16,11 +18,27 @@ class BlogPostListContainer extends Component {
   }
 
   render() {
-    return <BlogPostList posts={this.props.posts} />;
+    const { getPosts: loadMore, loading, moreAvailable, posts } = this.props;
+    return (
+      <BlogPostList
+        loading={loading}
+        loadMore={loadMore}
+        moreAvailable={moreAvailable}
+        posts={posts}
+      />
+    );
   }
 }
 
-const stateToProps = (state) => ({ posts: state.blog.get('posts') });
+const stateToProps = (state) => {
+  const { blog } = state;
+  return {
+    loading: blog.get('loading'),
+    moreAvailable: blog.get('moreAvailable'),
+    posts: blog.get('posts')
+  };
+};
+
 const dispatchToProps = { getPosts };
 
 export default connect(stateToProps, dispatchToProps)(BlogPostListContainer);

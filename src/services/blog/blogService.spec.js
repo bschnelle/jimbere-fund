@@ -42,6 +42,12 @@ describe('[Service] BlogService', () => {
       expect(fetch.default).to.have.been.calledWith(sinon.match(r));
     });
 
+    it('appends an offset query param if an offset arg is passed', () => {
+      sinon.stub(fetch, 'default').returns(Promise.resolve());
+      blogService.getPosts(2);
+      expect(fetch.default).to.have.been.calledWith(sinon.match(/\?offset=2/));
+    });
+
     it('if res.ok is true, returns res.json()', () => {
       const json = { posts: [] };
       const response = { ok: true, json: () => json };

@@ -12,8 +12,10 @@ class BlogService {
       .then(fetch.getText);
   }
 
-  getPosts() {
-    const url = `${this.url}/posts`;
+  getPosts(offset) {
+    let url = `${this.url}/posts`;
+    if (offset) url += `?offset=${offset}`;
+
     return fetch.default(url)
       .then(fetch.handleError)
       .then(fetch.getJSON);
