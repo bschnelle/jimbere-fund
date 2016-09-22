@@ -39,8 +39,10 @@ describe('NavItem', () => {
         expect(wrapper.find(Link).prop('onClick')).to.equal(onClick);
       });
 
-      it('onlyActiveOnIndex of true', () => {
+      it('onlyActiveOnIndex of true if to = "/"', () => {
         const wrapper = shallow(<NavItem label={label} to={to} />);
+        expect(wrapper.find(Link).prop('onlyActiveOnIndex')).to.be.false;
+        wrapper.setProps({ label, to: '/' });
         expect(wrapper.find(Link).prop('onlyActiveOnIndex')).to.be.true;
       });
 

@@ -4,7 +4,7 @@ import { List as iList } from 'immutable';
 import { getPosts } from '../../redux/modules/blog/blogModule';
 import BlogPostList from '../../components/BlogPostList/BlogPostList';
 
-class BlogPostListContainer extends Component {
+export class BlogPostListContainer extends Component {
 
   static propTypes = {
     getPosts: PropTypes.func.isRequired,
@@ -30,7 +30,7 @@ class BlogPostListContainer extends Component {
   }
 }
 
-const stateToProps = (state) => {
+export const stateToProps = (state) => {
   const { blog } = state;
   return {
     loading: blog.get('loading'),

@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import classes from './Blog.scss';
 
 const Blog = (props) => (
   <div className={classes.blog}>
     <div className={classes.content}>
-      <h1 className={classes.title}>Blog</h1>
+      <h1><Link className={classes.title} to="/blog">Blog</Link></h1>
       {props.children}
     </div>
   </div>
