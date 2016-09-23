@@ -6,7 +6,6 @@ const Footer = () => (
   <div className={classes.footer}>
     <div>
       <span>{`© Jimbere Fund ${new Date().getFullYear()}`}</span>
-      <span className={classes.phone}>917.224.2095</span>
     </div>
     <div className={classes.social}>
       <a href="https://www.facebook.com/jimberefund/">
