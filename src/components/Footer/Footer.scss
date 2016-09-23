@@ -1,0 +1,51 @@
+@import '../../styles/config';
+
+.footer {
+  background-color: $primaryColor1;
+  color: $alternateTextColor;
+  display: flex;
+  font-family: $headerFont;
+  padding: 6rem 3rem;
+
+  > div {
+    align-items: center;
+    display: flex;
+    font-size: 1.2rem;
+    flex: 1;
+  }
+
+  .phone {
+    margin-left: 2rem;
+    letter-spacing: .05rem;
+  }
+
+  .social {
+    justify-content: flex-end;
+
+    > a {
+      align-items: center;
+      border: solid 2px $alternateTextColor;
+      border-radius: 50%;
+      display: flex;
+      height: 40px;
+      justify-content: center;
+      margin-left: 1rem;
+      text-decoration: none;
+      transition: all $transitionDuration;
+      width: 40px;
+
+      &:hover {
+        background-color: $alternateTextColor;
+        > svg {
+          fill: $primaryColor1;
+        }
+      }
+
+      > svg {
+        fill: $alternateTextColor;
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+}
