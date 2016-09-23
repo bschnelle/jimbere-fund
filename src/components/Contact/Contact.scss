@@ -1,0 +1,45 @@
+@import '../../styles/config';
+
+.contact {
+  background-image: url(/images/phone.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: auto;
+  position: relative;
+
+  .greeting {
+    align-items: center;
+    color: $alternateTextColor;
+    display: flex;
+    flex: 0 0 60%;
+    justify-content: center;
+    position: relative;
+
+    > h1 {
+      font-size: 8rem;
+      letter-spacing: .35rem;
+    }
+  }
+
+  .info {
+    align-items: center;
+    background-color: #fff;
+    display: flex;
+    flex: 0 0 40%;
+    justify-content: center;
+    position: relative;
+  }
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, .3);
+  left: 0;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+}
