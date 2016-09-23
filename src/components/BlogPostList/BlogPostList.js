@@ -3,6 +3,7 @@ import { List as iList } from 'immutable';
 import FlipMove from 'react-flip-move';
 import Button from '../Button/Button';
 import BlogPostListItem from '../BlogPostListItem/BlogPostListItem';
+import Loader from '../Loader/Loader';
 import classes from './BlogPostList.scss';
 
 const BlogPostList = (props) => (
@@ -22,7 +23,9 @@ const BlogPostList = (props) => (
 
     {props.moreAvailable && (
       <div className={classes.loadMore}>
-        <Button label="More" onClick={props.loadMore} />
+        {props.loading
+        ? <Loader />
+        : <Button label="More" onClick={props.loadMore} />}
       </div>
     )}
   </div>

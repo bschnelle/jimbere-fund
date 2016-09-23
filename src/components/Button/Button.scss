@@ -16,7 +16,6 @@
   text-decoration: none;
   text-transform: uppercase;
   transition: all $transitionDuration;
-  user-select: none;
 
   &:active {
     background-color: darken($primaryColor2, 10%) !important;
@@ -27,6 +26,20 @@
     background-color: $primaryColor2;
   }
 
+  &.busy {
+    cursor: default;
+    .label {
+      opacity: 0;
+    }
+    .loader {
+      animation: loading 1000ms infinite;
+    }
+  }
+
+  .label {
+    user-select: none;
+  }
+
   .loader {
     background-color: #fff;
     height: 100%;
@@ -34,8 +47,13 @@
     position: absolute;
     top: 0;
     transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 200ms;
     width: 100%;
   }
+}
+
+@keyframes loading {
+  0% { transform: scaleX(0); transform-origin: left; }
+  33% { transform: scaleX(1); transform-origin: left; }
+  66% { transform: scaleX(1); transform-origin: right; }
+  100% { transform: scaleX(0); transform-origin: right; }
 }
