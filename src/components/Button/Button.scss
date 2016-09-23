@@ -1,8 +1,8 @@
 @import '../../styles/config';
 
 .button {
-  background-color: transparentize($primaryColor2, .2);
-  border: solid 2px $primaryColor2;
+  background-color: transparentize($accentColor1, .2);
+  border: solid 2px $accentColor1;
   border-radius: 1px;
   color: $alternateTextColor;
   cursor: pointer;
@@ -16,44 +16,14 @@
   text-decoration: none;
   text-transform: uppercase;
   transition: all $transitionDuration;
+  user-select: none;
 
   &:active {
-    background-color: darken($primaryColor2, 10%) !important;
-    border: solid 2px darken($primaryColor2, 10%) !important;
+    background-color: darken($accentColor1, 10%) !important;
+    border: solid 2px darken($accentColor1, 10%) !important;
   }
 
   &:hover {
-    background-color: $primaryColor2;
+    background-color: $accentColor1;
   }
-
-  &.busy {
-    cursor: default;
-    .label {
-      opacity: 0;
-    }
-    .loader {
-      animation: loading 1000ms infinite;
-    }
-  }
-
-  .label {
-    user-select: none;
-  }
-
-  .loader {
-    background-color: #fff;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transform: scaleX(0);
-    width: 100%;
-  }
-}
-
-@keyframes loading {
-  0% { transform: scaleX(0); transform-origin: left; }
-  33% { transform: scaleX(1); transform-origin: left; }
-  66% { transform: scaleX(1); transform-origin: right; }
-  100% { transform: scaleX(0); transform-origin: right; }
 }
