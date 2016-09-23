@@ -15,7 +15,7 @@ const routes = (
     <IndexRoute component={HomeContainer} />
     <Route path="/blog" component={Blog}>
       <IndexRoute component={BlogPostListContainer} />
-      <Route path="/blog/:id" component={BlogPostContainer} />
+      <Route path="/blog/:slug" component={BlogPostContainer} />
     </Route>
     <Route path="/contact" component={ContactContainer} />
     <Route path="/donate" component={DonateContainer} />

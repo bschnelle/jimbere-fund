@@ -13,8 +13,8 @@ class BlogService {
   }
 
   getPosts(offset) {
-    let url = `${this.url}/posts?number=2`;
-    if (offset) url += `&offset=${offset}`;
+    let url = `${this.url}/posts`;
+    if (offset) url += `?offset=${offset}`;
 
     return fetch.default(url)
       .then(fetch.handleError)
