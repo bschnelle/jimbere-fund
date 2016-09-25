@@ -20,10 +20,13 @@
       }
 
       .details {
+        align-items: center;
         border-left: solid 5px $primaryColor1;
-        padding: 1rem 2rem;
+        display: flex;
+        padding-left: 2rem;
 
         > p {
+          margin: 0;
           text-align: justify;
         }
       }

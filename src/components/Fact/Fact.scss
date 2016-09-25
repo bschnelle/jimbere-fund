@@ -1,7 +1,7 @@
 @import '../../styles/config';
 
 .fact {
-  background-color: darken(#1b5e20, 2%);
+  background-color: darken($primaryColor1, 10%);
   border-radius: 1px;
   margin: 2rem;
   padding: 1rem;

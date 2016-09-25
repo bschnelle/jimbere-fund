@@ -1,22 +1,21 @@
 @import '../../styles/config';
 
-.section {
+.purpose {
   background-image: url(/images/JF_Congo_Street.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: $alternateTextColor;
 
-  .purpose {
-    background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.6), rgba(0,0,0,0));
+  .section {
+    background: linear-gradient(to right, transparent, rgba(0,0,0,.6), rgba(0,0,0,.6), transparent);
     display: flex;
     justify-content: center;
 
     > div {
       display: flex;
-      flex: 0 0 50%;
       flex-wrap: wrap;
-      max-width: 800px;
+      max-width: 650px;
 
       > div {
         flex: 0 0 50%;
@@ -44,7 +43,6 @@
 
       > p {
         flex: 0 0 100%;
-        // font-size: 1.2rem;
         margin: 0;
         text-align: justify;
       }

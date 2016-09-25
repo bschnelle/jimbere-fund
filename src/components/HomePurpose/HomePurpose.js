@@ -3,8 +3,8 @@ import Section from '../Section/Section';
 import classes from './HomePurpose.scss';
 
 const HomePurpose = () => (
-  <Section className={classes.section}>
-    <div className={classes.purpose}>
+  <div className={classes.purpose}>
+    <Section className={classes.section}>
       <div>
         <h1>Purpose</h1>
         <p>
@@ -30,8 +30,8 @@ const HomePurpose = () => (
           </p>
         </div>
       </div>
-    </div>
-  </Section>
+    </Section>
+  </div>
 );
 
 export default HomePurpose;
