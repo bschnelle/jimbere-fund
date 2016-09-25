@@ -1,7 +1,7 @@
 @import '../../styles/config';
 
 .fact {
-  background-color: lighten($primaryColor2, 5%);
+  background-color: darken(#1b5e20, 2%);
   border-radius: 1px;
   margin: 2rem;
   padding: 1rem;
@@ -9,12 +9,14 @@
   text-align: center;
 
   > h1 {
-    color: darken($primaryColor2, 10%);
+    color: $primaryColor1;
+    font-weight: 700;
     letter-spacing: .2rem;
   }
 
   > h5 {
-    color: lighten($primaryColor2, 50%);
+    color: lighten(#1b5e20, 80%);
+    letter-spacing: normal;
     text-transform: uppercase;
   }
 }

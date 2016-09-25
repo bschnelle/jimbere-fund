@@ -1,14 +1,16 @@
 @import '../../styles/config';
 
 .section {
-  background-color: $primaryColor1;
-
-
+  background-image: url(/images/JF_Congo_Street.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $alternateTextColor;
 
   .purpose {
+    background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.6), rgba(0,0,0,0));
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
 
     > div {
       display: flex;
@@ -42,7 +44,7 @@
 
       > p {
         flex: 0 0 100%;
-        font-size: 1.2rem;
+        // font-size: 1.2rem;
         margin: 0;
         text-align: justify;
       }

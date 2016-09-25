@@ -39,8 +39,6 @@ const Home = () => {
       <HomeFacts id="facts" />
       <HomePurpose />
       <HomeProcess />
-      <Section>Story</Section>
-      <Section>Footer</Section>
     </div>
   );
 };
