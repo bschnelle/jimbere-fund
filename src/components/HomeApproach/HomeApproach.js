@@ -62,7 +62,62 @@ class HomeApproach extends Component {
           </div>
 
           <div className={classes.process}>
-            <h3>Process</h3>
+            <h1>Process</h1>
+            <div>
+              <div>
+                <div />
+                <div />
+                <div>
+                  <h1>01</h1>
+                  <p>Listen and learn from communities.</p>
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <p>Collaboratively identify top priorities and build consensus.</p>
+                  <h1>02</h1>
+                </div>
+                <div />
+                <div />
+              </div>
+
+              <div>
+                <div />
+                <div />
+                <div>
+                  <h1>03</h1>
+                  <p>Co-design high-impact social project.</p>
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <p>Provide funding to implement projects.</p>
+                  <h1>04</h1>
+                </div>
+                <div />
+                <div />
+              </div>
+
+              <div>
+                <div />
+                <div />
+                <div>
+                  <h1>05</h1>
+                  <p>Co-manager projects together with the communities we serve.</p>
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <p>Follow-up to make sure projects are sustainable, then exit.</p>
+                  <h1>06</h1>
+                </div>
+                <div />
+                <div />
+              </div>
+            </div>
           </div>
         </div>
       </Section>
