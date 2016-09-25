@@ -1,0 +1,62 @@
+@import '../../styles/config';
+
+.section {
+  display: flex;
+  justify-content: center;
+
+  > div {
+    flex: 1;
+    max-width: 800px;
+
+    > h1 {
+      text-align: center;
+    }
+
+    .approach {
+      display: flex;
+      > div {
+        flex: 1;
+
+      }
+
+      .details {
+        border-left: solid 5px $primaryColor1;
+        padding: 1rem 2rem;
+
+        > p {
+          text-align: justify;
+        }
+      }
+
+      .sections {
+        > h3 {
+          cursor: pointer;
+          padding: 1rem;
+          margin: 1rem 0 0 0;
+          text-align: right;
+          transition: all 150ms;
+
+          &:first-of-type {
+            margin: 0;
+          }
+
+          &.active {
+            background-color: $primaryColor1 !important;
+            color: $alternateTextColor !important;
+          }
+
+          &:hover {
+            background-color: lighten($primaryColor1, 35%);
+            color: $alternateTextColor;
+          }
+        }
+      }
+    }
+
+    .process {
+      > h3 {
+        text-align: center;
+      }
+    }
+  }
+}
