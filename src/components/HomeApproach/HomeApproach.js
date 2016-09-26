@@ -87,7 +87,7 @@ class HomeApproach extends Component {
                 <div />
                 <div>
                   <h1>03</h1>
-                  <p>Co-design high-impact social project.</p>
+                  <p>Co-design high-impact social projects.</p>
                 </div>
               </div>
 
@@ -105,7 +105,7 @@ class HomeApproach extends Component {
                 <div />
                 <div>
                   <h1>05</h1>
-                  <p>Co-manager projects together with the communities we serve.</p>
+                  <p>Co-manage projects with the communities we serve.</p>
                 </div>
               </div>
 
