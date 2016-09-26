@@ -2,6 +2,7 @@ import React from 'react';
 import HomeFacts from '../HomeFacts/HomeFacts';
 import HomeLanding from '../HomeLanding/HomeLanding';
 import HomeApproach from '../HomeApproach/HomeApproach';
+import HomeProcess from '../HomeProcess/HomeProcess';
 import HomePurpose from '../HomePurpose/HomePurpose';
 // import classes from './Home.scss';
 
@@ -38,6 +39,7 @@ const Home = () => {
       <HomeFacts id="facts" />
       <HomePurpose />
       <HomeApproach />
+      <HomeProcess />
     </div>
   );
 };

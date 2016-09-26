@@ -1,0 +1,20 @@
+@import '../../styles/config';
+
+.donate {
+  display: flex;
+
+  > div {
+    flex: 0 0 50%;
+    height: 100vh;
+
+    &.info {
+      h1 {
+        text-align: center;
+      }
+    }
+
+    &.widget {
+      background-color: $primaryColor1;
+    }
+  }
+}

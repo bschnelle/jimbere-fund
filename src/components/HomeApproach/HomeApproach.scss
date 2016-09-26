@@ -14,6 +14,8 @@
 
     .approach {
       display: flex;
+      margin-bottom: 2rem;
+
       > div {
         flex: 1;
 
@@ -51,67 +53,6 @@
           &:hover {
             background-color: lighten($primaryColor1, 35%);
             color: $alternateTextColor;
-          }
-        }
-      }
-    }
-
-    .process {
-      > h1 {
-        text-align: center;
-      }
-
-      > div {
-        > div {
-          display: flex;
-          align-items: center;
-
-          > div {
-            margin: 1rem;
-
-            &:not(:nth-of-type(2)) {
-              flex: 1;
-            }
-
-            &:nth-of-type(2) {
-              border: solid 2px $primaryColor1;
-              border-radius: 50%;
-              height: 100px;
-              width: 100px;
-            }
-          }
-
-          .info {
-            align-items: center;
-            border: solid 2px $primaryColor1;
-            border-radius: 1px;
-            display: flex;
-
-            > h1 {
-              color: $primaryColor1;
-              font-weight: 700;
-              margin: 0 1rem;
-            }
-
-            > p {
-              background-color: $primaryColor1;
-              color: $alternateTextColor;
-              flex: 1;
-              margin: 0;
-              padding: 1.5rem;
-            }
-          }
-
-          &:nth-child(2n-1) {
-            > div:nth-of-type(3) {
-              @extend .info;
-            }
-          }
-
-          &:nth-child(2n) {
-            > div:first-of-type {
-              @extend .info;
-            }
           }
         }
       }
