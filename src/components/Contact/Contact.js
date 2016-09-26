@@ -10,10 +10,10 @@ class Contact extends Component {
       // container id
       container: 'map',
       // style location
-      style: 'mapbox://styles/bschnelle/citgejb9400032iqh1owo598z',
+      style: 'mapbox://styles/bschnelle/citgbrv5n00022iqh7psitcc6',
       // starting position
-      center: [-74.50, 40],
-      zoom: 9
+      center: [-73.9377, 40.6507],
+      zoom: 10
     });
 
     /* map.on('load', () => {
