@@ -1,20 +1,38 @@
 @import '../../styles/config';
 
 .donate {
-  display: flex;
+  align-items: center;
+  background-image: url(/images/school.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $alternateTextColor;
 
   > div {
-    flex: 0 0 50%;
+    background-color: rgba(0,0,0,.4);
+    display: flex;
+    flex-direction: column;
     height: 100vh;
 
-    &.info {
-      h1 {
-        text-align: center;
-      }
-    }
+    > div {
+      align-items: center;
+      display: flex;
+      flex: 0 0 50%;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+      width: 100vw;
 
-    &.widget {
-      background-color: $primaryColor1;
+      &:first-of-type {
+        > div > p {
+          &:nth-of-type(1) {
+            font-size: 2rem;
+          }
+          &:nth-of-type(2) {
+            font-size: 1.25rem;
+          }
+        }
+      }
     }
   }
 }
