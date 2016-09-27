@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FlipMove from 'react-flip-move';
 import Section from '../Section/Section';
 import classes from './HomeApproach.scss';
 
@@ -41,6 +42,16 @@ class HomeApproach extends Component {
       `
     };
 
+    const { activeSection } = this.state;
+    const enter = {
+      from: { opacity: 0, transform: 'translateY(-30px)' },
+      to: { opacity: 1 }
+    };
+    const leave = {
+      from: { opacity: 1 },
+      to: { opacity: 0, transform: 'translateY(30px)' }
+    };
+
     return (
       <Section className={classes.section}>
         <div>
@@ -48,7 +59,7 @@ class HomeApproach extends Component {
           <div className={classes.approach}>
             <div className={classes.sections}>
               {Object.keys(sections).map((section) => {
-                const className = this.state.activeSection === section ? classes.active : '';
+                const className = activeSection === section ? classes.active : '';
                 return (
                   <h3 className={className} key={section} onClick={this.updateSection}>
                     {section}
@@ -56,9 +67,11 @@ class HomeApproach extends Component {
                 );
               })}
             </div>
-            <div className={classes.details}>
-              <p>{sections[this.state.activeSection]}</p>
-            </div>
+            <FlipMove duration={200} enterAnimation={enter} leaveAnimation={leave}>
+              <div className={classes.details} key={activeSection}>
+                <p>{sections[activeSection]}</p>
+              </div>
+            </FlipMove>
           </div>
         </div>
       </Section>
