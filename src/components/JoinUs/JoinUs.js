@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from '../Button/Button';
 import classes from './JoinUs.scss';
 
 class JoinUs extends Component {
@@ -68,6 +69,9 @@ class JoinUs extends Component {
             <li>Brand Manager</li>
             <li>Int'l Development Mgr</li>
           </ul>
+          <div className={classes.contact}>
+            <Button label="Contact" to="/contact" />
+          </div>
         </div>
       )
     };
