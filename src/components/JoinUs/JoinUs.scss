@@ -51,7 +51,7 @@
 
           > p, > span, .positions {
             opacity: 0;
-            transition: opacity $transitionDuration;
+            transition: opacity $transitionDuration, background-color $transitionDuration;
             visibility: hidden;
           }
 
@@ -68,13 +68,13 @@
           }
 
           &:nth-of-type(1) {
-            background-color: $primaryColor1;
+            background-color: transparentize($primaryColor1, .2);
             color: $alternateTextColor;
             right: 50vw;
           }
 
           &:nth-of-type(2) {
-            background-color: #fff;
+            background-color: transparentize(#fff, .2);
             color: $primaryColor1;
             left: 50vw;
           }
@@ -86,10 +86,12 @@
             z-index: 3;
 
             &:nth-of-type(1) {
+              background-color: $primaryColor1;
               right: 0;
             }
 
             &:nth-of-type(2) {
+              background-color: #fff;
               left: 0;
             }
 
