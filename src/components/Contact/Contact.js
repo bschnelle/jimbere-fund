@@ -33,10 +33,10 @@ class Contact extends Component {
         </div>
         <div className={classes.info}>
           <div>
-            <h2>Email</h2>
-            <span>obadiasndaba@gmail.com</span>
-            <h2>Phone</h2>
-            <span>917.224.2095</span>
+            <h3>Email</h3>
+            <p>obadiasndaba@gmail.com</p>
+            <h3>Phone</h3>
+            <p>917.224.2095</p>
           </div>
           <div id="map" />
         </div>
