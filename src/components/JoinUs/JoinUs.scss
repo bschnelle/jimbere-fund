@@ -27,7 +27,7 @@
         text-align: center;
 
         p {
-          font-size: 2.5rem;
+          font-size: 2rem;
         }
       }
 
@@ -49,13 +49,13 @@
             text-align: center;
           }
 
-          > p, > span, .positions, .contact {
+          .story, > span, .positions, .contact {
             opacity: 0;
             transition: opacity $transitionDuration, background-color $transitionDuration, margin $transitionDuration;
             visibility: hidden;
           }
 
-          > p {
+          .story {
             margin-left: auto;
             margin-right: auto;
             max-width: 800px;
@@ -97,7 +97,7 @@
               left: 0;
             }
 
-            > p, > span, .positions, .contact {
+            .story, > span, .positions, .contact {
               opacity: 1;
               transition: visibility $transitionDuration ease $transitionDuration, opacity $transitionDuration ease $transitionDuration;
               visibility: visible;

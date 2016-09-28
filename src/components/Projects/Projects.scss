@@ -1,0 +1,25 @@
+@import '../../styles/config';
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 232px);
+
+  > div {
+    align-items: center;
+    display: flex;
+    flex: 0 0 50%;
+    flex-wrap: wrap;
+
+    &:nth-of-type(1) {
+      > div {
+        flex: 0 0 100%;
+        text-align: center;
+      }
+
+      p {
+        font-size: 2rem;
+      }
+    }
+  }
+}
