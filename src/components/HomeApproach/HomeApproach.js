@@ -22,7 +22,7 @@ class HomeApproach extends Component {
         implementation of each project. Not only do we engage them, we actually
         let them take the lead. We believe that lasting change can only happen
         from the ground-up. We ensure community participation in formulating
-        solutions and a wider buy-in of the way each project is implementated.
+        solutions and a wider buy-in of the way each project is implemented.
       `,
       Holistic: `
         Poverty is complex. No single intervention can tackle it alone. Nor is

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Logo from '../Logo/Logo';
 import MenuIconButton from '../MenuIconButton/MenuIconButton';
 import NavItem from '../NavItem/NavItem';
+import Social from '../Social/Social';
 import classes from './Nav.scss';
 
 class Nav extends Component {
@@ -45,6 +46,7 @@ class Nav extends Component {
               <NavItem {...link} className={classes.navItem} key={link.to} onClick={toggleMenu} />
             )}
           </ul>
+          <Social className={classes.social} />
         </div>
       </div>
     );
