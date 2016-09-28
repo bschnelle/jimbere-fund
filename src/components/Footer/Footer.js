@@ -1,11 +1,15 @@
 /* eslint-disable max-len */
 import React from 'react';
+import Logo from '../Logo/Logo';
 import classes from './Footer.scss';
 
 const Footer = () => (
   <div className={classes.footer}>
     <div>
-      <span>{`© Jimbere Fund ${new Date().getFullYear()}`}</span>
+      <div>
+        <Logo className={classes.logo} link secondary />
+        <span>{`© Jimbere Fund ${new Date().getFullYear()}`}</span>
+      </div>
     </div>
     <div className={classes.social}>
       <a href="https://www.facebook.com/jimberefund/">

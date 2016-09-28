@@ -9,8 +9,8 @@
   > div {
     align-items: center;
     display: flex;
-    font-size: 1.2rem;
     flex: 1;
+    font-size: .9rem;
   }
 
   .social {
@@ -42,4 +42,10 @@
       }
     }
   }
+}
+
+.logo {
+  display: block;
+  margin-bottom: .5rem;
+  // width: 150px;
 }
