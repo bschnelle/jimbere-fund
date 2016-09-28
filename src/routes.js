@@ -10,8 +10,11 @@ import HomeContainer from './containers/Home/HomeContainer';
 import JoinUsContainer from './containers/JoinUs/JoinUsContainer';
 import ProjectsContainer from './containers/Projects/ProjectsContainer';
 
+// TODO create/move to UI Service
+const onChange = () => { document.body.scrollTop = document.documentElement.scrollTop = 0; };
+
 const routes = (
-  <Route path="/" component={Layout}>
+  <Route path="/" component={Layout} onChange={onChange}>
     <IndexRoute component={HomeContainer} />
     <Route path="/blog" component={Blog}>
       <IndexRoute component={BlogPostListContainer} />
