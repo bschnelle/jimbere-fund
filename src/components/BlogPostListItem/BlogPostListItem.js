@@ -20,7 +20,7 @@ const BlogPostListItem = (props) => {
   return (
     <Link className={className} style={linkStyle} to={to}>
       <div className={classes.content}>
-        <h4 className={classes.title}>{title}</h4>
+        <h5 className={classes.title}>{title}</h5>
         <div className={classes.footer}>
           <span>{name}</span>
           <span>{moment(new Date(date)).format('D MMM, YY')}</span>

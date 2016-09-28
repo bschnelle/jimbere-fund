@@ -5,7 +5,7 @@ import classes from './BlogPost.scss';
 const BlogPost = (props) => (
   <div className="blogPostWrapper">
     <div>
-      <h2>{props.post.get('title')}</h2>
+      <h4>{props.post.get('title')}</h4>
       <div
         dangerouslySetInnerHTML={{ __html: props.post.get('content') }}
       />

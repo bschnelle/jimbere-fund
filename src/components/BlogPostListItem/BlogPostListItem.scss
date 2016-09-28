@@ -7,8 +7,9 @@
   background-size: cover;
   color: $alternateTextColor;
   cursor: pointer;
+  display: block;
   text-decoration: none;
-  width: 350px;
+  min-width: 350px;
   height: 350px;
 
   &:hover {
@@ -22,7 +23,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 1.5rem;
+    padding: 2rem;
     transition: all $transitionDuration;
     width: 100%;
   }
