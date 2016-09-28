@@ -1,60 +1,53 @@
 @import '../../styles/config';
 
 .content {
-  display: flex;
-  justify-content: center;
 
-  > div {
-    flex: 1;
-    max-width: 950px;
+  .approach {
+    display: flex;
+    margin-bottom: 2rem;
 
-    .approach {
+    > div {
+      flex: 1;
+
+    }
+
+    .details {
+      align-items: center;
       display: flex;
-      margin-bottom: 2rem;
+      height: 100%;
+      padding-left: 2rem;
 
-      > div {
-        flex: 1;
-
+      > p {
+        // font-size: 1.3rem;
+        margin: 0;
+        text-align: justify;
       }
+    }
 
-      .details {
-        align-items: center;
-        display: flex;
-        height: 100%;
-        padding-left: 2rem;
+    .sections {
+      border-right: solid 5px $primaryColor1;
 
-        > p {
-          // font-size: 1.3rem;
+      > h4 {
+        cursor: pointer;
+        font-weight: 400;
+        letter-spacing: .2rem;
+        padding: 1rem;
+        margin: 1rem 0 0 0;
+        text-align: right;
+        transition: all 150ms;
+
+        &:first-of-type {
           margin: 0;
-          text-align: justify;
         }
-      }
 
-      .sections {
-        border-right: solid 5px $primaryColor1;
+        &.active {
+          background-color: $primaryColor1 !important;
+          color: $alternateTextColor !important;
+        }
 
-        > h4 {
-          cursor: pointer;
-          font-weight: 400;
-          letter-spacing: .2rem;
-          padding: 1rem;
-          margin: 1rem 0 0 0;
-          text-align: right;
-          transition: all 150ms;
-
-          &:first-of-type {
-            margin: 0;
-          }
-
-          &.active {
-            background-color: $primaryColor1 !important;
-            color: $alternateTextColor !important;
-          }
-
-          &:hover {
-            background-color: lighten($primaryColor1, 35%);
-            color: $alternateTextColor;
-          }
+        &:hover {
+          background-color: lighten($primaryColor1, 35%);
+          color: $alternateTextColor;
         }
       }
     }

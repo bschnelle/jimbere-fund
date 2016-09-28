@@ -7,7 +7,9 @@ const Section = (props) => {
   return (
     <div className={className} id={props.id}>
       <h1>{props.title}</h1>
-      {props.children}
+      {props.container
+      ? <div className={classes.container}>{props.children}</div>
+      : props.children}
     </div>
   );
 };
@@ -15,6 +17,7 @@ const Section = (props) => {
 Section.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  container: PropTypes.bool,
   id: PropTypes.string,
   title: PropTypes.string.isRequired
 };
