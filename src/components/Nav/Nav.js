@@ -28,11 +28,17 @@ class Nav extends Component {
       { label: 'Contact', to: '/contact' }
     ];
     let className = classes.nav;
-    if (open) className += ` ${classes.open}`;
+    let style;
+    if (open) {
+      className += ` ${classes.open}`;
+      const scale = (Math.round(window.innerWidth * 2.2) / 45);
+      const transform = `rotate(45deg) scale(${scale})`;
+      style = { transform };
+    }
 
     return (
       <div className={className}>
-        <div className={classes.expand} />
+        <div className={classes.expand} style={style} />
         <MenuIconButton
           className={classes.menuIconButton}
           onClick={toggleMenu}

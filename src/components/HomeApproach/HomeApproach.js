@@ -53,7 +53,7 @@ class HomeApproach extends Component {
     };
 
     return (
-      <Section container title="Approach">
+      <Section className={classes.section} container title="Approach">
         <div className={classes.content}>
           <div className={classes.approach}>
             <div className={classes.sections}>
