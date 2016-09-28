@@ -20,6 +20,12 @@
     width: 100vw;
     z-index: 1;
 
+    .logo {
+      left: 1.5rem;
+      position: absolute;
+      top: 1.5rem;
+    }
+
     > ul {
       list-style: none;
       margin-left: 10%;

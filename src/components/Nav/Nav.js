@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Logo from '../Logo/Logo';
 import MenuIconButton from '../MenuIconButton/MenuIconButton';
 import NavItem from '../NavItem/NavItem';
 import classes from './Nav.scss';
@@ -38,6 +39,7 @@ class Nav extends Component {
         />
 
         <div className={classes.content}>
+          <Logo className={classes.logo} />
           <ul>
             {links.map((link) =>
               <NavItem {...link} className={classes.navItem} key={link.to} onClick={toggleMenu} />
