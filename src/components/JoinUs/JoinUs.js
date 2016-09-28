@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from '../Button/Button';
+import ImageLoader from '../ImageLoader/ImageLoader';
 import classes from './JoinUs.scss';
 
 class JoinUs extends Component {
@@ -80,29 +81,31 @@ class JoinUs extends Component {
     };
 
     return (
-      <div className={classes.joinUs}>
-        <div>
-          <div className={classes.header}>
-            <div>
-              <h1>Join Us</h1>
-              <p>Together we can end poverty.</p>
+      <ImageLoader className={classes.imageLoader} src="/images/new_york-o.jpg">
+        <div className={classes.joinUs}>
+          <div>
+            <div className={classes.header}>
+              <div>
+                <h1>Join Us</h1>
+                <p>Together we can end poverty.</p>
+              </div>
+            </div>
+            <div className={classes.cards}>
+              {Object.keys(cards).map((card) => (
+                <div
+                  className={this.state.activeCard === card ? classes.active : ''}
+                  key={card}
+                  onClick={() => this.onCardClick(card)}
+                >
+                  <span onClick={this.closeCard}>Close</span>
+                  <h4>{card}</h4>
+                  {cards[card]}
+                </div>
+              ))}
             </div>
           </div>
-          <div className={classes.cards}>
-            {Object.keys(cards).map((card) => (
-              <div
-                className={this.state.activeCard === card ? classes.active : ''}
-                key={card}
-                onClick={() => this.onCardClick(card)}
-              >
-                <span onClick={this.closeCard}>Close</span>
-                <h4>{card}</h4>
-                {cards[card]}
-              </div>
-            ))}
-          </div>
         </div>
-      </div>
+      </ImageLoader>
     );
   }
 }

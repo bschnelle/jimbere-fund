@@ -1,11 +1,10 @@
 @import '../../styles/config';
 
-.joinUs {
+.imageLoader {
   background-color: #8F867B;
-  background-image: url(/images/new_york-o.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+}
+
+.joinUs {
   height: 100vh;
 
   > div {

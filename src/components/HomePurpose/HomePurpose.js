@@ -1,9 +1,10 @@
 import React from 'react';
+import ImageLoader from '../ImageLoader/ImageLoader';
 import Section from '../Section/Section';
 import classes from './HomePurpose.scss';
 
 const HomePurpose = () => (
-  <div className={classes.purpose}>
+  <ImageLoader src="/images/street.jpg" className={classes.imageLoader}>
     <Section className={classes.section} container title="Purpose">
       <div className={classes.content}>
         <p>
@@ -30,7 +31,7 @@ const HomePurpose = () => (
         </div>
       </div>
     </Section>
-  </div>
+  </ImageLoader>
 );
 
 export default HomePurpose;

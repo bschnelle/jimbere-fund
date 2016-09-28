@@ -2,11 +2,6 @@
 
 .donate {
   align-items: center;
-  background-color: #333;
-  background-image: url(/images/school-o.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   color: $alternateTextColor;
 
   > div {
@@ -29,4 +24,8 @@
       }
     }
   }
+}
+
+.imageLoader {
+  background-color: #333;
 }
