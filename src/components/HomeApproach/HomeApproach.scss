@@ -6,7 +6,7 @@
 
   > div {
     flex: 1;
-    max-width: 800px;
+    max-width: 950px;
 
     > h1 {
       text-align: center;
@@ -28,6 +28,7 @@
         padding-left: 2rem;
 
         > p {
+          // font-size: 1.3rem;
           margin: 0;
           text-align: justify;
         }

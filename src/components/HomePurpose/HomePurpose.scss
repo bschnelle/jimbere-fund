@@ -15,7 +15,7 @@
     > div {
       display: flex;
       flex-wrap: wrap;
-      max-width: 650px;
+      max-width: 950px;
 
       > div {
         flex: 0 0 50%;
@@ -33,17 +33,19 @@
         }
 
         > p {
+          // font-size: 1.3rem;
           text-align: justify;
         }
       }
 
-      > h1 {
+      h1, h4 {
         flex: 0 0 100%;
         text-align: center;
       }
 
       > p {
         flex: 0 0 100%;
+        // font-size: 1.3rem;
         margin: 0;
         text-align: justify;
       }

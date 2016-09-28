@@ -8,7 +8,7 @@ const Donate = () => (
       <div>
         <div>
           <h1>Donate</h1>
-          <p>Congo is among the most destitute countries on Earth.</p>
+          <h6>Congo is among the most destitute countries on Earth.</h6>
           <p>You can help change that.</p>
         </div>
       </div>

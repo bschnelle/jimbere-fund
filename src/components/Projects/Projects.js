@@ -6,7 +6,7 @@ const Projects = () => (
     <div>
       <div>
         <h1>Projects</h1>
-        <p>Coming soon!</p>
+        <h6>Coming soon!</h6>
       </div>
     </div>
     <div />
