@@ -9,14 +9,6 @@
   flex-wrap: wrap;
 }
 
-.section {
-  // background: url(/images/mooning.png);
-
-  > h1 {
-    text-align: center;
-  }
-}
-
 @media (min-width: 1920px) {
   .fact {
     flex: 0 0 16.667%;

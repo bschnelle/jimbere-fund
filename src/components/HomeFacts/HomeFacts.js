@@ -14,8 +14,7 @@ const HomeFacts = (props) => {
   ];
 
   return (
-    <Section className={classes.section} id={props.id}>
-      <h1>Facts</h1>
+    <Section id={props.id} title="Facts">
       <div className={classes.facts}>
         {facts.map((fact, index) => <Fact {...fact} className={classes.fact} key={index} />)}
       </div>

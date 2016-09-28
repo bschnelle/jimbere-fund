@@ -1,16 +1,12 @@
 @import '../../styles/config';
 
-.section {
+.content {
   display: flex;
   justify-content: center;
 
   > div {
     flex: 1;
     max-width: 950px;
-
-    > h1 {
-      text-align: center;
-    }
 
     .approach {
       display: flex;

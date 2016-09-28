@@ -53,25 +53,26 @@ class HomeApproach extends Component {
     };
 
     return (
-      <Section className={classes.section}>
-        <div>
-          <h1>Approach</h1>
-          <div className={classes.approach}>
-            <div className={classes.sections}>
-              {Object.keys(sections).map((section) => {
-                const className = activeSection === section ? classes.active : '';
-                return (
-                  <h4 className={className} key={section} onClick={this.updateSection}>
-                    {section}
-                  </h4>
-                );
-              })}
-            </div>
-            <FlipMove duration={200} enterAnimation={enter} leaveAnimation={leave}>
-              <div className={classes.details} key={activeSection}>
-                <p>{sections[activeSection]}</p>
+      <Section title="Approach">
+        <div className={classes.content}>
+          <div>
+            <div className={classes.approach}>
+              <div className={classes.sections}>
+                {Object.keys(sections).map((section) => {
+                  const className = activeSection === section ? classes.active : '';
+                  return (
+                    <h4 className={className} key={section} onClick={this.updateSection}>
+                      {section}
+                    </h4>
+                  );
+                })}
               </div>
-            </FlipMove>
+              <FlipMove duration={200} enterAnimation={enter} leaveAnimation={leave}>
+                <div className={classes.details} key={activeSection}>
+                  <p>{sections[activeSection]}</p>
+                </div>
+              </FlipMove>
+            </div>
           </div>
         </div>
       </Section>

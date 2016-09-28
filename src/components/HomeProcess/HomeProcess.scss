@@ -1,17 +1,12 @@
 @import '../../styles/config';
 
-.section {
-  background-color: #eee;
+.content {
   display: flex;
   justify-content: center;
 
   > div {
     flex: 1;
     max-width: 800px;
-
-    > h1 {
-      text-align: center;
-    }
 
     .process {
       > h1 {
@@ -74,4 +69,9 @@
       }
     }
   }
+}
+
+
+.section {
+  background-color: #eee;
 }
