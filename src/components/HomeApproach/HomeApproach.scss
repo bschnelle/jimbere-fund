@@ -36,8 +36,10 @@
       .sections {
         border-right: solid 5px $primaryColor1;
 
-        > h3 {
+        > h4 {
           cursor: pointer;
+          font-weight: 400;
+          letter-spacing: .2rem;
           padding: 1rem;
           margin: 1rem 0 0 0;
           text-align: right;

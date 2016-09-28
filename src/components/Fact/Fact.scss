@@ -8,15 +8,14 @@
   position: relative;
   text-align: center;
 
-  > h1 {
+  > h2 {
     color: $primaryColor1;
     font-weight: 700;
     letter-spacing: .2rem;
   }
 
-  > h5 {
+  > h6 {
     color: lighten(#1b5e20, 80%);
-    letter-spacing: normal;
     text-transform: uppercase;
   }
 }

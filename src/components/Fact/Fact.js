@@ -7,8 +7,8 @@ const Fact = (props) => {
   return (
     <div className={props.className || ''}>
       <div className={classes.fact}>
-        <h1>{header}</h1>
-        <h5>{body}</h5>
+        <h2>{header}</h2>
+        <h6>{body}</h6>
       </div>
     </div>
   );

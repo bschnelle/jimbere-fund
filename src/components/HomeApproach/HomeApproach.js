@@ -61,9 +61,9 @@ class HomeApproach extends Component {
               {Object.keys(sections).map((section) => {
                 const className = activeSection === section ? classes.active : '';
                 return (
-                  <h3 className={className} key={section} onClick={this.updateSection}>
+                  <h4 className={className} key={section} onClick={this.updateSection}>
                     {section}
-                  </h3>
+                  </h4>
                 );
               })}
             </div>

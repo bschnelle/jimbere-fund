@@ -18,38 +18,37 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: $headerFont;
-    font-weight: 400;
     text-transform: uppercase;
   }
 
   h1 {
-    font-size: 4rem;
-    letter-spacing: .35rem;
+    font-size: 5.5rem;
+    letter-spacing: .15rem;
   }
 
   h2 {
-    font-size: 3rem;
-    letter-spacing: .28rem;
+    font-size: 5rem;
+    letter-spacing: .12rem;
   }
 
   h3 {
-    font-size: 2.5rem;
-    letter-spacing: .25rem;
+    font-size: 4rem;
+    letter-spacing: .1rem;
   }
 
   h4 {
-    font-size: 2rem;
-    letter-spacing: .18rem;
+    font-size: 3rem;
+    letter-spacing: .08rem;
   }
 
   h5 {
-    font-size: 1.5rem;
-    letter-spacing: .13rem;
+    font-size: 2rem;
+    letter-spacing: .06rem;
   }
 
   h6 {
-    font-size: 1.1rem;
-    letter-spacing: .1rem;
+    font-size: 1.5rem;
+    letter-spacing: .04rem;
   }
 
   p {

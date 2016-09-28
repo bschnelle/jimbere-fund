@@ -3,12 +3,11 @@
 .scrollArrow {
   animation: bounce 3s infinite;
   color: $alternateTextColor;
-  font-family: $headerFont;
   font-size: 1.1rem;
   cursor: pointer;
   padding: 9px 0;
   position: relative;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   transform-origin: left center;
 
   > span {
