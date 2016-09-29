@@ -33,6 +33,7 @@ class Nav extends Component {
     let className = classes.nav;
     let expandStyle;
 
+    /* scale rotating animation and animate in logo/links/social */
     if (open) {
       className += ` ${classes.open}`;
       const scale = Math.ceil((window.innerWidth * 2.4) / 45);
