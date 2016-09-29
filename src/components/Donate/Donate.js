@@ -1,10 +1,10 @@
 import React from 'react';
 import Button from '../Button/Button';
-import ImageLoader from '../ImageLoader/ImageLoader';
+import ImageContainer from '../ImageContainer/ImageContainer';
 import classes from './Donate.scss';
 
 const Donate = () => (
-  <ImageLoader className={classes.imageLoader} src="/images/school-o.jpg">
+  <ImageContainer className={classes.ImageContainer} src="/images/school-o.jpg">
     <div className={classes.donate}>
       <div>
         <div>
@@ -19,7 +19,7 @@ const Donate = () => (
         </div>
       </div>
     </div>
-  </ImageLoader>
+  </ImageContainer>
 );
 
 export default Donate;

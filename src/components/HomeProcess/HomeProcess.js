@@ -10,7 +10,7 @@ const HomeProcess = () => (
           <div />
           <div />
           <div>
-            <h1>01</h1>
+            <h2>01</h2>
             <p>Listen and learn from communities.</p>
           </div>
         </div>
@@ -18,7 +18,7 @@ const HomeProcess = () => (
         <div>
           <div>
             <p>Collaboratively identify top priorities and build consensus.</p>
-            <h1>02</h1>
+            <h2>02</h2>
           </div>
           <div />
           <div />
@@ -28,7 +28,7 @@ const HomeProcess = () => (
           <div />
           <div />
           <div>
-            <h1>03</h1>
+            <h2>03</h2>
             <p>Co-design high-impact social projects.</p>
           </div>
         </div>
@@ -36,7 +36,7 @@ const HomeProcess = () => (
         <div>
           <div>
             <p>Provide funding to implement projects.</p>
-            <h1>04</h1>
+            <h2>04</h2>
           </div>
           <div />
           <div />
@@ -46,7 +46,7 @@ const HomeProcess = () => (
           <div />
           <div />
           <div>
-            <h1>05</h1>
+            <h2>05</h2>
             <p>Co-manage projects with the communities we serve.</p>
           </div>
         </div>
@@ -54,7 +54,7 @@ const HomeProcess = () => (
         <div>
           <div>
             <p>Follow-up to make sure projects are sustainable, then exit.</p>
-            <h1>06</h1>
+            <h2>06</h2>
           </div>
           <div />
           <div />

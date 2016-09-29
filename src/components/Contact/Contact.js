@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
-import ImageLoader from '../ImageLoader/ImageLoader';
+import ImageContainer from '../ImageContainer/ImageContainer';
 import classes from './Contact.scss';
 
 class Contact extends Component {
@@ -28,7 +28,11 @@ class Contact extends Component {
   render() {
     return (
       <div className={classes.contact}>
-        <ImageLoader className={classes.image} src="/images/phone-o.jpg" />
+        <ImageContainer
+          className={classes.imageContainer}
+          imageClassName={classes.image}
+          src="/images/phone-o.jpg"
+        />
         <div className={classes.greeting}>
           <h1>Contact Us</h1>
         </div>

@@ -6,7 +6,7 @@ import classes from './Layout.scss';
 
 const Layout = (props) => (
   <div className={classes.layout}>
-    <Logo className={classes.logo} link secondary />
+    <Logo className={classes.logo} link secondary={props.theme === 'secondary'} />
     <Nav />
     {props.children}
     <Footer />
@@ -14,7 +14,8 @@ const Layout = (props) => (
 );
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  theme: PropTypes.string.isRequired
 };
 
 export default Layout;

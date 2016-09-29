@@ -31,7 +31,7 @@ class Nav extends Component {
     let style;
     if (open) {
       className += ` ${classes.open}`;
-      const scale = (Math.round(window.innerWidth * 2.2) / 45);
+      const scale = (Math.round(window.innerWidth * 2.4) / 45);
       const transform = `rotate(45deg) scale(${scale})`;
       style = { transform };
     }

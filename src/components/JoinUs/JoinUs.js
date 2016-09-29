@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Button from '../Button/Button';
-import ImageLoader from '../ImageLoader/ImageLoader';
+import ImageContainer from '../ImageContainer/ImageContainer';
 import classes from './JoinUs.scss';
 
 class JoinUs extends Component {
@@ -81,7 +81,7 @@ class JoinUs extends Component {
     };
 
     return (
-      <ImageLoader className={classes.imageLoader} src="/images/new_york-o.jpg">
+      <ImageContainer className={classes.ImageContainer} src="/images/new_york-o.jpg">
         <div className={classes.joinUs}>
           <div>
             <div className={classes.header}>
@@ -105,7 +105,7 @@ class JoinUs extends Component {
             </div>
           </div>
         </div>
-      </ImageLoader>
+      </ImageContainer>
     );
   }
 }

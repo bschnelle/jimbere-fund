@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import Button from '../Button/Button';
-import ImageLoader from '../ImageLoader/ImageLoader';
+import ImageContainer from '../ImageContainer/ImageContainer';
 import ScrollArrow from '../ScrollArrow/ScrollArrow';
 import classes from './HomeLanding.scss';
 
@@ -8,7 +8,7 @@ const HomeLanding = (props) => {
   const { onScrollClick } = props;
 
   return (
-    <ImageLoader className={classes.splash} src="/images/children-o.jpg">
+    <ImageContainer className={classes.splash} src="/images/children-o.jpg">
       <div className={classes.landing}>
         <div className={classes.slogan}>
           <div>
@@ -25,7 +25,7 @@ const HomeLanding = (props) => {
 
         <ScrollArrow className={classes.scrollToFacts} label="facts" onClick={onScrollClick} />
       </div>
-    </ImageLoader>
+    </ImageContainer>
   );
 };
 
