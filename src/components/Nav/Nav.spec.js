@@ -12,6 +12,14 @@ describe('Nav', () => {
       const wrapper = shallow(<Nav />);
       expect(wrapper.state('open')).to.be.false;
     });
+
+    it('sets this.links to an array of 6 objects containing "label" and "to" attributes', () => {
+      const wrapper = shallow(<Nav />);
+      wrapper.instance().links.forEach((link) => {
+        expect(link.label).to.exist;
+        expect(link.to).to.exist;
+      });
+    });
   });
 
   describe('toggleMenu()', () => {
@@ -29,15 +37,24 @@ describe('Nav', () => {
       expect(wrapper.is(`.${classes.nav}`)).to.be.true;
     });
 
-    it('adds an .open class if state.open is true', () => {
-      const wrapper = shallow(<Nav />);
-      wrapper.setState({ open: true });
-      expect(wrapper.is(`.${classes.open}`)).to.be.true;
-    });
-
     it('renders a div with an .expand class', () => {
       const wrapper = shallow(<Nav />);
-      expect(wrapper.contains(<div className={classes.expand} />)).to.be.true;
+      expect(wrapper.find(`.${classes.expand}`).type()).to.equal('div');
+    });
+
+    describe('state.open set to true', () => {
+      it('adds an .open class if state.open is true', () => {
+        const wrapper = shallow(<Nav />);
+        wrapper.setState({ open: true });
+        expect(wrapper.is(`.${classes.open}`)).to.be.true;
+      });
+
+      it('adds a style prop to div.expand with a transform attribute', () => {
+        const wrapper = shallow(<Nav />);
+        wrapper.setState({ open: true });
+        const expand = wrapper.find(`.${classes.expand}`);
+        expect(expand.prop('style').transform).to.exist;
+      });
     });
 
     describe('MenuIconButton props', () => {

@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+/* import { expect } from 'chai';
 import { fromJS } from 'immutable';
 import sinon from 'sinon';
 import * as uiModule from './uiModule';
@@ -104,3 +104,4 @@ describe('[Redux] UIModule', () => {
     });
   });
 });
+*/

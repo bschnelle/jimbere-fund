@@ -2,6 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import Footer from './Footer';
+import Social from '../Social/Social';
 import classes from './Footer.scss';
 
 describe('Footer', () => {
@@ -11,8 +12,8 @@ describe('Footer', () => {
     expect(wrapper.is(`.${classes.footer}`)).to.be.true;
   });
 
-  it('contains a div with a .social class', () => {
+  it('contains a Social component with props.secondary set to true', () => {
     const wrapper = shallow(<Footer />);
-    expect(wrapper.find(`.${classes.social}`)).to.have.length(1);
+    expect(wrapper.contains(<Social secondary />)).to.be.true;
   });
 });

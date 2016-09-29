@@ -5,21 +5,16 @@ import NavItem from '../NavItem/NavItem';
 import Social from '../Social/Social';
 import classes from './Nav.scss';
 
+/**
+ * Navigation button and container
+ */
 class Nav extends Component {
 
   constructor(props) {
     super(props);
     this.state = { open: false };
     this.toggleMenu = this.toggleMenu.bind(this);
-  }
-
-  toggleMenu() {
-    this.setState({ open: !this.state.open });
-  }
-
-  render() {
-    const { state: { open }, toggleMenu } = this;
-    const links = [
+    this.links = [
       { label: 'Home', to: '/' },
       { label: 'Projects', to: '/projects' },
       { label: 'Blog', to: '/blog' },
@@ -27,18 +22,28 @@ class Nav extends Component {
       { label: 'Join Us', to: '/join-us' },
       { label: 'Contact', to: '/contact' }
     ];
+  }
+
+  toggleMenu() {
+    this.setState({ open: !this.state.open });
+  }
+
+  render() {
+    const { links, state: { open }, toggleMenu } = this;
     let className = classes.nav;
-    let style;
+    let expandStyle;
+
     if (open) {
       className += ` ${classes.open}`;
-      const scale = (Math.round(window.innerWidth * 2.4) / 45);
+      const scale = Math.ceil((window.innerWidth * 2.4) / 45);
       const transform = `rotate(45deg) scale(${scale})`;
-      style = { transform };
+      expandStyle = { transform };
     }
 
     return (
       <div className={className}>
-        <div className={classes.expand} style={style} />
+        <div className={classes.expand} style={expandStyle} />
+
         <MenuIconButton
           className={classes.menuIconButton}
           onClick={toggleMenu}

@@ -15,44 +15,37 @@ describe('HomeFacts', () => {
       expect(wrapper.type()).to.equal(Section);
     });
 
-    it('has a .section class', () => {
-      const wrapper = shallow(<HomeFacts id={id} />);
-      expect(wrapper.is(`.${classes.section}`)).to.be.true;
-    });
-
     it('is passed props.id as a prop', () => {
       const wrapper = shallow(<HomeFacts id={id} />);
       expect(wrapper.prop('id')).to.equal(id);
     });
+
+    it('is passed "Facts" as a title', () => {
+      const wrapper = shallow(<HomeFacts id={id} />);
+      expect(wrapper.prop('title')).to.equal('Facts');
+    });
   });
 
-  describe('nested elements', () => {
-    it('renders an h1 with "Facts"', () => {
+  describe('facts container', () => {
+    it('is of type div', () => {
       const wrapper = shallow(<HomeFacts id={id} />);
-      expect(wrapper.contains(<h1>Facts</h1>)).to.be.true;
+      expect(wrapper.find('div')).to.have.length(1);
     });
 
-    describe('facts container', () => {
-      it('is of type div', () => {
-        const wrapper = shallow(<HomeFacts id={id} />);
-        expect(wrapper.find('div')).to.have.length(1);
-      });
+    it('has a .facts class', () => {
+      const wrapper = shallow(<HomeFacts id={id} />);
+      expect(wrapper.find('div').is(`.${classes.facts}`)).to.be.true;
+    });
 
-      it('has a .facts class', () => {
-        const wrapper = shallow(<HomeFacts id={id} />);
-        expect(wrapper.find('div').is(`.${classes.facts}`)).to.be.true;
-      });
+    it('renders six Fact components', () => {
+      const wrapper = shallow(<HomeFacts id={id} />);
+      expect(wrapper.find(Fact)).to.have.length(6);
+    });
 
-      it('renders six Fact components', () => {
-        const wrapper = shallow(<HomeFacts id={id} />);
-        expect(wrapper.find(Fact)).to.have.length(6);
-      });
-
-      it('Fact component has a .fact class', () => {
-        const wrapper = shallow(<HomeFacts id={id} />);
-        const facts = wrapper.find(Fact);
-        expect(facts.first().is(`.${classes.fact}`)).to.be.true;
-      });
+    it('Fact component has a .fact class', () => {
+      const wrapper = shallow(<HomeFacts id={id} />);
+      const facts = wrapper.find(Fact);
+      expect(facts.first().is(`.${classes.fact}`)).to.be.true;
     });
   });
 });
