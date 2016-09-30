@@ -68,7 +68,7 @@
       opacity: 1;
       transform: none;
 
-      @for $i from 1 through 6 {
+      @for $i from 1 through 7 {
         &:nth-of-type(#{$i}) {
           transition: transform 500ms ease #{250 + $i * 50}ms, opacity 500ms ease #{250 + $i * 50}ms;
         }

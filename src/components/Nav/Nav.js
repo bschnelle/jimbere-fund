@@ -18,6 +18,7 @@ class Nav extends Component {
       { label: 'Home', to: '/' },
       { label: 'Projects', to: '/projects' },
       { label: 'Blog', to: '/blog' },
+      { label: 'Team', to: '/team' },
       { label: 'Donate', to: '/donate' },
       { label: 'Join Us', to: '/join-us' },
       { label: 'Contact', to: '/contact' }
