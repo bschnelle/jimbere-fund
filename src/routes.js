@@ -9,6 +9,7 @@ import DonateContainer from './containers/Donate/DonateContainer';
 import HomeContainer from './containers/Home/HomeContainer';
 import JoinUsContainer from './containers/JoinUs/JoinUsContainer';
 import ProjectsContainer from './containers/Projects/ProjectsContainer';
+import TeamContainer from './containers/Team/TeamContainer';
 
 // TODO create/move to UI Service
 const onChange = () => { document.body.scrollTop = document.documentElement.scrollTop = 0; };
@@ -24,6 +25,7 @@ const routes = (
     <Route path="/donate" component={DonateContainer} />
     <Route path="/join-us" component={JoinUsContainer} />
     <Route path="/projects" component={ProjectsContainer} />
+    <Route path="/team" component={TeamContainer} />
   </Route>
 );
 
