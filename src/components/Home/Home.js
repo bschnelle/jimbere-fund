@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import HomeFacts from '../HomeFacts/HomeFacts';
 import HomeLanding from '../HomeLanding/HomeLanding';
 import HomeApproach from '../HomeApproach/HomeApproach';
@@ -6,7 +6,7 @@ import HomeProcess from '../HomeProcess/HomeProcess';
 import HomePurpose from '../HomePurpose/HomePurpose';
 // import classes from './Home.scss';
 
-const Home = () => {
+const Home = (props) => {
   const scrollToFacts = () => {
     const duration = 750;
     const el = document.getElementById('facts');
@@ -38,10 +38,14 @@ const Home = () => {
       <HomeLanding onScrollClick={scrollToFacts} />
       <HomeFacts id="facts" />
       <HomePurpose />
-      <HomeApproach />
+      <HomeApproach isSmall={props.isSmall} />
       <HomeProcess />
     </div>
   );
+};
+
+Home.propTypes = {
+  isSmall: PropTypes.bool.isRequired
 };
 
 export default Home;

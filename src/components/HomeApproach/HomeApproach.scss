@@ -18,7 +18,6 @@
       padding-left: 2rem;
 
       > p {
-        // font-size: 1.3rem;
         margin: 0;
         text-align: justify;
       }
@@ -50,6 +49,17 @@
           color: $alternateTextColor;
         }
       }
+    }
+  }
+
+  .approachSmall > div {
+    > h4 {
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    > p {
+      text-align: justify;
     }
   }
 }

@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 import Home from '../../components/Home/Home';
 
-const HomeContainer = () => (
-  <Home />
+const HomeContainer = (props) => (
+  <Home isSmall={props.isSmall} />
 );
 
-export default HomeContainer;
+HomeContainer.propTypes = {
+  isSmall: PropTypes.bool.isRequired
+};
+
+const stateToProps = (state) => ({
+  isSmall: state.browser.lessThan.medium
+});
+
+export default connect(stateToProps)(HomeContainer);

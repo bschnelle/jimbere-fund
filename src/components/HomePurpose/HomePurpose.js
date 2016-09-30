@@ -16,14 +16,14 @@ const HomePurpose = () => (
         <div>
           <h4>Vision</h4>
           <p>
-            Our vision is a world in which people have the means they need to create
+            A world in which people have the means they need to create
             opportunities to realize their potential and for all to live with dignity.
           </p>
         </div>
         <div>
           <h4>Mission</h4>
           <p>
-            Our mission is to empower the people and communities of the D.R. Congo to create
+            To empower the people and communities of the D.R. Congo to create
             economic opportunities and improve their livelihoods. We strive to make
             vulnerable communities stronger and more resilient through community-driven
             interventions.
