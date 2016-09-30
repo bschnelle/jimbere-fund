@@ -17,10 +17,10 @@ class Nav extends Component {
     this.links = [
       { label: 'Home', to: '/' },
       { label: 'Projects', to: '/projects' },
-      { label: 'Blog', to: '/blog' },
       { label: 'Team', to: '/team' },
-      { label: 'Donate', to: '/donate' },
       { label: 'Join Us', to: '/join-us' },
+      { label: 'Donate', to: '/donate' },
+      { label: 'Blog', to: '/blog' },
       { label: 'Contact', to: '/contact' }
     ];
   }
