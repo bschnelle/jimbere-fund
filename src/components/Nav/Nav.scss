@@ -80,9 +80,15 @@
       transition: opacity $transitionDuration ease-out $transitionDuration;
     }
   }
+}
 
-  .expand {
-    // TODO replace with JS to scale appropriately
-    // transform: rotate(45deg) scale(80);
+@media (max-width: $small) {
+  .nav > .content {
+    justify-content: center;
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
   }
 }
