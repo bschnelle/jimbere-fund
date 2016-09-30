@@ -8,9 +8,11 @@ const MenuIconButton = (props) => {
 
   return (
     <button className={className} onClick={props.onClick}>
-      <span />
-      <span />
-      <span />
+      <div>
+        <span />
+        <span />
+        <span />
+      </div>
     </button>
   );
 };
