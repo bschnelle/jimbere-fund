@@ -1,9 +1,34 @@
+/* fonts */
 $bodyFont: Raleway, Sans-Serif;
 $headerFont: PT Sans Narrow, Sans-Serif;
+
+/* palette */
 $primaryColor1: #2f8435;
 $primaryColor2: #2196f3;
 $accentColor1: #00c853;
 $accentColor2: #2962ff;
 $textColor: rgba(0, 0, 0, .92);
 $alternateTextColor: #fff;
+
+/* animations */
 $transitionDuration: 300ms;
+
+/* breakpoints */
+$tiny: 380px;
+$extraSmall: 480px;
+$small: 768px;
+$medium: 992px;
+$large: 1200px;
+$extraLarge: 1920px;
+
+/* JS exports for use with components */
+:export {
+  breakPoints: {
+    tiny: $tiny;
+    extraSmall: $extraSmall;
+    small: $small;
+    medium: $medium;
+    large: $large;
+    extraLarge: $extraLarge;
+  }
+}

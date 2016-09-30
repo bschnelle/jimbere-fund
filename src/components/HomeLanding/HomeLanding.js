@@ -10,6 +10,7 @@ const HomeLanding = (props) => {
   return (
     <ImageContainer className={classes.splash} src="/images/children-o.jpg">
       <div className={classes.landing}>
+
         <div className={classes.slogan}>
           <div>
             <span>battling</span>
