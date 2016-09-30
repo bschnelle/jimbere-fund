@@ -22,3 +22,21 @@
   display: block;
   margin-bottom: .5rem;
 }
+
+@media (max-width: $small) {
+  .footer {
+    flex-wrap: wrap;
+    overflow: auto;
+    padding: 3rem 1.5rem;
+
+    > div {
+      flex: 0 0 100%;
+
+
+      &:nth-child(2) {
+        margin-top: 1.5rem;
+        justify-content: flex-start;
+      }
+    }
+  }
+}

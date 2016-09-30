@@ -4,7 +4,7 @@ import HomeLanding from '../HomeLanding/HomeLanding';
 import HomeApproach from '../HomeApproach/HomeApproach';
 import HomeProcess from '../HomeProcess/HomeProcess';
 import HomePurpose from '../HomePurpose/HomePurpose';
-// import classes from './Home.scss';
+import classes from './Home.scss';
 
 const Home = (props) => {
   const scrollToFacts = () => {
@@ -34,7 +34,7 @@ const Home = (props) => {
   };
 
   return (
-    <div>
+    <div className={classes.home}>
       <HomeLanding onScrollClick={scrollToFacts} />
       <HomeFacts id="facts" />
       <HomePurpose />

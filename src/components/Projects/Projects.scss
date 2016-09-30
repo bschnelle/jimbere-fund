@@ -2,8 +2,9 @@
 
 .projects {
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
-  height: calc(100vh - 232px);
+  height: 100%;
 
   > div {
     align-items: center;
