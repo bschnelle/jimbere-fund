@@ -21,7 +21,7 @@ const HomeLanding = (props) => {
         </div>
 
         <div className={classes.actions}>
-          <Button label="Join Us" to="join-us" />
+          <Button label="Join Us" to="/join-us" />
         </div>
 
         <ScrollArrow className={classes.scrollToFacts} label="facts" onClick={onScrollClick} />

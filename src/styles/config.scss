@@ -14,14 +14,14 @@ $alternateTextColor: #fff;
 $transitionDuration: 300ms;
 
 /* breakpoints */
-$tiny: 380px;
+$tiny: 350px;
 $extraSmall: 480px;
 $small: 768px;
 $medium: 992px;
 $large: 1200px;
 $extraLarge: 1920px;
 
-/* JS exports for use with components */
+/* redux-responsive */
 :export {
   breakPoints: {
     tiny: $tiny;
