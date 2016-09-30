@@ -17,3 +17,13 @@
     color: $alternateTextColor;
   }
 }
+
+@media (max-width: $small) {
+  .fact {
+    height: auto;
+
+    > h3 {
+      margin: 2rem 0;
+    }
+  }
+}
