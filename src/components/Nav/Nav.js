@@ -37,7 +37,8 @@ class Nav extends Component {
     /* scale rotating animation and animate in logo/links/social */
     if (open) {
       className += ` ${classes.open}`;
-      const scale = Math.ceil((window.innerWidth * 2.4) / 45);
+      const base = Math.max(window.innerWidth, window.innerHeight);
+      const scale = Math.ceil((base * 2.6) / 45);
       const transform = `rotate(45deg) scale(${scale})`;
       expandStyle = { transform };
     }
