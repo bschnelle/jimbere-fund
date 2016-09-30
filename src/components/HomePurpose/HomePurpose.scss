@@ -45,3 +45,20 @@
   background: linear-gradient(to right, transparent, rgba(0,0,0,.6), rgba(0,0,0,.6), transparent);
   color: $alternateTextColor;
 }
+
+@media (max-width: $small) {
+  .content {
+    > div {
+      flex: 0 0 100%;
+
+      > p {
+        margin: 0 !important;
+      }
+    }
+  }
+
+  .section {
+    background: none;
+    background-color: #333
+  }
+}
