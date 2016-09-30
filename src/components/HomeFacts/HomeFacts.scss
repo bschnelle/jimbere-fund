@@ -1,7 +1,7 @@
 @import '../../styles/config';
 
 .fact {
-  flex: 0 0 33.333%;
+  flex: 0 0 16.667%;
 }
 
 .facts {
@@ -9,8 +9,20 @@
   flex-wrap: wrap;
 }
 
-@media (min-width: 1920px) {
+@media (max-width: $large) {
   .fact {
-    flex: 0 0 16.667%;
+    flex: 0 0 33.333%;
+  }
+}
+
+@media (max-width: $medium) {
+  .fact {
+    flex: 0 0 50%;
+  }
+}
+
+@media (max-width: $small) {
+  .fact {
+    flex: 0 0 100%;
   }
 }

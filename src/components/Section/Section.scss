@@ -1,3 +1,5 @@
+@import '../../styles/config';
+
 .section {
   padding: 6rem 3rem;
 
@@ -9,5 +11,11 @@
   .container {
     margin: auto;
     max-width: 950px;
+  }
+}
+
+@media (max-width: $small) {
+  .section {
+    padding: 6rem 1.5rem;
   }
 }
