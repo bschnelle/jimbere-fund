@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import FlipMove from 'react-flip-move';
+import HomeApproachIcon from '../HomeApproachIcon/HomeApproachIcon';
 import Section from '../Section/Section';
 import classes from './HomeApproach.scss';
 
@@ -16,7 +17,7 @@ class HomeApproach extends Component {
   }
 
   updateSection(e) {
-    this.setState({ activeSection: e.target.dataset.title });
+    this.setState({ activeSection: e.currentTarget.dataset.title });
   }
 
   render() {
@@ -72,7 +73,17 @@ class HomeApproach extends Component {
       const className = activeSection === t ? classes.active : '';
       return !isSmall
       ? <h4 className={className} data-title={t} key={t} onClick={updateSection}>{t}</h4>
-      : <div className={className} key={t}><div data-title={t} onClick={updateSection} /></div>;
+      : (
+        <div className={className} key={t}>
+          <span data-title={t} onClick={updateSection}>
+            <HomeApproachIcon
+              active={!!className}
+              className={classes.icon}
+              icon={t.toLowerCase()}
+            />
+          </span>
+        </div>
+      );
     });
 
     const { body, title } = sections.find((section) => section.title === activeSection);

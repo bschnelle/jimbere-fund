@@ -58,19 +58,15 @@
 
       > div {
         flex: 1;
-
-        > div {
-          background-color: gray;
+        
+        .icon {
           border-radius: 50%;
           cursor: pointer;
-          height: 7rem;
+          display: block;
+          height: 6rem;
           margin: auto;
           -webkit-tap-highlight-color: transparent;
-          width: 7rem;
-        }
-
-        &.active > div {
-          background-color: $primaryColor1;
+          width: 6rem;
         }
       }
     }

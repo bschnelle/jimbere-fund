@@ -1,0 +1,21 @@
+@import '../../styles/config';
+
+.active {
+  fill: $primaryColor1;
+}
+
+.activeShadow {
+  fill: #207026;
+}
+
+.inactive {
+  fill: #c1c1c1;
+}
+
+.inactiveShadow {
+  fill: #adadad;
+}
+
+.white {
+  fill: #fff;
+}
