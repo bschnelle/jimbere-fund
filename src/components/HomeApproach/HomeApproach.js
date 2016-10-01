@@ -16,7 +16,7 @@ class HomeApproach extends Component {
   }
 
   updateSection(e) {
-    this.setState({ activeSection: e.target.innerHTML });
+    this.setState({ activeSection: e.target.dataset.title });
   }
 
   render() {
@@ -55,6 +55,7 @@ class HomeApproach extends Component {
       }
     ];
 
+    const { props: { isSmall }, updateSection } = this;
     const { activeSection } = this.state;
     const enter = {
       from: { opacity: 0, transform: 'translateY(-30px)' },
@@ -65,45 +66,38 @@ class HomeApproach extends Component {
       to: { opacity: 0, transform: 'translateY(30px)' }
     };
 
-    let content;
-    if (this.props.isSmall) {
-      content = (
-        <div className={classes.approachSmall}>
-          {sections.map((section) => (
-            <div key={section.title}>
-              <h4>{section.title}</h4>
-              <p>{section.body}</p>
-            </div>
-          ))}
-        </div>
-      );
-    } else {
-      content = (
-        <div className={classes.approach}>
-          <div className={classes.sections}>
-            {sections.map((section) => {
-              const { title } = section;
-              const className = activeSection === title ? classes.active : '';
-              return (
-                <h4 className={className} key={title} onClick={this.updateSection}>
-                  {title}
-                </h4>
-              );
-            })}
-          </div>
-          <FlipMove duration={200} enterAnimation={enter} leaveAnimation={leave}>
-            <div className={classes.details} key={activeSection}>
-              <p>{sections.find((section) => section.title === activeSection).body}</p>
-            </div>
-          </FlipMove>
-        </div>
-      );
-    }
+    const approachClassName = isSmall ? classes.approachSmall : classes.approach;
+    const sectionElements = sections.map((section) => {
+      const { title: t } = section;
+      const className = activeSection === t ? classes.active : '';
+      return !isSmall
+      ? <h4 className={className} data-title={t} key={t} onClick={updateSection}>{t}</h4>
+      : <div className={className} key={t}><div data-title={t} onClick={updateSection} /></div>;
+    });
+
+    const { body, title } = sections.find((section) => section.title === activeSection);
+    const detailElement = !isSmall
+    ? <p>{body}</p>
+    : (
+      <div>
+        <h4>{title}</h4>
+        <p>{body}</p>
+      </div>
+    );
 
     return (
       <Section className={classes.section} container title="Approach">
         <div className={classes.content}>
-          {content}
+          <div className={approachClassName}>
+            <div className={classes.sections}>
+              {sectionElements}
+            </div>
+            <FlipMove duration={200} enterAnimation={enter} leaveAnimation={leave}>
+              <div className={classes.detail} key={activeSection}>
+                {detailElement}
+              </div>
+            </FlipMove>
+          </div>
         </div>
       </Section>
     );
