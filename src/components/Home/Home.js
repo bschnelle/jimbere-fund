@@ -39,7 +39,7 @@ const Home = (props) => {
       <HomeFacts id="facts" />
       <HomePurpose />
       <HomeApproach isSmall={props.isSmall} />
-      <HomeProcess />
+      <HomeProcess isSmall={props.isSmall} />
     </div>
   );
 };

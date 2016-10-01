@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Section from '../Section/Section';
 import classes from './HomeProcess.scss';
 
-const HomeProcess = () => (
+const HomeProcess = (props) => (
   <Section className={classes.section} container title="Process">
     <div className={classes.process}>
-      <img src="/images/process-compact.svg" alt="Process infographic" />
+      <img
+        alt="Process infographic"
+        src={`/images/process${props.isSmall ? '-compact' : ''}.svg`}
+      />
     </div>
   </Section>
 );
+
+HomeProcess.propTypes = {
+  isSmall: PropTypes.bool.isRequired
+};
 
 export default HomeProcess;
