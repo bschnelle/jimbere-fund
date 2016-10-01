@@ -90,16 +90,23 @@ class JoinUs extends Component {
                 <p>Together we can end poverty.</p>
               </div>
             </div>
+
             <div className={classes.cards}>
               {Object.keys(cards).map((card) => (
                 <div
                   className={this.state.activeCard === card ? classes.active : ''}
                   key={card}
-                  onClick={() => this.onCardClick(card)}
                 >
-                  <span onClick={this.closeCard}>Close</span>
-                  <h4>{card}</h4>
-                  {cards[card]}
+                  <div className={classes.card} onClick={() => this.onCardClick(card)}>
+                    <h5>{card}</h5>
+                  </div>
+                  <div className={classes.content}>
+                    <div>
+                      <span onClick={this.closeCard}>Close</span>
+                      <h4>{card}</h4>
+                      {cards[card]}
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
