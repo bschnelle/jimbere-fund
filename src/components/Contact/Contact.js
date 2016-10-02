@@ -10,6 +10,8 @@ class Contact extends Component {
     const map = new mapboxgl.Map({
       // container id
       container: 'map',
+      dragPan: false,
+      scrollZoom: false,
       // style location
       style: 'mapbox://styles/bschnelle/citgbrv5n00022iqh7psitcc6',
       // starting position

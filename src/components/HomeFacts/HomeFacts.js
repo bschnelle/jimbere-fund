@@ -14,7 +14,7 @@ const HomeFacts = (props) => {
   ];
 
   return (
-    <Container id={props.id} section title="Facts">
+    <Container fluid id={props.id} section title="Facts">
       <div className={classes.facts}>
         {facts.map((fact, index) => <Fact {...fact} className={classes.fact} key={index} />)}
       </div>
