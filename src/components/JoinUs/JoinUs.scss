@@ -1,183 +1,189 @@
 @import '../../styles/config';
 
-.ImageContainer {
+.imageContainer {
   background-color: #8F867B;
 }
 
 .joinUs {
+  background: linear-gradient(to bottom, rgba(255,255,255,.2), rgba(255,255,255,.2), rgba(255, 255, 255, .85));
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   height: 100vh;
 
   > div {
-    background: linear-gradient(to bottom, rgba(255,255,255,.2), rgba(255,255,255,.2), rgba(255, 255, 255, .85));
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 100%;
-    justify-content: center;
+    flex: 0 0 50%;
+    width: 100vw;
 
-    > div {
-      flex: 0 0 50%;
-      width: 100vw;
+    &.cards {
+      position: relative;
 
-      &.header {
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
+      .positions, .story {
+        bottom: 0;
+        cursor: pointer;
+        height: 15.5rem;
+        margin: 3rem 1.5rem;
+        overflow: hidden;
+        padding: 2rem;
+        position: absolute;
+        transition: all $transitionDuration;
+        width: 450px;
 
-        p {
-          font-size: 2rem;
+        > h4 {
+          text-align: center;
+        }
+
+        .close {
+          position: absolute;
+          right: 1.5rem;
+          top: 1.5rem;
+        }
+
+        .close, .content {
+          opacity: 0;
+          position: absolute;
+          visibility: hidden;
+        }
+
+        &.active {
+          cursor: default;
+          height: calc(100vh - 3rem);
+          margin: 1.5rem;
+          overflow: scroll;
+          width: calc(100vw - 3rem);
+          z-index: 3;
+
+          .close, .content {
+            opacity: 1;
+            transition: visibility $transitionDuration ease $transitionDuration,
+                        opacity $transitionDuration ease $transitionDuration;
+            visibility: visible;
+          }
+
+          .close {
+            cursor: pointer;
+          }
+
+          .content {
+            position: static;
+          }
+        }
+
+        /* card hover effect */
+        &:hover:not(.active) {
+          transform: scale(1.02);
         }
       }
 
-      &.cards {
-        display: flex;
+      .positions {
+        background-color: transparentize(#fff, .2);
+        color: $primaryColor1;
+        left: 50vw;
 
-        > div {
-          align-items: center;
+        &.active {
+          background-color: #fff;
+          left: 0;
+        }
+
+        .contact {
+          flex: 0 0 100%;
+          margin: 2rem 0;
+          text-align: center;
+        }
+
+        .content > div {
           display: flex;
-          flex: 1;
+          flex-wrap: wrap;
+          margin-left: auto;
+          margin-right: auto;
+          max-width: 800px;
+          text-align: center;
 
-          &:nth-of-type(1) {
-            justify-content: flex-end;
-
-            .card {
-              background-color: $primaryColor1;
-            }
-
-            .card, .content {
-              color: $alternateTextColor;
-            }
-
-            .story {
-              p {
-                text-align: justify;
-              }
-            }
+          p {
+            flex: 0 0 100%;
           }
 
-          &:nth-of-type(2) {
-            .card, .content {
-              background-color: #fff;
-            }
+          ul {
+            flex: 0 0 50%;
+            list-style: none;
+            padding: 0;
 
-            .positions {
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: center;
-              margin-left: auto;
-              margin-right: auto;
-              max-width: 800px;
-              text-align: center;
-
-              p {
-                flex: 0 0 100%;
-              }
-
-              ul {
-                flex: 0 0 50%;
-                list-style: none;
-
-                li {
-                  font-size: 1.3rem;
-                  margin: 2rem 1rem;
-                }
-              }
-            }
-          }
-
-          .card {
-            border-radius: 1px;
-            cursor: pointer;
-            margin: 2rem;
-            overflow: auto;
-            padding: 2rem;
-            text-align: center;
-            transition: transform $transitionDuration;
-            width: 25vw;
-
-            h5 {
-              transition: visibility 0ms ease $transitionDuration;
-            }
-
-            &:hover {
-              transform: scale(1.02);
-            }
-          }
-
-          .content {
-            display: flex;
-            height: 100vh;
-            justify-content: center;
-            left: 0;
-            opacity: 0;
-            overflow: scroll;
-            position: fixed;
-            top: 0;
-            visibility: hidden;
-            width: 100vw;
-
-            > div {
-              width: 50%;
-
-              > div {
-                margin-bottom: 5rem;
-              }
-
-              h4 {
-                text-align: center;
-              }
-
-              span {
-                cursor: pointer;
-                right: 1.5rem;
-                position: absolute;
-                top: 1.5rem;
-              }
+            li {
+              font-size: 1.3rem;
+              margin: 2rem 1rem;
             }
           }
         }
+      }
 
-        .active {
-          .card, .content {
-            z-index: 4;
-          }
+      .story {
+        background-color: transparentize($primaryColor1, .2);
+        color: $alternateTextColor;
+        right: 50vw;
 
-          .card {
-            transform: scale(6, 12) !important;
-
-            h5 {
-              opacity: 0;
-              transition: none;
-              visibility: hidden;
-            }
-          }
-
-          .content {
-            opacity: 1;
-            transition: opacity $transitionDuration ease $transitionDuration, visibility $transitionDuration ease $transitionDuration;
-            visibility: visible;
-          }
+        .content > div {
+          margin-left: auto;
+          margin-right: auto;
+          max-width: 800px;
+          text-align: justify;
         }
+
+        &.active {
+          background-color: $primaryColor1;
+          right: 0;
+        }
+      }
+    }
+
+    &.header {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+
+      h6 {
+        margin: 0;
       }
     }
   }
 }
 
 @media (max-width: $small) {
-  .card {
-    margin: 0 3vw !important;
-    padding: 0 !important;
-    width: 100% !important;
+  .joinUs > div.cards {
+    .positions, .story {
+      height: auto;
+      transition: none;
+      width: calc(50vw - 2.25rem);
 
-    > h5 {
-      margin: 2rem;
+      &.active {
+        .close, .content {
+          transition-delay: 0ms;
+        }
+      }
+
+      &:not(.active) {
+        > h4 {
+          font-size: 1.5rem;
+          margin: 0;
+        }
+      }
     }
-  }
 
-  .content > div {
-    padding: 0 1.5rem;
-    width: 100% !important;
+    .positions {
+      margin: 3rem 1.5rem 3rem .75rem;
+
+      .content > div > ul {
+        flex: 0 0 100%;
+        margin: 0;
+
+        > li:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .story {
+      margin: 3rem .75rem 3rem 1.5rem;
+    }
   }
 }

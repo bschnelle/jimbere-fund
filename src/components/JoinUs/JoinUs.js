@@ -23,7 +23,7 @@ class JoinUs extends Component {
   render() {
     const cards = {
       Story: (
-        <div className={classes.story}>
+        <div>
           <p>Co-founders Obadias Ndaba and Adele Kibasumba came from some of the most remote areas
           of Congo in High Plateaux of South Kivu. You’ve got to walk a couple of days from the
           nearest dirt road to reach their ancestral villages. After witnessing the horrors of
@@ -57,7 +57,7 @@ class JoinUs extends Component {
         </div>
       ),
       Positions: (
-        <div className={classes.positions}>
+        <div>
           <p>
             We're currently looking for volunteers to fill the following positions.
           </p>
@@ -81,35 +81,26 @@ class JoinUs extends Component {
     };
 
     return (
-      <ImageContainer className={classes.ImageContainer} src="/images/new_york-o.jpg">
+      <ImageContainer className={classes.imageContainer} src="/images/new_york-o.jpg">
         <div className={classes.joinUs}>
-          <div>
-            <div className={classes.header}>
-              <div>
-                <h1>Join Us</h1>
-                <p>Together we can end poverty.</p>
-              </div>
+          <div className={classes.header}>
+            <div>
+              <h1>Join Us</h1>
+              <h6>Together we can end poverty.</h6>
             </div>
-
-            <div className={classes.cards}>
-              {Object.keys(cards).map((card) => (
-                <div
-                  className={this.state.activeCard === card ? classes.active : ''}
-                  key={card}
-                >
-                  <div className={classes.card} onClick={() => this.onCardClick(card)}>
-                    <h5>{card}</h5>
-                  </div>
-                  <div className={classes.content}>
-                    <div>
-                      <span onClick={this.closeCard}>Close</span>
-                      <h4>{card}</h4>
-                      {cards[card]}
-                    </div>
-                  </div>
+          </div>
+          <div className={classes.cards}>
+            {['Story', 'Positions'].map((card) => {
+              let className = classes[card.toLowerCase()];
+              if (this.state.activeCard === card) className += ` ${classes.active}`;
+              return (
+                <div className={className} key={card} onClick={() => this.onCardClick(card)}>
+                  <span className={classes.close} onClick={this.closeCard}>Close</span>
+                  <h4>{card}</h4>
+                  <div className={classes.content}>{cards[card]}</div>
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </div>
       </ImageContainer>
