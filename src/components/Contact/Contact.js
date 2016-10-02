@@ -28,6 +28,8 @@ class Contact extends Component {
   }
 
   render() {
+    // TODO use Container for header
+
     return (
       <div className={classes.contact}>
         <ImageContainer
