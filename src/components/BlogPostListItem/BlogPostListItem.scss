@@ -41,3 +41,10 @@
     }
   }
 }
+
+@media (max-width: $small) {
+  .post {
+    min-width: 200px;
+    height: 200px;
+  }
+}
