@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import FlipMove from 'react-flip-move';
 import HomeApproachIcon from '../HomeApproachIcon/HomeApproachIcon';
-import Section from '../Section/Section';
+import Container from '../Container/Container';
 import classes from './HomeApproach.scss';
 
 class HomeApproach extends Component {
@@ -12,12 +12,12 @@ class HomeApproach extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { activeSection: 'Collaborative' };
-    this.updateSection = this.updateSection.bind(this);
+    this.state = { activeContainer: 'Collaborative' };
+    this.updateContainer = this.updateContainer.bind(this);
   }
 
-  updateSection(e) {
-    this.setState({ activeSection: e.currentTarget.dataset.title });
+  updateContainer(e) {
+    this.setState({ activeContainer: e.currentTarget.dataset.title });
   }
 
   render() {
@@ -56,8 +56,8 @@ class HomeApproach extends Component {
       }
     ];
 
-    const { props: { isSmall }, updateSection } = this;
-    const { activeSection } = this.state;
+    const { props: { isSmall }, updateContainer } = this;
+    const { activeContainer } = this.state;
     const enter = {
       from: { opacity: 0, transform: 'translateY(-30px)' },
       to: { opacity: 1 }
@@ -70,12 +70,12 @@ class HomeApproach extends Component {
     const approachClassName = isSmall ? classes.approachSmall : classes.approach;
     const sectionElements = sections.map((section) => {
       const { title: t } = section;
-      const className = activeSection === t ? classes.active : '';
+      const className = activeContainer === t ? classes.active : '';
       return !isSmall
-      ? <h4 className={className} data-title={t} key={t} onClick={updateSection}>{t}</h4>
+      ? <h4 className={className} data-title={t} key={t} onClick={updateContainer}>{t}</h4>
       : (
         <div className={className} key={t}>
-          <span data-title={t} onClick={updateSection}>
+          <span data-title={t} onClick={updateContainer}>
             <HomeApproachIcon
               active={!!className}
               className={classes.icon}
@@ -86,7 +86,7 @@ class HomeApproach extends Component {
       );
     });
 
-    const { body, title } = sections.find((section) => section.title === activeSection);
+    const { body, title } = sections.find((section) => section.title === activeContainer);
     const detailElement = !isSmall
     ? <p>{body}</p>
     : (
@@ -97,20 +97,20 @@ class HomeApproach extends Component {
     );
 
     return (
-      <Section className={classes.section} container title="Approach">
+      <Container className={classes.section} container section title="Approach">
         <div className={classes.content}>
           <div className={approachClassName}>
             <div className={classes.sections}>
               {sectionElements}
             </div>
             <FlipMove duration={200} enterAnimation={enter} leaveAnimation={leave}>
-              <div className={classes.detail} key={activeSection}>
+              <div className={classes.detail} key={activeContainer}>
                 {detailElement}
               </div>
             </FlipMove>
           </div>
         </div>
-      </Section>
+      </Container>
     );
   }
 }

@@ -1,16 +1,16 @@
 import React, { PropTypes } from 'react';
-import Section from '../Section/Section';
+import Container from '../Container/Container';
 import classes from './HomeProcess.scss';
 
 const HomeProcess = (props) => (
-  <Section className={classes.section} container title="Process">
+  <Container className={classes.section} container section title="Process">
     <div className={classes.process}>
       <img
         alt="Process infographic"
         src={`/images/process${props.isSmall ? '-compact' : ''}.svg`}
       />
     </div>
-  </Section>
+  </Container>
 );
 
 HomeProcess.propTypes = {

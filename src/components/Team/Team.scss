@@ -1,12 +1,9 @@
 @import '../../styles/config';
 
 .team {
-  align-items: center;
-  display: flex;
-  flex: 1 1 100vh;
-  justify-content: center;
-
-  > div {
+  min-height: 100vh;
+  
+  h6 {
      text-align: center;
   }
 }

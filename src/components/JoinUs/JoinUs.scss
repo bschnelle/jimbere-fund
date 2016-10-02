@@ -1,21 +1,30 @@
 @import '../../styles/config';
 
+.container {
+  background: linear-gradient(to bottom, rgba(255,255,255,.2), rgba(255,255,255,.2), rgba(255, 255, 255, .85));
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+
+  > div {
+    display: flex;
+    flex: 1 1 auto;
+  }
+}
+
 .imageContainer {
   background-color: #8F867B;
 }
 
 .joinUs {
-  background: linear-gradient(to bottom, rgba(255,255,255,.2), rgba(255,255,255,.2), rgba(255, 255, 255, .85));
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  height: 100vh;
+  flex: 1 1 auto;
 
   > div {
-    flex: 0 0 50%;
-    width: 100vw;
-
     &.cards {
+      flex: 1 1 auto;
       position: relative;
 
       .positions, .story {
@@ -48,7 +57,7 @@
         &.active {
           cursor: default;
           height: calc(100vh - 3rem);
-          margin: 1.5rem;
+          margin: 1.5rem -1.5rem;
           overflow: scroll;
           width: calc(100vw - 3rem);
           z-index: 3;
@@ -68,17 +77,12 @@
             position: static;
           }
         }
-
-        /* card hover effect */
-        &:hover:not(.active) {
-          transform: scale(1.02);
-        }
       }
 
       .positions {
         background-color: transparentize(#fff, .2);
         color: $primaryColor1;
-        left: 50vw;
+        left: 50%;
 
         &.active {
           background-color: #fff;
@@ -119,7 +123,7 @@
       .story {
         background-color: transparentize($primaryColor1, .2);
         color: $alternateTextColor;
-        right: 50vw;
+        right: 50%;
 
         .content > div {
           margin-left: auto;
@@ -136,13 +140,21 @@
     }
 
     &.header {
-      align-items: center;
-      display: flex;
-      justify-content: center;
       text-align: center;
 
       h6 {
         margin: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: $small) {
+  .joinUs > div.cards {
+    .positions, .story {
+      /* card hover effect */
+      &:hover:not(.active) {
+        transform: scale(1.02);
       }
     }
   }
@@ -156,9 +168,11 @@
       .positions, .story {
         height: auto;
         transition: none;
+        -webkit-tap-highlight-color: transparent;
         width: calc(50vw - 2.25rem);
 
         &.active {
+          margin: 1.5rem 0;
           .close, .content {
             transition-delay: 0ms;
           }

@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import Fact from '../Fact/Fact';
-import Section from '../Section/Section';
+import Container from '../Container/Container';
 import HomeFacts from './HomeFacts';
 import classes from './HomeFacts.scss';
 
@@ -10,9 +10,9 @@ const id = 'id';
 
 describe('HomeFacts', () => {
   describe('root element', () => {
-    it('is of type Section', () => {
+    it('is of type Container', () => {
       const wrapper = shallow(<HomeFacts id={id} />);
-      expect(wrapper.type()).to.equal(Section);
+      expect(wrapper.type()).to.equal(Container);
     });
 
     it('is passed props.id as a prop', () => {

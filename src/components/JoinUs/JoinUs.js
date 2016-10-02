@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from '../Button/Button';
+import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
 import classes from './JoinUs.scss';
 
@@ -82,27 +83,28 @@ class JoinUs extends Component {
 
     return (
       <ImageContainer className={classes.imageContainer} src="/images/new_york-o.jpg">
-        <div className={classes.joinUs}>
-          <div className={classes.header}>
-            <div>
-              <h1>Join Us</h1>
-              <h6>Together we can end poverty.</h6>
+        <Container className={classes.container} fluid title="Join Us">
+          <div className={classes.joinUs}>
+            <div className={classes.header}>
+              <div>
+                <h6>Together we can end poverty.</h6>
+              </div>
+            </div>
+            <div className={classes.cards}>
+              {['Story', 'Positions'].map((card) => {
+                let className = classes[card.toLowerCase()];
+                if (this.state.activeCard === card) className += ` ${classes.active}`;
+                return (
+                  <div className={className} key={card} onClick={() => this.onCardClick(card)}>
+                    <span className={classes.close} onClick={this.closeCard}>Close</span>
+                    <h4>{card}</h4>
+                    <div className={classes.content}>{cards[card]}</div>
+                  </div>
+                );
+              })}
             </div>
           </div>
-          <div className={classes.cards}>
-            {['Story', 'Positions'].map((card) => {
-              let className = classes[card.toLowerCase()];
-              if (this.state.activeCard === card) className += ` ${classes.active}`;
-              return (
-                <div className={className} key={card} onClick={() => this.onCardClick(card)}>
-                  <span className={classes.close} onClick={this.closeCard}>Close</span>
-                  <h4>{card}</h4>
-                  <div className={classes.content}>{cards[card]}</div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        </Container>
       </ImageContainer>
     );
   }

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import Fact from '../Fact/Fact';
-import Section from '../Section/Section';
+import Container from '../Container/Container';
 import classes from './HomeFacts.scss';
 
 const HomeFacts = (props) => {
@@ -14,11 +14,11 @@ const HomeFacts = (props) => {
   ];
 
   return (
-    <Section id={props.id} title="Facts">
+    <Container id={props.id} section title="Facts">
       <div className={classes.facts}>
         {facts.map((fact, index) => <Fact {...fact} className={classes.fact} key={index} />)}
       </div>
-    </Section>
+    </Container>
   );
 };
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import ImageContainer from '../ImageContainer/ImageContainer';
-import Section from '../Section/Section';
+import Container from '../Container/Container';
 import classes from './HomePurpose.scss';
 
 const HomePurpose = () => (
   <ImageContainer src="/images/street.jpg" className={classes.ImageContainer}>
-    <Section className={classes.section} container title="Purpose">
+    <Container className={classes.section} container section title="Purpose">
       <div className={classes.content}>
         <p>
           Jimbere Fund is on a mission to revitalize distressed communities in Congo.
@@ -30,7 +30,7 @@ const HomePurpose = () => (
           </p>
         </div>
       </div>
-    </Section>
+    </Container>
   </ImageContainer>
 );
 

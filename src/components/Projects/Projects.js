@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import Container from '../Container/Container';
 import classes from './Projects.scss';
 
 class Projects extends Component {
@@ -17,12 +18,11 @@ class Projects extends Component {
 
   render() {
     return (
-      <div className={classes.projects}>
+      <Container className={classes.projects} title="Projects">
         <div>
-          <h1>Projects</h1>
           <h6>Coming soon!</h6>
         </div>
-      </div>
+      </Container>
     );
   }
 }

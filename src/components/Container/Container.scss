@@ -1,0 +1,33 @@
+@import '../../styles/config';
+
+.section {
+  padding-bottom: 6rem !important;
+
+  > h1 {
+    margin-top: 0;
+  }
+}
+
+.container {
+  padding: 6rem 3rem 0 3rem;
+
+  > div {
+    margin: auto;
+    max-width: 950px;
+
+    &.fluid {
+      margin: 0;
+      max-width: none;
+    }
+  }
+
+  > h1 {
+    text-align: center;
+  }
+}
+
+@media (max-width: $small) {
+  .container {
+    padding: 6rem 1.5rem 0 1.5rem;
+  }
+}
