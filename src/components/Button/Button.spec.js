@@ -15,6 +15,14 @@ describe('Button', () => {
     expect(wrapper.is(`.${classes.button}`)).to.be.true;
   });
 
+  it('renders an anchor with a .button class if props.href is defined', () => {
+    const label = 'label';
+    const href = 'www.site.com';
+    const wrapper = shallow(<Button label={label} href={href} />);
+    expect(wrapper.type()).to.equal('a');
+    expect(wrapper.is(`.${classes.button}`)).to.be.true;
+  });
+
   it('renders a root div with a .button class otherwise', () => {
     const label = 'label';
     const onClick = sinon.stub();

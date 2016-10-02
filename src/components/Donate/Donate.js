@@ -15,7 +15,7 @@ const Donate = () => (
           </div>
         </div>
         <div>
-          <Button label="Give Now" />
+          <Button label="Give Now" href="https://www.razoo.com/us/story/Jimbere-Fund" />
         </div>
       </div>
     </div>
