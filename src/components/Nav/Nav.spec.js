@@ -81,9 +81,9 @@ describe('Nav', () => {
         expect(wrapper.find(`.${classes.content}`)).to.have.length(1);
       });
 
-      it('renders a 6 NavItem components', () => {
+      it('renders 7 NavItem components', () => {
         const wrapper = shallow(<Nav />);
-        expect(wrapper.find(NavItem)).to.have.length(6);
+        expect(wrapper.find(NavItem)).to.have.length(7);
       });
     });
   });
