@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { setTheme } from '../../redux/modules/ui/uiModule';
 import Blog from '../../components/Blog/Blog';
 
-const BlogContainer = (props) => (
+export const BlogContainer = (props) => (
   <Blog setTheme={props.setTheme}>{props.children}</Blog>
 );
 
