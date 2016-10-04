@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
 import classes from './Contact.scss';
 
@@ -20,18 +21,15 @@ class Contact extends Component {
   }
 
   render() {
-    // TODO use Container for header
-
     return (
-      <div className={classes.contact}>
+      <div>
         <ImageContainer
           className={classes.imageContainer}
           imageClassName={classes.image}
           src="/images/phone-o.jpg"
-        />
-        <div className={classes.greeting}>
-          <h1>Contact Us</h1>
-        </div>
+        >
+          <Container className={classes.header} fluid title="Contact Us" />
+        </ImageContainer>
         <div className={classes.info}>
           <div>
             <h3>Email</h3>
