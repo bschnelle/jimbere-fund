@@ -5,6 +5,7 @@ const Container = (props) => {
   let className = classes.container;
   if (props.className) className += ` ${props.className}`;
   if (props.section) className += ` ${classes.section}`;
+
   return (
     <div className={className} id={props.id}>
       <h1>{props.title}</h1>
