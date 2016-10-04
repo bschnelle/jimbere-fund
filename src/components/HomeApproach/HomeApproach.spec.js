@@ -1,59 +1,118 @@
-/* import React from 'react';
+import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import Fact from '../Fact/Fact';
+import FlipMove from 'react-flip-move';
 import Container from '../Container/Container';
-import HomeFacts from './HomeFacts';
-import classes from './HomeFacts.scss';
+import HomeApproach from './HomeApproach';
+import HomeApproachIcon from '../HomeApproachIcon/HomeApproachIcon';
+import classes from './HomeApproach.scss';
 
-const id = 'id';
-
-describe('HomeFacts', () => {
-  describe('root element', () => {
-    it('is of type Container', () => {
-      const wrapper = shallow(<HomeFacts id={id} />);
-      expect(wrapper.type()).to.equal(Container);
-    });
-
-    it('has a .section class', () => {
-      const wrapper = shallow(<HomeFacts id={id} />);
-      expect(wrapper.is(`.${classes.section}`)).to.be.true;
-    });
-
-    it('is passed props.id as a prop', () => {
-      const wrapper = shallow(<HomeFacts id={id} />);
-      expect(wrapper.prop('id')).to.equal(id);
+describe('HomeApproach', () => {
+  describe('constructor()', () => {
+    it('initializes state.activeContainer to "Collaborative"', () => {
+      const wrapper = shallow(<HomeApproach isSmall />);
+      expect(wrapper.state('activeContainer')).to.equal('Collaborative');
     });
   });
 
-  describe('nested elements', () => {
-    it('renders an h1 with "Facts"', () => {
-      const wrapper = shallow(<HomeFacts id={id} />);
-      expect(wrapper.contains(<h1>Facts</h1>)).to.be.true;
+  describe('updateContainer()', () => {
+    it('sets state.activeContainer to event.currentTarget.dataset.title', () => {
+      const event = { currentTarget: { dataset: { title: 'Holistic' } } };
+      const wrapper = shallow(<HomeApproach isSmall />);
+      wrapper.instance().updateContainer(event);
+      expect(wrapper.state('activeContainer')).to.equal(event.currentTarget.dataset.title);
+    });
+  });
+
+  describe('render()', () => {
+    describe('root Container has the following props', () => {
+      it('is of type Container', () => {
+        const wrapper = shallow(<HomeApproach isSmall />);
+        expect(wrapper.type()).to.equal(Container);
+      });
+
+      it('className = .section', () => {
+        const wrapper = shallow(<HomeApproach isSmall />);
+        expect(wrapper.prop('className')).to.equal(classes.section);
+      });
+
+      it('container = true', () => {
+        const wrapper = shallow(<HomeApproach isSmall />);
+        expect(wrapper.prop('container')).to.be.true;
+      });
+
+      it('section = true', () => {
+        const wrapper = shallow(<HomeApproach isSmall />);
+        expect(wrapper.prop('section')).to.be.true;
+      });
+
+      it('title = "Approach"', () => {
+        const wrapper = shallow(<HomeApproach isSmall />);
+        expect(wrapper.prop('title')).to.equal('Approach');
+      });
     });
 
-    describe('facts container', () => {
-      it('is of type div', () => {
-        const wrapper = shallow(<HomeFacts id={id} />);
-        expect(wrapper.find('div')).to.have.length(1);
+    describe('nested elements', () => {
+      it('contains a div with a .content class', () => {
+        const wrapper = shallow(<HomeApproach isSmall />);
+        expect(wrapper.find(`.${classes.content}`).type()).to.equal('div');
       });
 
-      it('has a .facts class', () => {
-        const wrapper = shallow(<HomeFacts id={id} />);
-        expect(wrapper.find('div').is(`.${classes.facts}`)).to.be.true;
+      it('contains a div with a .sections class', () => {
+        const wrapper = shallow(<HomeApproach isSmall />);
+        expect(wrapper.find(`.${classes.sections}`).type()).to.equal('div');
       });
 
-      it('renders six Fact components', () => {
-        const wrapper = shallow(<HomeFacts id={id} />);
-        expect(wrapper.find(Fact)).to.have.length(6);
+      describe('FlipMove component', () => {
+        let flipMove;
+
+        beforeEach(() => {
+          const wrapper = shallow(<HomeApproach isSmall />);
+          flipMove = wrapper.find(FlipMove);
+        });
+
+        it('contains a div with a .detail class', () => {
+          expect(flipMove.find(`.${classes.detail}`)).to.have.length(1);
+        });
+
+        describe('has the following props', () => {
+          it('duration = 200', () => {
+            expect(flipMove.prop('duration')).to.equal(200);
+          });
+
+          it('enterAnimation is an object', () => {
+            expect(typeof flipMove.prop('enterAnimation')).to.equal('object');
+          });
+
+          it('leaveAnimation is an object', () => {
+            expect(typeof flipMove.prop('leaveAnimation')).to.equal('object');
+          });
+        });
       });
 
-      it('Fact component has a .fact class', () => {
-        const wrapper = shallow(<HomeFacts id={id} />);
-        const facts = wrapper.find(Fact);
-        expect(facts.first().is(`.${classes.fact}`)).to.be.true;
+      describe('props.isSmall is false', () => {
+        let wrapper;
+
+        beforeEach(() => {
+          wrapper = shallow(<HomeApproach isSmall={false} />);
+        });
+
+        it('renders 3 h4 elements', () => {
+          expect(wrapper.find('h4')).to.have.length(3);
+        });
+      });
+
+      describe('props.isSmall is true', () => {
+        let wrapper;
+
+        beforeEach(() => {
+          wrapper = shallow(<HomeApproach isSmall />);
+        });
+
+        it('renders 3 HomeApproachIcons', () => {
+          expect(wrapper.find(HomeApproachIcon)).to.have.length(3);
+        });
       });
     });
   });
 });
-*/

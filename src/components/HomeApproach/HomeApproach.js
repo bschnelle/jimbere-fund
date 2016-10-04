@@ -67,6 +67,11 @@ class HomeApproach extends Component {
       to: { opacity: 0, transform: 'translateY(30px)' }
     };
 
+    /**
+     * render different elements based on screen size (isSmall)
+     * desktop is a lefthand list with righthand detail, mobile
+     * is a list of icons on top and detail below
+     */
     const approachClassName = isSmall ? classes.approachSmall : classes.approach;
     const sectionElements = sections.map((section) => {
       const { title: t } = section;
