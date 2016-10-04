@@ -23,7 +23,7 @@ describe('Button', () => {
     expect(wrapper.is(`.${classes.button}`)).to.be.true;
   });
 
-  it('renders a root div with a .button class otherwise', () => {
+  it('renders a div with a .button class otherwise', () => {
     const label = 'label';
     const onClick = sinon.stub();
     const wrapper = shallow(<Button label={label} onClick={onClick} />);
@@ -38,7 +38,7 @@ describe('Button', () => {
     expect(wrapper.contains(label)).to.be.true;
   });
 
-  it('adds props.class if defined', () => {
+  it('adds props.className if defined', () => {
     const className = 'myClass';
     const label = 'label';
     const onClick = sinon.stub();

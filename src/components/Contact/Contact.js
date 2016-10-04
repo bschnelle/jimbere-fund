@@ -6,25 +6,17 @@ import classes from './Contact.scss';
 class Contact extends Component {
 
   componentDidMount() {
+    // eslint-disable-next-line
     mapboxgl.accessToken = 'pk.eyJ1IjoiYnNjaG5lbGxlIiwiYSI6ImNpdGdicThsODAwZTkyem1rNjU3NGE5YjYifQ.-vW-e8wtnO_S9GBdFlZ2nw';
+    // eslint-disable-next-line
     const map = new mapboxgl.Map({
-      // container id
       container: 'map',
       dragPan: false,
       scrollZoom: false,
-      // style location
       style: 'mapbox://styles/bschnelle/citgbrv5n00022iqh7psitcc6',
-      // starting position
       center: [-73.9377, 40.6507],
       zoom: 10
     });
-
-    /* map.on('load', () => {
-      map.addSource('terrain-data', {
-        type: 'vector',
-        url: 'mapbox://mapbox.citgch6lf00bi2nnv0k1ltnfy'
-      });
-    }); */
   }
 
   render() {
