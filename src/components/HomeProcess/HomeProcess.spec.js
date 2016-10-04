@@ -1,59 +1,63 @@
-/* import React from 'react';
+import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import Fact from '../Fact/Fact';
 import Container from '../Container/Container';
-import HomeFacts from './HomeFacts';
-import classes from './HomeFacts.scss';
+import HomeProcess from './HomeProcess';
+import classes from './HomeProcess.scss';
 
-const id = 'id';
-
-describe('HomeFacts', () => {
+describe('HomeProcess', () => {
   describe('root element', () => {
     it('is of type Container', () => {
-      const wrapper = shallow(<HomeFacts id={id} />);
+      const wrapper = shallow(<HomeProcess isSmall />);
       expect(wrapper.type()).to.equal(Container);
     });
 
-    it('has a .section class', () => {
-      const wrapper = shallow(<HomeFacts id={id} />);
-      expect(wrapper.is(`.${classes.section}`)).to.be.true;
-    });
+    describe('props', () => {
+      let wrapper;
 
-    it('is passed props.id as a prop', () => {
-      const wrapper = shallow(<HomeFacts id={id} />);
-      expect(wrapper.prop('id')).to.equal(id);
+      beforeEach(() => { wrapper = shallow(<HomeProcess isSmall />); });
+
+      it('className = .section', () => {
+        expect(wrapper.prop('className')).to.equal(classes.section);
+      });
+
+      it('container = true', () => {
+        expect(wrapper.prop('container')).to.be.true;
+      });
+
+      it('section = true', () => {
+        expect(wrapper.prop('section')).to.be.true;
+      });
+
+      it('title = "Process"', () => {
+        expect(wrapper.prop('title')).to.equal('Process');
+      });
     });
   });
 
   describe('nested elements', () => {
-    it('renders an h1 with "Facts"', () => {
-      const wrapper = shallow(<HomeFacts id={id} />);
-      expect(wrapper.contains(<h1>Facts</h1>)).to.be.true;
+    it('contains a div with a .process class', () => {
+      const wrapper = shallow(<HomeProcess isSmall />);
+      expect(wrapper.find(`.${classes.process}`)).to.have.length(1);
     });
 
-    describe('facts container', () => {
-      it('is of type div', () => {
-        const wrapper = shallow(<HomeFacts id={id} />);
-        expect(wrapper.find('div')).to.have.length(1);
+    describe('img has the following props', () => {
+      it('alt = "Process infographic"', () => {
+        const wrapper = shallow(<HomeProcess isSmall />);
+        expect(wrapper.find('img').prop('alt')).to.equal('Process infographic');
       });
 
-      it('has a .facts class', () => {
-        const wrapper = shallow(<HomeFacts id={id} />);
-        expect(wrapper.find('div').is(`.${classes.facts}`)).to.be.true;
-      });
+      describe('src', () => {
+        it('process.isSmall = false, /images/process.svg', () => {
+          const wrapper = shallow(<HomeProcess isSmall={false} />);
+          expect(wrapper.find('img').prop('src')).to.equal('/images/process.svg');
+        });
 
-      it('renders six Fact components', () => {
-        const wrapper = shallow(<HomeFacts id={id} />);
-        expect(wrapper.find(Fact)).to.have.length(6);
-      });
-
-      it('Fact component has a .fact class', () => {
-        const wrapper = shallow(<HomeFacts id={id} />);
-        const facts = wrapper.find(Fact);
-        expect(facts.first().is(`.${classes.fact}`)).to.be.true;
+        it('process.isSmall = true, /images/process-compact.svg', () => {
+          const wrapper = shallow(<HomeProcess isSmall />);
+          expect(wrapper.find('img').prop('src')).to.equal('/images/process-compact.svg');
+        });
       });
     });
   });
 });
-*/
