@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
 import classes from './Contact.scss';
@@ -10,7 +10,7 @@ class Contact extends Component {
     // eslint-disable-next-line
     mapboxgl.accessToken = 'pk.eyJ1IjoiYnNjaG5lbGxlIiwiYSI6ImNpdGdicThsODAwZTkyem1rNjU3NGE5YjYifQ.-vW-e8wtnO_S9GBdFlZ2nw';
     // eslint-disable-next-line
-    const map = new mapboxgl.default.Map({
+    const map = new mapboxgl.Map({
       container: 'map',
       dragPan: false,
       scrollZoom: false,

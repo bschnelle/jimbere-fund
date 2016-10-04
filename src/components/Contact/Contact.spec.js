@@ -2,20 +2,20 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
-import * as mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
+import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 import Contact from './Contact';
 import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
 import classes from './Contact.scss';
 
 describe('Contact', () => {
-  beforeEach(() => sinon.stub(mapboxgl.default, 'Map'));
-  afterEach(() => mapboxgl.default.Map.restore());
+  beforeEach(() => sinon.stub(mapboxgl, 'Map'));
+  afterEach(() => mapboxgl.Map.restore());
 
   describe('componentDidMount()', () => {
-    it('it calls mapboxgl.default.Map with an options object', () => {
+    it('it calls mapboxgl.Map with an options object', () => {
       shallow(<Contact />).instance().componentDidMount();
-      expect(mapboxgl.default.Map).to.have.been.calledWith(sinon.match({ container: 'map' }));
+      expect(mapboxgl.Map).to.have.been.calledWith(sinon.match({ container: 'map' }));
     });
   });
 
