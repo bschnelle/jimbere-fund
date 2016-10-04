@@ -1,59 +1,59 @@
-/* import React from 'react';
+import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import Fact from '../Fact/Fact';
 import Container from '../Container/Container';
-import HomeFacts from './HomeFacts';
-import classes from './HomeFacts.scss';
+import ImageContainer from '../ImageContainer/ImageContainer';
+import HomePurpose from './HomePurpose';
+import classes from './HomePurpose.scss';
 
-const id = 'id';
+describe('HomePurpose', () => {
+  let wrapper;
 
-describe('HomeFacts', () => {
+  beforeEach(() => { wrapper = shallow(<HomePurpose />); });
+
   describe('root element', () => {
-    it('is of type Container', () => {
-      const wrapper = shallow(<HomeFacts id={id} />);
-      expect(wrapper.type()).to.equal(Container);
-    });
-
-    it('has a .section class', () => {
-      const wrapper = shallow(<HomeFacts id={id} />);
-      expect(wrapper.is(`.${classes.section}`)).to.be.true;
-    });
-
-    it('is passed props.id as a prop', () => {
-      const wrapper = shallow(<HomeFacts id={id} />);
-      expect(wrapper.prop('id')).to.equal(id);
+    it('is of type ImageContainer', () => {
+      expect(wrapper.type()).to.equal(ImageContainer);
     });
   });
 
-  describe('nested elements', () => {
-    it('renders an h1 with "Facts"', () => {
-      const wrapper = shallow(<HomeFacts id={id} />);
-      expect(wrapper.contains(<h1>Facts</h1>)).to.be.true;
+  describe('Container', () => {
+    let container;
+    beforeEach(() => { container = wrapper.find(Container); });
+
+    describe('props', () => {
+      it('className = .section', () => {
+        expect(container.prop('className')).to.equal(classes.section);
+      });
+
+      it('container = true', () => {
+        expect(container.prop('container')).to.be.true;
+      });
+
+      it('section = true', () => {
+        expect(container.prop('section')).to.be.true;
+      });
+
+      it('title = "Purpose"', () => {
+        expect(container.prop('title')).to.equal('Purpose');
+      });
+    });
+  });
+
+  describe('content div', () => {
+    let content;
+    beforeEach(() => { content = wrapper.find(`.${classes.content}`); });
+
+    it('is of type div', () => {
+      expect(content.type()).to.equal('div');
     });
 
-    describe('facts container', () => {
-      it('is of type div', () => {
-        const wrapper = shallow(<HomeFacts id={id} />);
-        expect(wrapper.find('div')).to.have.length(1);
-      });
+    it('contains 3 p elements', () => {
+      expect(content.find('p')).to.have.length(3);
+    });
 
-      it('has a .facts class', () => {
-        const wrapper = shallow(<HomeFacts id={id} />);
-        expect(wrapper.find('div').is(`.${classes.facts}`)).to.be.true;
-      });
-
-      it('renders six Fact components', () => {
-        const wrapper = shallow(<HomeFacts id={id} />);
-        expect(wrapper.find(Fact)).to.have.length(6);
-      });
-
-      it('Fact component has a .fact class', () => {
-        const wrapper = shallow(<HomeFacts id={id} />);
-        const facts = wrapper.find(Fact);
-        expect(facts.first().is(`.${classes.fact}`)).to.be.true;
-      });
+    it('contains 2 h4 elements', () => {
+      expect(content.find('h4')).to.have.length(2);
     });
   });
 });
-*/
