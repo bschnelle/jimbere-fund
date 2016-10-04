@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { setTheme } from '../../redux/modules/ui/uiModule';
 import Projects from '../../components/Projects/Projects';
 
-const ProjectsContainer = (props) => (
+export const ProjectsContainer = (props) => (
   <Projects setTheme={props.setTheme} />
 );
 
