@@ -64,13 +64,13 @@ const HomeApproachIcon = (props) => {
     )
   };
 
-  return icons[props.icon] || null;
+  return icons[props.icon];
 };
 
 HomeApproachIcon.propTypes = {
   active: PropTypes.bool,
   className: PropTypes.string,
-  icon: PropTypes.string.isRequired
+  icon: PropTypes.oneOf(['collaborative', 'holistic', 'self-sustaining']).isRequired
 };
 
 export default HomeApproachIcon;
