@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { setTheme } from '../../redux/modules/ui/uiModule';
 import Team from '../../components/Team/Team';
 
-const TeamContainer = (props) => (
+export const TeamContainer = (props) => (
   <Team setTheme={props.setTheme} />
 );
 
