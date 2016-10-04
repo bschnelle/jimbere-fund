@@ -1,4 +1,4 @@
-/* eslint-ignore max-len */
+/* eslint-disable max-len */
 import React, { PropTypes } from 'react';
 import classes from './Social.scss';
 
