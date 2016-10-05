@@ -10,7 +10,7 @@ class SignUp extends Component {
   }
 
   render() {
-    const formUrl = 'https://forms.typeform.io/to/iTzQ6tQwsW';
+    const formUrl = 'https://forms.typeform.io/to/g7rifUTFxK';
     return (
       <div className={classes.signUp}>
         <iframe id="typeform-full" frameBorder={0} src={formUrl} />
