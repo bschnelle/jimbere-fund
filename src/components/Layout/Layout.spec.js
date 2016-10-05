@@ -32,6 +32,11 @@ describe('Layout', () => {
     expect(wrapper.contains(<Footer />)).to.be.true;
   });
 
+  it('if props.simple is true it does not render a Footer', () => {
+    const wrapper = shallow(<Layout simple theme={theme}>{child}</Layout>);
+    expect(wrapper.contains(<Footer />)).to.be.false;
+  });
+
   describe('Logo has the following props', () => {
     it('className = .logo', () => {
       const wrapper = shallow(<Layout theme={theme}>{child}</Layout>);

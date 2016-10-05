@@ -9,12 +9,13 @@ const Layout = (props) => (
     <Logo className={classes.logo} link secondary={props.theme === 'secondary'} />
     <Nav />
     {props.children}
-    <Footer />
+    {!props.simple && <Footer />}
   </div>
 );
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  simple: PropTypes.bool,
   theme: PropTypes.string.isRequired
 };
 

@@ -51,12 +51,12 @@ describe('HomeLanding', () => {
       });
 
       describe('props', () => {
-        it('label = "Join Us"', () => {
-          expect(button.prop('label')).to.equal('Join Us');
+        it('label = "Sign Up"', () => {
+          expect(button.prop('label')).to.equal('Sign Up');
         });
 
-        it('to = "/join-us"', () => {
-          expect(button.prop('to')).to.equal('/join-us');
+        it('to = "/sign-up"', () => {
+          expect(button.prop('to')).to.equal('/sign-up');
         });
       });
     });

@@ -19,6 +19,17 @@ describe('LayoutContainer', () => {
       expect(wrapper.prop('theme')).to.equal(theme);
     });
 
+    it('if defined, renders props.simple instead of child and passes props.simple = true', () => {
+      const simple = <div>simple</div>;
+      const child = <div>child</div>;
+      const wrapper = shallow(
+        <LayoutContainer simple={simple} theme={theme}>{child}</LayoutContainer>
+      );
+      expect(wrapper.contains(simple)).to.be.true;
+      expect(wrapper.contains(child)).to.be.false;
+      expect(wrapper.prop('simple')).to.be.true;
+    });
+
     it('renders its children', () => {
       const child = <div>child</div>;
       const wrapper = shallow(<LayoutContainer theme={theme}>{child}</LayoutContainer>);
