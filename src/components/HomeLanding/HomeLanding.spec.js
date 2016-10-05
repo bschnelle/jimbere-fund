@@ -51,8 +51,8 @@ describe('HomeLanding', () => {
       });
 
       describe('props', () => {
-        it('label = "Sign Up"', () => {
-          expect(button.prop('label')).to.equal('Sign Up');
+        it('label = "Join Us"', () => {
+          expect(button.prop('label')).to.equal('Join Us');
         });
 
         it('to = "/sign-up"', () => {
