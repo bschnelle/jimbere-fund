@@ -4,6 +4,7 @@ import HomeLanding from '../HomeLanding/HomeLanding';
 import HomeApproach from '../HomeApproach/HomeApproach';
 import HomeProcess from '../HomeProcess/HomeProcess';
 import HomePurpose from '../HomePurpose/HomePurpose';
+import HomeStory from '../HomeStory/HomeStory';
 import classes from './Home.scss';
 
 const Home = (props) => {
@@ -38,6 +39,7 @@ const Home = (props) => {
       <HomeLanding onScrollClick={scrollToFacts} />
       <HomeFacts id="facts" isSmall={props.isSmall} />
       <HomePurpose />
+      <HomeStory />
       <HomeApproach isSmall={props.isSmall} />
       <HomeProcess isSmall={props.isSmall} />
     </div>

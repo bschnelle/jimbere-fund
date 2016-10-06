@@ -24,7 +24,7 @@
     }
 
     .sections {
-      border-right: solid 5px $primaryColor1;
+      border-right: solid 5px #fff;
 
       > h4 {
         cursor: pointer;
@@ -40,13 +40,13 @@
         }
 
         &.active {
-          background-color: $primaryColor1 !important;
-          color: $alternateTextColor !important;
+          background-color: #fff !important;
+          color: $primaryColor1 !important;
         }
 
         &:hover {
-          background-color: lighten($primaryColor1, 35%);
-          color: $alternateTextColor;
+          background-color: lighten($primaryColor1, 40%);
+          color: $primaryColor1 !important;
         }
       }
     }
@@ -58,7 +58,7 @@
 
       > div {
         flex: 1;
-        
+
         .icon {
           border-radius: 50%;
           cursor: pointer;
@@ -88,5 +88,6 @@
 }
 
 .section {
-  background-color: #eee;
+  background-color: $primaryColor1;
+  color: $alternateTextColor;
 }

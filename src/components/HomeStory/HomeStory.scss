@@ -1,0 +1,23 @@
+@import '../../styles/config';
+
+.readMore {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height $transitionDuration ease-out, visibility 0ms ease $transitionDuration;
+  visibility: hidden;
+}
+
+.readMoreOpen {
+  max-height: 450px;
+  transition: max-height $transitionDuration ease-out, visibility 0ms ease 0ms;
+  visibility: visible;
+}
+
+.readMoreButton {
+  text-align: center;
+}
+
+.story {
+  height: auto;
+  width: 100%;
+}
