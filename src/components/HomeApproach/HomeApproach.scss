@@ -24,7 +24,7 @@
     }
 
     .sections {
-      border-right: solid 5px #fff;
+      border-right: solid 5px $primaryColor1;
 
       > h4 {
         cursor: pointer;
@@ -40,13 +40,13 @@
         }
 
         &.active {
-          background-color: #fff !important;
-          color: $primaryColor1 !important;
+          background-color: $primaryColor1 !important;
+          color: $alternateTextColor !important;
         }
 
         &:hover {
-          background-color: lighten($primaryColor1, 40%);
-          color: $primaryColor1 !important;
+          background-color: lighten($primaryColor1, 35%);
+          color: $alternateTextColor;
         }
       }
     }
@@ -88,6 +88,5 @@
 }
 
 .section {
-  background-color: $primaryColor1;
-  color: $alternateTextColor;
+  background-color: #d0d0d0;
 }
