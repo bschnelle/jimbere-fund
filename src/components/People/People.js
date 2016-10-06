@@ -18,7 +18,8 @@ const People = () => {
         { name: 'Moses Nkosilathi Vuma', title: 'Chairman' },
         { name: 'Rachel Henderson', title: 'Secretary' },
         { name: 'Hemant Wandhwani', title: 'Treasurer' },
-        { name: 'Adele Kibasumba', title: 'Member' }
+        { name: 'Adele Kibasumba', title: 'Member' },
+        { name: 'JD Stier', title: 'Member' }
       ]
     },
     {
