@@ -5,7 +5,7 @@ import classes from './Layout.scss';
 
 const Layout = (props) => (
   <div className={classes.layout}>
-    <Nav secondary={props.theme === 'secondary'} />
+    <Nav isSmall={props.isSmall} secondary={props.theme === 'secondary'} />
     {props.children}
     {!props.simple && <Footer />}
   </div>
@@ -13,6 +13,7 @@ const Layout = (props) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  isSmall: PropTypes.bool.isRequired,
   simple: PropTypes.bool,
   theme: PropTypes.string.isRequired
 };

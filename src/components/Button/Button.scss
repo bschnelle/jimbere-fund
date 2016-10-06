@@ -26,3 +26,42 @@
     background-color: $accentColor1;
   }
 }
+
+.secondary {
+  color: $primaryColor1;
+
+  &:active {
+    background-color: darken($alternateTextColor, 10%) !important;
+    border: solid 2px darken($alternateTextColor, 10%) !important;
+  }
+
+  &:hover {
+    background-color: $alternateTextColor;
+  }
+}
+
+.flat {
+  background-color: transparent;
+  border: none;
+  color: $primaryColor1;
+
+  &.secondary {
+    color: $alternateTextColor;
+  }
+
+  &:active {
+    background-color: darken($accentColor1, 10%) !important;
+    border: none !important;
+  }
+
+  &:hover {
+    background-color: $accentColor1;
+    color: $alternateTextColor;
+  }
+}
+
+.small {
+  font-size: 1.3rem;
+  letter-spacing: .05rem;
+  padding: .5rem 1.5rem;
+}

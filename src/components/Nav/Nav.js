@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import Button from '../Button/Button';
 import Logo from '../Logo/Logo';
 import MenuIconButton from '../MenuIconButton/MenuIconButton';
 import NavItem from '../NavItem/NavItem';
@@ -11,6 +12,7 @@ import classes from './Nav.scss';
 class Nav extends Component {
 
   static propTypes = {
+    isSmall: PropTypes.bool.isRequired,
     secondary: PropTypes.bool.isRequired
   }
 
@@ -71,6 +73,17 @@ class Nav extends Component {
         <div className={classes.logoWrapper}>
           <Logo className={classes.logo} link secondary={secondary} />
         </div>
+
+        {!this.props.isSmall && (
+          <Button
+            className={classes.donate}
+            flat
+            label="Donate"
+            secondary={secondary}
+            small
+            to="/donate"
+          />
+        )}
 
         <MenuIconButton
           className={classes.menuIconButton}

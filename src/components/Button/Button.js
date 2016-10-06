@@ -4,6 +4,10 @@ import classes from './Button.scss';
 
 const Button = (props) => {
   let className = classes.button;
+  if (props.accent) className += ` ${classes.accent}`;
+  if (props.flat) className += ` ${classes.flat}`;
+  if (props.secondary) className += ` ${classes.secondary}`;
+  if (props.small) className += ` ${classes.small}`;
   if (props.className) className += ` ${props.className}`;
 
   if (props.to) {
@@ -20,10 +24,14 @@ const Button = (props) => {
 };
 
 Button.propTypes = {
+  accent: PropTypes.bool,
   className: PropTypes.string,
+  flat: PropTypes.bool,
   href: PropTypes.string,
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func,
+  secondary: PropTypes.bool,
+  small: PropTypes.bool,
   to: PropTypes.string
 };
 

@@ -5,17 +5,23 @@ import { fromJS } from 'immutable';
 import Layout from '../../components/Layout/Layout';
 import { LayoutContainer, stateToProps } from './LayoutContainer';
 
+const isSmall = true;
 const theme = 'primary';
 
 describe('LayoutContainer', () => {
   describe('render()', () => {
     it('renders a Layout component', () => {
-      const wrapper = shallow(<LayoutContainer />);
+      const wrapper = shallow(<LayoutContainer isSmall={isSmall} theme={theme} />);
       expect(wrapper.type()).to.equal(Layout);
     });
 
+    it('passes props.isSmall to Layout', () => {
+      const wrapper = shallow(<LayoutContainer isSmall={isSmall} theme={theme} />);
+      expect(wrapper.prop('isSmall')).to.equal(isSmall);
+    });
+
     it('passes props.theme to Layout', () => {
-      const wrapper = shallow(<LayoutContainer theme={theme} />);
+      const wrapper = shallow(<LayoutContainer isSmall={isSmall} theme={theme} />);
       expect(wrapper.prop('theme')).to.equal(theme);
     });
 
@@ -23,7 +29,7 @@ describe('LayoutContainer', () => {
       const simple = <div>simple</div>;
       const child = <div>child</div>;
       const wrapper = shallow(
-        <LayoutContainer simple={simple} theme={theme}>{child}</LayoutContainer>
+        <LayoutContainer simple={simple} isSmall={isSmall} theme={theme}>{child}</LayoutContainer>
       );
       expect(wrapper.contains(simple)).to.be.true;
       expect(wrapper.contains(child)).to.be.false;
@@ -32,14 +38,24 @@ describe('LayoutContainer', () => {
 
     it('renders its children', () => {
       const child = <div>child</div>;
-      const wrapper = shallow(<LayoutContainer theme={theme}>{child}</LayoutContainer>);
+      const wrapper = shallow(
+        <LayoutContainer isSmall={isSmall} theme={theme}>{child}</LayoutContainer>
+      );
       expect(wrapper.contains(child)).to.be.true;
     });
   });
 
   describe('stateToProps()', () => {
+    let state;
+    beforeEach(() => {
+      state = { browser: { lessThan: { medium: true } }, ui: fromJS({ theme }) };
+    });
+
+    it('maps state.browser.lessThem.medium to props.isSmall', () => {
+      expect(stateToProps(state).isSmall).to.equal(state.browser.lessThan.medium);
+    });
+
     it('maps state.ui.theme to props.theme', () => {
-      const state = { ui: fromJS({ theme }) };
       expect(stateToProps(state).theme).to.equal(state.ui.get('theme'));
     });
   });

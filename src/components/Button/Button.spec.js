@@ -38,6 +38,34 @@ describe('Button', () => {
     expect(wrapper.contains(label)).to.be.true;
   });
 
+  it('if props.accent is defined, adds .accent class', () => {
+    const label = 'label';
+    const onClick = sinon.stub();
+    const wrapper = shallow(<Button accent label={label} onClick={onClick} />);
+    expect(wrapper.is(`.${classes.accent}`)).to.be.true;
+  });
+
+  it('if props.flat is defined, adds .flat class', () => {
+    const label = 'label';
+    const onClick = sinon.stub();
+    const wrapper = shallow(<Button flat label={label} onClick={onClick} />);
+    expect(wrapper.is(`.${classes.flat}`)).to.be.true;
+  });
+
+  it('if props.secondary is defined, adds .secondary class', () => {
+    const label = 'label';
+    const onClick = sinon.stub();
+    const wrapper = shallow(<Button label={label} onClick={onClick} secondary />);
+    expect(wrapper.is(`.${classes.secondary}`)).to.be.true;
+  });
+
+  it('if props.small is defined, adds .small class', () => {
+    const label = 'label';
+    const onClick = sinon.stub();
+    const wrapper = shallow(<Button label={label} onClick={onClick} small />);
+    expect(wrapper.is(`.${classes.small}`)).to.be.true;
+  });
+
   it('adds props.className if defined', () => {
     const className = 'myClass';
     const label = 'label';
