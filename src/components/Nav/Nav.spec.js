@@ -1,6 +1,8 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
+import sinon from 'sinon';
+import Logo from '../Logo/Logo';
 import MenuIconButton from '../MenuIconButton/MenuIconButton';
 import NavItem from '../NavItem/NavItem';
 import Nav from './Nav';
@@ -8,18 +10,57 @@ import classes from './Nav.scss';
 
 describe('Nav', () => {
   describe('constructor()', () => {
+    it('initializes state.addBackground to false', () => {
+      const wrapper = shallow(<Nav />);
+      expect(wrapper.state('addBackground')).to.be.false;
+    });
+
     it('initializes state.open to false', () => {
       const wrapper = shallow(<Nav />);
       expect(wrapper.state('open')).to.be.false;
     });
 
-    it('sets this.links to an array of 6 objects containing "label" and "to" attributes', () => {
+    it('sets this.links to an array of 7 objects containing "label" and "to" attributes', () => {
       const wrapper = shallow(<Nav />);
-      wrapper.instance().links.forEach((link) => {
+      const { links } = wrapper.instance();
+      expect(links).to.have.length(7);
+      links.forEach((link) => {
         expect(link.label).to.exist;
         expect(link.to).to.exist;
       });
     });
+  });
+
+  describe('componentDidMount()', () => {
+    it('calls window.addEventListener with "scroll" and addBackgroundOnScroll()', (done) => {
+      sinon.stub(window, 'addEventListener');
+      const instance = shallow(<Nav />).instance();
+      instance.componentDidMount();
+      expect(window.addEventListener).to.have.been.calledWith(
+        'scroll',
+        instance.addBackgroundOnScroll
+      );
+      window.addEventListener.restore();
+      done();
+    });
+  });
+
+  describe('componentWillUnmount()', () => {
+    it('calls window.removeEventListener with "scroll" and addBackgroundOnScroll()', (done) => {
+      sinon.stub(window, 'removeEventListener');
+      const instance = shallow(<Nav />).instance();
+      instance.componentWillUnmount();
+      expect(window.removeEventListener).to.have.been.calledWith(
+        'scroll',
+        instance.addBackgroundOnScroll
+      );
+      window.removeEventListener.restore();
+      done();
+    });
+  });
+
+  describe('addBackgroundOnScroll()', () => {
+    // TODO
   });
 
   describe('toggleMenu()', () => {
@@ -42,18 +83,70 @@ describe('Nav', () => {
       expect(wrapper.find(`.${classes.expand}`).type()).to.equal('div');
     });
 
+    describe('logo', () => {
+      it('renders a div with a .logoWrapper class', () => {
+        const wrapper = shallow(<Nav />);
+        expect(wrapper.find(`.${classes.logoWrapper}`).type()).to.equal('div');
+      });
+
+      describe('Logo has the following props', () => {
+        it('className = .logo', () => {
+          const wrapper = shallow(<Nav />);
+          const logo = wrapper.find(Logo);
+          expect(logo.prop('className')).to.equal(classes.logo);
+        });
+
+        it('link = true', () => {
+          const wrapper = shallow(<Nav />);
+          const logo = wrapper.find(Logo);
+          expect(logo.prop('link')).to.be.true;
+        });
+
+        describe('secondary =', () => {
+          it('true if state.addBackground/open = false and props.secondary = true', () => {
+            const wrapper = shallow(<Nav secondary />);
+            const logo = wrapper.find(Logo);
+            expect(logo.prop('secondary')).to.be.true;
+          });
+
+          describe('false if', () => {
+            it('state.addBackground = true', () => {
+              const wrapper = shallow(<Nav />);
+              wrapper.setState({ addBackground: true });
+              const logo = wrapper.find(Logo);
+              expect(logo.prop('secondary')).to.be.false;
+            });
+
+            it('state.open = true', () => {
+              const wrapper = shallow(<Nav />);
+              wrapper.setState({ open: true });
+              const logo = wrapper.find(Logo);
+              expect(logo.prop('secondary')).to.be.false;
+            });
+
+            it('props.secondary = false', () => {
+              const wrapper = shallow(<Nav secondary={false} />);
+              const logo = wrapper.find(Logo);
+              expect(logo.prop('secondary')).to.be.false;
+            });
+          });
+        });
+      });
+    });
+
+    describe('state.addBackground set to true', () => {
+      it('adds a .expandBackground class to expand div', () => {
+        const wrapper = shallow(<Nav />);
+        wrapper.setState({ addBackground: true });
+        expect(wrapper.find(`.${classes.expandBackground}`)).to.have.length(1);
+      });
+    });
+
     describe('state.open set to true', () => {
       it('adds an .open class if state.open is true', () => {
         const wrapper = shallow(<Nav />);
         wrapper.setState({ open: true });
         expect(wrapper.is(`.${classes.open}`)).to.be.true;
-      });
-
-      it('adds a style prop to div.expand with a transform attribute', () => {
-        const wrapper = shallow(<Nav />);
-        wrapper.setState({ open: true });
-        const expand = wrapper.find(`.${classes.expand}`);
-        expect(expand.prop('style').transform).to.exist;
       });
     });
 

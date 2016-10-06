@@ -3,7 +3,6 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import Footer from '../Footer/Footer';
 import Layout from './Layout';
-import Logo from '../Logo/Logo';
 import Nav from '../Nav/Nav';
 import classes from './Layout.scss';
 
@@ -19,7 +18,7 @@ describe('Layout', () => {
 
   it('renders a Nav', () => {
     const wrapper = shallow(<Layout theme={theme}>{child}</Layout>);
-    expect(wrapper.contains(<Nav />)).to.be.true;
+    expect(wrapper.find(Nav)).to.have.length(1);
   });
 
   it('renders its children', () => {
@@ -35,34 +34,5 @@ describe('Layout', () => {
   it('if props.simple is true it does not render a Footer', () => {
     const wrapper = shallow(<Layout simple theme={theme}>{child}</Layout>);
     expect(wrapper.contains(<Footer />)).to.be.false;
-  });
-
-  describe('Logo has the following props', () => {
-    it('className = .logo', () => {
-      const wrapper = shallow(<Layout theme={theme}>{child}</Layout>);
-      const logo = wrapper.find(Logo);
-      expect(logo.prop('className')).to.equal(classes.logo);
-    });
-
-    it('link = true', () => {
-      const wrapper = shallow(<Layout theme={theme}>{child}</Layout>);
-      const logo = wrapper.find(Logo);
-      expect(logo.prop('link')).to.be.true;
-    });
-
-    describe('secondary =', () => {
-      it('false if props.theme != secondary', () => {
-        const wrapper = shallow(<Layout theme={theme}>{child}</Layout>);
-        const logo = wrapper.find(Logo);
-        expect(logo.prop('secondary')).to.be.false;
-      });
-
-      it('true if props.theme = secondary', () => {
-        const secondaryTheme = 'secondary';
-        const wrapper = shallow(<Layout theme={secondaryTheme}>{child}</Layout>);
-        const logo = wrapper.find(Logo);
-        expect(logo.prop('secondary')).to.be.true;
-      });
-    });
   });
 });

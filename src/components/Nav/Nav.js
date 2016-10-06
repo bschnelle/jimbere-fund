@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Logo from '../Logo/Logo';
 import MenuIconButton from '../MenuIconButton/MenuIconButton';
 import NavItem from '../NavItem/NavItem';
@@ -10,9 +10,14 @@ import classes from './Nav.scss';
  */
 class Nav extends Component {
 
+  static propTypes = {
+    secondary: PropTypes.bool.isRequired
+  }
+
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = { addBackground: false, open: false };
+    this.addBackgroundOnScroll = this.addBackgroundOnScroll.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
     this.links = [
       { label: 'Home', to: '/' },
@@ -25,27 +30,47 @@ class Nav extends Component {
     ];
   }
 
+  componentDidMount() {
+    window.addEventListener('scroll', this.addBackgroundOnScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.addBackgroundOnScroll);
+  }
+
+  addBackgroundOnScroll() {
+    const scrollTop = window.pageYOffset
+      || document.documentElement.scrollTop
+      || document.body.scrollTop
+      || 0;
+    const { addBackground } = this.state;
+
+    if (scrollTop > 15 && !addBackground) {
+      this.setState({ addBackground: true });
+    } else if (!scrollTop && addBackground) {
+      this.setState({ addBackground: false });
+    }
+  }
+
   toggleMenu() {
     this.setState({ open: !this.state.open });
   }
 
   render() {
-    const { links, state: { open }, toggleMenu } = this;
+    const { links, state: { addBackground, open }, toggleMenu } = this;
+    const secondary = !addBackground && !open && this.props.secondary;
     let className = classes.nav;
-    let expandStyle;
-
-    /* scale rotating animation and animate in logo/links/social */
-    if (open) {
-      className += ` ${classes.open}`;
-      const base = Math.max(window.innerWidth, window.innerHeight);
-      const scale = Math.ceil((base * 2.6) / 45);
-      const transform = `rotate(45deg) scale(${scale})`;
-      expandStyle = { transform };
-    }
+    let expandClassName = classes.expand;
+    if (open) className += ` ${classes.open}`;
+    if (addBackground) expandClassName += ` ${classes.expandBackground}`;
 
     return (
       <div className={className}>
-        <div className={classes.expand} style={expandStyle} />
+        <div className={expandClassName} />
+
+        <div className={classes.logoWrapper}>
+          <Logo className={classes.logo} link secondary={secondary} />
+        </div>
 
         <MenuIconButton
           className={classes.menuIconButton}
@@ -54,7 +79,6 @@ class Nav extends Component {
         />
 
         <div className={classes.content}>
-          <Logo className={classes.logo} />
           <ul>
             {links.map((link) =>
               <NavItem {...link} className={classes.navItem} key={link.to} onClick={toggleMenu} />

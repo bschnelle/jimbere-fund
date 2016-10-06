@@ -1,13 +1,23 @@
 @import '../../styles/config';
 
+.transition {
+  transition: fill $transitionDuration;
+}
+
 .green {
+  @extend .transition;
   fill: $primaryColor1;
 }
 
 .logo {
-  width: 13rem;
+  width: 12rem;
+
+  > svg {
+    display: block;
+  }
 }
 
 .white {
+  @extend .transition;
   fill: #fff;
 }
