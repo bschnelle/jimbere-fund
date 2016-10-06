@@ -1,7 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
 import { GetInvolved } from './GetInvolved';
@@ -10,28 +9,6 @@ import classes from './GetInvolved.scss';
 describe('GetInvolved', () => {
   let wrapper;
   beforeEach(() => { wrapper = shallow(<GetInvolved />); });
-
-  describe('onCardClick()', () => {
-    it('sets state.activeCard to argument', () => {
-      const activeCard = 'Story';
-      wrapper.instance().onCardClick(activeCard);
-      expect(wrapper.state('activeCard')).to.equal(activeCard);
-    });
-  });
-
-  describe('closeCard()', () => {
-    it('calls event.stopPropagation', () => {
-      const event = { stopPropagation: sinon.stub() };
-      wrapper.instance().closeCard(event);
-      expect(event.stopPropagation).to.have.been.calledOnce;
-    });
-
-    it('sets state.activeCard to null', () => {
-      const event = { stopPropagation: sinon.stub() };
-      wrapper.instance().closeCard(event);
-      expect(wrapper.state('activeCard')).to.be.null;
-    });
-  });
 
   describe('render()', () => {
     describe('root element', () => {
@@ -72,10 +49,6 @@ describe('GetInvolved', () => {
     describe('nested elements', () => {
       it('contains an h6', () => {
         expect(wrapper.find('h6')).to.have.length(1);
-      });
-
-      it('contains a div with a .story class', () => {
-        expect(wrapper.find(`.${classes.story}`)).to.have.length(1);
       });
 
       it('contains a div with a .positions class', () => {
