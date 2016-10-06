@@ -7,8 +7,8 @@ const { default: reducer, SET_THEME, setTheme } = uiModule;
 describe('[Redux] UIModule', () => {
   describe('reducer', () => {
     describe('default state', () => {
-      it('theme = "secondary"', () => {
-        expect(reducer(undefined, {}).get('theme')).to.equal('secondary');
+      it('theme = "primary"', () => {
+        expect(reducer(undefined, {}).get('theme')).to.equal('primary');
       });
     });
 

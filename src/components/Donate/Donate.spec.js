@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import Button from '../Button/Button';
 import Container from '../Container/Container';
-import Donate from './Donate';
+import { Donate } from './Donate';
 import ImageContainer from '../ImageContainer/ImageContainer';
 import classes from './Donate.scss';
 

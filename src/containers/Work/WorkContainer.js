@@ -1,14 +1,8 @@
-import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
-import { setTheme } from '../../redux/modules/ui/uiModule';
+import React from 'react';
 import Work from '../../components/Work/Work';
 
-export const WorkContainer = (props) => (
-  <Work setTheme={props.setTheme} />
+export const WorkContainer = () => (
+  <Work />
 );
 
-WorkContainer.propTypes = {
-  setTheme: PropTypes.func.isRequired
-};
-
-export default connect(null, { setTheme })(WorkContainer);
+export default WorkContainer;

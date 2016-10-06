@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
 import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
+import secondaryTheme from '../../containers/secondaryTheme/secondaryTheme';
 import classes from './Contact.scss';
 
-class Contact extends Component {
+export class Contact extends Component {
 
   componentDidMount() {
     // eslint-disable-next-line
@@ -44,4 +45,4 @@ class Contact extends Component {
   }
 }
 
-export default Contact;
+export default secondaryTheme(Contact);

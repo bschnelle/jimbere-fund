@@ -5,7 +5,7 @@ export const SET_THEME = 'ui/SET_THEME';
 
 // Reducer
 const initialState = fromJS({
-  theme: 'secondary'
+  theme: 'primary'
 });
 
 export default (state = initialState, action) => {

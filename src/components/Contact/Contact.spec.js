@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js';
-import Contact from './Contact';
+import { Contact } from './Contact';
 import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
 import classes from './Contact.scss';

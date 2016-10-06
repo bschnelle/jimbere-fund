@@ -5,9 +5,10 @@ import HomeApproach from '../HomeApproach/HomeApproach';
 import HomeProcess from '../HomeProcess/HomeProcess';
 import HomePurpose from '../HomePurpose/HomePurpose';
 import HomeStory from '../HomeStory/HomeStory';
+import secondaryTheme from '../../containers/secondaryTheme/secondaryTheme';
 import classes from './Home.scss';
 
-const Home = (props) => {
+export const Home = (props) => {
   const scrollToFacts = () => {
     const duration = 750;
     const el = document.getElementById('facts');
@@ -34,14 +35,15 @@ const Home = (props) => {
     });
   };
 
+  const { isSmall } = props;
   return (
     <div className={classes.home}>
       <HomeLanding onScrollClick={scrollToFacts} />
-      <HomeFacts id="facts" isSmall={props.isSmall} />
+      <HomeFacts id="facts" isSmall={isSmall} />
       <HomePurpose />
       <HomeStory />
-      <HomeApproach isSmall={props.isSmall} />
-      <HomeProcess isSmall={props.isSmall} />
+      <HomeApproach isSmall={isSmall} />
+      <HomeProcess isSmall={isSmall} />
     </div>
   );
 };
@@ -50,4 +52,4 @@ Home.propTypes = {
   isSmall: PropTypes.bool.isRequired
 };
 
-export default Home;
+export default secondaryTheme(Home);

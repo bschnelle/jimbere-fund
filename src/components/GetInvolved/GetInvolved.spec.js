@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
-import GetInvolved from './GetInvolved';
+import { GetInvolved } from './GetInvolved';
 import classes from './GetInvolved.scss';
 
 describe('GetInvolved', () => {

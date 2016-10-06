@@ -27,7 +27,7 @@
       flex: 1 1 auto;
       position: relative;
 
-      .positions, .story {
+      .positions {
         bottom: 0;
         cursor: pointer;
         height: 15.5rem;
@@ -119,24 +119,6 @@
           }
         }
       }
-
-      .story {
-        background-color: transparentize($primaryColor1, .2);
-        color: $alternateTextColor;
-        right: 50%;
-
-        .content > div {
-          margin-left: auto;
-          margin-right: auto;
-          max-width: 800px;
-          text-align: justify;
-        }
-
-        &.active {
-          background-color: $primaryColor1;
-          right: 0;
-        }
-      }
     }
 
     &.header {
@@ -165,7 +147,7 @@
     &.cards {
       flex: auto;
 
-      .positions, .story {
+      .positions {
         height: auto;
         transition: none;
         -webkit-tap-highlight-color: transparent;
@@ -197,10 +179,6 @@
             margin-bottom: 0;
           }
         }
-      }
-
-      .story {
-        margin: 3rem .75rem 3rem 1.5rem;
       }
     }
 

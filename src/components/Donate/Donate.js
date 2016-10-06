@@ -2,9 +2,10 @@ import React from 'react';
 import Button from '../Button/Button';
 import ImageContainer from '../ImageContainer/ImageContainer';
 import Container from '../Container/Container';
+import secondaryTheme from '../../containers/secondaryTheme/secondaryTheme';
 import classes from './Donate.scss';
 
-const Donate = () => (
+export const Donate = () => (
   <ImageContainer className={classes.imageContainer} src="/images/school-o.jpg">
     <Container className={classes.donate} title="Donate">
       <div>
@@ -22,4 +23,4 @@ const Donate = () => (
   </ImageContainer>
 );
 
-export default Donate;
+export default secondaryTheme(Donate);
