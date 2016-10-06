@@ -1,16 +1,11 @@
 @import '../../styles/config';
 
 .readMore {
-  max-height: 0px;
-  overflow: hidden;
-  transition: max-height $transitionDuration ease-out, visibility 0ms ease $transitionDuration;
-  visibility: hidden;
+  display: none;
 }
 
 .readMoreOpen {
-  max-height: 450px;
-  transition: max-height $transitionDuration ease-out, visibility 0ms ease 0ms;
-  visibility: visible;
+  display: block;
 }
 
 .readMoreButton {
@@ -19,5 +14,6 @@
 
 .story {
   height: auto;
+  text-align: justify;
   width: 100%;
 }
