@@ -24,8 +24,8 @@ describe('Fact', () => {
     const wrapper = shallow(<Fact body={body} header={header} />);
     const container = wrapper.find(`.${classes.fact}`);
     expect(container.contains([
-      <h4>{header}</h4>,
-      <span>{body}</span>
+      <div><h4>{header}</h4></div>,
+      <div><span>{body}</span></div>
     ])).to.be.true;
   });
 });

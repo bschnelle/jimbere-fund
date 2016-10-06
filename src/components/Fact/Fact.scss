@@ -11,17 +11,23 @@
   position: relative;
   text-align: center;
 
-  > h4 {
-    color: $primaryColor1;
-    margin: auto;
-    text-transform: none;
-  }
+  > div {
+    align-items: center;
+    display: flex;
+    flex: 1;
 
-  > span {
-    color: $alternateTextColor;
-    display: block;
-    margin: auto;
-    max-width: 15rem;
+    > h4 {
+      color: $primaryColor1;
+      margin: auto;
+      text-transform: none;
+    }
+
+    > span {
+      color: $alternateTextColor;
+      display: block;
+      margin: auto;
+      max-width: 15rem;
+    }
   }
 }
 
@@ -29,12 +35,14 @@
   .fact {
     height: auto;
 
-    > h4 {
-      margin: 2rem auto;
-    }
+    > div {
+      > h4 {
+        margin: 2rem auto;
+      }
 
-    > span {
-      margin: 1rem auto;
+      > span {
+        margin: 1rem auto;
+      }
     }
   }
 }
