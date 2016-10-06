@@ -31,6 +31,12 @@ describe('Home', () => {
       it('has props.id equal to "facts"', () => {
         expect(wrapper.find(HomeFacts).prop('id')).to.equal('facts');
       });
+
+      it('has props.isSmall of the same name', () => {
+        const isSmall = true;
+        wrapper.setProps({ isSmall });
+        expect(wrapper.find(HomeFacts).prop('isSmall')).to.equal(isSmall);
+      });
     });
 
     describe('HomePurpose', () => {
@@ -40,7 +46,7 @@ describe('Home', () => {
     });
 
     describe('HomeApproach', () => {
-      it('has is passed props.isSmall of the same name', () => {
+      it('has props.isSmall of the same name', () => {
         const isSmall = true;
         wrapper.setProps({ isSmall });
         expect(wrapper.find(HomeApproach).prop('isSmall')).to.equal(isSmall);
@@ -48,7 +54,7 @@ describe('Home', () => {
     });
 
     describe('HomeProcess', () => {
-      it('has is passed props.isSmall of the same name', () => {
+      it('has props.isSmall of the same name', () => {
         const isSmall = true;
         wrapper.setProps({ isSmall });
         expect(wrapper.find(HomeProcess).prop('isSmall')).to.equal(isSmall);

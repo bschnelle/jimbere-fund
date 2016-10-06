@@ -3,27 +3,38 @@
 .fact {
   background-color: darken($primaryColor1, 10%);
   border-radius: 1px;
-  height: 18rem;
+  display: flex;
+  flex-direction: column;
+  height: 15rem;
   margin: .5rem;
   padding: 1rem;
   position: relative;
   text-align: center;
 
-  > h3 {
+  > h4 {
     color: $primaryColor1;
+    margin: auto;
+    text-transform: none;
   }
 
-  > p {
+  > span {
     color: $alternateTextColor;
+    display: block;
+    margin: auto;
+    max-width: 15rem;
   }
 }
 
-@media (max-width: $small) {
+@media (max-width: $extraSmall) {
   .fact {
     height: auto;
 
-    > h3 {
-      margin: 2rem 0;
+    > h4 {
+      margin: 2rem auto;
+    }
+
+    > span {
+      margin: 1rem auto;
     }
   }
 }

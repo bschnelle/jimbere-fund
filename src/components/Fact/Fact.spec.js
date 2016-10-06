@@ -20,12 +20,12 @@ describe('Fact', () => {
     expect(wrapper.find(`.${classes.fact}`)).to.have.length(1);
   });
 
-  it('contains an h3 with props.header and p with props.body', () => {
+  it('contains an h4 with props.header and a span with props.body', () => {
     const wrapper = shallow(<Fact body={body} header={header} />);
     const container = wrapper.find(`.${classes.fact}`);
     expect(container.contains([
-      <h3>{header}</h3>,
-      <p>{body}</p>
+      <h4>{header}</h4>,
+      <span>{body}</span>
     ])).to.be.true;
   });
 });

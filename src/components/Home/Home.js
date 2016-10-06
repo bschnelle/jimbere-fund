@@ -36,7 +36,7 @@ const Home = (props) => {
   return (
     <div className={classes.home}>
       <HomeLanding onScrollClick={scrollToFacts} />
-      <HomeFacts id="facts" />
+      <HomeFacts id="facts" isSmall={props.isSmall} />
       <HomePurpose />
       <HomeApproach isSmall={props.isSmall} />
       <HomeProcess isSmall={props.isSmall} />

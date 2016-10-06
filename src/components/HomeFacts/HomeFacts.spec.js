@@ -37,8 +37,13 @@ describe('HomeFacts', () => {
       expect(wrapper.find('div').is(`.${classes.facts}`)).to.be.true;
     });
 
-    it('renders six Fact components', () => {
+    it('renders 12 Fact components', () => {
       const wrapper = shallow(<HomeFacts id={id} />);
+      expect(wrapper.find(Fact)).to.have.length(12);
+    });
+
+    it('renders 6 Fact components if props.isSmall is true', () => {
+      const wrapper = shallow(<HomeFacts id={id} isSmall />);
       expect(wrapper.find(Fact)).to.have.length(6);
     });
 
