@@ -3,16 +3,16 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import Container from '../Container/Container';
-import Team from './Team';
-import classes from './Team.scss';
+import People from './People';
+import classes from './People.scss';
 
 let setTheme;
 let wrapper;
 
-describe('Team', () => {
+describe('People', () => {
   beforeEach(() => {
     setTheme = sinon.stub();
-    wrapper = shallow(<Team setTheme={setTheme} />);
+    wrapper = shallow(<People setTheme={setTheme} />);
   });
 
   describe('componentWillMount()', () => {
@@ -35,19 +35,13 @@ describe('Team', () => {
       });
 
       describe('props', () => {
-        it('className = .team', () => {
-          expect(wrapper.prop('className')).to.equal(classes.team);
+        it('className = .people', () => {
+          expect(wrapper.prop('className')).to.equal(classes.people);
         });
 
-        it('title = "Team"', () => {
-          expect(wrapper.prop('title')).to.equal('Team');
+        it('title = "People"', () => {
+          expect(wrapper.prop('title')).to.equal('People');
         });
-      });
-    });
-
-    describe('nested elements', () => {
-      it('renders an h6 with "Coming soon!"', () => {
-        expect(wrapper.contains(<h6>Coming soon!</h6>)).to.be.true;
       });
     });
   });

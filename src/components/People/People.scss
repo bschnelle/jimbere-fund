@@ -1,0 +1,27 @@
+@import '../../styles/config';
+
+.people {
+  min-height: 100vh;
+  padding-bottom: 6rem;
+  text-align: center;
+
+  .group {
+    > h4 {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .member {
+    margin-bottom: 1.5rem;
+
+    > span {
+      display: block;
+      margin-bottom: .2rem;
+
+      &:first-of-type {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+    }
+  }
+}

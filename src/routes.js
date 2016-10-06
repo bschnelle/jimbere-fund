@@ -10,7 +10,7 @@ import HomeCont from './containers/Home/HomeContainer';
 import GetInvolvedCont from './containers/GetInvolved/GetInvolvedContainer';
 import WorkCont from './containers/Work/WorkContainer';
 import SignUpCont from './containers/SignUp/SignUpContainer';
-import TeamCont from './containers/Team/TeamContainer';
+import PeopleCont from './containers/People/PeopleContainer';
 
 // TODO create/move to UI Service
 const onChange = () => { document.body.scrollTop = document.documentElement.scrollTop = 0; };
@@ -27,7 +27,7 @@ const routes = (
     <Route path="/get-involved" component={GetInvolvedCont} />
     <Route path="/work" component={WorkCont} />
     <Route path="/sign-up" components={{ simple: SignUpCont }} />
-    <Route path="/team" component={TeamCont} />
+    <Route path="/people" component={PeopleCont} />
   </Route>
 );
 

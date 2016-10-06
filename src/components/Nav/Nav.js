@@ -24,7 +24,7 @@ class Nav extends Component {
     this.links = [
       { label: 'Home', to: '/' },
       { label: 'Work', to: '/work' },
-      { label: 'Team', to: '/team' },
+      { label: 'People', to: '/people' },
       { label: 'Get Involved', to: '/get-involved' },
       { label: 'Donate', to: '/donate' },
       { label: 'Blog', to: '/blog' },
