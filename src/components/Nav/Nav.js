@@ -23,7 +23,7 @@ class Nav extends Component {
     this.toggleMenu = this.toggleMenu.bind(this);
     this.links = [
       { label: 'Home', to: '/' },
-      { label: 'Projects', to: '/projects' },
+      { label: 'Work', to: '/work' },
       { label: 'Team', to: '/team' },
       { label: 'Get Involved', to: '/get-involved' },
       { label: 'Donate', to: '/donate' },

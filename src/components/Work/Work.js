@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import Container from '../Container/Container';
-import classes from './Projects.scss';
+import classes from './Work.scss';
 
-class Projects extends Component {
+class Work extends Component {
 
   static propTypes = {
     setTheme: PropTypes.func.isRequired
@@ -18,7 +18,7 @@ class Projects extends Component {
 
   render() {
     return (
-      <Container className={classes.projects} title="Projects">
+      <Container className={classes.work} title="Work">
         <div>
           <h6>Coming soon!</h6>
         </div>
@@ -27,4 +27,4 @@ class Projects extends Component {
   }
 }
 
-export default Projects;
+export default Work;

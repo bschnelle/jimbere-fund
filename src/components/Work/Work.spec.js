@@ -3,16 +3,16 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import Container from '../Container/Container';
-import Projects from './Projects';
-import classes from './Projects.scss';
+import Work from './Work';
+import classes from './Work.scss';
 
 let setTheme;
 let wrapper;
 
-describe('Projects', () => {
+describe('Work', () => {
   beforeEach(() => {
     setTheme = sinon.stub();
-    wrapper = shallow(<Projects setTheme={setTheme} />);
+    wrapper = shallow(<Work setTheme={setTheme} />);
   });
 
   describe('componentWillMount()', () => {
@@ -35,12 +35,12 @@ describe('Projects', () => {
       });
 
       describe('props', () => {
-        it('className = .projects', () => {
-          expect(wrapper.prop('className')).to.equal(classes.projects);
+        it('className = .work', () => {
+          expect(wrapper.prop('className')).to.equal(classes.work);
         });
 
-        it('title = "Projects"', () => {
-          expect(wrapper.prop('title')).to.equal('Projects');
+        it('title = "Work"', () => {
+          expect(wrapper.prop('title')).to.equal('Work');
         });
       });
     });

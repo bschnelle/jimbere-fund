@@ -8,7 +8,7 @@ import ContactCont from './containers/Contact/ContactContainer';
 import DonateCont from './containers/Donate/DonateContainer';
 import HomeCont from './containers/Home/HomeContainer';
 import GetInvolvedCont from './containers/GetInvolved/GetInvolvedContainer';
-import ProjectsCont from './containers/Projects/ProjectsContainer';
+import WorkCont from './containers/Work/WorkContainer';
 import SignUpCont from './containers/SignUp/SignUpContainer';
 import TeamCont from './containers/Team/TeamContainer';
 
@@ -25,7 +25,7 @@ const routes = (
     <Route path="/contact" component={ContactCont} />
     <Route path="/donate" component={DonateCont} />
     <Route path="/get-involved" component={GetInvolvedCont} />
-    <Route path="/projects" component={ProjectsCont} />
+    <Route path="/work" component={WorkCont} />
     <Route path="/sign-up" components={{ simple: SignUpCont }} />
     <Route path="/team" component={TeamCont} />
   </Route>
