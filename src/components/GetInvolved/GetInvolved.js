@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import Button from '../Button/Button';
 import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
-import classes from './JoinUs.scss';
+import classes from './GetInvolved.scss';
 
-class JoinUs extends Component {
+class GetInvolved extends Component {
   constructor(props) {
     super(props);
     this.state = { activeCard: undefined };
@@ -83,7 +83,7 @@ class JoinUs extends Component {
 
     return (
       <ImageContainer className={classes.imageContainer} src="/images/new_york-o.jpg">
-        <Container className={classes.container} fluid title="Join Us">
+        <Container className={classes.container} fluid title="Get Involved">
           <div className={classes.joinUs}>
             <div className={classes.header}>
               <div>
@@ -110,4 +110,4 @@ class JoinUs extends Component {
   }
 }
 
-export default JoinUs;
+export default GetInvolved;

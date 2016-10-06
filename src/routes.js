@@ -7,7 +7,7 @@ import BlogPostListContainer from './containers/BlogPostList/BlogPostListContain
 import ContactContainer from './containers/Contact/ContactContainer';
 import DonateContainer from './containers/Donate/DonateContainer';
 import HomeContainer from './containers/Home/HomeContainer';
-import JoinUsContainer from './containers/JoinUs/JoinUsContainer';
+import GetInvolvedContainer from './containers/GetInvolved/GetInvolvedContainer';
 import ProjectsContainer from './containers/Projects/ProjectsContainer';
 import SignUpContainer from './containers/SignUp/SignUpContainer';
 import TeamContainer from './containers/Team/TeamContainer';
@@ -24,7 +24,7 @@ const routes = (
     </Route>
     <Route path="/contact" component={ContactContainer} />
     <Route path="/donate" component={DonateContainer} />
-    <Route path="/join-us" component={JoinUsContainer} />
+    <Route path="/get-involved" component={GetInvolvedContainer} />
     <Route path="/projects" component={ProjectsContainer} />
     <Route path="/sign-up" components={{ simple: SignUpContainer }} />
     <Route path="/team" component={TeamContainer} />

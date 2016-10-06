@@ -4,12 +4,12 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
-import JoinUs from './JoinUs';
-import classes from './JoinUs.scss';
+import GetInvolved from './GetInvolved';
+import classes from './GetInvolved.scss';
 
-describe('JoinUs', () => {
+describe('GetInvolved', () => {
   let wrapper;
-  beforeEach(() => { wrapper = shallow(<JoinUs />); });
+  beforeEach(() => { wrapper = shallow(<GetInvolved />); });
 
   describe('onCardClick()', () => {
     it('sets state.activeCard to argument', () => {
@@ -63,8 +63,8 @@ describe('JoinUs', () => {
           expect(container.prop('fluid')).to.be.true;
         });
 
-        it('title = "Join Us"', () => {
-          expect(container.prop('title')).to.equal('Join Us');
+        it('title = "Get Involved"', () => {
+          expect(container.prop('title')).to.equal('Get Involved');
         });
       });
     });
