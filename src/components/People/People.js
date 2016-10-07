@@ -15,7 +15,7 @@ const People = () => {
     {
       name: 'U.S. Board of Directors',
       members: [
-        { name: 'Moses Nkosilathi Vuma', title: 'Chairman' },
+        { name: 'Moses Nkosilathi Vuma', title: 'Chair' },
         { name: 'Rachel Henderson', title: 'Secretary' },
         { name: 'Hemant Wandhwani', title: 'Treasurer' },
         { name: 'Adele Kibasumba', title: 'Member' },
@@ -25,11 +25,11 @@ const People = () => {
     {
       name: 'D.R.C. Board of Directors',
       members: [
+        { name: 'Adele Kibasumba', title: 'Chair' },
+        { name: 'Muhamiriza Neza Aline', title: 'Secretary' },
+        { name: 'Ntare Paul', title: 'Treasurer' },
         { name: 'Lazare R. Sebitereko', title: 'Member' },
-        { name: 'Sebaganwa Gasore Zébédée', title: 'Member' },
-        { name: 'Adele Kibasumba', title: 'Member' },
-        { name: 'Muhamiriza Neza Aline', title: 'Member' },
-        { name: 'Ntare Paul', title: 'Member' }
+        { name: 'Sebaganwa Gasore Zébédée', title: 'Member' }
       ]
     }
   ];

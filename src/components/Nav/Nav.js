@@ -38,6 +38,7 @@ class Nav extends Component {
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.addBackgroundOnScroll);
+    document.body.style.overflow = '';
   }
 
   addBackgroundOnScroll() {
@@ -55,7 +56,10 @@ class Nav extends Component {
   }
 
   toggleMenu() {
-    this.setState({ open: !this.state.open });
+    const open = !this.state.open;
+    this.setState({ open });
+    /* prevent background scroll when menu is open */
+    document.body.style.overflow = open ? 'hidden' : '';
   }
 
   render() {

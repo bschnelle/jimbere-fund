@@ -57,6 +57,13 @@ describe('Nav', () => {
       window.removeEventListener.restore();
       done();
     });
+
+    it('sets document.body.style.overflow to an empty string', () => {
+      const instance = shallow(<Nav />).instance();
+      document.body.style.overflow = 'hidden';
+      instance.componentWillUnmount();
+      expect(document.body.style.overflow).to.equal('');
+    });
   });
 
   describe('addBackgroundOnScroll()', () => {
@@ -68,6 +75,19 @@ describe('Nav', () => {
       const wrapper = shallow(<Nav />);
       wrapper.instance().toggleMenu();
       expect(wrapper.state('open')).to.be.true;
+    });
+
+    it('sets document.body.style.overflow to "hidden" when state.open is true', () => {
+      const instance = shallow(<Nav />).instance();
+      instance.toggleMenu();
+      expect(document.body.style.overflow).to.equal('hidden');
+    });
+
+    it('sets document.body.style.overflow to an empty string when state.open is false', () => {
+      const wrapper = shallow(<Nav />);
+      wrapper.setState({ open: true });
+      wrapper.instance().toggleMenu();
+      expect(document.body.style.overflow).to.equal('');
     });
   });
 
