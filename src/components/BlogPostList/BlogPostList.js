@@ -6,7 +6,13 @@ import BlogPostListItem from '../BlogPostListItem/BlogPostListItem';
 import Loader from '../Loader/Loader';
 import classes from './BlogPostList.scss';
 
-const BlogPostList = (props) => (
+const BlogPostList = (props) => (!props.posts.size
+? (
+  <h6 className={classes.notFound}>
+    We're still working on our first post! Please check back soon.
+  </h6>
+)
+: (
   <div>
     <FlipMove
       className={classes.posts}
@@ -29,7 +35,7 @@ const BlogPostList = (props) => (
       </div>
     )}
   </div>
-);
+));
 
 BlogPostList.propTypes = {
   loading: PropTypes.bool,

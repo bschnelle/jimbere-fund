@@ -14,7 +14,7 @@ export class BlogPostListContainer extends Component {
   }
 
   componentWillMount() {
-    this.props.getPosts();
+    // this.props.getPosts();
   }
 
   render() {
