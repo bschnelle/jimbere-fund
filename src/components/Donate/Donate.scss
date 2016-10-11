@@ -4,7 +4,7 @@
   align-items: center;
   background-color: rgba(0,0,0,.4);
   color: $alternateTextColor;
-  height: 100vh;
+  padding-bottom: 6rem;
 
   > div {
     display: flex;
@@ -26,6 +26,34 @@
 
 .imageContainer {
   background-color: #333;
+  flex: 1;
+}
+
+.widget {
+  background-color: #fff;
+  display: flex;
+  padding: 3rem;
+
+  > div {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+
+    .content {
+      max-width: 500px;
+
+      h4 {
+        color: $primaryColor1;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
 }
 
 @media (max-width: $small) {
@@ -36,6 +64,13 @@
 
     &:nth-of-type(2) {
       flex: auto;
+    }
+  }
+
+  .widget {
+    padding: 3rem 0;
+    > div:first-of-type {
+      display: none;
     }
   }
 }

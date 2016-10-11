@@ -33,25 +33,37 @@ class Donate extends Component {
 
   render() {
     return (
-      <ImageContainer className={classes.imageContainer} src="/images/school-o.jpg">
-        <Container className={classes.donate} title="Donate">
-          <div>
+      <div>
+        <ImageContainer className={classes.imageContainer} src="/images/school-o.jpg">
+          <Container className={classes.donate} title="Donate">
             <div>
               <div>
-                <h6>Congo is among the most destitute countries on Earth.</h6>
-                <p>You can help change that.</p>
+                <div>
+                  <h6>Congo is among the most destitute countries on Earth.</h6>
+                  <p>You can help change that.</p>
+                </div>
               </div>
             </div>
-            <div>
-              <div id="razoo_donation_widget">
-                <span>
-                  <a href="https://www.razoo.com/story/Jimbere-Fund">Donate to Jimbere Fund, Inc.</a> at <a href="https://www.razoo.com/">Razoo</a>
-                </span>
-              </div>
+          </Container>
+        </ImageContainer>
+
+        <div className={classes.widget}>
+          <div>
+            <div className={classes.content}>
+              <h4>Thank You</h4>
+              <p>
+                By choosing to support Jimbere Fund you're giving poverty
+                stricken communities in Congo hope for a better tomorrow.
+              </p>
             </div>
           </div>
-        </Container>
-      </ImageContainer>
+          <div id="razoo_donation_widget">
+            <span>
+              <a href="https://www.razoo.com/story/Jimbere-Fund">Donate to Jimbere Fund, Inc.</a> at <a href="https://www.razoo.com/">Razoo</a>
+            </span>
+          </div>
+        </div>
+      </div>
     );
   }
 }
