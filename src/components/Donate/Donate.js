@@ -36,14 +36,8 @@ class Donate extends Component {
       <div>
         <ImageContainer className={classes.imageContainer} src="/images/school-o.jpg">
           <Container className={classes.donate} title="Donate">
-            <div>
-              <div>
-                <div>
-                  <h6>Congo is among the most destitute countries on Earth.</h6>
-                  <p>You can help change that.</p>
-                </div>
-              </div>
-            </div>
+            <h6>Congo is among the most destitute countries on Earth.</h6>
+            <p>You can help change that.</p>
           </Container>
         </ImageContainer>
 

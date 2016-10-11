@@ -5,22 +5,10 @@
   background-color: rgba(0,0,0,.4);
   color: $alternateTextColor;
   padding-bottom: 6rem;
+  text-align: center;
 
-  > div {
-    display: flex;
-    flex-direction: column;
-
-    > div {
-      display: flex;
-      flex: 0 0 50%;
-      flex-wrap: wrap;
-      justify-content: center;
-      text-align: center;
-
-      h6 {
-        margin: 0;
-      }
-    }
+  h6 {
+    margin: 0;
   }
 }
 
