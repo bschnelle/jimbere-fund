@@ -21,7 +21,10 @@ const BlogPost = (props) => {
         <span>|</span>
         <span>{moment(new Date(post.get('date'))).format('MMMM D, YYYY')}</span>
       </div>
-      <div dangerouslySetInnerHTML={{ __html: post.get('content') }} />
+      <div
+        className={classes['markdown-body']}
+        dangerouslySetInnerHTML={{ __html: post.get('content') }}
+      />
     </div>
   );
 };

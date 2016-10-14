@@ -1,3 +1,6 @@
+@import '../../styles/config';
+@import '~github-markdown-css/github-markdown';
+
 .header {
   margin-bottom: 2rem;
 
@@ -8,6 +11,12 @@
   > span:nth-of-type(2) {
     padding: 0 .5rem;
   }
+}
+
+/* github-markdown-css overrides */
+.markdown-body {
+  font-family: $bodyFont;
+  font-size: 1.3rem;
 }
 
 .notFound {
