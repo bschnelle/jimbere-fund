@@ -4,7 +4,7 @@ import Container from '../Container/Container';
 import secondaryTheme from '../../containers/secondaryTheme/secondaryTheme';
 import classes from './Donate.scss';
 
-class Donate extends Component {
+export class Donate extends Component {
 
   componentDidMount() {
     window.r_params = {

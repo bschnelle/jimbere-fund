@@ -1,17 +1,32 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import Button from '../Button/Button';
 import Container from '../Container/Container';
 import { Donate } from './Donate';
 import ImageContainer from '../ImageContainer/ImageContainer';
 import classes from './Donate.scss';
 
 describe('Donate', () => {
-  it('renders a root ImageContainer with a .imageContainer class', () => {
+  it('renders a root div', () => {
     const wrapper = shallow(<Donate />);
-    expect(wrapper.type()).to.equal(ImageContainer);
-    expect(wrapper.is(`.${classes.imageContainer}`)).to.be.true;
+    expect(wrapper.type()).to.equal('div');
+  });
+
+  describe('ImageContainer props', () => {
+    let imageContainer;
+
+    beforeEach(() => {
+      const wrapper = shallow(<Donate />);
+      imageContainer = wrapper.find(ImageContainer);
+    });
+
+    it('className = .imageContainer', () => {
+      expect(imageContainer.prop('className')).to.equal(classes.imageContainer);
+    });
+
+    it('src = "/images/school-o.jpg"', () => {
+      expect(imageContainer.prop('src')).to.equal('/images/school-o.jpg');
+    });
   });
 
   describe('Container', () => {
@@ -37,19 +52,6 @@ describe('Donate', () => {
 
       it('contains a p', () => {
         expect(container.find('p')).to.have.length(1);
-      });
-
-      describe('Button with the following props', () => {
-        let button;
-        beforeEach(() => { button = container.find(Button); });
-
-        it('label = "Give Now"', () => {
-          expect(button.prop('label')).to.equal('Give Now');
-        });
-
-        it('href = "https://www.razoo.com/us/story/Jimbere-Fund"', () => {
-          expect(button.prop('href')).to.equal('https://www.razoo.com/us/story/Jimbere-Fund');
-        });
       });
     });
   });
