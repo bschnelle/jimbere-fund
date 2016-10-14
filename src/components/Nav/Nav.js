@@ -71,7 +71,7 @@ class Nav extends Component {
     if (addBackground) expandClassName += ` ${classes.expandBackground}`;
 
     return (
-      <div className={className}>
+      <div id="jf-nav" className={className}>
         <div className={expandClassName} />
 
         <div className={classes.logoWrapper}>

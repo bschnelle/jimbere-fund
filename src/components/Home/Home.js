@@ -12,8 +12,9 @@ export const Home = (props) => {
   const scrollToFacts = () => {
     const duration = 750;
     const el = document.getElementById('facts');
+    const navYOffset = document.getElementById('jf-nav').offsetHeight;
     const startingY = window.pageYOffset;
-    const diff = el.offsetTop - startingY;
+    const diff = el.offsetTop - startingY - navYOffset;
     let start;
 
     /* [0-1] */
