@@ -28,11 +28,11 @@ describe('BlogPostListContainer', () => {
     );
   });
 
-  describe('componentWillMount()', () => {
+  /* describe('componentWillMount()', () => {
     it('calls props.getPosts()', () => {
       expect(getPosts).to.have.been.calledOnce;
     });
-  });
+  }); */
 
   describe('render()', () => {
     it('renders a BlogPostList', () => {
