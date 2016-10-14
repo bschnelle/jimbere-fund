@@ -72,7 +72,7 @@ class Nav extends Component {
 
     return (
       <div id="jf-nav" className={className}>
-        <div className={expandClassName} />
+        <div className={expandClassName}><div /></div>
 
         <div className={classes.logoWrapper}>
           <Logo className={classes.logo} link secondary={secondary} />
@@ -94,7 +94,7 @@ class Nav extends Component {
           onClick={toggleMenu}
           open={open}
         />
-
+        
         <div className={classes.content}>
           <ul>
             {links.map((link) =>

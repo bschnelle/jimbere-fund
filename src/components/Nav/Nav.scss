@@ -10,7 +10,7 @@
   width: 100%;
   z-index: 3;
 
-  .content {
+  .content, .overlay {
     align-items: center;
     display: flex;
     height: 100vh;
@@ -52,11 +52,25 @@
     transition: all $transitionDuration;
     width: 100%;
     z-index: 0;
+
+    > div {
+      background-color: rgba(225, 225, 225, 0);
+      bottom: 0;
+      height: 7px;
+      position: absolute;
+      width: 100%;
+    }
   }
 
   .expandBackground {
     transform: none;
     transition: all $transitionDuration;
+
+    > div {
+      background-color: rgba(225, 225, 225, .5);
+      transform: translateY(7px);
+      transition: background-color $transitionDuration ease-out $transitionDuration;
+    }
   }
 
   .menuIconButton {
@@ -75,34 +89,34 @@
   .logoWrapper {
     flex: 1;
   }
-}
 
-.open {
-  .content {
-    opacity: 1;
-    transform: none;
-    transition-delay: 300ms;
-    visibility: visible;
-
-    .navItem {
+  &.open {
+    .content {
       opacity: 1;
       transform: none;
+      transition-delay: 300ms;
+      visibility: visible;
 
-      @for $i from 1 through 7 {
-        &:nth-of-type(#{$i}) {
-          transition: transform 500ms ease #{250 + $i * 50}ms, opacity 500ms ease #{250 + $i * 50}ms;
+      .navItem {
+        opacity: 1;
+        transform: none;
+
+        @for $i from 1 through 7 {
+          &:nth-of-type(#{$i}) {
+            transition: transform 500ms ease #{250 + $i * 50}ms, opacity 500ms ease #{250 + $i * 50}ms;
+          }
         }
+      }
+
+      .social {
+        opacity: 1;
+        transition: opacity $transitionDuration ease-out $transitionDuration;
       }
     }
 
-    .social {
-      opacity: 1;
-      transition: opacity $transitionDuration ease-out $transitionDuration;
+    .expand {
+      transform: translateY(100vh);
     }
-  }
-
-  .expand {
-    transform: translateY(100vh);
   }
 }
 
