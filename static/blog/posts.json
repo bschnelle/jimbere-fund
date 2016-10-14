@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "author": "Benjamin Schnelle",
+      "date": "Thu Aug 18 2016 08:03:36 GMT-0600 (MDT)",
+      "image": "https://images.unsplash.com/profile-1447095712521-621e3464a06d?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=500\u0026w=500\u0026s=3181f8beceabf958048caa56e25d2b37",
+      "preview": "This is the first preview.",
+      "slug": "temp-1",
+      "title": "Temp Post 1",
+      "content": "<div><h5>Content 1</h3><p>Some content about something 1...</p></div>"
+    },
+    {
+      "author": "Obadias Ndaba",
+      "date": "Thu Aug 18 2016 08:03:36 GMT-0600 (MDT)",
+      "image": "https://images.unsplash.com/profile-1447095712521-621e3464a06d?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=500\u0026w=500\u0026s=3181f8beceabf958048caa56e25d2b37",
+      "preview": "This is the second preview.",
+      "slug": "temp-2",
+      "title": "Temp Post 2",
+      "content": "<div><h5>Content 2</h3><p>Some content about something 2...</p></div>"
+    },
+    {
+      "author": "Benjamin Schnelle",
+      "date": "Thu Aug 18 2016 08:03:36 GMT-0600 (MDT)",
+      "image": "https://images.unsplash.com/profile-1447095712521-621e3464a06d?ixlib=rb-0.3.5\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=500\u0026w=500\u0026s=3181f8beceabf958048caa56e25d2b37",
+      "preview": "This is the third preview.",
+      "slug": "temp-3",
+      "title": "Temp Post 3",
+      "content": "<div><h5>Content 3</h3><p>Some content about something 3...</p></div>"
+    }
+  ]
+}

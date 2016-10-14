@@ -1,15 +1,11 @@
 import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
-import { setTheme } from '../../redux/modules/ui/uiModule';
 import Blog from '../../components/Blog/Blog';
 
-export const BlogContainer = (props) => (
-  <Blog setTheme={props.setTheme}>{props.children}</Blog>
-);
+const BlogContainer = (props) => <Blog slug={props.params.slug}>{props.children}</Blog>;
 
 BlogContainer.propTypes = {
   children: PropTypes.node,
-  setTheme: PropTypes.func.isRequired
+  params: PropTypes.object.isRequired
 };
 
-export default connect(null, { setTheme })(BlogContainer);
+export default BlogContainer;

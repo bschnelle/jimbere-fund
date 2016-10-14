@@ -21,7 +21,7 @@ const BlogPostList = (props) => (!props.posts.size
       staggerDurationBy={50}
     >
       {props.posts.map((post) =>
-        <div className={classes.post} key={post.get('ID')}>
+        <div className={classes.post} key={post.get('slug')}>
           <BlogPostListItem post={post} />
         </div>
       )}

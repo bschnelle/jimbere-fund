@@ -17,7 +17,7 @@ const initialState = fromJS({
   error: false,
   found: undefined,
   loading: false,
-  moreAvailable: true,
+  moreAvailable: false,
   posts: []
 });
 
@@ -54,8 +54,8 @@ export default (state = initialState, action) => {
       const newState = state.update('posts', (posts) => posts.concat(fromJS(action.posts)));
       return newState.merge({
         found: action.found,
-        loading: false,
-        moreAvailable: newState.get('posts').size < action.found
+        loading: false
+        // moreAvailable: newState.get('posts').size < action.found
       });
     }
 

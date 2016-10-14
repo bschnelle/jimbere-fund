@@ -1,7 +1,7 @@
 import * as fetch from '../../utils/fetch';
 
 class BlogService {
-  constructor() {
+  /* constructor() {
     this.url = 'https://public-api.wordpress.com/rest/v1.1/sites/jimberefundblog.wordpress.com';
   }
 
@@ -10,11 +10,11 @@ class BlogService {
     return fetch.default(url)
       .then(fetch.handleError)
       .then(fetch.getText);
-  }
+  } */
 
-  getPosts(offset) {
-    let url = `${this.url}/posts`;
-    if (offset) url += `?offset=${offset}`;
+  getPosts() {
+    const url = '/blog/posts.json';
+    // if (offset) url += `?offset=${offset}`;
 
     return fetch.default(url)
       .then(fetch.handleError)

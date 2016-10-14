@@ -1,29 +1,16 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import Container from '../Container/Container';
 import classes from './Blog.scss';
 
-class Blog extends Component {
+const Blog = (props) => (
+  <Container className={classes.blog} fluid={!props.slug} title="Blog">
+    {props.children}
+  </Container>
+);
 
-  static propTypes = {
-    children: PropTypes.node,
-    setTheme: PropTypes.func.isRequired
-  }
-
-  componentWillMount() {
-    this.props.setTheme('primary');
-  }
-
-  componentWillUnmount() {
-    this.props.setTheme('secondary');
-  }
-
-  render() {
-    return (
-      <Container className={classes.blog} fluid title="Blog">
-        {this.props.children}
-      </Container>
-    );
-  }
-}
+Blog.propTypes = {
+  children: PropTypes.node,
+  slug: PropTypes.string
+};
 
 export default Blog;

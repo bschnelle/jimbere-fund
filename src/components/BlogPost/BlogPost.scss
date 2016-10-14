@@ -1,3 +1,15 @@
+.header {
+  margin-bottom: 2rem;
+
+  > h4 {
+    margin-bottom: .5rem;
+  }
+
+  > span:nth-of-type(2) {
+    padding: 0 .5rem;
+  }
+}
+
 .notFound {
   text-align: center;
 }
