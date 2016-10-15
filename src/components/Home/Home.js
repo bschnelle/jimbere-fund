@@ -6,6 +6,7 @@ import HomeProcess from '../HomeProcess/HomeProcess';
 import HomePurpose from '../HomePurpose/HomePurpose';
 import HomeStory from '../HomeStory/HomeStory';
 import secondaryTheme from '../../containers/secondaryTheme/secondaryTheme';
+import * as animations from '../../utils/animations';
 import classes from './Home.scss';
 
 export const Home = (props) => {
@@ -14,26 +15,9 @@ export const Home = (props) => {
     const el = document.getElementById('facts');
     const navYOffset = document.getElementById('jf-nav').offsetHeight;
     const startingY = window.pageYOffset;
-    const diff = el.offsetTop - startingY - navYOffset;
-    let start;
+    const distance = el.offsetTop - startingY - navYOffset;
 
-    /* [0-1] */
-    const easeInOutCubic = (t) => (
-      t < 0.5
-      ? 4 * t * t * t
-      : ((t - 1) * ((2 * t) - 2) * ((2 * t) - 2)) + 1
-    );
-
-    window.requestAnimationFrame(function step(timestamp) {
-      if (!start) start = timestamp;
-      const elapsed = timestamp - start;
-      const percent = Math.min(easeInOutCubic(elapsed / duration), 1);
-      window.scrollTo(0, startingY + (diff * percent));
-
-      if (elapsed < duration) {
-        window.requestAnimationFrame(step);
-      }
-    });
+    animations.scroll(duration, startingY, distance);
   };
 
   const { isSmall } = props;

@@ -3,7 +3,19 @@ import Button from '../Button/Button';
 import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
 import secondaryTheme from '../../containers/secondaryTheme/secondaryTheme';
+import * as animations from '../../utils/animations';
 import classes from './GetInvolved.scss';
+
+const scroll = (e) => {
+  e.stopPropagation();
+  const id = e.currentTarget.dataset.id;
+  const duration = 750;
+  const el = document.getElementById(id).getBoundingClientRect();
+  const navYOffset = document.getElementById('jf-nav').offsetHeight;
+  const startingY = window.pageYOffset;
+  const distance = el.top - startingY - navYOffset;
+  animations.scroll(duration, startingY, distance);
+};
 
 export const GetInvolved = () => (
   <div>
@@ -17,19 +29,19 @@ export const GetInvolved = () => (
           </div>
           <div className={classes.tiles}>
             <div>
-              <div>
+              <div data-id="gi-fundraising" onClick={scroll}>
                 <h5>Start a</h5>
                 <h5>Fundraiser</h5>
               </div>
             </div>
             <div>
-              <div>
+              <div data-id="gi-newsletter" onClick={scroll}>
                 <h5>Newsletter</h5>
                 <h5>Sign up</h5>
               </div>
             </div>
             <div>
-              <div>
+              <div data-id="gi-work-with-us" onClick={scroll}>
                 <h5>Work</h5>
                 <h5>With Us</h5>
               </div>
