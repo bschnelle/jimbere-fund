@@ -12,22 +12,27 @@ export const GetInvolved = () => (
         <div className={classes.joinUs}>
           <div className={classes.header}>
             <div>
-              <h6>We're currently looking for volunteers to fill the following positions.</h6>
+              <h6>We need your time and talents.</h6>
             </div>
           </div>
-          <div className={classes.positions}>
-            <ul>
-              <li>Graphic Designer</li>
-              <li>Web Developer</li>
-              <li>Blogger/Storyteller</li>
-              <li>Photographer/Videographer</li>
-              <li>Financial Manager</li>
-              <li>Strategy & Planning Mgr</li>
-              <li>Brand Manager</li>
-              <li>Int'l Development Mgr</li>
-            </ul>
-            <div className={classes.contact}>
-              <Button label="Contact" to="/contact" />
+          <div className={classes.tiles}>
+            <div>
+              <div>
+                <h5>Start a</h5>
+                <h5>Fundraiser</h5>
+              </div>
+            </div>
+            <div>
+              <div>
+                <h5>Newsletter</h5>
+                <h5>Sign up</h5>
+              </div>
+            </div>
+            <div>
+              <div>
+                <h5>Work</h5>
+                <h5>With Us</h5>
+              </div>
             </div>
           </div>
         </div>
@@ -73,15 +78,15 @@ export const GetInvolved = () => (
 
     <Container id="gi-work-with-us" section title="Work With Us">
       <div className={classes.workWithUs}>
-        <p>
-          We need your time and talents
-        </p>
+        <p>We're always looking for great people to join our cause.</p>
         <div>
           <h4>Jobs</h4>
+          <span />
           <p>There are currently no job openings.  Please check back soon.</p>
         </div>
         <div>
           <h4>Volunteers</h4>
+          <span />
           <p>
             We're currently looking for volunteers with
             skills and expertise in the following fields:
