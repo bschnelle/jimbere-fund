@@ -9,8 +9,8 @@ const Footer = () => (
     <div>
       <div>
         <Logo className={classes.logo} link secondary />
-        <span>Jimbere Fund, Inc. is a 501(c)(3) Nonprofit Organization</span>
-        <span>{`© ${new Date().getFullYear()}`}</span>
+        <span>{`© ${new Date().getFullYear()} Jimbere Fund, Inc.`}</span>
+        <span>A 501(c)(3) Nonprofit Organization</span>
       </div>
     </div>
     <Social secondary />
