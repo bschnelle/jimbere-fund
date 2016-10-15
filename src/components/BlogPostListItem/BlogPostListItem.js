@@ -23,7 +23,7 @@ const BlogPostListItem = (props) => {
         <h5 className={classes.title}>{title}</h5>
         <div className={classes.footer}>
           <span>{author}</span>
-          <span>{moment(new Date(date)).format('MMM D, YY')}</span>
+          <span>{moment(new Date(date)).format('MMM D, YYYY')}</span>
         </div>
       </div>
     </Link>

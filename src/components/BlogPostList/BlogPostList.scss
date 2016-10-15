@@ -10,6 +10,7 @@
 .post {
   flex: 1 0 auto;
   margin: .5rem;
+  max-width: calc(100% - 1rem);
 }
 
 .posts {

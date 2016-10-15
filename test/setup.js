@@ -24,6 +24,6 @@ chai.use(sinonChai);
 
 // compile CSS Modules via require()
 hook({
-  extensions: ['.scss'],
+  extensions: ['.scss', '.css'],
   preprocessCss: (data, file) => sass.renderSync({ data, file }).css
 });

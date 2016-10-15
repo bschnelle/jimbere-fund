@@ -1,5 +1,6 @@
 @import '../../styles/config';
-@import '~github-markdown-css/github-markdown';
+/* TODO ~/github-markdown-css/github-markdown import failing during testing */
+@import '../../../node_modules/github-markdown-css/github-markdown';
 
 .header {
   margin-bottom: 2rem;

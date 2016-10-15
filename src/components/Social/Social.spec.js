@@ -22,18 +22,23 @@ describe('Social', () => {
     expect(wrapper.is(`.${className}`)).to.be.true;
   });
 
-  it('renders a anchor with an href to https://www.facebook.com/jimberefund/', () => {
+  it('renders an anchor with a href to https://www.facebook.com/jimberefund/', () => {
     const wrapper = shallow(<Social />);
     expect(wrapper.find('a').at(0).prop('href')).to.equal('https://www.facebook.com/jimberefund/');
   });
 
-  it('renders a anchor with an href to https://twitter.com/JimbereFund', () => {
+  it('renders an anchor with a href to https://twitter.com/JimbereFund', () => {
     const wrapper = shallow(<Social />);
     expect(wrapper.find('a').at(1).prop('href')).to.equal('https://twitter.com/JimbereFund');
   });
 
-  it('renders two svg elements', () => {
+  it('renders an anchor with a href to https://www.linkedin.com/company/jimbere-fund', () => {
     const wrapper = shallow(<Social />);
-    expect(wrapper.find('a')).to.have.length(2);
+    expect(wrapper.find('a').at(2).prop('href')).to.equal('https://www.linkedin.com/company/jimbere-fund');
+  });
+
+  it('renders three svg elements', () => {
+    const wrapper = shallow(<Social />);
+    expect(wrapper.find('svg')).to.have.length(3);
   });
 });
