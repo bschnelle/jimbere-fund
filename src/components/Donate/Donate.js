@@ -49,6 +49,11 @@ export class Donate extends Component {
                 By choosing to support Jimbere Fund you're giving poverty
                 stricken communities in Congo hope for a better tomorrow.
               </p>
+              <p>
+                Jimbere Fund is a registered 501(c)(3) nonprofit organization.
+                All donations made to Jimbere Fund are tax deductible with the
+                US Internal Revenue Service
+              </p>
             </div>
           </div>
           <div id="razoo_donation_widget">
