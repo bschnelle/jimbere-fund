@@ -19,32 +19,30 @@ const scroll = (e) => {
 
 export const GetInvolved = () => (
   <div>
-    <ImageContainer className={classes.imageContainer} src="/images/new_york-o.jpg">
+    <ImageContainer className={classes.imageContainer} src="/images/hands-o.jpg">
       <Container className={classes.container} fluid title="Get Involved">
-        <div className={classes.joinUs}>
-          <div className={classes.header}>
-            <div>
-              <h6>We need your time and talents.</h6>
+        <div className={classes.header}>
+          <div>
+            <h6>We need your time and talents</h6>
+          </div>
+        </div>
+        <div className={classes.tiles}>
+          <div>
+            <div data-id="gi-fundraising" onClick={scroll}>
+              <h5>Start a</h5>
+              <h5>Fundraiser</h5>
             </div>
           </div>
-          <div className={classes.tiles}>
-            <div>
-              <div data-id="gi-fundraising" onClick={scroll}>
-                <h5>Start a</h5>
-                <h5>Fundraiser</h5>
-              </div>
+          <div>
+            <div data-id="gi-newsletter" onClick={scroll}>
+              <h5>Newsletter</h5>
+              <h5>Sign up</h5>
             </div>
-            <div>
-              <div data-id="gi-newsletter" onClick={scroll}>
-                <h5>Newsletter</h5>
-                <h5>Sign up</h5>
-              </div>
-            </div>
-            <div>
-              <div data-id="gi-work-with-us" onClick={scroll}>
-                <h5>Work</h5>
-                <h5>With Us</h5>
-              </div>
+          </div>
+          <div>
+            <div data-id="gi-work-with-us" onClick={scroll}>
+              <h5>Work</h5>
+              <h5>With Us</h5>
             </div>
           </div>
         </div>
@@ -83,7 +81,7 @@ export const GetInvolved = () => (
 
     <ImageContainer src="/images/news-o.jpg">
       <Container id="gi-newsletter" className={classes.newsletter} section title="Newsletter">
-        <p>Join our weekly mailing list to stay up to date with our progress</p>
+        <p>Join our weekly mailing list to stay up to date with our progress.</p>
         <Button label="Sign Up" to="/sign-up" />
       </Container>
     </ImageContainer>
