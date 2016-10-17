@@ -13,7 +13,7 @@ const scroll = (e) => {
   const el = document.getElementById(id).getBoundingClientRect();
   const navYOffset = document.getElementById('jf-nav').offsetHeight;
   const startingY = window.pageYOffset;
-  const distance = el.top - startingY - navYOffset;
+  const distance = el.top - navYOffset;
   animations.scroll(duration, startingY, distance);
 };
 
