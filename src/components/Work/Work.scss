@@ -1,8 +1,73 @@
 @import '../../styles/config';
 
+.panes {
+  height: 70vh;
+  margin-bottom: 6rem;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+
+  .close {
+    background-color: black;
+    cursor: pointer;
+    height: 50px;
+    position: absolute;
+    right: 1.5rem;
+    width: 50px;
+    top: 1.5rem;
+    z-index: 1;
+  }
+
+  > div {
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    position: absolute;
+    transition: transform $transitionDuration;
+    width: 100%;
+
+    &:nth-of-type(1) {
+      background-color: blue;
+    }
+    &:nth-of-type(2) {
+      background-color: orange;
+      transform: translateX(20%);
+    }
+    &:nth-of-type(3) {
+      background-color: green;
+      transform: translateX(40%);
+    }
+    &:nth-of-type(4) {
+      background-color: yellow;
+      transform: translateX(60%);
+    }
+    &:nth-of-type(5) {
+      background-color: red;
+      transform: translateX(80%);
+    }
+
+    &.active {
+      cursor: default;
+      transform: none;
+    }
+
+    &.hidden {
+      transform: translateX(100%);
+    }
+
+    > h3 {
+      flex: 0 0 20%;
+    }
+
+    > p {
+      flex: 0 0 80%;
+    }
+  }
+}
+
 .work {
   min-height: 100vh;
-  
+
   h6 {
      text-align: center;
   }
