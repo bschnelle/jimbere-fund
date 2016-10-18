@@ -1,3 +1,5 @@
+@import '../../styles/config';
+
 .loadMore {
   flex: 0 0 100%;
   text-align: center;
@@ -15,4 +17,10 @@
 .posts {
   display: flex;
   flex-wrap: wrap;
+}
+
+@media (max-width: $small) {
+  .post {
+    margin: .5rem 0;
+  }
 }

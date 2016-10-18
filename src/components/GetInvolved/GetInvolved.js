@@ -56,6 +56,7 @@ export const GetInvolved = () => (
           Our fundraisers help expand opportunities to those who need help
           most; one community at time.
         </p>
+        <img src="/images/fundraising.svg" alt="Fundraising infographic" />
         <div>
           <h4>Step 1</h4>
           <p>
@@ -72,9 +73,12 @@ export const GetInvolved = () => (
         <div>
           <h4>Step 3</h4>
           <p>
-            Create an online fundraising page here, add information,
+            Create an online fundraising page below, add information,
             and share with family and friends via social media/email.
           </p>
+        </div>
+        <div>
+          <Button href="https://www.razoo.com/story/new?subject=Jimbere-Fund" label="Start Fundraising" />
         </div>
       </div>
     </Container>
@@ -92,7 +96,11 @@ export const GetInvolved = () => (
         <div>
           <h4>Jobs</h4>
           <span />
-          <p>There are currently no job openings.  Please check back soon.</p>
+          <p>
+            There are currently no job openings.
+            <br />
+            Please check back soon.
+          </p>
         </div>
         <div>
           <h4>Volunteers</h4>
