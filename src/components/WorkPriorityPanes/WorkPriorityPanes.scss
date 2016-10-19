@@ -2,16 +2,12 @@
 
 $longTransitionDuration: 500ms;
 
-.difference {
-  background-color: #eee;
-  text-align: justify;
-}
-
 .panes {
   display: table;
   margin-bottom: 6rem;
   overflow: hidden;
   position: relative;
+  -webkit-tap-highlight-color: transparent;
   width: 500vw;
 
   .close {
@@ -62,16 +58,6 @@ $longTransitionDuration: 500ms;
       display: table-cell;
       transition: background-color $transitionDuration, transform $longTransitionDuration;
       width: 20%;
-
-      &:hover {
-        &:not(.active) {
-          background-color: darken($primaryColor1, 7.5%) !important;
-
-          > div > .title {
-            transform: scale(1.03);
-          }
-        }
-      }
 
       &:nth-of-type(1) {
         background-color: $primaryColor1;
@@ -190,20 +176,79 @@ $longTransitionDuration: 500ms;
   width: 100vw;
 }
 
-.priorityHeader {
-  margin-top: 6rem;
-  padding: 0 1.5rem;
-  text-align: center;
+@media (min-width: $medium) {
+  .panes > div > div:hover {
+    &:not(.active) {
+      background-color: darken($primaryColor1, 7.5%) !important;
+
+      > div > .title {
+        transform: scale(1.03);
+      }
+    }
+  }
 }
 
-.why {
-  background-color: $primaryColor1;
-  color: $alternateTextColor;
-  text-align: justify;
-}
+@media (max-width: $medium) {
+  .panes {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
 
-.work {
-  h6 {
-     text-align: center;
+    > div {
+      display: block;
+
+      > div {
+        display: block;
+        transform: none !important;
+        width: 100%;
+
+        &.active {
+          transform: none !important;
+
+          > div .content {
+            display: block;
+          }
+        }
+
+        &.hidden {
+          transform: none !important;
+        }
+
+        > div {
+          display: flex;
+          flex-direction: column;
+
+          .content {
+            display: none;
+
+            > div {
+              flex-direction: column;
+              padding-top: 0;
+            }
+          }
+
+          .title {
+            align-items: center;
+            display: flex;
+
+            > img {
+              margin: 0;
+              max-height: 8rem;
+              max-width: 8rem;
+            }
+
+            > span {
+              display: none;
+            }
+
+            h5 {
+              flex: 1 1 auto;
+              margin: 1.5rem 0 1.5rem 1.5rem;
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
   }
 }
