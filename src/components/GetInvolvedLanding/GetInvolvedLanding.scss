@@ -1,0 +1,80 @@
+@import '../../styles/config';
+
+.container {
+  background-color: rgba(0,0,0,.2);
+  color: $alternateTextColor;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 6rem;
+  position: relative;
+
+  > div {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+}
+
+.imageContainer {
+  background-color: #8F867B;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+
+  h6 {
+    margin-top: 0;
+  }
+}
+
+.tiles {
+  align-items: center;
+  display: flex;
+  flex: 1;
+
+  > div {
+    flex: 1;
+    margin: 1rem;
+
+    > div {
+      background-color: rgba(255, 255, 255, .85);
+      border-radius: 2px;
+      color: $primaryColor1;
+      cursor: pointer;
+      margin: auto;
+      max-width: 500px;
+      padding: 6rem 1rem;
+      position: relative;
+      text-align: center;
+      transition: background-color $transitionDuration;
+
+      h5 {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: $small) {
+  .tiles > div > div:hover {
+    background-color: #fff;
+  }
+}
+
+@media (max-width: $small) {
+  .tiles {
+    flex-direction: column;
+
+    > div {
+      margin: .5rem 0;
+      width: 100%;
+
+      > div {
+        padding: 3rem 1rem;
+      }
+    }
+  }
+}
