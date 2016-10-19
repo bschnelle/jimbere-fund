@@ -1,60 +1,75 @@
-/* import React from 'react';
+import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import Container from '../Container/Container';
-import ImageContainer from '../ImageContainer/ImageContainer';
+import sinon from 'sinon';
+import GIFundraising from '../GetInvolvedFundraising/GetInvolvedFundraising';
+import GILanding from '../GetInvolvedLanding/GetInvolvedLanding';
+import GINewsletter from '../GetInvolvedNewsletter/GetInvolvedNewsletter';
+import GIWorkWithUs from '../GetInvolvedWorkWithUs/GetInvolvedWorkWithUs';
 import { GetInvolved } from './GetInvolved';
-import classes from './GetInvolved.scss';
+import * as animations from '../../utils/animations';
 
 describe('GetInvolved', () => {
   let wrapper;
-  beforeEach(() => { wrapper = shallow(<GetInvolved />); });
+  const isSmall = true;
 
-  describe('render()', () => {
-    describe('root element', () => {
-      it('is of type ImageContainer', () => {
-        expect(wrapper.type()).to.equal(ImageContainer);
+  beforeEach(() => { wrapper = shallow(<GetInvolved isSmall={isSmall} />); });
+
+  it('renders a root div', () => {
+    expect(wrapper.type()).to.equal('div');
+  });
+
+  describe('it contains', () => {
+    it('GetInvolvedNewsletter', () => {
+      expect(wrapper.find(GINewsletter)).to.have.length(1);
+    });
+
+    it('GetInvolvedWorkWithUs', () => {
+      expect(wrapper.find(GIWorkWithUs)).to.have.length(1);
+    });
+
+    describe('GetInvolvedLanding with onScrollClick prop', () => {
+      let giLanding;
+      beforeEach(() => {
+        giLanding = wrapper.find(GILanding);
       });
 
-      describe('props', () => {
-        it('className = .imageContainer', () => {
-          expect(wrapper.prop('className')).to.equal(classes.imageContainer);
+      it('of type function', () => {
+        expect(typeof giLanding.prop('onScrollClick')).to.equal('function');
+      });
+
+      describe('when called', () => {
+        let event;
+        beforeEach(() => {
+          event = {
+            currentTarget: {
+              dataset: {
+                id: '4'
+              }
+            },
+            stopPropagation: sinon.stub()
+          };
+          sinon.stub(animations, 'smoothScrollTo');
+          giLanding.prop('onScrollClick')(event);
         });
 
-        it('src = "/images/new_york-o.jpg"', () => {
-          expect(wrapper.prop('src')).to.equal('/images/new_york-o.jpg');
+        afterEach(() => animations.smoothScrollTo.restore());
+
+        it('calls event.stopPropagation', () => {
+          expect(event.stopPropagation).to.have.been.calledOnce;
+        });
+
+        it('calls animations.smoothScrollTo with event.currentTarget.dataset.id', () => {
+          const { id } = event.currentTarget.dataset;
+          expect(animations.smoothScrollTo).to.have.been.calledWith(id);
         });
       });
     });
 
-    describe('Container', () => {
-      let container;
-      beforeEach(() => { container = wrapper.find(Container); });
-
-      describe('props', () => {
-        it('className = .container', () => {
-          expect(container.prop('className')).to.equal(classes.container);
-        });
-
-        it('fluid = true', () => {
-          expect(container.prop('fluid')).to.be.true;
-        });
-
-        it('title = "Get Involved"', () => {
-          expect(container.prop('title')).to.equal('Get Involved');
-        });
-      });
-    });
-
-    describe('nested elements', () => {
-      it('contains an h6', () => {
-        expect(wrapper.find('h6')).to.have.length(1);
-      });
-
-      it('contains a div with a .positions class', () => {
-        expect(wrapper.find(`.${classes.positions}`)).to.have.length(1);
+    describe('GetInvolvedFundraising with props', () => {
+      it('isSmall set to props.isSmall', () => {
+        expect(wrapper.find(GIFundraising).prop('isSmall')).to.equal(isSmall);
       });
     });
   });
 });
-*/

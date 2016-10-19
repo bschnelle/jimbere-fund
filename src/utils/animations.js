@@ -1,5 +1,9 @@
-export function scroll(duration, startingY, distance) {
-  const diff = distance;
+export function smoothScrollTo(id) {
+  const duration = 750;
+  const el = document.getElementById(id).getBoundingClientRect();
+  const navYOffset = document.getElementById('jf-nav').offsetHeight;
+  const startingY = window.pageYOffset;
+  const diff = el.top - navYOffset;
   let start;
 
   /* [0-1] */
@@ -21,4 +25,4 @@ export function scroll(duration, startingY, distance) {
   });
 }
 
-export default scroll;
+export default smoothScrollTo;

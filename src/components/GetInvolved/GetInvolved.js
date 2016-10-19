@@ -8,13 +8,7 @@ import * as animations from '../../utils/animations';
 
 const scroll = (e) => {
   e.stopPropagation();
-  const id = e.currentTarget.dataset.id;
-  const duration = 750;
-  const el = document.getElementById(id).getBoundingClientRect();
-  const navYOffset = document.getElementById('jf-nav').offsetHeight;
-  const startingY = window.pageYOffset;
-  const distance = el.top - navYOffset;
-  animations.scroll(duration, startingY, distance);
+  animations.smoothScrollTo(e.currentTarget.dataset.id);
 };
 
 export const GetInvolved = (props) => (
