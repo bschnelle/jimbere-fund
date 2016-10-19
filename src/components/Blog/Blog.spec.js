@@ -1,49 +1,38 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 import Blog from './Blog';
 import Container from '../Container/Container';
 import classes from './Blog.scss';
 
-let child;
-let setTheme;
+const child = <div>Child</div>;
 
 describe('Blog', () => {
-  beforeEach(() => {
-    child = <div>child</div>;
-    setTheme = sinon.stub();
+  it('is of type Container', () => {
+    const wrapper = shallow(<Blog>{child}</Blog>);
+    expect(wrapper.type()).to.equal(Container);
   });
 
-  describe('componentWillMount()', () => {
-    it('calls props.setTheme with "primary"', () => {
-      shallow(<Blog setTheme={setTheme}>{child}</Blog>);
-      expect(setTheme).to.have.been.calledWith('primary');
-    });
+  it('renders its children', () => {
+    const wrapper = shallow(<Blog>{child}</Blog>);
+    expect(wrapper.contains(child)).to.be.true;
   });
 
-  describe('componentWillUnmount()', () => {
-    it('calls props.setTheme with "secondary"', () => {
-      const wrapper = shallow(<Blog setTheme={setTheme}>{child}</Blog>);
-      wrapper.instance().componentWillUnmount();
-      expect(setTheme).to.have.been.calledWith('secondary');
-    });
-  });
-
-  describe('render()', () => {
-    it('is of type Container', () => {
-      const wrapper = shallow(<Blog setTheme={setTheme}>{child}</Blog>);
-      expect(wrapper.type()).to.equal(Container);
+  describe('with the following props', () => {
+    it('className = .blog', () => {
+      const wrapper = shallow(<Blog>{child}</Blog>);
+      expect(wrapper.prop('className')).to.equal(classes.blog);
     });
 
-    it('has a .blog class', () => {
-      const wrapper = shallow(<Blog setTheme={setTheme}>{child}</Blog>);
-      expect(wrapper.is(`.${classes.blog}`)).to.be.true;
+    it('fluid = !props.slug', () => {
+      const slug = 'apple-juice';
+      const wrapper = shallow(<Blog slug={slug}>{child}</Blog>);
+      expect(wrapper.prop('fluid')).to.equal(!slug);
     });
 
-    it('renders its children', () => {
-      const wrapper = shallow(<Blog setTheme={setTheme}>{child}</Blog>);
-      expect(wrapper.contains(child)).to.be.true;
+    it('title = "Blog"', () => {
+      const wrapper = shallow(<Blog>{child}</Blog>);
+      expect(wrapper.prop('title')).to.equal('Blog');
     });
   });
 });
