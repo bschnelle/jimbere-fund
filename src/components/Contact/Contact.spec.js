@@ -80,8 +80,8 @@ describe('Contact', () => {
         expect(info.type()).to.equal('div');
       });
 
-      it('contains two h3 elements', () => {
-        expect(info.find('h3')).to.have.length(2);
+      it('contains two h4 elements', () => {
+        expect(info.find('h4')).to.have.length(2);
       });
 
       it('contains two p elements', () => {
