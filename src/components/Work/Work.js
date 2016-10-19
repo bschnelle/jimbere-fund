@@ -12,6 +12,8 @@ class Work extends Component {
     this.panes = [
       {
         title: 'Tackling Food Insecurity',
+        image: '/images/work_food.svg',
+        imageAlt: 'fork and knife icon',
         content: (
           <div>
             <div>
@@ -55,6 +57,8 @@ class Work extends Component {
       },
       {
         title: 'Access to Healthcare, Clean Water, and Sanitation',
+        image: '/images/work_water.svg',
+        imageAlt: 'fork and knife icon',
         content: (
           <div>
             <div>
@@ -111,6 +115,8 @@ class Work extends Component {
       },
       {
         title: 'Access to Quality Education',
+        image: '/images/work_educate.svg',
+        imageAlt: 'book icon',
         content: (
           <div>
             <div>
@@ -150,6 +156,8 @@ class Work extends Component {
       },
       {
         title: 'Promoting Women\'s Empowerment',
+        image: '/images/work_empowerment.svg',
+        imageAlt: 'female symbol icon',
         content: (
           <div>
             <div>
@@ -190,6 +198,8 @@ class Work extends Component {
       },
       {
         title: 'Access to Electricity',
+        image: '/images/work_electricity.svg',
+        imageAlt: 'light bulb icon',
         content: (
           <div>
             <div>
@@ -264,6 +274,7 @@ class Work extends Component {
               education, health, women’s empowerment, water and sanitation, and we work with them
               to find solutions.
             </h6>
+            <div />
             <h5>Why we do what we do</h5>
             <p>
               About 64% of Democratic Republic of Congo’s nearly 80 million inhabitants live below
@@ -308,7 +319,7 @@ class Work extends Component {
                 <div className={className} data-name={i} key={i} onClick={this.activatePane}>
                   <div>
                     <div className={classes.title}>
-                      <div />
+                      <img src={pane.image} alt={pane.imageAlt} />
                       <h5>{pane.title}</h5>
                     </div>
                     <div className={classes.content}>

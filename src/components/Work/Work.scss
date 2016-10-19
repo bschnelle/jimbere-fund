@@ -55,8 +55,18 @@ $longTransitionDuration: 500ms;
 
     > div {
       display: table-cell;
-      transition: transform $longTransitionDuration;
+      transition: background-color $transitionDuration, transform $longTransitionDuration;
       width: 20%;
+
+      &:hover {
+        &:not(.active) {
+          background-color: darken($primaryColor1, 7.5%) !important;
+
+          > div > .title {
+            transform: scale(1.03);
+          }
+        }
+      }
 
       &:nth-of-type(1) {
         background-color: $primaryColor1;
@@ -150,12 +160,10 @@ $longTransitionDuration: 500ms;
           flex: 0 0 20%;
           padding: 2rem;
           text-align: center;
+          transition: transform $transitionDuration;
 
-          > div {
-            border: solid 5px #fff;
-            border-radius: 50%;
-            height: 150px;
-            width: 150px;
+          > img {
+            max-width: 150px;
             margin: 2rem auto;
           }
         }
