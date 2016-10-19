@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import GetInvolved from '../../components/GetInvolved/GetInvolved';
+import GetInvolvedComp from '../../components/GetInvolved/GetInvolved';
 
-const GetInvolvedContainer = (props) => (
-  <GetInvolved isSmall={props.isSmall} />
+export const GetInvolvedContainer = (props) => (
+  <GetInvolvedComp isSmall={props.isSmall} />
 );
 
 GetInvolvedContainer.propTypes = {

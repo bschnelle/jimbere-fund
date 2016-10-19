@@ -1,14 +1,14 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import Home from '../../components/Home/Home';
+import HomeComp from '../../components/Home/Home';
 import { HomeContainer, stateToProps } from './HomeContainer';
 
 describe('HomeContainer', () => {
   describe('render()', () => {
     it('renders a Home component', () => {
       const wrapper = shallow(<HomeContainer />);
-      expect(wrapper.type()).to.equal(Home);
+      expect(wrapper.type()).to.equal(HomeComp);
     });
 
     it('passes props.isSmall to Home', () => {
