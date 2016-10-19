@@ -58,20 +58,20 @@ export const GetInvolved = () => (
         </p>
         <img src="/images/fundraising.svg" alt="Fundraising infographic" />
         <div>
-          <h4>Step 1</h4>
+          <img src="/images/fundraising_creative.svg" alt="Fundraising step 1" />
           <p>
             Choose an event or activity: throw a party, run
             a marathon, or organize a meeting.  Be creative!
           </p>
         </div>
         <div>
-          <h4>Step 2</h4>
+          <img src="/images/fundraising_goal.svg" alt="Fundraising step 2" />
           <p>
             Set an amount as your fundraising goal.
           </p>
         </div>
         <div>
-          <h4>Step 3</h4>
+          <img src="/images/fundraising_share.svg" alt="Fundraising step 3" />
           <p>
             Create an online fundraising page below, add information,
             and share with family and friends via social media/email.
