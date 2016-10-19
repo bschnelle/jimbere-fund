@@ -17,7 +17,7 @@ describe('BlogPostList', () => {
   beforeEach(() => {
     loadMore = sinon.stub();
     more = true;
-    posts = fromJS([{ ID: '1' }]);
+    posts = fromJS([{ slug: '1' }]);
   });
 
   describe('posts', () => {
@@ -61,7 +61,7 @@ describe('BlogPostList', () => {
 
       describe('posts', () => {
         it('renders a BlogPostListItem for every props.posts', () => {
-          posts = fromJS([{ ID: '1' }, { ID: '2' }, { ID: '3' }]);
+          posts = fromJS([{ slug: '1' }, { slug: '2' }, { slug: '3' }]);
           const wrapper = shallow(
             <BlogPostList loadMore={loadMore} moreAvailable={more} posts={posts} />
           );
