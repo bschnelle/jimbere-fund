@@ -10,14 +10,9 @@ import * as animations from '../../utils/animations';
 import classes from './Home.scss';
 
 export const Home = (props) => {
-  const scrollToFacts = () => {
-    const duration = 750;
-    const el = document.getElementById('facts');
-    const navYOffset = document.getElementById('jf-nav').offsetHeight;
-    const startingY = window.pageYOffset;
-    const distance = el.offsetTop - startingY - navYOffset;
-
-    animations.scroll(duration, startingY, distance);
+  const scrollToFacts = (e) => {
+    e.stopPropagation();
+    animations.smoothScrollTo('facts');
   };
 
   const { isSmall } = props;
