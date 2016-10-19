@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import Container from '../Container/Container';
@@ -36,3 +36,4 @@ describe('Work', () => {
     });
   });
 });
+*/
