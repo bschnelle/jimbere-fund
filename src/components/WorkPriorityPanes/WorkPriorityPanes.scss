@@ -57,6 +57,7 @@ $longTransitionDuration: 500ms;
     > div {
       display: table-cell;
       transition: background-color $transitionDuration, transform $longTransitionDuration;
+      vertical-align: top;
       width: 20%;
 
       &:nth-of-type(1) {
