@@ -6,12 +6,8 @@ import BlogPostListItem from '../BlogPostListItem/BlogPostListItem';
 import Loader from '../Loader/Loader';
 import classes from './BlogPostList.scss';
 
-const BlogPostList = (props) => (!props.posts.size
-? (
-  <h6 className={classes.notFound}>
-    We're still working on our first post! Please check back soon.
-  </h6>
-)
+const BlogPostList = (props) => (props.loading
+? <Loader />
 : (
   <div>
     <FlipMove
