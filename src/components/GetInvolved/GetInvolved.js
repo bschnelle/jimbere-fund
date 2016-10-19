@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Button from '../Button/Button';
 import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
@@ -17,7 +17,7 @@ const scroll = (e) => {
   animations.scroll(duration, startingY, distance);
 };
 
-export const GetInvolved = () => (
+export const GetInvolved = (props) => (
   <div>
     <ImageContainer className={classes.imageContainer} src="/images/hands-o.jpg">
       <Container className={classes.container} fluid title="Get Involved">
@@ -56,22 +56,28 @@ export const GetInvolved = () => (
           Our fundraisers help expand opportunities to those who need help
           most; one community at time.
         </p>
-        <img src="/images/fundraising.svg" alt="Fundraising infographic" />
+        {!props.isSmall && <img src="/images/fundraising.svg" alt="Fundraising infographic" />}
         <div>
-          <img src="/images/fundraising_creative.svg" alt="Fundraising step 1" />
+          {props.isSmall
+          ? <img src="/images/fundraising_creative.svg" alt="Fundraising step 1" />
+          : <h4>Step 1</h4>}
           <p>
             Choose an event or activity: throw a party, run
             a marathon, or organize a meeting.  Be creative!
           </p>
         </div>
         <div>
-          <img src="/images/fundraising_goal.svg" alt="Fundraising step 2" />
+          {props.isSmall
+          ? <img src="/images/fundraising_goal.svg" alt="Fundraising step 2" />
+          : <h4>Step 2</h4>}
           <p>
             Set an amount as your fundraising goal.
           </p>
         </div>
         <div>
-          <img src="/images/fundraising_share.svg" alt="Fundraising step 3" />
+          {props.isSmall
+          ? <img src="/images/fundraising_share.svg" alt="Fundraising step 3" />
+          : <h4>Step 3</h4>}
           <p>
             Create an online fundraising page below, add information,
             and share with family and friends via social media/email.
@@ -125,5 +131,9 @@ export const GetInvolved = () => (
     </Container>
   </div>
 );
+
+GetInvolved.propTypes = {
+  isSmall: PropTypes.bool.isRequired
+};
 
 export default secondaryTheme(GetInvolved);
