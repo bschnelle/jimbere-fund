@@ -26,8 +26,8 @@ describe('[Redux] BlogModule', () => {
         expect(reducer(undefined, {}).get('loading')).to.be.false;
       });
 
-      it('moreAvailable = true', () => {
-        expect(reducer(undefined, {}).get('moreAvailable')).to.be.true;
+      it('moreAvailable = false', () => {
+        expect(reducer(undefined, {}).get('moreAvailable')).to.be.false;
       });
 
       it('posts = empty immutable list', () => {
@@ -113,9 +113,9 @@ describe('[Redux] BlogModule', () => {
         expect(newState.get('loading')).to.be.false;
       });
 
-      it('sets moreAvailable to posts.size < action.found', () => {
+      /* it('sets moreAvailable to posts.size < action.found', () => {
         expect(newState.get('moreAvailable')).to.be.true;
-      });
+      }); */
 
       it('pushes actions.posts into state.posts', () => {
         expect(newState.get('posts').size).to.equal(3);
@@ -130,7 +130,7 @@ describe('[Redux] BlogModule', () => {
     });
   });
 
-  describe('getPost()', () => {
+  /* describe('getPost()', () => {
     let dispatch;
     const id = 'id';
 
@@ -171,7 +171,7 @@ describe('[Redux] BlogModule', () => {
         done();
       });
     });
-  });
+  }); */
 
   describe('getPosts()', () => {
     let dispatch;

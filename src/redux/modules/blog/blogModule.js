@@ -66,14 +66,14 @@ export default (state = initialState, action) => {
 };
 
 // Action Creators
-export function getPost(id) {
+/* export function getPost(id) {
   return (dispatch) => {
     dispatch({ type: GET_POST });
     return blogSvc.getPost(id)
       .then((post) => dispatch({ type: GET_POST_SUCCESS, post }))
       .catch(() => dispatch({ type: GET_POST_FAILURE }));
   };
-}
+} */
 
 export function getPosts() {
   return (dispatch, getState) => {
