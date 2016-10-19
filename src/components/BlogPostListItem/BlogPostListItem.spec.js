@@ -12,25 +12,23 @@ let post;
 describe('BlogPostListItem', () => {
   beforeEach(() => {
     post = fromJS({
-      author: {
-        name: 'Rob'
-      },
+      author: 'Arnold Jagger',
       date: new Date(),
-      featured_image: '/path/to/image.jpg',
+      image: '/path/to/image.jpg',
       slug: 'my-blog-post',
       title: 'My Blog Post'
     });
   });
 
   describe('root Link', () => {
-    it('of type Link with a .post class', () => {
+    it('is of type Link', () => {
       const wrapper = shallow(<BlogPostListItem post={post} />);
       expect(wrapper.type()).to.equal(Link);
     });
 
-    it('sets the root Link\'s background image to props.post.featured_image', () => {
+    it('has background image set to props.post.image', () => {
       const wrapper = shallow(<BlogPostListItem post={post} />);
-      expect(wrapper.prop('style').background).to.equal(`url(${post.get('featured_image')})`);
+      expect(wrapper.prop('style').backgroundImage).to.equal(`url(${post.get('image')})`);
     });
 
     it('links to /blog/props.post.slug', () => {
@@ -61,7 +59,7 @@ describe('BlogPostListItem', () => {
       const footer = wrapper.find(`.${classes.footer}`);
       expect(footer.contains([
         <span>{post.get('author')}</span>,
-        <span>{moment(new Date(post.get('date'))).format('D MMM, YY')}</span>
+        <span>{moment(new Date(post.get('date'))).format('MMM D, YYYY')}</span>
       ])).to.be.true;
     });
   });
