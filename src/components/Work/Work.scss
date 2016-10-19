@@ -2,6 +2,10 @@
 
 $longTransitionDuration: 500ms;
 
+.difference {
+  background-color: #eee;
+}
+
 .panes {
   display: table;
   margin-bottom: 6rem;
@@ -166,6 +170,14 @@ $longTransitionDuration: 500ms;
             max-width: 150px;
             margin: 2rem auto;
           }
+
+          > span {
+            background-color: $alternateTextColor;
+            display: block;
+            height: 1px;
+            width: 50%;
+            margin: 0 auto;
+          }
         }
       }
     }
@@ -177,10 +189,18 @@ $longTransitionDuration: 500ms;
   width: 100vw;
 }
 
-.work {
-  padding-bottom: 6rem;
+.priorityHeader {
+  margin-top: 6rem;
+  text-align: center;
+}
 
-  h5, h6 {
+.why {
+  background-color: $primaryColor1;
+  color: $alternateTextColor;
+}
+
+.work {
+  h6 {
      text-align: center;
   }
 }

@@ -266,44 +266,47 @@ class Work extends Component {
     return (
       <div>
         <Container className={classes.work} title="Work">
-          <div>
-            <h6>
-              Jimbere Fund works closely with communities and villages in remote areas of
-              Democratic Republic of Congo to design and implement individualized high-impact
-              social interventions. Communities identify their most pressing needs in agriculture,
-              education, health, women’s empowerment, water and sanitation, and we work with them
-              to find solutions.
-            </h6>
-            <div />
-            <h5>Why we do what we do</h5>
-            <p>
-              About 64% of Democratic Republic of Congo’s nearly 80 million inhabitants live below
-              poverty line. Over 60% of them live in rural areas as subsistence farmers.  This
-              unprecedented level of extreme poverty is amplified by tribal strife and incessant
-              conflicts. We provide communities with tools and resources to improve their lives.
-              Our approach is different: it’s truly locally-led. We source ideas of interventions
-              from local communities and work with them to design and implement holistic and
-              self-sustaining projects.
-            </p>
-            <h5>What makes us different</h5>
-            <p>
-              We go where others dare not go. Other nonprofits and relief organizations go up to
-              where the last dirt road ends. We go beyond that. We reach out to some of the world’s
-              most remote communities where social needs are most acute. It sometimes takes us a
-              couple of days of hiking to get there. We firmly believe that solutions to issues of
-              extreme poverty and inequality lie within people and communities living in it. We
-              co-design and co-manage projects together with the communities we serve.
-            </p>
-            <p>
-              Although our projects are informed by the communities we serve, the issues we hear
-              across remote communities in Congo are the same. We ensure each community we
-              serve has an opportunity to participate in designing the particularities of their
-              project and drive the implementation. Here are the top issues we’re trying to fix,
-              one community at a time.
-            </p>
-          </div>
+          <h6>
+            Jimbere Fund works closely with communities and villages in remote areas of
+            Democratic Republic of Congo to design and implement individualized high-impact
+            social interventions. Communities identify their most pressing needs in agriculture,
+            education, health, women’s empowerment, water and sanitation, and we work with them
+            to find solutions.
+          </h6>
         </Container>
 
+        <Container className={classes.why} section title="Why?">
+          <p>
+            About 64% of Democratic Republic of Congo’s nearly 80 million inhabitants live below
+            poverty line. Over 60% of them live in rural areas as subsistence farmers.  This
+            unprecedented level of extreme poverty is amplified by tribal strife and incessant
+            conflicts. We provide communities with tools and resources to improve their lives.
+            Our approach is different: it’s truly locally-led. We source ideas of interventions
+            from local communities and work with them to design and implement holistic and
+            self-sustaining projects.
+          </p>
+        </Container>
+
+        <Container className={classes.difference} section title="Difference">
+          <p>
+            We go where others dare not go. Other nonprofits and relief organizations go up to
+            where the last dirt road ends. We go beyond that. We reach out to some of the world’s
+            most remote communities where social needs are most acute. It sometimes takes us a
+            couple of days of hiking to get there. We firmly believe that solutions to issues of
+            extreme poverty and inequality lie within people and communities living in it. We
+            co-design and co-manage projects together with the communities we serve.
+          </p>
+          <p>
+            Although our projects are informed by the communities we serve, the issues we hear
+            across remote communities in Congo are the same. We ensure each community we
+            serve has an opportunity to participate in designing the particularities of their
+            project and drive the implementation. Here are the top issues we’re trying to fix,
+            one community at a time.
+          </p>
+        </Container>
+
+
+        <h1 className={classes.priorityHeader}>Priority Areas</h1>
         <div className={classes.panesWrapper}>
           <div className={classes.panes}>
             <span className={closeClassName} onClick={this.closePane}>
@@ -320,6 +323,7 @@ class Work extends Component {
                   <div>
                     <div className={classes.title}>
                       <img src={pane.image} alt={pane.imageAlt} />
+                      <span />
                       <h5>{pane.title}</h5>
                     </div>
                     <div className={classes.content}>

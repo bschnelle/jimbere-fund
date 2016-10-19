@@ -33,9 +33,9 @@ export class Contact extends Component {
         </ImageContainer>
         <div className={classes.info}>
           <div>
-            <h3>Email</h3>
+            <h4>Email</h4>
             <p>obadiasndaba@gmail.com</p>
-            <h3>Phone</h3>
+            <h4>Phone</h4>
             <p>917.224.2095</p>
           </div>
           <div id="map" />
