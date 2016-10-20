@@ -67,7 +67,27 @@ describe('Nav', () => {
   });
 
   describe('addBackgroundOnScroll()', () => {
-    // TODO
+    let wrapper;
+    beforeEach(() => {
+      wrapper = shallow(<Nav />);
+    });
+
+    describe('window.pageYOffset > 15 && state.addBackground = false', () => {
+      it('sets state.addBackground to true', () => {
+        window.pageYOffset = 20;
+        wrapper.instance().addBackgroundOnScroll();
+        expect(wrapper.state('addBackground')).to.be.true;
+      });
+    });
+
+    describe('window.pageYOffset = 0 && state.addBackground = true', () => {
+      it('sets state.addBackground to false', () => {
+        window.pageYOffset = 0;
+        wrapper.setState({ addBackground: true });
+        wrapper.instance().addBackgroundOnScroll();
+        expect(wrapper.state('addBackground')).to.be.false;
+      });
+    });
   });
 
   describe('toggleMenu()', () => {
