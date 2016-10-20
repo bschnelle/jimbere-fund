@@ -31,14 +31,23 @@ describe('[Service] BlogService', () => {
   }); */
 
   describe('getPosts()', () => {
-    afterEach(() => { fetch.default.restore(); });
+    beforeEach(() => {
+      sinon.stub(fetch, 'handleError');
+      sinon.stub(fetch, 'getJSON');
+    });
+
+    afterEach(() => {
+      fetch.default.restore();
+      fetch.handleError.restore();
+      fetch.getJSON.restore();
+    });
 
     it('calls fetch.default with /blog/posts.json', () => {
       sinon.stub(fetch, 'default').returns(Promise.resolve());
-      blogService.getPosts();
-      const url = '/blog/posts.json';
-      const r = new RegExp(url);
-      expect(fetch.default).to.have.been.calledWith(sinon.match(r));
+      blogService.getPosts().then(() => {
+        const url = '/blog/posts.json';
+        expect(fetch.default).to.have.been.calledWith(url);
+      });
     });
 
     /* it('appends an offset query param if an offset arg is passed', () => {
@@ -47,17 +56,12 @@ describe('[Service] BlogService', () => {
       expect(fetch.default).to.have.been.calledWith(sinon.match(/\?offset=2/));
     }); */
 
-    it('if res.ok is true, returns res.json()', () => {
-      const json = { posts: [] };
-      const response = { ok: true, json: () => json };
-      sinon.stub(fetch, 'default').returns(Promise.resolve(response));
-      return expect(blogService.getPosts()).to.eventually.equal(json);
-    });
-
-    it('if res.ok is false, throws an error', () => {
-      const response = { ok: false };
-      sinon.stub(fetch, 'default').returns(Promise.resolve(response));
-      return expect(blogService.getPosts()).to.eventually.be.rejectedWith(Error);
+    it('it calls fetch.handleError and fetch.getJSON', () => {
+      sinon.stub(fetch, 'default').returns(Promise.resolve());
+      blogService.getPosts().then(() => {
+        expect(fetch.handleError).to.have.been.calledOnce;
+        expect(fetch.getJSON).to.have.been.calledOnce;
+      });
     });
   });
 });
