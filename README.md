@@ -1,6 +1,6 @@
 # [Jimbere Fund](https://www.jimberefund.org)
 
-##### Jimbere Fund is on a mission to revitalize distressed communities in Congo.
+Jimbere Fund is on a mission to revitalize distressed communities in Congo.
 
 ### Tech Details
 Curious how this site is built? Have a look around...here are the major pieces:
