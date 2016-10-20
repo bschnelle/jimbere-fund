@@ -2,9 +2,6 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
-import Button from '../Button/Button';
-import Container from '../Container/Container';
-import ImageContainer from '../ImageContainer/ImageContainer';
 import WorkPriorityPanes from './WorkPriorityPanes';
 import classes from './WorkPriorityPanes.scss';
 
