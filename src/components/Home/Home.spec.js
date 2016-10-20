@@ -1,12 +1,14 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
+import sinon from 'sinon';
 import { Home } from './Home';
 import HomeApproach from '../HomeApproach/HomeApproach';
 import HomeFacts from '../HomeFacts/HomeFacts';
 import HomeLanding from '../HomeLanding/HomeLanding';
 import HomeProcess from '../HomeProcess/HomeProcess';
 import HomePurpose from '../HomePurpose/HomePurpose';
+import * as animations from '../../utils/animations';
 import classes from './Home.scss';
 
 describe('Home', () => {
@@ -22,8 +24,30 @@ describe('Home', () => {
     beforeEach(() => { wrapper = shallow(<Home />); });
 
     describe('HomeLanding', () => {
+      let event;
+      let homeLanding;
+      beforeEach(() => {
+        sinon.stub(animations, 'smoothScrollTo');
+        event = { stopPropagation: sinon.stub() };
+        homeLanding = wrapper.find(HomeLanding);
+      });
+
+      afterEach(() => animations.smoothScrollTo.restore());
+
       it('has props.onScrollClick of type function', () => {
-        expect(typeof wrapper.find(HomeLanding).prop('onScrollClick')).to.equal('function');
+        expect(typeof homeLanding.prop('onScrollClick')).to.equal('function');
+      });
+
+      describe('onScrollClick', () => {
+        it('calls event.stopPropagation()', () => {
+          homeLanding.prop('onScrollClick')(event);
+          expect(event.stopPropagation).to.have.been.calledOnce;
+        });
+
+        it('calls animations.smoothScrollTo with "facts"', () => {
+          homeLanding.prop('onScrollClick')(event);
+          expect(animations.smoothScrollTo).to.have.been.calledWith('facts');
+        });
       });
     });
 
