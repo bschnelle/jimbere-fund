@@ -223,6 +223,7 @@ $longTransitionDuration: 500ms;
             display: none;
 
             > div {
+              align-items: center;
               flex-direction: column;
               padding-top: 0;
             }
