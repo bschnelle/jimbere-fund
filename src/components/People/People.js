@@ -40,7 +40,7 @@ const People = () => {
   return (
     <Container className={classes.people} title="People">
       <div>
-        <h6>Our team of incredible individuals.</h6>
+        <h6>Our team of incredible individuals</h6>
         {people.map((group) => (
           <div className={classes.group} key={group.name}>
             <h4>{group.name}</h4>
