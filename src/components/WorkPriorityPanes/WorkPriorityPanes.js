@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import classes from './WorkPriorityPanes.scss';
 
-class Work extends Component {
+class WorkPriorityPanes extends Component {
 
   static propTypes = {
     compact: PropTypes.bool,
@@ -68,4 +68,4 @@ class Work extends Component {
   }
 }
 
-export default Work;
+export default WorkPriorityPanes;
