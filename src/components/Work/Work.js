@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 import Container from '../Container/Container';
+import ImageContainer from '../ImageContainer/ImageContainer';
 import WorkPriorityPanes from '../WorkPriorityPanes/WorkPriorityPanes';
+import secondaryTheme from '../../containers/secondaryTheme/secondaryTheme';
 import classes from './Work.scss';
 
 const priorities = [
@@ -243,17 +245,19 @@ const priorities = [
   }
 ];
 
-const Work = (props) => (
+export const Work = (props) => (
   <div>
-    <Container className={classes.work} title="Work">
-      <h6>
-        Jimbere Fund works closely with communities and villages in remote areas of
-        Democratic Republic of Congo to design and implement individualized high-impact
-        social interventions. Communities identify their most pressing needs in agriculture,
-        education, health, women’s empowerment, water and sanitation, and we work with them
-        to find solutions.
-      </h6>
-    </Container>
+    <ImageContainer src="/images/work-o.jpg">
+      <Container className={classes.work} title="Work">
+        <h6>
+          Jimbere Fund works closely with communities and villages in remote areas of
+          Democratic Republic of Congo to design and implement individualized high-impact
+          social interventions. Communities identify their most pressing needs in agriculture,
+          education, health, women’s empowerment, water and sanitation, and we work with them
+          to find solutions.
+        </h6>
+      </Container>
+    </ImageContainer>
 
     <Container className={classes.why} section title="Why?">
       <p>
@@ -295,4 +299,4 @@ Work.propTypes = {
   isMedium: PropTypes.bool.isRequired
 };
 
-export default Work;
+export default secondaryTheme(Work);
