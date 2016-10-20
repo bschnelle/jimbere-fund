@@ -1,14 +1,20 @@
-/* import React from 'react';
+import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
+import sinon from 'sinon';
 import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
-import { GetInvolved } from './GetInvolved';
-import classes from './GetInvolved.scss';
+import { GetInvolvedLanding } from './GetInvolvedLanding';
+import classes from './GetInvolvedLanding.scss';
 
-describe('GetInvolved', () => {
+describe('GetInvolvedLanding', () => {
+  let onScrollClick;
   let wrapper;
-  beforeEach(() => { wrapper = shallow(<GetInvolved />); });
+
+  beforeEach(() => {
+    onScrollClick = sinon.stub();
+    wrapper = shallow(<GetInvolvedLanding onScrollClick={onScrollClick} />);
+  });
 
   describe('render()', () => {
     describe('root element', () => {
@@ -21,8 +27,8 @@ describe('GetInvolved', () => {
           expect(wrapper.prop('className')).to.equal(classes.imageContainer);
         });
 
-        it('src = "/images/new_york-o.jpg"', () => {
-          expect(wrapper.prop('src')).to.equal('/images/new_york-o.jpg');
+        it('src = "/images/hands-o.jpg"', () => {
+          expect(wrapper.prop('src')).to.equal('/images/hands-o.jpg');
         });
       });
     });
@@ -44,17 +50,99 @@ describe('GetInvolved', () => {
           expect(container.prop('title')).to.equal('Get Involved');
         });
       });
-    });
 
-    describe('nested elements', () => {
-      it('contains an h6', () => {
-        expect(wrapper.find('h6')).to.have.length(1);
-      });
+      describe('nested elements', () => {
+        describe('header', () => {
+          let header;
+          beforeEach(() => {
+            header = container.childAt(0);
+          });
 
-      it('contains a div with a .positions class', () => {
-        expect(wrapper.find(`.${classes.positions}`)).to.have.length(1);
+          it('is a div', () => {
+            expect(header.type()).to.equal('div');
+          });
+
+          it('has a .header class', () => {
+            expect(header.prop('className')).to.equal(classes.header);
+          });
+
+          it('contains a h6', () => {
+            expect(header.find('h6')).to.have.length(1);
+          });
+        });
+
+        describe('tiles', () => {
+          let tiles;
+          beforeEach(() => {
+            tiles = container.childAt(1);
+          });
+
+          it('is a div', () => {
+            expect(tiles.type()).to.equal('div');
+          });
+
+          it('has a .header class', () => {
+            expect(tiles.prop('className')).to.equal(classes.tiles);
+          });
+
+          describe('fundraising tile', () => {
+            let fundraising;
+            beforeEach(() => {
+              fundraising = tiles.childAt(0).childAt(0);
+            });
+
+            it('has a data-id prop set to "gi-fundraising"', () => {
+              expect(fundraising.prop('data-id')).to.equal('gi-fundraising');
+            });
+
+            it('has an onClick prop set to props.onScrollClick', () => {
+              expect(fundraising.prop('onClick')).to.equal(onScrollClick);
+            });
+
+            it('contains two h5 elements', () => {
+              expect(fundraising.find('h5')).to.have.length(2);
+            });
+          });
+
+          describe('newsletter tile', () => {
+            let fundraising;
+            beforeEach(() => {
+              fundraising = tiles.childAt(1).childAt(0);
+            });
+
+            it('has a data-id prop set to "gi-newsletter"', () => {
+              expect(fundraising.prop('data-id')).to.equal('gi-newsletter');
+            });
+
+            it('has an onClick prop set to props.onScrollClick', () => {
+              expect(fundraising.prop('onClick')).to.equal(onScrollClick);
+            });
+
+            it('contains two h5 elements', () => {
+              expect(fundraising.find('h5')).to.have.length(2);
+            });
+          });
+
+          describe('work with us tile', () => {
+            let fundraising;
+            beforeEach(() => {
+              fundraising = tiles.childAt(2).childAt(0);
+            });
+
+            it('has a data-id prop set to "gi-work-with-us"', () => {
+              expect(fundraising.prop('data-id')).to.equal('gi-work-with-us');
+            });
+
+            it('has an onClick prop set to props.onScrollClick', () => {
+              expect(fundraising.prop('onClick')).to.equal(onScrollClick);
+            });
+
+            it('contains two h5 elements', () => {
+              expect(fundraising.find('h5')).to.have.length(2);
+            });
+          });
+        });
       });
     });
   });
 });
-*/
