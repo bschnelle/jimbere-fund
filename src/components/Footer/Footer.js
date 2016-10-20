@@ -7,7 +7,7 @@ import classes from './Footer.scss';
  * footer component used throughout site
  */
 const Footer = () => (
-  <div className={classes.footer}>
+  <footer className={classes.footer}>
     <div>
       <div>
         <Logo className={classes.logo} link secondary />
@@ -16,7 +16,7 @@ const Footer = () => (
       </div>
     </div>
     <Social secondary />
-  </div>
+  </footer>
 );
 
 export default Footer;
