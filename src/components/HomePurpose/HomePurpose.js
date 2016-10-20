@@ -1,10 +1,13 @@
 import React from 'react';
-import ImageContainer from '../ImageContainer/ImageContainer';
 import Container from '../Container/Container';
+import ImageContainer from '../ImageContainer/ImageContainer';
 import classes from './HomePurpose.scss';
 
+/**
+ * purpose section of root route
+ */
 const HomePurpose = () => (
-  <ImageContainer src="/images/street.jpg" className={classes.ImageContainer}>
+  <ImageContainer src="/images/street.jpg" className={classes.imageContainer}>
     <Container className={classes.section} container section title="Purpose">
       <div className={classes.content}>
         <p>

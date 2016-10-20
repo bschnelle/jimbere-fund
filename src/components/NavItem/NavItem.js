@@ -2,6 +2,9 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import classes from './NavItem.scss';
 
+/**
+ * nav link
+ */
 const NavItem = (props) => {
   const { label, onClick, to } = props;
   let className = classes.navItem;

@@ -2,6 +2,9 @@ import React from 'react';
 import Container from '../Container/Container';
 import classes from './People.scss';
 
+/**
+ * /people route component
+ */
 const People = () => {
   const people = [
     {

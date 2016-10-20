@@ -3,6 +3,9 @@ import Button from '../Button/Button';
 import Container from '../Container/Container';
 import classes from './HomeStory.scss';
 
+/**
+ * story section of root route
+ */
 class HomeStory extends Component {
 
   constructor(props) {
@@ -11,6 +14,9 @@ class HomeStory extends Component {
     this.toggleReadMore = this.toggleReadMore.bind(this);
   }
 
+  /**
+   * toggleReadMore - open/close detail
+   */
   toggleReadMore() {
     this.setState({ readMore: !this.state.readMore });
   }

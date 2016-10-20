@@ -4,6 +4,9 @@ import moment from 'moment';
 import Loader from '../Loader/Loader';
 import classes from './BlogPost.scss';
 
+/**
+ * individual blog post
+ */
 const BlogPost = (props) => {
   const { loading, post } = props;
 

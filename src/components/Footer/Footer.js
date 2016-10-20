@@ -1,9 +1,11 @@
-/* eslint-disable max-len */
 import React from 'react';
 import Logo from '../Logo/Logo';
 import Social from '../Social/Social';
 import classes from './Footer.scss';
 
+/**
+ * footer component used throughout site
+ */
 const Footer = () => (
   <div className={classes.footer}>
     <div>

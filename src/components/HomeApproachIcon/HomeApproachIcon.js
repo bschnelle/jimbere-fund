@@ -2,9 +2,14 @@
 import React, { PropTypes } from 'react';
 import classes from './HomeApproachIcon.scss';
 
+/**
+ * icons used for HomeApproach component
+ */
 const HomeApproachIcon = (props) => {
   const className = props.active ? classes.active : classes.inactive;
   const shadowClassName = props.active ? classes.activeShadow : classes.inactiveShadow;
+
+  // TODO break these out into separate components
   const icons = {
     collaborative: (
       <svg className={props.className || ''} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" strokeLinejoin="round">

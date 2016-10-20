@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import Home from '../../components/Home/Home';
+import HomeComp from '../../components/Home/Home';
 
 export const HomeContainer = (props) => (
-  <Home isSmall={props.isSmall} />
+  <HomeComp isSmall={props.isSmall} />
 );
 
 HomeContainer.propTypes = {

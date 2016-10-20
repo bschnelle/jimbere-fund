@@ -1,11 +1,14 @@
 import React, { PropTypes } from 'react';
 import { List as iList } from 'immutable';
 import FlipMove from 'react-flip-move';
-import Button from '../Button/Button';
 import BlogPostListItem from '../BlogPostListItem/BlogPostListItem';
+import Button from '../Button/Button';
 import Loader from '../Loader/Loader';
 import classes from './BlogPostList.scss';
 
+/**
+ * tiled list of blog posts
+ */
 const BlogPostList = (props) => (props.loading
 ? <Loader />
 : (

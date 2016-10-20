@@ -4,6 +4,9 @@ import { Link } from 'react-router';
 import moment from 'moment';
 import classes from './BlogPostListItem.scss';
 
+/**
+ * individual tile for BlogPostList
+ */
 const BlogPostListItem = (props) => {
   const {
     author,

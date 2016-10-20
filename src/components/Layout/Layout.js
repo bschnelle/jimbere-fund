@@ -3,6 +3,9 @@ import Footer from '../Footer/Footer';
 import Nav from '../Nav/Nav';
 import classes from './Layout.scss';
 
+/**
+ * layout component used for entire site
+ */
 const Layout = (props) => (
   <div className={classes.layout}>
     <Nav isSmall={props.isSmall} secondary={props.theme === 'secondary'} />

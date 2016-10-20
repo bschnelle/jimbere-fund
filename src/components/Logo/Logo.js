@@ -3,6 +3,9 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import classes from './Logo.scss';
 
+/**
+ * logo icon
+ */
 const Logo = (props) => {
   const { green, white } = classes;
   const primaryClassName = props.secondary ? white : green;

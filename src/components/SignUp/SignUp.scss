@@ -1,9 +1,7 @@
-@import '../../styles/config';
-
 .signUp {
   display: flex;
   height: 100vh;
-  padding-top: 100px; // TODO update after Nav changes are made
+  padding-top: 5rem;
 
   > iframe {
     flex: 1;

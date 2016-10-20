@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import classes from './WorkPriorityPanes.scss';
 
+/**
+ * slider component used in Work to display priority areas
+ */
 class WorkPriorityPanes extends Component {
 
   static propTypes = {
@@ -15,10 +18,18 @@ class WorkPriorityPanes extends Component {
     this.togglePane = this.togglePane.bind(this);
   }
 
+  /**
+   * closePane - close pane, if open
+   */
   closePane() {
     this.setState({ active: null });
   }
 
+  /**
+   * togglePane - open/close individual pane
+   *
+   * @param  {type} e event
+   */
   togglePane(e) {
     e.stopPropagation();
     const { active } = this.state;

@@ -1,6 +1,9 @@
 import React, { PropTypes } from 'react';
 import classes from './Fact.scss';
 
+/**
+ * fact tile used in HomeFacts
+ */
 const Fact = (props) => {
   const { body, header } = props;
 

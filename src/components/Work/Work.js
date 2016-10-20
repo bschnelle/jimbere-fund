@@ -5,6 +5,7 @@ import WorkPriorityPanes from '../WorkPriorityPanes/WorkPriorityPanes';
 import secondaryTheme from '../../containers/secondaryTheme/secondaryTheme';
 import classes from './Work.scss';
 
+/* priority items rendered by WorkPriorityPanes */
 const priorities = [
   {
     title: 'Tackling Food Insecurity',
@@ -245,6 +246,9 @@ const priorities = [
   }
 ];
 
+/**
+ * /work route component
+ */
 export const Work = (props) => (
   <div>
     <ImageContainer src="/images/work-o.jpg">

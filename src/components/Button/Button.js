@@ -2,6 +2,9 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import classes from './Button.scss';
 
+/**
+ * ...a button
+ */
 const Button = (props) => {
   let className = classes.button;
   if (props.accent) className += ` ${classes.accent}`;

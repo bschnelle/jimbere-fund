@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import Work from '../../components/Work/Work';
+import WorkComp from '../../components/Work/Work';
 
 export const WorkContainer = (props) => (
-  <Work isMedium={props.isMedium} />
+  <WorkComp isMedium={props.isMedium} />
 );
 
 WorkContainer.propTypes = {

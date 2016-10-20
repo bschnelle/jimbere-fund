@@ -1,6 +1,9 @@
 import React, { PropTypes } from 'react';
 import classes from './ScrollArrow.scss';
 
+/**
+ * floating arrow to indicate/scroll to more content
+ */
 const ScrollArrow = (props) => {
   let className = classes.scrollArrow;
   if (props.className) className += ` ${props.className}`;

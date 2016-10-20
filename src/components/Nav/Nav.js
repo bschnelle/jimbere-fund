@@ -7,7 +7,7 @@ import Social from '../Social/Social';
 import classes from './Nav.scss';
 
 /**
- * Navigation button and container
+ * nav bar/menu
  */
 class Nav extends Component {
 
@@ -94,7 +94,7 @@ class Nav extends Component {
           onClick={toggleMenu}
           open={open}
         />
-        
+
         <div className={classes.content}>
           <ul>
             {links.map((link) =>

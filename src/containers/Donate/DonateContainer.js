@@ -1,8 +1,8 @@
 import React from 'react';
-import Donate from '../../components/Donate/Donate';
+import DonateComp from '../../components/Donate/Donate';
 
 const DonateContainer = () => (
-  <Donate />
+  <DonateComp />
 );
 
 export default DonateContainer;

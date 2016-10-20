@@ -3,6 +3,9 @@ import Button from '../Button/Button';
 import Container from '../Container/Container';
 import classes from './GetInvolvedWorkWithUs.scss';
 
+/**
+ * work with us section of /get-involved route
+ */
 export const GetInvolvedWorkWithUs = () => (
   <Container id="gi-work-with-us" section title="Work With Us">
     <div className={classes.workWithUs}>

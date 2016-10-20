@@ -8,9 +8,9 @@
   color: $alternateTextColor;
   cursor: pointer;
   display: block;
-  text-decoration: none;
-  min-width: 350px;
   height: 350px;
+  min-width: 350px;
+  text-decoration: none;
 
   &:hover {
     .content {
@@ -28,12 +28,6 @@
     width: 100%;
   }
 
-  .title {
-    flex: 1;
-    margin: 0;
-    max-width: 400px;
-  }
-
   .footer {
     color: darken($alternateTextColor, 20%);
 
@@ -41,11 +35,17 @@
       float: right;
     }
   }
+
+  .title {
+    flex: 1;
+    margin: 0;
+    max-width: 400px;
+  }
 }
 
 @media (max-width: $small) {
   .post {
-    min-width: 200px;
     height: 200px;
+    min-width: 200px;
   }
 }

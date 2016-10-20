@@ -4,6 +4,9 @@ import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
 import classes from './GetInvolvedNewsletter.scss';
 
+/**
+ * newsletter section of /get-involved route
+ */
 export const GetInvolvedNewsletter = () => (
   <ImageContainer src="/images/news-o.jpg">
     <Container id="gi-newsletter" className={classes.newsletter} section title="Newsletter">

@@ -3,6 +3,9 @@ import Button from '../Button/Button';
 import Container from '../Container/Container';
 import classes from './GetInvolvedFundraising.scss';
 
+/**
+ * fundraising section of /get-involved route
+ */
 export const GetInvolvedFundraising = (props) => (
   <Container id="gi-fundraising" section title="Fundraising">
     <div className={classes.fundraising}>

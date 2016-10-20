@@ -11,6 +11,9 @@ const scroll = (e) => {
   animations.smoothScrollTo(e.currentTarget.dataset.id);
 };
 
+/**
+ * /get-involved route component
+ */
 export const GetInvolved = (props) => (
   <div>
     <GILanding onScrollClick={scroll} />

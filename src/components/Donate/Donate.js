@@ -4,9 +4,13 @@ import Container from '../Container/Container';
 import secondaryTheme from '../../containers/secondaryTheme/secondaryTheme';
 import classes from './Donate.scss';
 
+/**
+ * /donate route component
+ */
 export class Donate extends Component {
 
   componentDidMount() {
+    /* initialize Razoo donation widget */
     window.r_params = {
       title: 'Jimbere Fund, Inc.',
       short_description: '',
@@ -21,7 +25,7 @@ export class Donate extends Component {
         200: ''
       }
     };
-    /* is this line necessary? */
+    /* is this line necessary? (via Razoo docs) */
     window.r_protocol = document.location.protocol === 'https:' ? 'https://' : 'http://';
     window.r_identifier = 'Jimbere-Fund';
     /* inject script */

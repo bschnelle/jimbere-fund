@@ -5,6 +5,9 @@ import ImageContainer from '../ImageContainer/ImageContainer';
 import secondaryTheme from '../../containers/secondaryTheme/secondaryTheme';
 import classes from './Contact.scss';
 
+/**
+ * /contact route component
+ */
 export class Contact extends Component {
 
   componentDidMount() {

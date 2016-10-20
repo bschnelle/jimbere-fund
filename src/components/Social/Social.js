@@ -2,6 +2,9 @@
 import React, { PropTypes } from 'react';
 import classes from './Social.scss';
 
+/**
+ * social media icons
+ */
 const Social = (props) => {
   let className = classes.social;
   if (props.secondary) className += ` ${classes.secondary}`;

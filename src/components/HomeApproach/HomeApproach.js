@@ -1,9 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import FlipMove from 'react-flip-move';
-import HomeApproachIcon from '../HomeApproachIcon/HomeApproachIcon';
 import Container from '../Container/Container';
+import HomeApproachIcon from '../HomeApproachIcon/HomeApproachIcon';
 import classes from './HomeApproach.scss';
 
+/**
+ * approach section of root route
+ */
 class HomeApproach extends Component {
 
   static propTypes = {
@@ -16,6 +19,11 @@ class HomeApproach extends Component {
     this.updateContainer = this.updateContainer.bind(this);
   }
 
+  /**
+   * updateContainer - active section when header/icon is clicked
+   *
+   * @param  {Object} e event
+   */
   updateContainer(e) {
     this.setState({ activeContainer: e.currentTarget.dataset.title });
   }

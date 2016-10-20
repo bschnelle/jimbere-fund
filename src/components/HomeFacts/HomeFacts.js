@@ -1,8 +1,11 @@
 import React, { PropTypes } from 'react';
-import Fact from '../Fact/Fact';
 import Container from '../Container/Container';
+import Fact from '../Fact/Fact';
 import classes from './HomeFacts.scss';
 
+/**
+ * facts section of root route
+ */
 const HomeFacts = (props) => {
   let facts = [
     { body: 'GDP per capita', header: '$480' },

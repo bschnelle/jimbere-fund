@@ -4,6 +4,9 @@ import ImageContainer from '../ImageContainer/ImageContainer';
 import ScrollArrow from '../ScrollArrow/ScrollArrow';
 import classes from './HomeLanding.scss';
 
+/**
+ * landing section of root route
+ */
 const HomeLanding = (props) => {
   const { onScrollClick } = props;
 

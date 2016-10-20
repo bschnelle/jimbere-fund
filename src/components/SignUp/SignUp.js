@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import classes from './SignUp.scss';
 
+/**
+ * /sign-up route component
+ * renders a typeform.io form
+ */
 class SignUp extends Component {
 
   componentDidMount() {

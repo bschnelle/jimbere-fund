@@ -2,6 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { setTheme } from '../../redux/modules/ui/uiModule';
 
+/**
+ * HOC for changing default theme
+ */
 const secondaryTheme = (Comp) => {
   class WrappedComponent extends Component {
     static propTypes = {

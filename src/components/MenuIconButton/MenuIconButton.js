@@ -1,6 +1,9 @@
 import React, { PropTypes } from 'react';
 import classes from './MenuIconButton.scss';
 
+/**
+ * menu icon
+ */
 const MenuIconButton = (props) => {
   let className = classes.menu;
   if (props.className) className += ` ${props.className}`;

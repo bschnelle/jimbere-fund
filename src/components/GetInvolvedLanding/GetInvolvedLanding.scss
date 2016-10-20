@@ -16,18 +16,18 @@
   }
 }
 
-.imageContainer {
-  background-color: #8F867B;
-  display: flex;
-  flex-direction: column;
-}
-
 .header {
   text-align: center;
 
   h6 {
     margin-top: 0;
   }
+}
+
+.imageContainer {
+  background-color: #8F867B;
+  display: flex;
+  flex-direction: column;
 }
 
 .tiles {

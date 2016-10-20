@@ -3,6 +3,9 @@ import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
 import classes from './GetInvolvedLanding.scss';
 
+/**
+ * landing section of /get-involved route
+ */
 export const GetInvolvedLanding = (props) => (
   <ImageContainer className={classes.imageContainer} src="/images/hands-o.jpg">
     <Container className={classes.container} fluid title="Get Involved">

@@ -1,6 +1,9 @@
 import React, { PropTypes } from 'react';
 import classes from './Container.scss';
 
+/**
+ * component for encapsulating content
+ */
 const Container = (props) => {
   let className = classes.container;
   if (props.className) className += ` ${props.className}`;
