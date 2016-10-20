@@ -1,14 +1,21 @@
-/* import React from 'react';
+import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
+import sinon from 'sinon';
+import Button from '../Button/Button';
 import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
-import { GetInvolved } from './GetInvolved';
-import classes from './GetInvolved.scss';
+import { GetInvolvedNewsletter } from './GetInvolvedNewsletter';
+import classes from './GetInvolvedNewsletter.scss';
 
-describe('GetInvolved', () => {
+describe('GetInvolvedNewsletter', () => {
+  let onScrollClick;
   let wrapper;
-  beforeEach(() => { wrapper = shallow(<GetInvolved />); });
+
+  beforeEach(() => {
+    onScrollClick = sinon.stub();
+    wrapper = shallow(<GetInvolvedNewsletter onScrollClick={onScrollClick} />);
+  });
 
   describe('render()', () => {
     describe('root element', () => {
@@ -21,8 +28,8 @@ describe('GetInvolved', () => {
           expect(wrapper.prop('className')).to.equal(classes.imageContainer);
         });
 
-        it('src = "/images/new_york-o.jpg"', () => {
-          expect(wrapper.prop('src')).to.equal('/images/new_york-o.jpg');
+        it('src = "/images/news-o.jpg"', () => {
+          expect(wrapper.prop('src')).to.equal('/images/news-o.jpg');
         });
       });
     });
@@ -32,29 +39,41 @@ describe('GetInvolved', () => {
       beforeEach(() => { container = wrapper.find(Container); });
 
       describe('props', () => {
-        it('className = .container', () => {
-          expect(container.prop('className')).to.equal(classes.container);
+        it('id = gi-newsletter', () => {
+          expect(container.prop('id')).to.equal('gi-newsletter');
         });
 
-        it('fluid = true', () => {
-          expect(container.prop('fluid')).to.be.true;
+        it('className = .newsletter', () => {
+          expect(container.prop('className')).to.equal(classes.newsletter);
         });
 
-        it('title = "Get Involved"', () => {
-          expect(container.prop('title')).to.equal('Get Involved');
+        it('section = true', () => {
+          expect(container.prop('section')).to.be.true;
+        });
+
+        it('title = "Newsletter"', () => {
+          expect(container.prop('title')).to.equal('Newsletter');
         });
       });
-    });
 
-    describe('nested elements', () => {
-      it('contains an h6', () => {
-        expect(wrapper.find('h6')).to.have.length(1);
-      });
+      describe('nested elements', () => {
+        it('contains a paragraph', () => {
+          expect(container.childAt(0).type()).to.equal('p');
+        });
 
-      it('contains a div with a .positions class', () => {
-        expect(wrapper.find(`.${classes.positions}`)).to.have.length(1);
+        describe('Button with props', () => {
+          let button;
+          beforeEach(() => { button = container.find(Button); });
+
+          it('label = "Sign Up"', () => {
+            expect(button.prop('label')).to.equal('Sign Up');
+          });
+
+          expect('to = "/sign-up"', () => {
+            expect(button.prop('to')).to.equal('/sign-up');
+          });
+        });
       });
     });
   });
 });
-*/
