@@ -10,7 +10,6 @@
   position: relative;
   /* prevent jarring vertical resize (100vh) when url bar hides on mobile */
   transition: height 1000000s;
-  width: 100vw;
 
   .actions, .slogan {
     flex: 1;
