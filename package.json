@@ -49,6 +49,7 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "css-loader": "^0.24.0",
+    "es6-promise": "^4.0.5",
     "extract-text-webpack-plugin": "^2.0.0-beta.3",
     "file-loader": "^0.9.0",
     "fs-extra": "^0.30.0",
