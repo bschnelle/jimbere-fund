@@ -86,6 +86,7 @@ $longTransitionDuration: 500ms;
 
         .content {
           flex: 0 0 80%;
+          max-width: 80%; // IE11 work around
 
           > div {
             display: flex;
@@ -111,6 +112,7 @@ $longTransitionDuration: 500ms;
 
         .title {
           flex: 0 0 20%;
+          max-width: 20%; // IE11 work around
           padding: 2rem;
           text-align: center;
           transition: transform $transitionDuration;

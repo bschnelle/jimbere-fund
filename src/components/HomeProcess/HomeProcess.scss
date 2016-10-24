@@ -1,4 +1,8 @@
 .process {
   height: auto;
   width: 100%;
+
+  > img {
+    height: 100%;
+  }
 }
