@@ -47,11 +47,11 @@ class WorkPriorityPanes extends Component {
 
     return (
       <div className={classes.panesWrapper}>
+        <span className={closeClassName} onClick={this.closePane}>
+          <span />
+          <span />
+        </span>
         <div className={classes.panes}>
-          <span className={closeClassName} onClick={this.closePane}>
-            <span />
-            <span />
-          </span>
           <div>
           {this.props.panes.map((pane, i) => {
             const className = this.state.active === i.toString()
