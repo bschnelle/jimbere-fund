@@ -12,7 +12,7 @@
 
     &:not(:nth-of-type(3)) {
       border-radius: 2px;
-      flex: 1;
+      flex: 1 0 auto;
 
       > span {
         background-color: lighten($primaryColor1, 10%);
