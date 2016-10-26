@@ -222,6 +222,11 @@ $longTransitionDuration: 500ms;
           display: flex;
           flex-direction: column;
 
+          .content, .title {
+            flex: 1; 
+            max-width: none;
+          }
+
           .content {
             display: none;
 
@@ -256,5 +261,9 @@ $longTransitionDuration: 500ms;
         }
       }
     }
+  }
+
+  .panesWrapper .close {
+    display: none;
   }
 }
