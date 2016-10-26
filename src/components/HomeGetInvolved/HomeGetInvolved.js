@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Button from '../Button/Button';
 import Container from '../Container/Container';
+import GetInvolvedTiles from '../GetInvolvedTiles/GetInvolvedTiles';
+import ImageContainer from '../ImageContainer/ImageContainer';
 import classes from './HomeGetInvolved.scss';
 
 /**
@@ -22,17 +23,13 @@ class HomeGetInvolved extends Component {
   }
 
   render() {
-    const { readMore } = this.state;
-    let readMoreClass = classes.readMore;
-    if (readMore) readMoreClass += ` ${classes.readMoreOpen}`;
-
     return (
-      <Container className={classes.section} container section title="Story">
-        <div className={classes.story}>
+      <ImageContainer className={classes.imageContainer} src="/images/hands-o.jpg">
+        <Container className={classes.section} container fluid section title="Get Involved">
           <p>We need your time and talents.</p>
-
-        </div>
-      </Container>
+          <GetInvolvedTiles link />
+        </Container>
+      </ImageContainer>
     );
   }
 }

@@ -1,0 +1,55 @@
+@import '../../styles/config';
+
+.tiles {
+  align-items: center;
+  display: flex;
+  flex: 1 0 auto;
+
+  > a, > div {
+    flex: 0 0 33.333%;
+    text-decoration: none;
+
+    > div {
+      background-color: rgba(255, 255, 255, .85);
+      border-radius: 2px;
+      color: $primaryColor1;
+      cursor: pointer;
+      margin: 1rem;
+      max-width: 500px;
+      padding: 6rem 1rem;
+      position: relative;
+      text-align: center;
+      transition: background-color $transitionDuration;
+
+      h5 {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: $small) {
+  .tiles {
+    > a, > div {
+      > div:hover {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+@media (max-width: $small) {
+  .tiles {
+    flex-direction: column;
+
+    > a, > div {
+      flex: 1 0 auto;
+      width: 100%;
+
+      > div {
+        margin: .5rem 0;
+        padding: 3rem 1rem;
+      }
+    }
+  }
+}
