@@ -6,9 +6,9 @@ import Social from '../Social/Social';
 import classes from './Footer.scss';
 
 describe('Footer', () => {
-  it('renders a root div with a .footer class', () => {
+  it('renders a root footer with a .footer class', () => {
     const wrapper = shallow(<Footer />);
-    expect(wrapper.type()).to.equal('div');
+    expect(wrapper.type()).to.equal('footer');
     expect(wrapper.is(`.${classes.footer}`)).to.be.true;
   });
 
