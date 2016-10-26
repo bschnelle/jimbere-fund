@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import classes from './GetInvolvedTiles.scss';
 
 /**
- * landing section of /get-involved route
+ * tiles for GetInvolvedLanding and HomeGetInvolved
  */
 const GetInvolvedTiles = (props) => {
   const tiles = [
