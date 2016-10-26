@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import Button from '../Button/Button';
@@ -103,3 +103,4 @@ describe('HomeGetInvolved', () => {
     });
   });
 });
+*/
