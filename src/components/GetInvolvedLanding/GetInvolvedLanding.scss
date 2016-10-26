@@ -36,15 +36,14 @@
   flex: 1 0 auto;
 
   > div {
-    flex: 1 0 auto;
-    margin: 1rem;
+    flex: 0 0 33.333%;
 
     > div {
       background-color: rgba(255, 255, 255, .85);
       border-radius: 2px;
       color: $primaryColor1;
       cursor: pointer;
-      margin: auto;
+      margin: 1rem;
       max-width: 500px;
       padding: 6rem 1rem;
       position: relative;
@@ -69,6 +68,7 @@
     flex-direction: column;
 
     > div {
+      flex: 1 0 auto;
       margin: .5rem 0;
       width: 100%;
 

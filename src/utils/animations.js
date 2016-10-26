@@ -23,6 +23,8 @@ export function smoothScrollTo(id) {
       window.requestAnimationFrame(step);
     }
   });
+  
+  location.hash = id;
 }
 
 export default smoothScrollTo;

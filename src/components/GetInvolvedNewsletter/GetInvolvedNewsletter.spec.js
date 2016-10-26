@@ -39,8 +39,8 @@ describe('GetInvolvedNewsletter', () => {
       beforeEach(() => { container = wrapper.find(Container); });
 
       describe('props', () => {
-        it('id = gi-newsletter', () => {
-          expect(container.prop('id')).to.equal('gi-newsletter');
+        it('id = newsletter', () => {
+          expect(container.prop('id')).to.equal('newsletter');
         });
 
         it('className = .newsletter', () => {

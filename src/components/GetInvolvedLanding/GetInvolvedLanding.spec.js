@@ -91,8 +91,8 @@ describe('GetInvolvedLanding', () => {
               fundraising = tiles.childAt(0).childAt(0);
             });
 
-            it('has a data-id prop set to "gi-fundraising"', () => {
-              expect(fundraising.prop('data-id')).to.equal('gi-fundraising');
+            it('has a data-id prop set to "fundraising"', () => {
+              expect(fundraising.prop('data-id')).to.equal('fundraising');
             });
 
             it('has an onClick prop set to props.onScrollClick', () => {
@@ -110,8 +110,8 @@ describe('GetInvolvedLanding', () => {
               fundraising = tiles.childAt(1).childAt(0);
             });
 
-            it('has a data-id prop set to "gi-newsletter"', () => {
-              expect(fundraising.prop('data-id')).to.equal('gi-newsletter');
+            it('has a data-id prop set to "newsletter"', () => {
+              expect(fundraising.prop('data-id')).to.equal('newsletter');
             });
 
             it('has an onClick prop set to props.onScrollClick', () => {
@@ -129,8 +129,8 @@ describe('GetInvolvedLanding', () => {
               fundraising = tiles.childAt(2).childAt(0);
             });
 
-            it('has a data-id prop set to "gi-work-with-us"', () => {
-              expect(fundraising.prop('data-id')).to.equal('gi-work-with-us');
+            it('has a data-id prop set to "work-with-us"', () => {
+              expect(fundraising.prop('data-id')).to.equal('work-with-us');
             });
 
             it('has an onClick prop set to props.onScrollClick', () => {

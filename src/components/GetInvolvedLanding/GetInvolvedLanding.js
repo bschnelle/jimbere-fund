@@ -16,19 +16,19 @@ export const GetInvolvedLanding = (props) => (
       </div>
       <div className={classes.tiles}>
         <div>
-          <div data-id="gi-fundraising" onClick={props.onScrollClick}>
+          <div data-id="fundraising" onClick={props.onScrollClick}>
             <h5>Start a</h5>
             <h5>Fundraiser</h5>
           </div>
         </div>
         <div>
-          <div data-id="gi-newsletter" onClick={props.onScrollClick}>
+          <div data-id="newsletter" onClick={props.onScrollClick}>
             <h5>Newsletter</h5>
             <h5>Sign up</h5>
           </div>
         </div>
         <div>
-          <div data-id="gi-work-with-us" onClick={props.onScrollClick}>
+          <div data-id="work-with-us" onClick={props.onScrollClick}>
             <h5>Work</h5>
             <h5>With Us</h5>
           </div>

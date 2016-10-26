@@ -17,8 +17,8 @@ describe('GetInvolvedFundraising', () => {
     });
 
     describe('with props', () => {
-      it('id = "gi-fundraising"', () => {
-        expect(container.prop('id')).to.equal('gi-fundraising');
+      it('id = "fundraising"', () => {
+        expect(container.prop('id')).to.equal('fundraising');
       });
 
       it('section = true', () => {

@@ -7,7 +7,7 @@ import classes from './GetInvolvedFundraising.scss';
  * fundraising section of /get-involved route
  */
 export const GetInvolvedFundraising = (props) => (
-  <Container id="gi-fundraising" section title="Fundraising">
+  <Container id="fundraising" section title="Fundraising">
     <div className={classes.fundraising}>
       <p>
         Ready to join the hard work of rebuilding communities in Congo?

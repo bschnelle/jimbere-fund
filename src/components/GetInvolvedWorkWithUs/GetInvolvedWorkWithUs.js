@@ -7,7 +7,7 @@ import classes from './GetInvolvedWorkWithUs.scss';
  * work with us section of /get-involved route
  */
 export const GetInvolvedWorkWithUs = () => (
-  <Container id="gi-work-with-us" section title="Work With Us">
+  <Container id="work-with-us" section title="Work With Us">
     <div className={classes.workWithUs}>
       <p>We're always looking for great people to join our cause.</p>
       <div>

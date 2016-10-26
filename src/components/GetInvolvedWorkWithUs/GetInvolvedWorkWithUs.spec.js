@@ -22,8 +22,8 @@ describe('GetInvolvedWorkWithUs', () => {
       beforeEach(() => { container = wrapper.find(Container); });
 
       describe('props', () => {
-        it('id = gi-work-with-us', () => {
-          expect(container.prop('id')).to.equal('gi-work-with-us');
+        it('id = work-with-us', () => {
+          expect(container.prop('id')).to.equal('work-with-us');
         });
 
         it('section = true', () => {
