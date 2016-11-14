@@ -55,8 +55,8 @@ describe('HomeLanding', () => {
           expect(button.prop('label')).to.equal('Join Us');
         });
 
-        it('to = "/sign-up"', () => {
-          expect(button.prop('to')).to.equal('/sign-up');
+        it('to = "/get-involved"', () => {
+          expect(button.prop('to')).to.equal('/get-involved');
         });
       });
     });
