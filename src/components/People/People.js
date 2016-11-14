@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import Container from '../Container/Container';
 import classes from './People.scss';
@@ -10,8 +11,10 @@ const People = () => {
     {
       name: 'Staff',
       members: [
-        { name: 'Obadias Ndaba', title: 'President & CEO' },
-        { name: 'Sandra Uwinlingiy\'Imana', title: 'Director of Strategic Partnerships' },
+        { name: 'Obadias Ndaba', title: 'Founder and CEO' },
+        { name: 'Adele Kibasumba', title: 'Co-founder and Senior Advisor' },
+        { name: 'Sandra Uwiringiyimana', title: 'Co-founder and Director of Partnerships & Communications' },
+        { name: 'Benjamin Itangishaka', title: 'Project Manager' },
         { name: 'Ruhumuriza Justin', title: 'Community Coordinator' }
       ]
     },
