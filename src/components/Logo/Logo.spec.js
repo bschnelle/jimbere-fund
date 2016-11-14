@@ -38,26 +38,26 @@ describe('Logo', () => {
     });
 
     describe('props.secondary  = false', () => {
-      it('contains 13 elements with a .green class', () => {
+      it('contains 12 elements with a .green class', () => {
         const wrapper = shallow(<Logo />);
-        expect(wrapper.find(`.${classes.green}`)).to.have.length(13);
+        expect(wrapper.find(`.${classes.green}`)).to.have.length(12);
       });
 
-      it('contains 2 elements with a .white class', () => {
+      it('contains 3 elements with a .white class', () => {
         const wrapper = shallow(<Logo />);
-        expect(wrapper.find(`.${classes.white}`)).to.have.length(2);
+        expect(wrapper.find(`.${classes.white}`)).to.have.length(3);
       });
     });
 
     describe('props.secondary  = true', () => {
-      it('contains 2 elements with a .green class', () => {
+      it('contains 3 elements with a .green class', () => {
         const wrapper = shallow(<Logo secondary />);
-        expect(wrapper.find(`.${classes.green}`)).to.have.length(2);
+        expect(wrapper.find(`.${classes.green}`)).to.have.length(3);
       });
 
-      it('contains 13 elements with a .white class', () => {
+      it('contains 12 elements with a .white class', () => {
         const wrapper = shallow(<Logo secondary />);
-        expect(wrapper.find(`.${classes.white}`)).to.have.length(13);
+        expect(wrapper.find(`.${classes.white}`)).to.have.length(12);
       });
     });
   });
