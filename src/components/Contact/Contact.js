@@ -37,7 +37,7 @@ export class Contact extends Component {
         <div className={classes.info}>
           <div>
             <h4>Email</h4>
-            <p>obadiasndaba@gmail.com</p>
+            <p>hello@jimberefund.org</p>
             <h4>Phone</h4>
             <p>917.224.2095</p>
           </div>
