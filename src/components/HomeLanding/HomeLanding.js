@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import Button from '../Button/Button';
 import ImageContainer from '../ImageContainer/ImageContainer';
 import ScrollArrow from '../ScrollArrow/ScrollArrow';
@@ -15,16 +16,33 @@ const HomeLanding = (props) => {
       <div className={classes.landing}>
 
         <div className={classes.slogan}>
+          {props.isMedium
+          ? (
+            <div>
+              <span>Connecting communities beyond the reach of the road to opportunities.</span>
+            </div>
+          )
+          : (
+            <div>
+              <span>Connecting</span>
+              <span>communities beyond</span>
+              <span>the reach of the road to</span>
+              <span>opportunities.</span>
+            </div>
+          )}
           <div>
-            <span>battling</span>
-            <span><span>extreme</span></span>
-            <span>poverty</span>
-            <span>in Congo</span>
+            <div><span>We enable Congo's most remote communities</span></div>
+            <div>
+              <span>
+                to access critical services and thrive...
+                <Link to="/work">learn more</Link>
+              </span>
+            </div>
           </div>
         </div>
 
-        <div className={classes.actions}>
-          <Button label="Join Us" to="/get-involved" />
+        <div>
+          <Button className={classes.joinUsButton} label="Join Us" to="/get-involved" />
         </div>
 
         <ScrollArrow className={classes.scrollToFacts} label="facts" onClick={onScrollClick} />
@@ -34,7 +52,8 @@ const HomeLanding = (props) => {
 };
 
 HomeLanding.propTypes = {
-  onScrollClick: PropTypes.func.isRequired
+  onScrollClick: PropTypes.func.isRequired,
+  isMedium: PropTypes.bool.isRequired
 };
 
 export default HomeLanding;

@@ -14,7 +14,7 @@ import classes from './Home.scss';
  * root route component
  */
 export const Home = (props) => {
-  const { isSmall } = props;
+  const { isMedium, isSmall } = props;
   const scrollToFacts = (e) => {
     e.stopPropagation();
     animations.smoothScrollTo('facts');
@@ -22,7 +22,7 @@ export const Home = (props) => {
 
   return (
     <div className={classes.home}>
-      <HomeLanding onScrollClick={scrollToFacts} />
+      <HomeLanding onScrollClick={scrollToFacts} isMedium={isMedium} />
       <HomeFacts id="facts" isSmall={isSmall} />
       <HomePurpose />
       <HomeStory />
@@ -34,6 +34,7 @@ export const Home = (props) => {
 };
 
 Home.propTypes = {
+  isMedium: PropTypes.bool.isRequired,
   isSmall: PropTypes.bool.isRequired
 };
 

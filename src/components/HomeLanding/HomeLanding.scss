@@ -1,39 +1,18 @@
 @import '../../styles/config';
 
 .landing {
-  align-items: center;
   background-color: rgba(0,0,0,.4);
   display: flex;
-  height: 100vh;
+  flex-direction: column;
   justify-content: center;
-  padding-bottom: 60px;
+  min-height: 100vh;
+  padding: 6rem 15% 60px 15%; // TODO ????
   position: relative;
   /* prevent jarring vertical resize (100vh) when url bar hides on mobile */
-  transition: height 1000000s;
+  transition: min-height 1000000s;
 
-  .actions, .slogan {
-    flex: 1;
-  }
-
-  .actions {
-    display: flex;
-    justify-content: center;
-    > div {
-      background-color: transparentize($primaryColor2, .2);
-      border: solid 2px $primaryColor2;
-      border-radius: 1px;
-      color: $alternateTextColor;
-      cursor: pointer;
-      font-family: $headerFont;
-      font-size: 1.5rem;
-      margin: 1rem;
-      padding: 1rem 3rem;
-      text-transform: uppercase;
-      transition: all $transitionDuration;
-      &:hover {
-        background-color: $primaryColor2;
-      }
-    }
+  .joinUsButton {
+    margin: 0;
   }
 
   .scrollToFacts {
@@ -43,38 +22,46 @@
   }
 
   .slogan {
-    align-items: center;
-    color: #fff;
-    display: flex;
+    // display: flex;
+    // flex-direction: column;
+    font-family: $headerFont;
     justify-content: center;
-    flex: 1;
-    font-size: 4rem;
 
-    > div > span {
-      display: block;
-      font-family: $headerFont;
+    > div {
+      &:first-of-type {
+        flex: 0 0 100%;
 
-      &:nth-of-type(2) {
-        margin: .5rem;
-        text-align: right;
         > span {
-          background-color: #fff;
-          color: rgba(0,0,0,.87);
-          display: inline-block;
-          padding: 0 2rem;
+          color: #fff;
+          display: block;
+          font-size: 5rem;
+          font-weight: 700;
         }
       }
 
-      &:nth-of-type(3) {
-        font-size: 1.75em;
-        font-style: italic;
-        font-weight: 700;
-        text-transform: uppercase;
-      }
+      &:not(:first-of-type) {
+        margin: 2rem 0;
 
-      &:nth-of-type(4) {
-        text-align: center;
+        > div {
+          margin: .25rem 0;
 
+          > span {
+            background-color: $alternateTextColor;
+            display: inline-block;
+            font-size: 1.4rem;
+            padding: .25rem .75rem;
+
+            > a {
+              color: $primaryColor1;
+              text-decoration: none;
+              transition: color $transitionDuration;
+
+              &:hover {
+                color: $accentColor1;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -88,6 +75,7 @@
   .landing {
     flex-direction: column;
     padding: 9rem 1.5rem 3rem 1.5rem;
+    text-align: center;
 
     .actions {
       display: block;
@@ -99,7 +87,24 @@
     }
 
     .slogan {
-      font-size: 3.5rem;
+      > div {
+        &:first-of-type {
+          > span {
+            font-size: 3.5rem;
+          }
+        }
+
+        &:not(:first-of-type) {
+          > div > span {
+            font-size: 1.2rem;
+            margin: 0 !important;
+          }
+        }
+      }
+    }
+
+    > div:nth-of-type(2) {
+      text-align: center;
     }
   }
 }
