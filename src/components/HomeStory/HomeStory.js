@@ -29,15 +29,14 @@ class HomeStory extends Component {
     return (
       <Container className={classes.section} container section title="Story">
         <div className={classes.story}>
-          <p>Co-founders Obadias Ndaba and Adele Kibasumba came from some of the most remote areas
-          of Congo in High Plateaux of South Kivu. You’ve got to walk a couple of days from the
-          nearest dirt road to reach their ancestral villages. After witnessing the horrors of
-          Congo’s wars and resettling to New York, they wanted to do something about their homeland
-          still mired in extreme poverty, tribal conflict, and largely disconnected from the modern
-          world. But they weren't’ sure what could make change happen there. The only thing they
-          knew for sure was that there was a great deal of need on the ground - from conflict to
-          water, food shortages to health,  gender inequality to education. Where could they
-          possibly start?</p>
+          <p>Co-founders Obadias, Adele and Sandra came from some of the most remote areas of Congo
+          in High Plateaux of South Kivu. You’ve got to walk a couple of days from the nearest dirt
+          road to reach their ancestral villages. After witnessing the horrors of Congo’s wars and
+          resettling to New York, they wanted to do something about their homeland still mired in
+          extreme poverty, tribal conflict, and largely disconnected from the modern world. But they
+          weren't’ sure what could make change happen there. The only thing they knew for sure was
+          that there was a great deal of need on the ground - from conflict to water, food shortages
+          to health, gender inequality to education. Where could they possibly start?</p>
 
           <div className={readMoreClass}>
             <p>For over four years, they grappled to define what exactly they could do to help and
@@ -51,15 +50,14 @@ class HomeStory extends Component {
             communities and villages about their top priorities. Each local community or village
             gave them somewhat different needs and priorities.</p>
 
-            <p>They figured out that they could not possibly find one solution for Congo’s
-            developmental challenges and that no one intervention is close to being sufficient to
-            help those in need. The best way to help, they concluded, was to work with and support
-            local communities and villages to identify top interventions that would do the most good,
-            help them design and implement their own projects in a way that bring people together
-            from different ethnic groups - building trust between communities through tackling common
-            needs together. Their model was born out of frustration from having to choose one clear
-            thing to do, as every textbook in nonprofit and international development would
-            tell you.</p>
+            <p>They figured out that they could not possibly find one solution for Congo’s developmental
+            challenges and that no one intervention is close to being sufficient to help those in need.
+            The best way to help, they concluded, was to work with and support local communities and
+            villages to identify top interventions that would do the most good, help them design and
+            implement their own projects in a way that bring people together from different ethnic
+            groups - building trust between communities through tackling common needs together. Their
+            model was born out of frustration from having to choose one clear thing to do, as every
+            textbook in nonprofit and international development would tell you.</p>
           </div>
 
           <div className={classes.readMoreButton}>
