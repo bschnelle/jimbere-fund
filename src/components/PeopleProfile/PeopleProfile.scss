@@ -1,6 +1,53 @@
+@import '../../styles/config';
+
 .profile {
-  span {
-    font-size: 1.2rem;
+  margin: 2rem;
+
+
+
+  .imageWrapper {
+    border: solid .75rem rgb(220,220,220);
+    border-radius: 50%;
+    cursor: pointer;
+    height: 15rem;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    transition: border-color $transitionDuration;
+    width: 15rem;
+    z-index: 1;
+
+    &[disabled=true] {
+      cursor: default;
+    }
+
+    &:hover {
+      border-color: rgb(200,200,200);
+
+      img {
+        transform: scale(1.05);
+      }
+    }
+
+    img {
+      height: 100%;
+      position: relative;
+      transition: transform $transitionDuration;
+      width: 100%;
+      z-index: 0;
+    }
+  }
+
+  .name {
+    display: block;
+    font-family: $headerFont;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    text-transform: uppercase; 
+  }
+
+  .title {
     font-style: italic;
   }
 }

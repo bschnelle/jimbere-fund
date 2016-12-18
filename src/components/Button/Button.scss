@@ -42,7 +42,7 @@
 
 .flat {
   background-color: transparent;
-  border: none;
+  border: solid 2px transparent;
   color: $primaryColor1;
 
   &.secondary {
@@ -51,7 +51,7 @@
 
   &:active {
     background-color: darken($accentColor1, 10%) !important;
-    border: none !important;
+    border: solid 2px transparent !important;
   }
 
   &:hover {

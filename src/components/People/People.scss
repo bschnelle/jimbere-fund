@@ -1,6 +1,28 @@
-.people {
-  min-height: 100vh;
+@import '../../styles/config';
+
+.buttons {
+  background-color: rgb(220,220,220);
+  min-height: 95px;
+  text-align: center;
+}
+
+.header {
+  background-color: rgba(0, 0, 0, .4);
+  color: $alternateTextColor;
+  overflow: auto;
   padding-bottom: 6rem;
+  text-align: center;
+
+  h6 {
+    margin: 0;
+  }
+}
+
+.imageContainer {
+  background-color: #EFE9DC; // TODO update this value
+}
+
+.people {
   text-align: center;
 
   .group {
@@ -9,17 +31,12 @@
     }
   }
 
-  /* .member {
-    margin-bottom: 1.5rem;
+  .members {
+    display: flex;
+    flex-wrap: wrap;
 
-    > span {
-      display: block;
-      margin-bottom: .2rem;
-
-      &:first-of-type {
-        font-size: 1.5rem;
-        font-weight: 700;
-      }
+    .member {
+      flex: 0 0 33.333%;
     }
-  } */
+  }
 }
