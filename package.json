@@ -6,7 +6,7 @@
   "scripts": {
     "build": "DEBUG=jimbere-fund node bin/build && NODE_ENV=production webpack",
     "lint": "eslint src test",
-    "start": "webpack-dev-server --debug --content-base dist/",
+    "start": "webpack-dev-server --content-base dist/",
     "test": "NODE_ENV=test istanbul cover _mocha",
     "test:dev": "NODE_ENV=test mocha --watch"
   },

@@ -21,23 +21,23 @@ const webpackConfig = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loader: 'babel-loader'
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url?limit=10000&mimetype=application/font-woff'
+        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
       },
       {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'file'
+        loader: 'file-loader'
       },
       {
         test: /\.(jpg|jpeg|png|svg)$/,
-        loader: 'url?limit=10000'
+        loader: 'url-loader?limit=10000'
       }
     ]
   },
@@ -58,25 +58,22 @@ const webpackConfig = {
         collapseWhitespace: true
       }
     })
-  ],
-
-  postcss: [autoprefixer]
+  ]
 };
 
 if (config.production) {
   // add css loader with ExtractTextPlugin
-  webpackConfig.module.loaders.push({
+  webpackConfig.module.rules.push({
     test: /\.(css|scss)$/,
     loader: ExtractTextPlugin.extract([
-      'css?modules&importLoaders=1&minimize',
-      'postcss',
-      'sass'
+      'css-loader?modules&importLoaders=1&minimize',
+      'postcss-loader',
+      'sass-loader'
     ])
   });
   // add optimizations
   webpackConfig.plugins.push(
     new ExtractTextPlugin('styles-[contenthash].css'),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       comments: false,
@@ -95,21 +92,20 @@ if (config.production) {
   );
 } else {
   // devServer options
-  webpackConfig.devServer.debug = true;
   webpackConfig.devServer.hot = true;
   // source maps
   webpackConfig.devtool = 'source-map';
   // add css loader
-  webpackConfig.module.loaders.push({
+  webpackConfig.module.rules.push({
     test: /\.(css|scss)$/,
     loaders: [
-      'style',
+      'style-loader',
       // &sourceMap removed below see following
       // https://github.com/webpack/style-loader/issues/55
       // https://github.com/davezuko/react-redux-starter-kit/issues/696
-      'css?modules&importLoaders=1',
-      'postcss',
-      'sass'
+      'css-loader?modules&importLoaders=1',
+      'postcss-loader',
+      'sass-loader'
     ]
   });
   // add HMR
