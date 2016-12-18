@@ -22,9 +22,17 @@
   background-color: #EFE9DC; // TODO update this value
 }
 
-.people {
-  text-align: center;
+.modal {
+  display: flex;
 
+  > div {
+    &:nth-of-type(0) {
+      text-align: center;
+    }
+  }
+}
+
+.people {
   .group {
     > h4 {
       margin-bottom: 2rem;

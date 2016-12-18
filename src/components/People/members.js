@@ -157,10 +157,10 @@ const members = {
       bio: `
         Ben is a software engineer based out of Denver, CO. He previously worked as an analyst
         in both the energy and insurance industries. He is a CPA, and holds degrees in
-        accounting and finance. He is passionate about bleeding edge technology and finding
-        ways to apply those innovations in a meaningful way. He’s built Jimbere Fund’s website
-        and provides advice on technology. He loves the outdoors, art, architecture, video
-        games, craft beer, and coffee.
+        accounting and finance. Ben is passionate about bleeding edge technology and finding
+        ways to apply those innovations in a meaningful way. He's built Jimbere Fund’s website
+        and provides advice on technology. The outdoors, art, architecture, video
+        games, craft beer, and coffee are among his interests.
       `
     },
     {

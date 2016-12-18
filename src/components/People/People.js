@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React, { Component } from 'react';
+import Modal from 'react-modal';
 import Button from '../Button/Button';
 import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
@@ -16,16 +17,36 @@ class People extends Component {
   constructor(props) {
     super(props);
     this.groups = ['Staff', 'US Board', 'DRC Board'];
-    this.state = { selectedGroup: 'Staff' };
-    this.changeGroup = this.changeGroup.bind(this);
+    this.state = { selectedGroup: 'Staff', selectPerson: undefined };
+    const fns = ['changeGroup', 'clearSelectedPerson', 'selectPerson'];
+    fns.forEach(fn => { this[fn] = this[fn].bind(this); });
   }
 
   changeGroup(e) {
     this.setState({ selectedGroup: e.target.innerHTML });
   }
 
+  clearSelectedPerson() {
+    this.setState({ selectedPerson: null });
+  }
+
+  selectPerson(person) {
+    this.setState({ selectedPerson: person });
+  }
+
   render() {
-    const { selectedGroup } = this.state;
+    const { selectedGroup, selectedPerson } = this.state;
+    const modalStyle = {
+      content: {
+        bottom: 'none',
+        left: '25%',
+        right: '25%',
+        top: '25%'
+      },
+      overlay: {
+        backgroundColor: 'rgba(0,0,0,.75)'
+      }
+    };
 
     return (
       <div>
@@ -54,13 +75,31 @@ class People extends Component {
               <div className={classes.members}>
                 {people[selectedGroup].map((member, index) => (
                   <div className={classes.member} key={index}>
-                    <PeopleProfile {...member} />
+                    <PeopleProfile profile={member} onClick={this.selectPerson} />
                   </div>
                 ))}
               </div>
             </div>
           </div>
         </Container>
+
+        <Modal
+          contentLabel="Bio"
+          isOpen={!!selectedPerson}
+          onRequestClose={this.clearSelectedPerson}
+          style={modalStyle}
+        >
+          {selectedPerson && (
+            <div className={classes.modal}>
+              <div>
+                <PeopleProfile profile={selectedPerson} />
+              </div>
+              <div>
+                <p>{selectedPerson.bio}</p>
+              </div>
+            </div>
+          )}
+        </Modal>
       </div>
     );
   }

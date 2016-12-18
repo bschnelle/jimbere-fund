@@ -2,32 +2,28 @@
 
 .profile {
   margin: 2rem;
-
-
+  text-align: center;
 
   .imageWrapper {
     border: solid .75rem rgb(220,220,220);
     border-radius: 50%;
-    cursor: pointer;
     height: 15rem;
     margin: auto;
     overflow: hidden;
     position: relative;
     transition: border-color $transitionDuration;
     width: 15rem;
-    z-index: 1;
+    z-index: 0;
 
-    &[disabled=true] {
-      cursor: default;
-    }
+    &.hoverable {
+      cursor: pointer;
 
-    &:hover {
-      border-color: rgb(200,200,200);
-
-      img {
-        transform: scale(1.05);
+      &:hover {
+        border-color: rgb(200,200,200);
       }
     }
+
+
 
     img {
       height: 100%;
@@ -44,7 +40,7 @@
     font-size: 1.25rem;
     font-weight: bold;
     margin-top: 1rem;
-    text-transform: uppercase; 
+    text-transform: uppercase;
   }
 
   .title {

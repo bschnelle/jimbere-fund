@@ -1,25 +1,39 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classes from './PeopleProfile.scss';
 
-const PeopleProfile = ({ image, name, onClick, title }) => {
-  let imageSrc = image ? `/images/${image}` : '/images/peoplePlaceholder.jpg';
+class PeopleProfile extends Component {
 
-  return (
-    <div className={classes.profile} disabled={!!onClick} onClick={onClick}>
-      <div className={classes.imageWrapper}>
-        <img alt={name} src={imageSrc} />
+  constructor(props) {
+    super(props);
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick() {
+    const { onClick } = this.props;
+    if (onClick && this.props.profile.bio) this.props.onClick(this.props.profile);
+  }
+
+  render() {
+    const { onClick, profile: { bio, image, name, title } } = this.props;
+    const imageSrc = image ? `/images/${image}` : '/images/peoplePlaceholder.jpg';
+    let imageWrapperClassName = classes.imageWrapper;
+    if (onClick && bio) imageWrapperClassName += ` ${classes.hoverable}`;
+
+    return (
+      <div className={classes.profile} onClick={this.onClick}>
+        <div className={imageWrapperClassName}>
+          <img alt={name} src={imageSrc} />
+        </div>
+        <span className={classes.name}>{name}</span>
+        <span className={classes.title}>{title}</span>
       </div>
-      <span className={classes.name}>{name}</span>
-      <span className={classes.title}>{title}</span>
-    </div>
-  );
-};
+    );
+  }
+}
 
 PeopleProfile.propTypes = {
-  image: PropTypes.string,
-  name: PropTypes.string.isRequired,
   onClick: PropTypes.func,
-  title: PropTypes.string.isRequired
+  profile: PropTypes.object.isRequired,
 };
 
 export default PeopleProfile;
