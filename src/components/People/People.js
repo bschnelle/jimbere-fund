@@ -1,45 +1,14 @@
 /* eslint-disable max-len */
 import React from 'react';
 import Container from '../Container/Container';
+import PeopleProfile from '../PeopleProfile/PeopleProfile';
 import classes from './People.scss';
+import people from './members';
 
 /**
  * /people route component
  */
 const People = () => {
-  const people = [
-    {
-      name: 'Staff',
-      members: [
-        { name: 'Obadias Ndaba', title: 'Founder and CEO' },
-        { name: 'Adele Kibasumba', title: 'Co-founder and Senior Advisor' },
-        { name: 'Sandra Uwiringiyimana', title: 'Co-founder and Director of Partnerships & Communications' },
-        { name: 'Benjamin Itangishaka', title: 'Project Manager' },
-        { name: 'Ruhumuriza Justin', title: 'Community Coordinator' }
-      ]
-    },
-    {
-      name: 'U.S. Board of Directors',
-      members: [
-        { name: 'Moses Nkosilathi Vuma', title: 'Chair' },
-        { name: 'Rachel Henderson', title: 'Secretary' },
-        { name: 'Hemant Wandhwani', title: 'Treasurer' },
-        { name: 'Adele Kibasumba', title: 'Member' },
-        { name: 'JD Stier', title: 'Member' }
-      ]
-    },
-    {
-      name: 'D.R.C. Board of Directors',
-      members: [
-        { name: 'Adele Kibasumba', title: 'Chair' },
-        { name: 'Muhamiriza Neza Aline', title: 'Secretary' },
-        { name: 'Ntare Paul', title: 'Treasurer' },
-        { name: 'Lazare R. Sebitereko', title: 'Member' },
-        { name: 'Sebaganwa Gasore Zébédée', title: 'Member' }
-      ]
-    }
-  ];
-
   return (
     <Container className={classes.people} title="People">
       <div>
@@ -48,10 +17,7 @@ const People = () => {
           <div className={classes.group} key={group.name}>
             <h4>{group.name}</h4>
             {group.members.map((member) => (
-              <div className={classes.member} key={member.name}>
-                <span>{member.name}</span>
-                <span>{member.title}</span>
-              </div>
+              <PeopleProfile {...member} />
             ))}
           </div>
         ))}

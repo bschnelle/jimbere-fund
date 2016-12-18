@@ -5,6 +5,7 @@ const members = [
       {
         name: 'Obadias Ndaba',
         title: 'Founder and CEO',
+        image: 'obadias-ndaba.jpg',
         bio: `
           Obadias is Founder and CEO of Jimbere Fund. He’s a seasoned non-profit executive with
           over 8 years of experience in nonprofit management, international development,
@@ -23,6 +24,7 @@ const members = [
       {
         name: 'Adele Kibasumba',
         title: 'Co-founder and Senior Advisor',
+        image: 'adele-kibasumba.jpg',
         bio: `
           Adele is Co-founder and Senior Advisor at Jimbere Fund, where she focusses on access to
           healthcare and women’s empowerment. She’s an activist who has advocated for human rights
@@ -38,6 +40,7 @@ const members = [
       {
         name: 'Sandra Uwiringiyimana',
         title: 'Co-founder and Director of Partnerships & Communications',
+        image: 'sandra-uwiringiyimana.jpg',
         bio: `
           Sandra is Co-founder and Director of Partnerships & Communications at Jimbere Fund,
           where she focusses on mobilizing people and institutions to support our mission. She’s
@@ -55,6 +58,7 @@ const members = [
       {
         name: 'Benjamin Itangishaka',
         title: 'Project Manager',
+        image: 'benjamin-itangishaka.jpg',
         bio: `
           Ben is a Project Manager at Jimbere Fund, where he focusses on program design and
           development. Ben originally came from Sud-Kivu in Democratic Republic of Congo and
@@ -70,6 +74,7 @@ const members = [
       {
         name: 'Justin Ruhumuriza',
         title: 'Community Coordinator',
+        image: 'ruhumuriza-justin.jpg',
         bio: `
           Justin is Community Coordinator at Jimbere Fund, where he focusses on working with
           communities to identify their most pressing needs and their solutions. He has worked
@@ -90,6 +95,7 @@ const members = [
       {
         name: 'Moses Nkosilathi Vuma',
         title: 'Chair',
+        image: 'moses-vuma.jpg',
         bio: `
           Moses holds a Masters degree in Public Administration and Finance from New York
           University. He founded Khuluma Center, a non-profit organization which creates
@@ -121,6 +127,7 @@ const members = [
       {
         name: 'Rachel Henderson',
         title: 'Secretary',
+        image: 'rachel-henderson.jpg',
         bio: `
           Rachel is an American writer, radio host and activist. Through her love for world
           experience, she has embraced the countries of Ghana, Rwanda and Israel.  Most recently
@@ -133,6 +140,7 @@ const members = [
       {
         name: 'Adele Kibasumba',
         title: 'Member',
+        image: 'adele-kibasumba.jpg',
         bio: `
           Adele is Co-founder and Senior Advisor at Jimbere Fund, where she focusses on access
           to healthcare and women’s empowerment. She’s an activist who has advocated for human
@@ -150,6 +158,7 @@ const members = [
       {
         name: 'Benjamin Schnelle',
         title: 'Member',
+        image: 'benjamin-schnelle.jpg',
         bio: `
           Ben is a software engineer based out of Denver, CO. He previously worked as an analyst
           in both the energy and insurance industries. He is a CPA, and holds degrees in
@@ -160,8 +169,17 @@ const members = [
         `
       },
       {
+        name: 'JD Stier',
+        title: 'Member'
+      },
+      {
+        name: 'Paul Freeman',
+        title: 'Member'
+      },
+      {
         name: 'Obadias Ndaba',
         title: 'Ex-officio member',
+        image: 'obadias-ndaba.jpg',
         bio: `
           Obadias is Founder and CEO of Jimbere Fund. He’s a seasoned non-profit executive with
           over 8 years of experience in nonprofit management, international development,
@@ -176,14 +194,6 @@ const members = [
           Independent University. Obadias has extensively travelled and lectured on global issues
           in over 25 countries in five continents. Follow him @ObadiasNdaba
         `
-      },
-      {
-        name: 'JD Stier',
-        title: 'Member'
-      },
-      {
-        name: 'Paul Freeman',
-        title: 'Member'
       }
     ]
   },
@@ -193,6 +203,7 @@ const members = [
       {
         name: 'Adele Kibasumba',
         title: 'Chair',
+        image: 'adele-kibasumba-2.jpg',
         bio: `
           Adele is Co-founder and Senior Advisor at Jimbere Fund, where she focusses on access to
           healthcare and women’s empowerment. She’s an activist who has advocated for human rights
@@ -210,6 +221,7 @@ const members = [
       {
         name: 'Paul Ntare',
         title: 'Treasurer',
+        image: 'ntare-paul.png',
         bio: `
           Paul has more than 25 years of experience in human rights, development and the judiciary
           in the Great Lakes Region. He has worked on police and justice reforms for many years,
@@ -226,6 +238,7 @@ const members = [
       {
         name: 'Lazare R. Sebitereko',
         title: 'Member',
+        image: 'lazare-sebitereko.jpg',
         bio: `
           Lazare is President and Rector of Eben-Ezer University in DRC, where he is a professor of
           community development and theology. He’s a Board member of Faculty Journal (HTS)
