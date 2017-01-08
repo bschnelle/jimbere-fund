@@ -1,5 +1,11 @@
 @import '../../styles/config';
 
+$lightGray: #ECECEC;
+
+.alternateBackground {
+  background-color: $lightGray;
+}
+
 .buttons {
   background-color: rgb(220,220,220);
   min-height: 95px;
@@ -19,11 +25,15 @@
 }
 
 .imageContainer {
-  background-color: #EFE9DC; // TODO update this value
+  background-color: $lightGray;
 }
 
 .modal {
   display: flex;
+
+  &.modalContentColumn {
+    flex-direction: column;
+  }
 
   > div {
     &:nth-of-type(0) {
@@ -33,12 +43,6 @@
 }
 
 .people {
-  .group {
-    > h4 {
-      margin-bottom: 2rem;
-    }
-  }
-
   .members {
     display: flex;
     flex-wrap: wrap;
@@ -46,5 +50,17 @@
     .member {
       flex: 0 0 33.333%;
     }
+  }
+}
+
+@media (max-width: $medium) {
+  .people .members .member {
+    flex: 0 0 50%;
+  }
+}
+
+@media (max-width: $extraSmall) {
+  .people .members .member {
+    flex: 0 0 100%;
   }
 }

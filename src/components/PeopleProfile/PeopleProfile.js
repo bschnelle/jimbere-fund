@@ -15,7 +15,7 @@ class PeopleProfile extends Component {
 
   render() {
     const { onClick, profile: { bio, image, name, title } } = this.props;
-    const imageSrc = image ? `/images/${image}` : '/images/peoplePlaceholder.jpg';
+    const imageSrc = image ? `/images/${image}` : '/images/profile-placeholder.jpg';
     let imageWrapperClassName = classes.imageWrapper;
     if (onClick && bio) imageWrapperClassName += ` ${classes.hoverable}`;
 

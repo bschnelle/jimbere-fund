@@ -213,7 +213,7 @@ const members = {
     {
       name: 'Paul Ntare',
       title: 'Treasurer',
-      image: 'ntare-paul.png',
+      image: 'ntare-paul.jpg',
       bio: `
         Paul has more than 25 years of experience in human rights, development and the judiciary
         in the Great Lakes Region. He has worked on police and justice reforms for many years,
