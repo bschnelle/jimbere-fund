@@ -104,6 +104,7 @@ const members = {
     {
       name: 'Hemant Wandhwani',
       title: 'Treasurer',
+      image: 'hemant-wandhwani.jpg',
       bio: `
         Hemant started his career working at Diversified Investment Advisors where he built
         financial applications for the pension industry. He founded and leads the Hanuman
@@ -155,12 +156,12 @@ const members = {
       title: 'Member',
       image: 'benjamin-schnelle.jpg',
       bio: `
-        Ben is a software engineer based out of Denver, CO. He previously worked as an analyst
-        in both the energy and insurance industries. He is a CPA, and holds degrees in
+        Ben is a software engineer based out of Denver, CO who previously worked as an analyst
+        in the energy and insurance industries. He is a CPA, and holds degrees in both
         accounting and finance. Ben is passionate about bleeding edge technology and finding
-        ways to apply those innovations in a meaningful way. He's built Jimbere Fund’s website
-        and provides advice on technology. The outdoors, art, architecture, video
-        games, craft beer, and coffee are among his interests.
+        ways to apply those innovations in a meaningful way. He built Jimbere Fund’s website
+        and provides advice on technology. While he isn't coding Ben enjoys the outdoors, art,
+        architecture, video games, craft beer, and coffee.
       `
     },
     {
@@ -168,8 +169,30 @@ const members = {
       title: 'Member'
     },
     {
-      name: 'Paul Freeman',
-      title: 'Member'
+      name: 'Paul Freedman',
+      title: 'Member',
+      image: 'paul-freedman.jpg',
+      bio: [
+        `Paul is an Emmy and Peabody Award winning film director, producer, writer and editor.
+        He began his career as and editorial assistant for television commercials.  As a commercial
+        editor and director, his credits include spots for airlines, automobiles, sport shoes and
+        soft drinks.  Today, his passion is social justice and his mission is to give a voice to
+        those who have none.  His films have covered an array of subjects and issues, from
+        performance artists in London to battlefields in the South Pacific to the conflicts of
+        modern Africa. He has interviewed presidents and Nobel laureates, genocidaires and
+        peacemakers. His films have tried to make a difference. `,
+        `"Rwanda - Do Scars Ever Fade?"" about the genocide and its painful aftermath, won a
+        Peabody Award and was nominated for two Emmys. "Sand and Sorrow", executive produced
+        and narrated by George Clooney, was broadcast on HBO and raised awareness about the
+        genocide in Darfur. "Halfway Home", about American servicemen and women coping with PTSD,
+        has brought attention to the plight of suffering vets here at home.  “One Last Hug - Three
+        Days at Grief Camp”, an HBO film about children coping with the death of a parent, was
+        awarded a Primetime Emmy.  His most recent film, "Merci Congo", about the deadly wars in
+        Congo and several extraordinary activists struggling to help, aired on Viceland in
+        December, 2016.`,
+        `Paul is from the Bay Area and holds a B.F.A. from San Francisco State University.
+        He currently lives in Los Angeles, is married, and the devoted father of two. `
+      ]
     },
     {
       name: 'Obadias Ndaba',

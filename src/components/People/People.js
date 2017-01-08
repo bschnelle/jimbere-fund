@@ -42,14 +42,17 @@ class People extends Component {
     const modalStyle = {
       content: {
         bottom: 'none',
-        height: '60%',
         left: isLarge ? '15%' : '25%',
-        overflowY: 'scroll',
+        margin: '3rem 0',
+        padding: '3rem',
         right: isLarge ? '15%' : '25%',
-        top: '20%'
       },
       overlay: {
-        backgroundColor: 'rgba(0,0,0,.75)'
+        alignItems: 'center',
+        backgroundColor: 'rgba(0,0,0,.75)',
+        display: 'flex',
+        overflowY: 'scroll',
+        zIndex: 1000,
       }
     };
 
@@ -100,7 +103,9 @@ class People extends Component {
                     <PeopleProfile profile={selectedPerson} />
                   </div>
                   <div>
-                    <p>{selectedPerson.bio}</p>
+                    {Array.isArray(selectedPerson.bio) ? (
+                      selectedPerson.bio.map(paragraph => <p>{paragraph}</p>)
+                    ) : <p>{selectedPerson.bio}</p>}
                   </div>
                 </div>
               )}
