@@ -19,8 +19,8 @@ export class Contact extends Component {
       dragPan: false,
       scrollZoom: false,
       style: 'mapbox://styles/bschnelle/citgbrv5n00022iqh7psitcc6',
-      center: [-73.9377, 40.6507],
-      zoom: 10
+      center: [-73.975, 40.753],
+      zoom: 12
     });
   }
 
@@ -40,6 +40,8 @@ export class Contact extends Component {
             <p>hello@jimberefund.org</p>
             <h4>Phone</h4>
             <p>917.224.2095</p>
+            <h4>Address</h4>
+            <p>450 Lexington Avenue, 4th Floor<br />New York, NY 10017</p>
           </div>
           <div id="map" />
         </div>

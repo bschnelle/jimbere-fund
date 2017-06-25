@@ -1,25 +1,66 @@
-.people {
-  min-height: 100vh;
+@import '../../styles/config';
+
+$lightGray: #ECECEC;
+
+.alternateBackground {
+  background-color: $lightGray;
+}
+
+.buttons {
+  background-color: rgb(220,220,220);
+  min-height: 95px;
+  text-align: center;
+}
+
+.header {
+  background-color: rgba(0, 0, 0, .4);
+  color: $alternateTextColor;
+  overflow: auto;
   padding-bottom: 6rem;
   text-align: center;
 
-  .group {
-    > h4 {
-      margin-bottom: 2rem;
-    }
+  h6 {
+    margin: 0;
+  }
+}
+
+.imageContainer {
+  background-color: $lightGray;
+}
+
+.modal {
+  display: flex;
+
+  &.modalContentColumn {
+    flex-direction: column;
   }
 
-  .member {
-    margin-bottom: 1.5rem;
-
-    > span {
-      display: block;
-      margin-bottom: .2rem;
-
-      &:first-of-type {
-        font-size: 1.5rem;
-        font-weight: 700;
-      }
+  > div {
+    &:nth-of-type(0) {
+      text-align: center;
     }
+  }
+}
+
+.people {
+  .members {
+    display: flex;
+    flex-wrap: wrap;
+
+    .member {
+      flex: 0 0 33.333%;
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  .people .members .member {
+    flex: 0 0 50%;
+  }
+}
+
+@media (max-width: $extraSmall) {
+  .people .members .member {
+    flex: 0 0 100%;
   }
 }
