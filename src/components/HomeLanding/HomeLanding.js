@@ -10,7 +10,6 @@ import classes from './HomeLanding.scss';
  */
 const HomeLanding = (props) => {
   const { onScrollClick } = props;
-  console.log('isLarge', props.isLarge);
 
   return (
     <ImageContainer className={classes.splash} src="/images/children-o.jpg">
