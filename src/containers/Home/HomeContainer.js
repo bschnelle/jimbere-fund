@@ -3,16 +3,16 @@ import { connect } from 'react-redux';
 import HomeComp from '../../components/Home/Home';
 
 export const HomeContainer = (props) => (
-  <HomeComp isMedium={props.isMedium} isSmall={props.isSmall} />
+  <HomeComp isLarge={props.isLarge} isSmall={props.isSmall} />
 );
 
 HomeContainer.propTypes = {
-  isMedium: PropTypes.bool.isRequired,
+  isLarge: PropTypes.bool.isRequired,
   isSmall: PropTypes.bool.isRequired
 };
 
 export const stateToProps = (state) => ({
-  isMedium: state.browser.lessThan.large,
+  isLarge: state.browser.greaterThan.large,
   isSmall: state.browser.lessThan.medium
 });
 

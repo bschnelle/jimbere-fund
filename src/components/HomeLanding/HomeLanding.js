@@ -10,42 +10,27 @@ import classes from './HomeLanding.scss';
  */
 const HomeLanding = (props) => {
   const { onScrollClick } = props;
+  console.log('isLarge', props.isLarge);
 
   return (
     <ImageContainer className={classes.splash} src="/images/children-o.jpg">
       <div className={classes.landing}>
-
         <div className={classes.slogan}>
-          {props.isMedium
-          ? (
-            <div>
-              <span>Connecting communities beyond the reach of the road to opportunities.</span>
+          {!props.isLarge ? (
+            <div className={classes.message}>
+              Connecting communities beyond the reach of the road to opportunities.
             </div>
-          )
-          : (
-            <div>
-              <span>Connecting</span>
-              <span>communities beyond</span>
-              <span>the reach of the road to</span>
-              <span>opportunities.</span>
+          ) : (
+            <div className={classes.message}>
+              <div>Connecting communities beyond the</div>
+              <div>reach of the road to opportunities.</div>
             </div>
           )}
+
           <div>
-            <div><span>We enable Congo's most remote communities</span></div>
-            <div>
-              <span>
-                to access critical services and thrive...
-                <Link to="/work">learn more</Link>
-              </span>
-            </div>
+            <Button className={classes.joinUsButton} label="Join Us" to="/get-involved" nowrap />
           </div>
         </div>
-
-        <div>
-          <Button className={classes.joinUsButton} label="Join Us" to="/get-involved" />
-        </div>
-
-        <ScrollArrow className={classes.scrollToFacts} label="facts" onClick={onScrollClick} />
       </div>
     </ImageContainer>
   );
@@ -53,7 +38,7 @@ const HomeLanding = (props) => {
 
 HomeLanding.propTypes = {
   onScrollClick: PropTypes.func.isRequired,
-  isMedium: PropTypes.bool.isRequired
+  isLarge: PropTypes.bool.isRequired
 };
 
 export default HomeLanding;
