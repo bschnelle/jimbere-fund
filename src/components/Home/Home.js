@@ -3,12 +3,9 @@ import { connect } from 'react-redux';
 import classNames from 'classnames';
 import Button from '../Button/Button';
 import HomeApproach from '../HomeApproach/HomeApproach';
-import HomeFacts from '../HomeFacts/HomeFacts';
 import HomeGetInvolved from '../HomeGetInvolved/HomeGetInvolved';
 import HomeLanding from '../HomeLanding/HomeLanding';
 import HomeProcess from '../HomeProcess/HomeProcess';
-import HomePurpose from '../HomePurpose/HomePurpose';
-import HomeStory from '../HomeStory/HomeStory';
 import { hideBook } from '../../redux/modules/ui/uiModule';
 import secondaryTheme from '../../containers/secondaryTheme/secondaryTheme';
 import * as animations from '../../utils/animations';
@@ -80,9 +77,6 @@ export const Home = (props) => {
   return (
     <div className={classes.home}>
       <HomeLanding onScrollClick={scrollToFacts} isLarge={isLarge} />
-      <HomeFacts id="facts" isSmall={isSmall} />
-      <HomePurpose />
-      <HomeStory />
       <HomeApproach isSmall={isSmall} />
       <HomeProcess isSmall={isSmall} />
       <HomeGetInvolved />

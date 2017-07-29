@@ -1,12 +1,12 @@
 import React, { PropTypes } from 'react';
 import Container from '../Container/Container';
 import Fact from '../Fact/Fact';
-import classes from './HomeFacts.scss';
+import classes from './AboutFacts.scss';
 
 /**
  * facts section of root route
  */
-const HomeFacts = (props) => {
+const AboutFacts = (props) => {
   let facts = [
     { body: 'of the population live below the national poverty line', header: '63.6%' },
     { body: 'people are food insecure', header: '6.7 Mil' },
@@ -28,9 +28,9 @@ const HomeFacts = (props) => {
   );
 };
 
-HomeFacts.propTypes = {
+AboutFacts.propTypes = {
   id: PropTypes.string.isRequired,
   isSmall: PropTypes.bool.isRequired
 };
 
-export default HomeFacts;
+export default AboutFacts;

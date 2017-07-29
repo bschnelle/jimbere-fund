@@ -3,13 +3,13 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
-import HomePurpose from './HomePurpose';
-import classes from './HomePurpose.scss';
+import AboutPurpose from './AboutPurpose';
+import classes from './AboutPurpose.scss';
 
-describe('HomePurpose', () => {
+describe('AboutPurpose', () => {
   let wrapper;
 
-  beforeEach(() => { wrapper = shallow(<HomePurpose />); });
+  beforeEach(() => { wrapper = shallow(<AboutPurpose />); });
 
   describe('root element', () => {
     it('is of type ImageContainer', () => {
