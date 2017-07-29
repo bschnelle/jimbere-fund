@@ -1,0 +1,108 @@
+@import '../../styles/config';
+
+.home {
+  flex: 1 1 auto;
+
+  .book {
+    background-color: $alternateTextColor;
+    box-shadow: 10px 10px 41px -2px rgba(0,0,0,0.75);
+    color: $textColor;
+    cursor: pointer;
+    display: flex;
+    height: 12rem;
+    position: absolute;
+    left: 0;
+    text-decoration: none;
+    top: calc(50vh - 6rem);
+    transform: translateX(-30rem);
+    transition: transform 750ms;
+    width: 30rem;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+
+    div {
+      overflow: hidden;
+      margin: 1rem;
+
+      span {
+        font-size: 2rem;
+        font-family: $headerFont;
+      }
+
+      p {
+        font-size: 1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .close {
+      cursor: pointer;
+      display: block;
+      height: 40px;
+      position: absolute;
+      right: 0.25rem;
+      width: 40px;
+      top: 0.25rem;
+      z-index: 1;
+
+      > span {
+        background-color: #000;
+        height: 2px;
+        position: absolute;
+        top: 19px;
+        width: 40px;
+
+        &:nth-of-type(1) {
+          transform: rotate(45deg);
+        }
+        &:nth-of-type(2) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
+.show {
+  &.book {
+    transform: translateX(2rem);
+  }
+}
+
+@media (max-width: $small) {
+  .home {
+    .book {
+      align-items: center;
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      justify-content: center;
+      left: 0;
+      position: fixed;
+      top: 0;
+      transform: translateY(100%) translateX(0%);
+      width: 100vw;
+      z-index: 1000;
+
+      > div {
+        text-align: center;
+      }
+
+      img {
+        height: auto;
+        width: 50%;
+      }
+    }
+
+    .show {
+      &.book {
+        transform: translateY(0);
+      }
+    }
+  }
+}
