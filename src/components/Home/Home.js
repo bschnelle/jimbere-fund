@@ -35,7 +35,6 @@ class Book extends React.Component {
   }
 
   render() {
-    console.log('small?', this.props.isSmall);
     return (
       <a
         className={classNames(classes.book, this.state.show && classes.show)}
