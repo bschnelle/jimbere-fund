@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
+import Button from '../Button/Button';
 import HomeApproach from '../HomeApproach/HomeApproach';
 import HomeFacts from '../HomeFacts/HomeFacts';
 import HomeGetInvolved from '../HomeGetInvolved/HomeGetInvolved';
@@ -37,10 +38,11 @@ class Book extends React.Component {
   }
 
   render() {
+    console.log('small?', this.props.isSmall);
     return (
       <a
         className={classNames(classes.book, this.state.show && classes.show)}
-        onClick={this.goToAmazon}
+        onClick={this.props.isSmall ? undefined : this.goToAmazon}
       >
         <img alt="How Dare the Sun Rise" src="/images/how-dare-the-sun-rise.jpg" />
         <span className={classes.close} onClick={this.hideBook}>
@@ -50,11 +52,15 @@ class Book extends React.Component {
         <div>
           <span>How Dare the Sun Rise</span>
           <p>
-            In this memoir, Sandra tells the story of her survival,
+            In this memoir, <i>Jimbere Fund Co-founder Sandra Uwiringiyimana </i>
+            tells the story of her survival,
             of finding her place in a new country,
             of her hope for the future,
             and how she found a way to give a voice to her people.
           </p>
+          {this.props.isSmall && (
+            <Button label="Learn More" onClick={this.goToAmazon} />
+          )}
         </div>
       </a>
     );
@@ -80,7 +86,9 @@ export const Home = (props) => {
       <HomeApproach isSmall={isSmall} />
       <HomeProcess isSmall={isSmall} />
       <HomeGetInvolved />
-      {props.showBook && (new Date().getFullYear() < 2018) && <Book hideBook={hideBook} />}
+      {props.showBook && (new Date().getFullYear() < 2018) &&
+        <Book hideBook={hideBook} isSmall={isSmall} />
+      }
     </div>
   );
 };

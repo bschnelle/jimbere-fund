@@ -72,3 +72,37 @@
     transform: translateX(2rem);
   }
 }
+
+@media (max-width: $small) {
+  .home {
+    .book {
+      align-items: center;
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      justify-content: center;
+      left: 0;
+      position: fixed;
+      top: 0;
+      transform: translateY(100%) translateX(0%);
+      width: 100vw;
+      z-index: 1000;
+
+      > div {
+        text-align: center;
+      }
+
+      img {
+        height: auto;
+        width: 50%;
+      }
+    }
+
+    .show {
+      &.book {
+        transform: translateY(0);
+      }
+    }
+  }
+}
