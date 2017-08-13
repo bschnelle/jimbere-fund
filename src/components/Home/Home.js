@@ -6,6 +6,7 @@ import HomeApproach from '../HomeApproach/HomeApproach';
 import HomeGetInvolved from '../HomeGetInvolved/HomeGetInvolved';
 import HomeLanding from '../HomeLanding/HomeLanding';
 import HomeProcess from '../HomeProcess/HomeProcess';
+import HomeWork from '../HomeWork/HomeWork';
 import { hideBook } from '../../redux/modules/ui/uiModule';
 import secondaryTheme from '../../containers/secondaryTheme/secondaryTheme';
 import * as animations from '../../utils/animations';
@@ -76,6 +77,7 @@ export const Home = (props) => {
   return (
     <div className={classes.home}>
       <HomeLanding onScrollClick={scrollToFacts} isLarge={isLarge} />
+      <HomeWork />
       <HomeApproach isSmall={isSmall} />
       <HomeProcess isSmall={isSmall} />
       <HomeGetInvolved />
