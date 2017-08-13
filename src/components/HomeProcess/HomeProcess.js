@@ -6,7 +6,7 @@ import classes from './HomeProcess.scss';
  * process section of root route
  */
 const HomeProcess = (props) => (
-  <Container className={classes.section} container section title="Process">
+  <Container className={classes.section} container section title="Our Process">
     <div className={classes.process}>
       <img
         alt="Process infographic"

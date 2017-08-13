@@ -106,7 +106,7 @@ class HomeApproach extends Component {
     );
 
     return (
-      <Container className={classes.section} container section title="Approach">
+      <Container className={classes.section} container section title="Our Approach">
         <div className={classes.content}>
           <div className={approachClassName}>
             <div className={classes.sections}>
