@@ -99,7 +99,6 @@ $longTransitionDuration: 500ms;
 
               h5 {
                 margin: 2rem 0 1rem 0;
-                text-align: center;
               }
 
               p {
@@ -223,7 +222,7 @@ $longTransitionDuration: 500ms;
           flex-direction: column;
 
           .content, .title {
-            flex: 1; 
+            flex: 1;
             max-width: none;
           }
 
