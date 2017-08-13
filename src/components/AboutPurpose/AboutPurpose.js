@@ -11,10 +11,11 @@ const AboutPurpose = () => (
     <Container className={classes.section} container section title="Purpose">
       <div className={classes.content}>
         <p>
-          We work <i>with</i> rural communities and villages in distressed areas to identify
-          their most pressing needs in education, health, women’s empowerment and food
-          security. Together, we design, implement and manage high-impact social
-          interventions that expand opportunities.
+          Jimbere Fund is on a mission to revitalize distressed communities in Congo.
+          We support rural communities to design, implement and manage individualized
+          high-impact social interventions that expand opportunities and access to
+          critical services, create jobs and lift people out of poverty in a
+          sustainable way.
         </p>
         <div>
           <h4>Vision</h4>
