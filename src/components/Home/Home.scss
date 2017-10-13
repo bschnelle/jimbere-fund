@@ -62,19 +62,19 @@
           position: absolute;
         }
 
-        p {
+        .message {
           display: flex;
           flex: 1 0 auto;
           flex-direction: column;
-          font-size: 1rem;
-          margin: 0;
           width: 24rem;
           overflow: hidden;
           position: relative;
           text-overflow: ellipsis;
 
-          .message {
+          > p {
             flex: 1 0 auto;
+            font-size: 1rem;
+            margin: 0;
           }
         }
       }
@@ -139,27 +139,51 @@
 @media (max-width: $small) {
   .home {
     .notification {
+      height: 100vh;
+      left: 0;
+      padding: 0;
+      position: fixed;
+      top: 0;
+      transform: translateY(100%) translateX(0%);
+      width: 100vw;
+      z-index: 1000;
+
       .content {
         align-items: center;
         cursor: default;
         display: flex;
         flex-direction: column;
-        height: 100vh;
         justify-content: center;
-        left: 0;
-        position: fixed;
-        top: 0;
-        transform: translateY(100%) translateX(0%);
-        width: 100vw;
-        z-index: 1000;
 
-        > div {
-          text-align: center;
+        h5 {
+          font-size: 3rem;
         }
 
-        img {
-          height: auto;
-          width: 50%;
+        .close {
+          height: 40px;
+          width: 40px;
+
+          > span {
+            top: 19px;
+            width: 40px;
+          }
+        }
+
+        .footer {
+          display: none;
+        }
+
+        .wrapper {
+          padding: 4rem 2rem 10rem 2rem;
+
+          .message {
+            width: auto;
+
+            > p {
+              font-size: 1.25rem;
+              max-width: 60vw;
+            }
+          }
         }
       }
     }

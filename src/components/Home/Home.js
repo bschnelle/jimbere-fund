@@ -57,23 +57,23 @@ class Book extends React.Component {
           <span />
         </div>
         <h5><span>LIFT UP CONGO'S </span>RURAL WOMEN</h5>
-        <p>
           <div className={classes.message}>
+            <p>
             This project will support 12 women's groups in
             the Itombwe area to acquire and use a milling machine
             to produce maize flour instead of pounding maize with their
             bare hands, which is time-consuming and physically exhausting.
             <strong> All your donations will be matched by a generous donor.</strong>
-          </div>
+          </p>
           <div>
             <Button
               className={classes.button}
               label="Donate Now"
               onClick={this.goToCampaign}
-              small
+              small={!this.props.isSmall}
             />
           </div>
-        </p>
+        </div>
         <img src="/images/woman.png" alt="Woman" />
       </div>
     );
@@ -85,14 +85,14 @@ class Book extends React.Component {
           <span />
         </div>
         <h5>HOW DARE THE SUN RISE</h5>
-        <p>
-          <div className={classes.message}>
+        <div className={classes.message}>
+          <p>
             In this memoir, <i>Jimbere Fund Co-founder Sandra Uwiringiyimana </i>
             tells the story of her survival,
             of finding her place in a new country,
             of her hope for the future,
             and how she found a way to give a voice to her people.
-          </div>
+          </p>
           <div>
             <Button
               className={classes.button}
@@ -101,7 +101,7 @@ class Book extends React.Component {
               small
             />
           </div>
-        </p>
+        </div>
         <img src="/images/how-dare-the-sun-rise.jpg" alt="Book Cover" />
       </div>
     );
@@ -117,32 +117,6 @@ class Book extends React.Component {
         </div>
       </div>
     );
-
-    // return (
-    //   <a
-    //     className={classNames(classes.book, this.state.show && classes.show)}
-    //     onClick={this.props.isSmall ? undefined : this.goToAmazon}
-    //   >
-    //     <img alt="How Dare the Sun Rise" src="/images/how-dare-the-sun-rise.jpg" />
-    //     <span className={classes.close} onClick={this.hideBook}>
-    //       <span />
-    //       <span />
-    //     </span>
-    //     <div>
-    //       <span>How Dare the Sun Rise</span>
-    //       <p>
-    //         In this memoir, <i>Jimbere Fund Co-founder Sandra Uwiringiyimana </i>
-    //         tells the story of her survival,
-    //         of finding her place in a new country,
-    //         of her hope for the future,
-    //         and how she found a way to give a voice to her people.
-    //       </p>
-    //       {this.props.isSmall && (
-    //         <Button label="Learn More" onClick={this.goToAmazon} />
-    //       )}
-    //     </div>
-    //   </a>
-    // );
   }
 }
 
