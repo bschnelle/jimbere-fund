@@ -33,32 +33,28 @@ class HomeApproach extends Component {
       {
         title: 'Collaborative',
         body: `
-          We engage communities we serve at every level: from the design to the
-          implementation of each project. Not only do we engage them, we actually
-          let them take the lead. We believe that lasting change can only happen
-          from the ground-up. We ensure community participation in formulating
-          solutions and a wider buy-in of the way each project is implemented.
+          We believe that lasting change can only happen from the ground-up.
+          We ensure community participation in formulating solutions and
+          gaining wider buy-in of the way each project is implemented.
         `
       },
       {
         title: 'Holistic',
         body: `
-          Poverty is complex. No single intervention can tackle it alone. Nor is
-          there a silver-bullet. We work with communities to figure out a set of
-          interventions that will do the most good. We then invest in their ideas.
-          By working with different communities in a given area, we create linkages
-          and small ecosystems for more economic activities and trade. Turning
-          interventions into business-like model is a sustainable way to end poverty.
+          We work with communities to define a set of interventions that
+          will do the most good. We then invest in their ideas. By working
+          with different communities in a given area, we create linkages
+          and small ecosystems for more economic activities and trade.
+          Turning interventions into business-like model is a sustainable
+          way to end poverty.
         `
       },
       {
         title: 'Self-Sustaining',
         body: `
-          Sustainability is important to us. We design each project with an
-          “exit strategy” in mind and ensure that every community we serve will
-          continue to reap the benefits. Our projects are mostly linked to local
-          economies and designed to be financially self-sustaining long after we're
-          gone. Communities we serve elect people to help co-manage our projects,
+          Our projects are primarily linked to local economies and designed
+          to be financially self-sustaining long after we're gone.
+          Communities we serve elect people to help co-manage our projects,
           ensuring continuity after the implementation phase.
         `
       }
@@ -110,7 +106,7 @@ class HomeApproach extends Component {
     );
 
     return (
-      <Container className={classes.section} container section title="Approach">
+      <Container className={classes.section} container section title="Our Approach">
         <div className={classes.content}>
           <div className={approachClassName}>
             <div className={classes.sections}>

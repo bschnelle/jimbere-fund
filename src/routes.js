@@ -1,6 +1,7 @@
 import React from 'react';
 import { IndexRoute, Route } from 'react-router';
 import LayoutCont from './containers/Layout/LayoutContainer';
+import AboutCont from './containers/About/AboutContainer';
 import BlogCont from './containers/Blog/BlogContainer';
 import BlogPostCont from './containers/BlogPost/BlogPostContainer';
 import BlogPostListCont from './containers/BlogPostList/BlogPostListContainer';
@@ -18,6 +19,7 @@ const onChange = () => { document.body.scrollTop = document.documentElement.scro
 const routes = (
   <Route path="/" component={LayoutCont} onChange={onChange}>
     <IndexRoute component={HomeCont} />
+    <Route path="/about" component={AboutCont} />
     <Route path="/blog" component={BlogCont}>
       <IndexRoute component={BlogPostListCont} />
       <Route path="/blog/:slug" component={BlogPostCont} />

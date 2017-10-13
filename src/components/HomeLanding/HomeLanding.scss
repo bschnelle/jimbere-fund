@@ -4,7 +4,7 @@
   background-color: rgba(0,0,0,.4);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   min-height: 100vh;
   padding: 6rem 15% 60px 15%; // TODO ????
   position: relative;
@@ -15,54 +15,19 @@
     margin: 0;
   }
 
-  .scrollToFacts {
-    bottom: 0px;
-    position: absolute;
-    left: 50%;
-  }
-
   .slogan {
-    // display: flex;
-    // flex-direction: column;
+    align-items: center;
+    border: solid 5px $alternateTextColor;
+    color: $alternateTextColor;
+    display: flex;
     font-family: $headerFont;
-    justify-content: center;
+    padding: 2rem;
+    font-size: 3rem;
+    font-weight: 700;
 
-    > div {
-      &:first-of-type {
-        flex: 0 0 100%;
-
-        > span {
-          color: #fff;
-          display: block;
-          font-size: 5rem;
-          font-weight: 700;
-        }
-      }
-
-      &:not(:first-of-type) {
-        margin: 2rem 0;
-
-        > div {
-          margin: .25rem 0;
-
-          > span {
-            background-color: $alternateTextColor;
-            display: inline-block;
-            font-size: 1.4rem;
-            padding: .25rem .75rem;
-
-            > a {
-              color: $primaryColor1;
-              text-decoration: none;
-              transition: color $transitionDuration;
-
-              &:hover {
-                color: $accentColor1;
-              }
-            }
-          }
-        }
-      }
+    .message {
+      flex: 1;
+      margin-right: 2rem;
     }
   }
 }
@@ -71,7 +36,7 @@
   background-color: #E19F6A;
 }
 
-@media (max-width: $small) {
+@media (max-width: $medium) {
   .landing {
     flex-direction: column;
     padding: 9rem 1.5rem 3rem 1.5rem;
@@ -87,24 +52,12 @@
     }
 
     .slogan {
-      > div {
-        &:first-of-type {
-          > span {
-            font-size: 3.5rem;
-          }
-        }
+      border: none;
+      flex-direction: column;
 
-        &:not(:first-of-type) {
-          > div > span {
-            font-size: 1.2rem;
-            margin: 0 !important;
-          }
-        }
+      .message {
+        margin: 0 0 2rem 0;
       }
-    }
-
-    > div:nth-of-type(2) {
-      text-align: center;
     }
   }
 }
