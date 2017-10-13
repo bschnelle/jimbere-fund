@@ -84,6 +84,21 @@ const members = {
         bachelor’s degree in Development Studies from Institut Superieur de Développement
         Rural in Bukavu.
       `
+    },
+    {
+      name: 'Jill Hinckley',
+      title: 'Program Development Officer',
+      image: 'jill-hinckley.jpg',
+      bio: `
+        Jill lives in Portland, Oregon, where she worked in urban planning for ten
+        years, and has mentored several Somali refugees for the past seven
+        years.  Since she retired, she has volunteered thousands of hours in
+        support of several African civil societies and individuals, connecting with
+        other volunteers around the globe.  Much to their mutual amazement, she
+        and her husband have managed not to kill each other or themselves as
+        they ride their tandem bicycle everywhere around town and the Western
+        states.
+      `
     }
   ],
   'US Board': [

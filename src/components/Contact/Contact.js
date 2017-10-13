@@ -41,7 +41,7 @@ export class Contact extends Component {
             <h4>Phone</h4>
             <p>917.224.2095</p>
             <h4>Address</h4>
-            <p>450 Lexington Avenue, 4th Floor<br />New York, NY 10017</p>
+            <p>1301 Wall Street West, 6203<br />Lyndhurst, NJ 07071</p>
           </div>
           <div id="map" />
         </div>
