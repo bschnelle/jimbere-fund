@@ -15,9 +15,11 @@ import classes from './Home.scss';
 class Book extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { show: false }
+    this.state = { pane: 0, show: false }
     this.goToAmazon = this.goToAmazon.bind(this);
+    this.goToCampaign = this.goToCampaign.bind(this);
     this.hideBook = this.hideBook.bind(this);
+    this.togglePane = this.togglePane.bind(this);
   }
 
   componentDidMount() {
@@ -30,24 +32,60 @@ class Book extends React.Component {
     window.location = 'https://www.amazon.com/How-Dare-Sun-Rise-Memoirs/dp/0062470140/ref=tmm_hrd_swatch_0?_encoding=UTF8&amp;qid=1498435372&amp;sr=1-1';
   }
 
+  goToCampaign() {
+    window.location = 'https://www.razoo.com/team/Q5adif';
+  }
+
   hideBook(e) {
     e.stopPropagation();
     this.props.hideBook();
   }
 
+  togglePane() {
+    this.setState({
+      pane: this.state.pane ? 0 : 1
+    });
+  }
+
   render() {
-    return (
-      <a
-        className={classNames(classes.book, this.state.show && classes.show)}
-        onClick={this.props.isSmall ? undefined : this.goToAmazon}
-      >
-        <img alt="How Dare the Sun Rise" src="/images/how-dare-the-sun-rise.jpg" />
-        <span className={classes.close} onClick={this.hideBook}>
+    const { pane, show } = this.state;
+
+    const campaign = (
+      <div className={classes.wrapper}>
+        <div className={classes.close} onClick={this.hideBook}>
           <span />
           <span />
-        </span>
-        <div>
-          <span>How Dare the Sun Rise</span>
+        </div>
+        <h5><span>LIFT UP CONGO'S </span>RURAL WOMEN</h5>
+          <div className={classes.message}>
+            <p>
+            This project will support 12 women's groups in
+            the Itombwe area to acquire and use a milling machine
+            to produce maize flour instead of pounding maize with their
+            bare hands, which is time-consuming and physically exhausting.
+            <strong> All your donations will be matched by a generous donor.</strong>
+          </p>
+          <div>
+            <Button
+              className={classes.button}
+              label="Donate Now"
+              onClick={this.goToCampaign}
+              small={!this.props.isSmall}
+            />
+          </div>
+        </div>
+        <img src="/images/woman.png" alt="Woman" />
+      </div>
+    );
+
+    const book = (
+      <div className={classes.wrapper}>
+        <div className={classes.close} onClick={this.hideBook}>
+          <span />
+          <span />
+        </div>
+        <h5>HOW DARE THE SUN RISE</h5>
+        <div className={classes.message}>
           <p>
             In this memoir, <i>Jimbere Fund Co-founder Sandra Uwiringiyimana </i>
             tells the story of her survival,
@@ -55,11 +93,29 @@ class Book extends React.Component {
             of her hope for the future,
             and how she found a way to give a voice to her people.
           </p>
-          {this.props.isSmall && (
-            <Button label="Learn More" onClick={this.goToAmazon} />
-          )}
+          <div>
+            <Button
+              className={classes.button}
+              label="Learn More"
+              onClick={this.goToAmazon}
+              small
+            />
+          </div>
         </div>
-      </a>
+        <img src="/images/how-dare-the-sun-rise.jpg" alt="Book Cover" />
+      </div>
+    );
+
+    return (
+      <div className={classNames(classes.notification, show && classes.show)}>
+        <div className={classes.content}>
+          {this.state.pane ? book : campaign}
+          <div className={classes.footer}>
+            <span className={classNames(!pane && classes.active)} onClick={this.togglePane} />
+            <span className={classNames(pane && classes.active)} onClick={this.togglePane} />
+          </div>
+        </div>
+      </div>
     );
   }
 }

@@ -3,64 +3,127 @@
 .home {
   flex: 1 1 auto;
 
-  .book {
-    background-color: $alternateTextColor;
+  .notification {
+    background-color: #fff;
+    border-radius: 0.15rem;
+    padding: 1rem;
     box-shadow: 10px 10px 41px -2px rgba(0,0,0,0.75);
-    color: $textColor;
-    cursor: pointer;
+    color: $alternateTextColor;
     display: flex;
-    height: 12rem;
+    height: 22rem;
     position: absolute;
     left: 0;
-    text-decoration: none;
-    top: calc(50vh - 6rem);
-    transform: translateX(-30rem);
+    top: 6rem;
+    transform: translateX(-42rem);
     transition: transform 750ms;
-    width: 30rem;
+    width: 42rem;
 
-    img {
-      height: 100%;
-      width: auto;
+    .button {
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      position: relative;
     }
 
-    div {
-      overflow: hidden;
-      margin: 1rem;
+    .content {
+      background-image: url(/images/notification-bg.png);
+      background-size: cover;
+      border-radius: 0.15rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1 0 100%;
+      position: relative;
 
-      span {
-        font-size: 2rem;
-        font-family: $headerFont;
-      }
+      h5 {
+        margin: 0 0 1rem 0;
 
-      p {
-        font-size: 1rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-    }
-
-    .close {
-      cursor: pointer;
-      display: block;
-      height: 40px;
-      position: absolute;
-      right: 0.25rem;
-      width: 40px;
-      top: 0.25rem;
-      z-index: 1;
-
-      > span {
-        background-color: #000;
-        height: 2px;
-        position: absolute;
-        top: 19px;
-        width: 40px;
-
-        &:nth-of-type(1) {
-          transform: rotate(45deg);
+        span {
+          font-weight: 400;
         }
-        &:nth-of-type(2) {
-          transform: rotate(-45deg);
+      }
+
+      img {
+        height: 100%;
+        width: auto;
+      }
+
+      .wrapper {
+        display: flex;
+        flex: 1 0 100%;
+        flex-direction: column;
+        overflow: hidden;
+        padding: 2rem 2rem 4rem 2rem;
+        position: relative;
+
+        img {
+          bottom: 0;
+          height: 16rem;
+          right: 2rem;
+          position: absolute;
+        }
+
+        .message {
+          display: flex;
+          flex: 1 0 auto;
+          flex-direction: column;
+          width: 24rem;
+          overflow: hidden;
+          position: relative;
+          text-overflow: ellipsis;
+
+          > p {
+            flex: 1 0 auto;
+            font-size: 1rem;
+            margin: 0;
+          }
+        }
+      }
+
+      .close {
+        cursor: pointer;
+        display: block;
+        height: 20px;
+        position: absolute;
+        right: 0.4rem;
+        width: 20px;
+        top: 0.4rem;
+        z-index: 1;
+
+        > span {
+          background-color: #fff;
+          height: 2px;
+          position: absolute;
+          top: 9px;
+          width: 20px;
+
+          &:nth-of-type(1) {
+            transform: rotate(45deg);
+          }
+          &:nth-of-type(2) {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+
+      .footer {
+        align-self: center;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0;
+        position: absolute;
+
+        span {
+          border: solid #fff 2px;
+          border-radius: 50%;
+          cursor: pointer;
+          height: 1rem;
+          margin: 0.5rem;
+          width: 1rem;
+
+          &.active {
+            background-color: #fff;
+          }
         }
       }
     }
@@ -68,39 +131,65 @@
 }
 
 .show {
-  &.book {
+  &.notification {
     transform: translateX(2rem);
   }
 }
 
 @media (max-width: $small) {
   .home {
-    .book {
-      align-items: center;
-      cursor: default;
-      display: flex;
-      flex-direction: column;
+    .notification {
       height: 100vh;
-      justify-content: center;
       left: 0;
+      padding: 0;
       position: fixed;
       top: 0;
       transform: translateY(100%) translateX(0%);
       width: 100vw;
       z-index: 1000;
 
-      > div {
-        text-align: center;
-      }
+      .content {
+        align-items: center;
+        cursor: default;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
-      img {
-        height: auto;
-        width: 50%;
+        h5 {
+          font-size: 3rem;
+        }
+
+        .close {
+          height: 40px;
+          width: 40px;
+
+          > span {
+            top: 19px;
+            width: 40px;
+          }
+        }
+
+        .footer {
+          display: none;
+        }
+
+        .wrapper {
+          padding: 4rem 2rem 10rem 2rem;
+
+          .message {
+            width: auto;
+
+            > p {
+              font-size: 1.25rem;
+              max-width: 60vw;
+            }
+          }
+        }
       }
     }
 
     .show {
-      &.book {
+      &.notification {
         transform: translateY(0);
       }
     }

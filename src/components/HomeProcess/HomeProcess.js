@@ -17,7 +17,7 @@ const HomeProcess = (props) => (
 );
 
 HomeProcess.propTypes = {
-  isSmall: PropTypes.bool.isRequired
+  isSmall: PropTypes.bool
 };
 
 export default HomeProcess;
