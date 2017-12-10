@@ -13,8 +13,7 @@ class BlogService {
   } */
 
   getPosts() {
-    const url = '/blog/posts.json';
-    // if (offset) url += `?offset=${offset}`;
+    const url = 'https://www.googleapis.com/blogger/v3/blogs/2842622942419516439/posts?key=AIzaSyD-5Ripyoq7Tqn9LLVvjbsWE3kH_XoU2dI';
 
     return fetch.default(url)
       .then(fetch.handleError)

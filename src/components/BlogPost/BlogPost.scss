@@ -1,6 +1,4 @@
 @import '../../styles/config';
-/* TODO ~/github-markdown-css/github-markdown import failing during testing */
-@import '../../../node_modules/github-markdown-css/github-markdown';
 
 .header {
   margin-bottom: 2rem;
@@ -14,10 +12,23 @@
   }
 }
 
-/* github-markdown-css overrides */
 .markdown-body {
-  font-family: $bodyFont;
-  font-size: 1.3rem;
+  * {
+    font-family: $bodyFont !important;
+    font-size: 1rem !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $headerFont !important;
+    margin: 0.5em 0;
+    * { font-family: $headerFont !important; }
+  }
+  h1, h1 * { font-size: 2.25rem !important; }
+  h2, h2 * { font-size: 2rem !important; }
+  h3, h3 * { font-size: 1.75rem !important; }
+  h4, h4 * { font-size: 1.5rem !important; }
+  h5, h5 * { font-size: 1.25rem !important; }
+  h6, h6 * { font-size: 1rem !important; }
 }
 
 .notFound {

@@ -81,7 +81,17 @@ export function getPosts() {
 
     dispatch({ type: GET_POSTS });
     return blogSvc.getPosts(offset)
-      .then(({ found, posts }) => dispatch({ type: GET_POSTS_SUCCESS, found, posts }))
+      .then(({ items }) => {
+        const posts = items.map((item) => {
+          const i = item.url.lastIndexOf('/') + 1;
+          const div = document.createElement('div');
+          div.innerHTML = item.content;
+          const images = div.getElementsByTagName('img');
+          const image = images.length ? images[0].getAttribute('src') : undefined;
+          return { ...item, image, slug: item.url.slice(i, -5) };
+        });
+        dispatch({ type: GET_POSTS_SUCCESS, posts });
+      })
       .catch(() => dispatch({ type: GET_POSTS_FAILURE }));
   };
 }

@@ -10,23 +10,24 @@ import classes from './BlogPostListItem.scss';
 const BlogPostListItem = (props) => {
   const {
     author,
-    date,
     image,
+    published,
     slug,
     title
   } = props.post.toJS();
-  const linkStyle = { backgroundImage: `url(${image})` };
+  const imageStyle = { backgroundImage: `url(${image})` };
   const to = `/blog/${slug}`;
   let className = classes.post;
   if (props.className) className += ` ${props.className}`;
 
   return (
-    <Link className={className} style={linkStyle} to={to}>
+    <Link className={className} to={to}>
+      <div className={classes.image} style={imageStyle} />
       <div className={classes.content}>
         <h5 className={classes.title}>{title}</h5>
         <div className={classes.footer}>
-          <span>{author}</span>
-          <span>{moment(new Date(date)).format('MMM D, YYYY')}</span>
+          <span>{author.displayName}</span>
+          <span>{moment(new Date(published)).format('MMM D, YYYY')}</span>
         </div>
       </div>
     </Link>

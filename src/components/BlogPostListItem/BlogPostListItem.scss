@@ -2,14 +2,13 @@
 
 .post {
   background-color: #333;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   color: $alternateTextColor;
   cursor: pointer;
   display: block;
   height: 350px;
   min-width: 350px;
+  overflow: hidden;
+  position: relative;
   text-decoration: none;
 
   &:hover {
@@ -24,6 +23,7 @@
     flex-direction: column;
     height: 100%;
     padding: 2rem;
+    position: relative;
     transition: all $transitionDuration;
     width: 100%;
   }
@@ -34,6 +34,18 @@
     > span:nth-of-type(2) {
       float: right;
     }
+  }
+
+  .image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0px;
+    filter: blur(3px);
+    left: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
   }
 
   .title {
