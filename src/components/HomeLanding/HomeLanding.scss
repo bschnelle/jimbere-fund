@@ -6,28 +6,21 @@
   flex-direction: column;
   justify-content: flex-end;
   min-height: 100vh;
-  padding: 6rem 15% 60px 15%; // TODO ????
+  padding: 6rem 3rem 60px 3rem; // TODO ????
   position: relative;
   /* prevent jarring vertical resize (100vh) when url bar hides on mobile */
   transition: min-height 1000000s;
 
-  .joinUsButton {
-    margin: 0;
-  }
-
   .slogan {
     align-items: center;
-    border: solid 5px $alternateTextColor;
     color: $alternateTextColor;
-    display: flex;
+    // display: flex;
     font-family: $headerFont;
-    padding: 2rem;
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 700;
 
     .message {
       flex: 1;
-      margin-right: 2rem;
     }
   }
 }

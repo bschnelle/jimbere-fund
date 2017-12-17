@@ -124,7 +124,7 @@ class Book extends React.Component {
  * root route component
  */
 export const Home = (props) => {
-  const { hideBook, isLarge, isSmall } = props;
+  const { hideBook, isMedium, isSmall } = props;
   const scrollToFacts = (e) => {
     e.stopPropagation();
     animations.smoothScrollTo('facts');
@@ -132,7 +132,7 @@ export const Home = (props) => {
 
   return (
     <div className={classes.home}>
-      <HomeLanding onScrollClick={scrollToFacts} isLarge={isLarge} />
+      <HomeLanding onScrollClick={scrollToFacts} isMedium={isMedium} />
       <HomeWork />
       <HomeApproach isSmall={isSmall} />
       <HomeProcess isSmall={isSmall} />
@@ -146,6 +146,7 @@ export const Home = (props) => {
 
 Home.propTypes = {
   isLarge: PropTypes.bool.isRequired,
+  isMedium: PropTypes.bool.isRequired,
   isSmall: PropTypes.bool.isRequired
 };
 

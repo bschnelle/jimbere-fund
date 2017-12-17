@@ -13,6 +13,7 @@ const Button = (props) => {
   if (props.small) className += ` ${classes.small}`;
   if (props.className) className += ` ${props.className}`;
   if (props.nowrap) className += ` ${classes.nowrap}`;
+  if (props.light) className += ` ${classes.light}`;
 
   if (props.to) {
     return <Link className={className} to={props.to}>{props.label}</Link>;
@@ -33,6 +34,7 @@ Button.propTypes = {
   flat: PropTypes.bool,
   href: PropTypes.string,
   label: PropTypes.string.isRequired,
+  light: PropTypes.bool,
   nowrap: PropTypes.bool,
   onClick: PropTypes.func,
   secondary: PropTypes.bool,
