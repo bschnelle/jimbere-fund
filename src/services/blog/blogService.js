@@ -12,8 +12,11 @@ class BlogService {
       .then(fetch.getText);
   } */
 
-  getPosts() {
-    const url = 'https://www.googleapis.com/blogger/v3/blogs/4014902320987113516/posts?key=AIzaSyD-5Ripyoq7Tqn9LLVvjbsWE3kH_XoU2dI';
+  getPosts(nextPageToken) {
+    const apiKey = 'AIzaSyD-5Ripyoq7Tqn9LLVvjbsWE3kH_XoU2dI';
+    const blogID = '4014902320987113516';
+    const pageToken = nextPageToken ? `&pageToken=${nextPageToken}` : '';
+    const url = `https://www.googleapis.com/blogger/v3/blogs/${blogID}/posts?key=${apiKey}${pageToken}`;
 
     return fetch.default(url)
       .then(fetch.handleError)

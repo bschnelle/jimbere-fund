@@ -9,9 +9,7 @@ import classes from './BlogPostList.scss';
 /**
  * tiled list of blog posts
  */
-const BlogPostList = (props) => (props.loading
-? <Loader />
-: (
+const BlogPostList = (props) => (
   <div>
     <FlipMove
       className={classes.posts}
@@ -26,7 +24,7 @@ const BlogPostList = (props) => (props.loading
       )}
     </FlipMove>
 
-    {props.moreAvailable && (
+    {!!props.nextPageToken && (
       <div className={classes.loadMore}>
         {props.loading
         ? <Loader />
@@ -34,12 +32,12 @@ const BlogPostList = (props) => (props.loading
       </div>
     )}
   </div>
-));
+);
 
 BlogPostList.propTypes = {
   loading: PropTypes.bool,
   loadMore: PropTypes.func.isRequired,
-  moreAvailable: PropTypes.bool.isRequired,
+  nextPageToken: PropTypes.string,
   posts: PropTypes.instanceOf(iList)
 };
 
