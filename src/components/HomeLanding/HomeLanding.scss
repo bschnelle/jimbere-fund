@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: flex-end;
   min-height: 100vh;
-  padding: 6rem 3rem 60px 3rem; // TODO ????
+  padding: 8rem 3rem 60px 3rem; // TODO ????
   position: relative;
   /* prevent jarring vertical resize (100vh) when url bar hides on mobile */
   transition: min-height 1000000s;
@@ -25,15 +25,138 @@
   }
 }
 
+.recent {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-left: solid 1px rgba(255, 255, 255, 0.3);
+  bottom: 0;
+  color: $alternateTextColor;
+  display: flex;
+  flex-direction: column;
+  padding: 6rem 2rem 2rem 2rem;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 25rem;
+
+  .controls {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+
+    a, .dot {
+      cursor: pointer;
+      display: inline-block;
+      user-select: none;
+    }
+
+    a {
+      margin: 0 1rem;
+
+      img {
+        height: 2rem;
+      }
+    }
+
+    .dot {
+      border: solid 1px $alternateTextColor;
+      border-radius: 0.5rem;
+      height: 0.75rem;
+      margin: 0 0.5rem;
+      width: 0.75rem;
+
+      &.active {
+        background-color: $alternateTextColor;
+      }
+    }
+  }
+
+  .header {
+    display: block;
+    font-family: $headerFont;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+  .post {
+    border-radius: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    margin-bottom: 2rem;
+    max-height: 26rem;
+    overflow: hidden;
+    text-align: left;
+
+    > a {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      flex: 1 0 100%;
+      text-decoration: none;
+    }
+
+    .image {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 12rem;
+    }
+
+    .readMore {
+      color: $textColor;
+      cursor: pointer;
+      display: block;
+      font-weight: 700;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .recentContent {
+      background-color: #fff;
+      color: $textColor;
+      display: flex;
+      flex-direction: column;
+      flex: 1 0 auto;
+      padding: 2rem;
+    }
+
+    .subtitle {
+      color: #999;
+      margin-bottom: auto;
+
+      > div:nth-of-type(2) {
+        font-style: italic;
+        font-size: 0.75em;
+      }
+    }
+
+    .title {
+      font-size: 1.5rem;
+      margin: 0 0 0.5rem 0;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+  }
+}
+
 .splash {
   background-color: #E19F6A;
+  position: relative;
 }
 
 @media (max-width: $medium) {
   .landing {
     flex-direction: column;
-    padding: 9rem 1.5rem 3rem 1.5rem;
-    text-align: center;
+    justify-content: flex-start;
+    padding: 7rem 1.5rem 3rem 1.5rem;
 
     .actions {
       display: block;
@@ -47,10 +170,61 @@
     .slogan {
       border: none;
       flex-direction: column;
+      font-size: 2rem;
 
       .message {
-        margin: 0 0 2rem 0;
+        margin: 0 0 1rem 0;
       }
+    }
+  }
+
+  .recent {
+    top: calc(100vh - 20rem);
+    transition: top 1000000s;
+    left: 0;
+    padding: 1rem;
+    width: auto;
+
+    .header {
+      margin-bottom: 1rem;
+    }
+
+    .post {
+      height: 12rem;
+      max-height: 12rem;
+      margin: 0 auto 1rem;
+      position: relative;
+      width: 28rem;
+
+      > a {
+        flex-direction: row;
+      }
+
+      .image {
+        height: auto;
+        flex: 0 0 35%;
+      }
+
+      .readMore {
+        bottom: 1rem;
+        right: 1rem;
+        position: absolute;
+        // text-align: right;
+      }
+
+      .recentContent {
+        flex: 0 0 65%;
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: $extraSmall) {
+  .recent {
+    .post {
+      margin: 0 0 1rem;
+      width: auto;
     }
   }
 }

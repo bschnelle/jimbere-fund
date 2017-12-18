@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
+import { List as iList } from 'immutable';
 import Button from '../Button/Button';
 import HomeApproach from '../HomeApproach/HomeApproach';
 import HomeGetInvolved from '../HomeGetInvolved/HomeGetInvolved';
@@ -57,8 +58,8 @@ class Book extends React.Component {
           <span />
         </div>
         <h5><span>LIFT UP CONGO'S </span>RURAL WOMEN</h5>
-          <div className={classes.message}>
-            <p>
+        <div className={classes.message}>
+          <p>
             This project will support 12 women's groups in
             the Itombwe area to acquire and use a milling machine
             to produce maize flour instead of pounding maize with their
@@ -124,7 +125,7 @@ class Book extends React.Component {
  * root route component
  */
 export const Home = (props) => {
-  const { hideBook, isMedium, isSmall } = props;
+  const { isMedium, isSmall, loading, posts } = props;
   const scrollToFacts = (e) => {
     e.stopPropagation();
     animations.smoothScrollTo('facts');
@@ -132,14 +133,19 @@ export const Home = (props) => {
 
   return (
     <div className={classes.home}>
-      <HomeLanding onScrollClick={scrollToFacts} isMedium={isMedium} />
+      <HomeLanding
+        onScrollClick={scrollToFacts}
+        isMedium={isMedium}
+        loading={loading}
+        posts={posts}
+      />
       <HomeWork />
       <HomeApproach isSmall={isSmall} />
       <HomeProcess isSmall={isSmall} />
       <HomeGetInvolved />
-      {props.showBook && (new Date().getFullYear() < 2018) &&
+      {/* {props.showBook && (new Date().getFullYear() < 2018) &&
         <Book hideBook={hideBook} isSmall={isSmall} />
-      }
+      } */}
     </div>
   );
 };
@@ -147,7 +153,9 @@ export const Home = (props) => {
 Home.propTypes = {
   isLarge: PropTypes.bool.isRequired,
   isMedium: PropTypes.bool.isRequired,
-  isSmall: PropTypes.bool.isRequired
+  isSmall: PropTypes.bool.isRequired,
+  loading: PropTypes.bool.isRequired,
+  posts: PropTypes.instanceOf(iList),
 };
 
 const mapStateToProps = state => ({

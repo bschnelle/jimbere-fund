@@ -79,6 +79,7 @@ export default (state = initialState, action) => {
 export function getPosts() {
   return (dispatch, getState) => {
     const pageToken = getState().blog.get('nextPageToken');
+    let index = new Date().getDate() % 6;
 
     dispatch({ type: GET_POSTS });
     return blogSvc.getPosts(pageToken)
@@ -88,7 +89,12 @@ export function getPosts() {
           const div = document.createElement('div');
           div.innerHTML = item.content;
           const images = div.getElementsByTagName('img');
-          const image = images.length ? images[0].getAttribute('src') : undefined;
+          let image = images.length ? images[0].getAttribute('src') : undefined;
+          if (!image) {
+            const nextIndex = index + 1;
+            index = nextIndex > 5 ? 0 : nextIndex;
+            image = `/images/blog-placeholders/${index}.jpg`;
+          }
           return { ...item, image, slug: item.url.slice(i, -5) };
         });
         dispatch({ type: GET_POSTS_SUCCESS, nextPageToken, posts });

@@ -17,6 +17,8 @@
 .posts {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 950px
 }
 
 @media (max-width: $small) {
