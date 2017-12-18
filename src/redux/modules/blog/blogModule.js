@@ -51,11 +51,12 @@ export default (state = initialState, action) => {
     }
 
     case GET_POSTS_SUCCESS: {
+      const { nextPageToken } = action;
       const newState = state.update('posts', (posts) => posts.concat(fromJS(action.posts)));
       return newState.merge({
         found: action.found,
-        loading: false
-        // moreAvailable: newState.get('posts').size < action.found
+        loading: false,
+        nextPageToken,
       });
     }
 
@@ -77,11 +78,27 @@ export default (state = initialState, action) => {
 
 export function getPosts() {
   return (dispatch, getState) => {
-    const offset = getState().blog.get('posts').size;
+    const pageToken = getState().blog.get('nextPageToken');
+    let index = new Date().getDate() % 6;
 
     dispatch({ type: GET_POSTS });
-    return blogSvc.getPosts(offset)
-      .then(({ found, posts }) => dispatch({ type: GET_POSTS_SUCCESS, found, posts }))
+    return blogSvc.getPosts(pageToken)
+      .then(({ items, nextPageToken }) => {
+        const posts = items.map((item) => {
+          const i = item.url.lastIndexOf('/') + 1;
+          const div = document.createElement('div');
+          div.innerHTML = item.content;
+          const images = div.getElementsByTagName('img');
+          let image = images.length ? images[0].getAttribute('src') : undefined;
+          if (!image) {
+            const nextIndex = index + 1;
+            index = nextIndex > 5 ? 0 : nextIndex;
+            image = `/images/blog-placeholders/${index}.jpg`;
+          }
+          return { ...item, image, slug: item.url.slice(i, -5) };
+        });
+        dispatch({ type: GET_POSTS_SUCCESS, nextPageToken, posts });
+      })
       .catch(() => dispatch({ type: GET_POSTS_FAILURE }));
   };
 }

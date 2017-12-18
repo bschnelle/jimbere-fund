@@ -9,7 +9,7 @@ export class BlogPostListContainer extends Component {
   static propTypes = {
     getPosts: PropTypes.func.isRequired,
     loading: PropTypes.bool,
-    moreAvailable: PropTypes.bool.isRequired,
+    nextPageToken: PropTypes.string,
     posts: PropTypes.instanceOf(iList)
   }
 
@@ -20,12 +20,12 @@ export class BlogPostListContainer extends Component {
   }
 
   render() {
-    const { getPosts: loadMore, loading, moreAvailable, posts } = this.props;
+    const { getPosts: loadMore, loading, nextPageToken, posts } = this.props;
     return (
       <BlogPostList
         loading={loading}
         loadMore={loadMore}
-        moreAvailable={moreAvailable}
+        nextPageToken={nextPageToken}
         posts={posts}
       />
     );
@@ -36,7 +36,7 @@ export const stateToProps = (state) => {
   const { blog } = state;
   return {
     loading: blog.get('loading'),
-    moreAvailable: blog.get('moreAvailable'),
+    nextPageToken: blog.get('nextPageToken'),
     posts: blog.get('posts')
   };
 };

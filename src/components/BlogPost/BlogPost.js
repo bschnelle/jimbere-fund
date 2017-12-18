@@ -20,9 +20,9 @@ const BlogPost = (props) => {
     <div>
       <div className={classes.header}>
         <h4>{post.get('title')}</h4>
-        <span>{post.get('author')}</span>
+        <span>{post.getIn(['author', 'displayName'])}</span>
         <span>|</span>
-        <span>{moment(new Date(post.get('date'))).format('MMMM D, YYYY')}</span>
+        <span>{moment(new Date(post.get('published'))).format('MMMM D, YYYY')}</span>
       </div>
       <div
         className={classes['markdown-body']}

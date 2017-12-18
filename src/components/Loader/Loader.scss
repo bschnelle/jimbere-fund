@@ -5,6 +5,10 @@
   position: relative;
   text-align: center;
   width: 40px;
+
+  &.alt > .child {
+    background-color: #fff !important;
+  }
 }
 
 .chasingDots .child {

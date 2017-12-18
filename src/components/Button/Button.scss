@@ -69,3 +69,18 @@
 .nowrap {
   white-space: nowrap;
 }
+
+.light {
+  background-color: transparent;
+  border: solid 2px $alternateTextColor;
+  color: $alternateTextColor;
+
+  &:active {
+    background-color: transparentize($alternateTextColor, .3) !important;
+    border: solid 2px $alternateTextColor !important;
+  }
+
+  &:hover {
+    background-color: transparentize($alternateTextColor, .6);
+  }
+}
