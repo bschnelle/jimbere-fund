@@ -17,7 +17,7 @@ export const Home = (props) => {
     <div className={classes.home}>
       <HomeLanding isMedium={isMedium} />
       <HomeWork />
-      <HomeHowWeWork isSmall={isSmall} />
+      <HomeHowWeWork isMedium={isMedium} />
       <HomeApproach isSmall={isSmall} />
       <HomeGetInvolved />
     </div>

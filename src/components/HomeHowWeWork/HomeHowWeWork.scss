@@ -37,6 +37,61 @@
   }
 }
 
+.mobile {
+  color: $alternateTextColor;
+  text-align: center;
+
+  h5 {
+    color: $accentColor1;
+  }
+
+  p {
+    height: 20rem;
+    margin: 1rem auto 0;
+    max-width: 25rem;
+  }
+}
+
+.mobileStep {
+  align-items: center;
+  border: 1px solid $alternateTextColor;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: $alternateTextColor;
+  cursor: pointer;
+  display: flex;
+  font-weight: bold;
+  height: 2rem;
+  justify-content: center;
+  margin: 1rem;
+  padding: 0.25rem;
+  width: 2rem;
+
+  &.active {
+    background-color: $alternateTextColor;
+    color: $textColor;
+    position: relative;
+
+    &::after {
+      border: 3px solid $alternateTextColor;
+      border-radius: 50%;
+      box-sizing: border-box;
+      content: '';
+      height: 3rem;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 3rem;
+      transform: translate(calc(-0.5rem - 1px), calc(-0.5rem - 1px));
+    }
+  }
+}
+
+.mobileSteps {
+  display: flex;
+  justify-content: center;
+}
+
 .svg {
   position: absolute;
   height: 45rem;
