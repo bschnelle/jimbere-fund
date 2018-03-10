@@ -38,7 +38,7 @@ export class Donate extends Component {
   render() {
     return (
       <div>
-        <ImageContainer className={classes.imageContainer} src="/images/school-o.jpg">
+        <ImageContainer className={classes.imageContainer} src="/images/donate-o.jpg">
           <Container className={classes.donate} title="Donate">
             <h6>Your donation is an investment in a real, long-term change</h6>
             <p>

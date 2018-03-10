@@ -12,7 +12,7 @@ export const Contact = () => (
     <ImageContainer
       className={classes.imageContainer}
       imageClassName={classes.image}
-      src="/images/phone-o.jpg"
+      src="/images/contact-o.jpg"
     >
       <Container className={classes.header} title="Contact Us">
         <h6>Have questions, ideas, or want to get involved? We'd love to hear from you.</h6>
