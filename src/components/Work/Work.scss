@@ -1,19 +1,99 @@
 @import '../../styles/config';
 
-.difference {
+.altSection {
   background-color: $primaryColor1;
   color: $alternateTextColor;
-  text-align: justify;
 }
 
-.priorityHeader {
-  margin-top: 6rem;
-  padding: 0 1.5rem;
-  text-align: center;
+.mobileTheory {
+  margin: 0 -1.5rem;
+
+  .mobileTheoryRippleHeader {
+    background-color: lighten($primaryColor1, 2.5%);
+    color: $alternateTextColor;
+    margin: 0;
+    padding: 3rem 0;
+    text-align: center;
+  }
+
+  .mobileTheoryRipple {
+    background-color: $primaryColor1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      align-items: center;
+      color: $alternateTextColor;
+      display: flex;
+
+      img, p {
+        margin: 3rem 2rem;
+      }
+
+      img {
+        margin-right: 0;
+        width: 3rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .mobileTheorySteps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      align-items: center;
+      color: $alternateTextColor;
+      display: flex;
+      height: 11rem;
+
+      &:nth-of-type(1) { background-color: lighten($primaryColor1, 25%); }
+      &:nth-of-type(2) { background-color: lighten($primaryColor1, 20%); }
+      &:nth-of-type(3) { background-color: lighten($primaryColor1, 15%); }
+      &:nth-of-type(4) { background-color: lighten($primaryColor1, 10%); }
+      &:nth-of-type(5) { background-color: lighten($primaryColor1, 5%); }
+    }
+
+    .count {
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex: 0 0 8rem;
+      justify-content: center;
+      height: 100%;
+
+      h2 {
+        margin: 0;
+      }
+    }
+
+    .count, p {
+      padding: 2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+  }
 }
 
-.why {
-  text-align: justify;
+.theoryOfChange {
+  > div {
+    align-items: center;
+    display: flex;
+
+    img {
+      margin: auto;
+      max-width: 100%;
+    }
+  }
 }
 
 .work {

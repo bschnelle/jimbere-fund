@@ -1,91 +1,68 @@
 @import '../../styles/config';
 
-.content {
+.item {
+  margin: 0 2rem;
+  max-width: 14rem;
 
-  .approach {
-    display: flex;
-    margin-bottom: 2rem;
+  div {
+    border-bottom: 1px solid $accentColor1;
+    text-align: center;
 
-    > div {
-      flex: 1;
-
+    h1 {
+      color: $accentColor1;
+      margin: 0;
     }
 
-    .detail {
-      align-items: center;
-      display: flex;
-      height: 100%;
-      padding-left: 2rem;
-
-      > p {
-        margin: 0;
-        text-align: justify;
-      }
-    }
-
-    .sections {
-      border-right: solid 5px $primaryColor1;
-
-      > h4 {
-        cursor: pointer;
-        font-weight: 400;
-        letter-spacing: .2rem;
-        padding: 1rem;
-        margin: 1rem 0 0 0;
-        text-align: right;
-        transition: all 150ms;
-
-        &:first-of-type {
-          margin: 0;
-        }
-
-        &.active {
-          background-color: $primaryColor1 !important;
-          color: $alternateTextColor !important;
-        }
-
-        &:hover {
-          background-color: lighten($primaryColor1, 35%);
-          color: $alternateTextColor;
-        }
-      }
+    h5 {
+      font-weight: 400;
+      margin: 0 0 1.5rem 0;
     }
   }
 
-  .approachSmall {
-    .sections {
-      display: flex;
-
-      > div {
-        flex: 1;
-
-        .icon {
-          border-radius: 50%;
-          cursor: pointer;
-          display: block;
-          height: 6rem;
-          margin: auto;
-          -webkit-tap-highlight-color: transparent;
-          width: 6rem;
-        }
-      }
-    }
-
-    .detail > div {
-      overflow: auto;
-
-      h4 {
-        margin: 2rem 0 1rem 0;
-        text-align: center;
-      }
-
-      p {
-        text-align: justify;
-      }
-    }
+  p {
+    text-align: center;
   }
+}
+
+.items {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
 }
 
 .section {
   background-color: #eee;
+}
+
+.title {
+  margin-top: 0;
+  text-align: center;
+}
+
+@media (max-width: $small) {
+  .item {
+    align-items: center;
+    display: flex;
+    margin: 1rem auto;
+    max-width: 20rem;
+
+    div {
+      border-bottom: none;
+      margin: 0 2rem;
+    }
+
+    p {
+      text-align: left;
+    }
+  }
+
+  .items {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section {
+    background-color: inherit;
+  }
 }

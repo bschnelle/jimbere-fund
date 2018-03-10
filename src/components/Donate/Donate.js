@@ -13,7 +13,10 @@ export class Donate extends Component {
     /* initialize Razoo donation widget */
     window.r_params = {
       title: 'Jimbere Fund, Inc.',
-      short_description: '',
+      short_description: `
+        Jimbere Fund is on a mission to mobilize, prepare, finance
+        and launch women-led enterprises in Congo's rural communities.
+      `,
       long_description: '',
       color: '#2f8435',
       errors: false,
@@ -38,10 +41,13 @@ export class Donate extends Component {
   render() {
     return (
       <div>
-        <ImageContainer className={classes.imageContainer} src="/images/school-o.jpg">
+        <ImageContainer className={classes.imageContainer} src="/images/donate-o.jpg">
           <Container className={classes.donate} title="Donate">
-            <h6>Congo is among the most destitute countries on Earth.</h6>
-            <p>You can help change that.</p>
+            <h6>Your donation is an investment in a real, long-term change</h6>
+            <p>
+              Begin the ripple effect: help us mobilize, prepare, and position women
+              entrepreneurs to have a positive, permanent effect on their communities and Congo.
+            </p>
           </Container>
         </ImageContainer>
 
@@ -50,8 +56,8 @@ export class Donate extends Component {
             <div className={classes.content}>
               <h4>Thank You</h4>
               <p>
-                By choosing to support Jimbere Fund you're giving poverty
-                stricken communities in Congo hope for a better tomorrow.
+                By choosing to support Jimbere Fund, you are giving women
+                in Congo an opportunity to thrive and hope for a better tomorrow
               </p>
               <p>
                 Jimbere Fund is a registered 501(c)(3) nonprofit organization.

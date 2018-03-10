@@ -20,22 +20,6 @@ export const GetInvolvedWorkWithUs = () => (
         </p>
       </div>
       <div>
-        <h4>Volunteers</h4>
-        <span />
-        <p>
-          We're currently looking for volunteers with
-          skills and expertise in the following fields:
-        </p>
-        <ul>
-          <li>Graphic Design</li>
-          <li>Nonprofit Strategy & Planning</li>
-          <li>Blogging/Storytelling</li>
-          <li>Social Media Strategy</li>
-          <li>Brand Positioning & Messaging</li>
-          <li>Financial Planning & Fundraising</li>
-        </ul>
-      </div>
-      <div>
         <Button label="Contact" to="/contact" />
       </div>
     </div>

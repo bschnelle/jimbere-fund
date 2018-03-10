@@ -10,9 +10,8 @@ export const GetInvolvedFundraising = (props) => (
   <Container id="fundraising" section title="Fundraising">
     <div className={classes.fundraising}>
       <p>
-        Ready to join the hard work of rebuilding communities in Congo?
-        Our fundraisers help expand opportunities to those who need help
-        most; one community at time.
+        Ready to help women entrepreneurs in Congo? Our fundraisers help us
+        mobilize and prepare those who need help most; one business at a time.
       </p>
       {!props.isSmall && <img src="/images/fundraising.svg" alt="Fundraising infographic" />}
       <div>

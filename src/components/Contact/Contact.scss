@@ -1,11 +1,17 @@
 @import '../../styles/config';
 
 .header {
+  align-items: center;
   background-color: rgba(0, 0, 0, .4);
   color: $alternateTextColor;
   overflow: auto;
   padding-bottom: 6rem;
   position: relative;
+  text-align: center;
+
+  h6 {
+    margin: 0;
+  }
 }
 
 .image {

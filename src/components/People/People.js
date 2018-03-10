@@ -61,7 +61,7 @@ class People extends Component {
         <ImageContainer
           className={classes.imageContainer}
           imageClassName={classes.image}
-          src="/images/office-o.jpg"
+          src="/images/people-o.jpg"
         >
           <Container className={classes.header} fluid title="People">
             <h6>Our team of incredible individuals</h6>

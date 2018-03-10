@@ -11,7 +11,7 @@ const Container = (props) => {
 
   return (
     <div className={className} id={props.id}>
-      <h1>{props.title}</h1>
+      {props.title && <h1>{props.title}</h1>}
       <div className={props.fluid ? classes.fluid : ''}>{props.children}</div>
     </div>
   );
@@ -23,7 +23,7 @@ Container.propTypes = {
   fluid: PropTypes.bool,
   id: PropTypes.string,
   section: PropTypes.bool,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string
 };
 
 export default Container;

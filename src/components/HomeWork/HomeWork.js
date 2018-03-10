@@ -6,15 +6,13 @@ import classes from './HomeWork.scss';
 /**
  * process section of root route
  */
-const HomeProcess = (props) => (
+const HomeProcess = () => (
   <Container className={classes.work} container section title="Our Work">
-    <h6>Together, we can build the road to opportunity.</h6>
     <p>
-      In Congo’s most remote areas, communities are isolated over large swathes of
-      land. It takes people days of walking on foot to get to the nearest dirt road.
-      We work with rural communities to identify their most pressing needs in education,
-      health, women’s empowerment and food security. Together, we design, implement
-      and manage high-impact social interventions that expand opportunities.
+      Jimbere Fund is on a mission to mobilize, prepare, finance and launch women-led
+      enterprises in rural communities of the Democratic Republic of Congo. Our goal
+      is to revitalize communities and lift people out of poverty in a sustainable
+      way by creating jobs and stimulating local economies.
     </p>
     <Button label="Learn More" to="/work" nowrap />
   </Container>

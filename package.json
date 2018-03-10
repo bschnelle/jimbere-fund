@@ -58,8 +58,7 @@
     "html-webpack-plugin": "^2.22.0",
     "immutable": "^3.8.1",
     "isomorphic-fetch": "^2.2.1",
-    "mapbox-gl": "^0.24.0",
-    "moment": "^2.15.1",
+    "moment": "^2.21.0",
     "node-sass": "^3.8.0",
     "normalize.css": "^4.2.0",
     "postcss-loader": "^0.10.1",
@@ -77,6 +76,7 @@
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
+    "vivus": "^0.4.3",
     "webpack": "^2.1.0-beta.21"
   }
 }
