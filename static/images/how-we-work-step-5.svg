@@ -5,10 +5,10 @@
 <style type="text/css">
 	.st1{fill:#FFFFFF;}
 	.st2{fill:#34D175;}
-	.st3{font-family:'PTSans-Bold';}
+	.st3{font-family:'PT Sans Narrow';font-weight: 700;}
 	.st4{font-size:100px;}
 	.st5{letter-spacing:1;}
-	.st6{font-family:'PTSans-Narrow';}
+	.st6{font-family:'PT Sans Narrow';}
 	.st7{font-size:64px;}
 	.st8{fill:none;stroke:#FFFFFF;stroke-width:3;stroke-linecap:square;}
 	.st9{fill:none;stroke:#FFFFFF;stroke-width:3;}

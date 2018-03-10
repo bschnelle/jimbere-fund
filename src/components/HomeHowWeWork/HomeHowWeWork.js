@@ -74,6 +74,7 @@ class DesktopHowWeWork extends Component {
     const { onScroll } = this;
     this.onScroll = debounce(onScroll, 25);
   }
+
   componentDidMount() {
     /* eslint-disable no-new */
     const options = { duration: 150, type: 'oneByOne', start: 'manual' };
@@ -83,6 +84,10 @@ class DesktopHowWeWork extends Component {
     /* eslint-enable no-new */
 
     document.addEventListener('scroll', this.onScroll);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.onScroll);
   }
 
   onScroll = () => {
@@ -184,7 +189,9 @@ class MobileHowWeWork extends Component {
               ))}
           </div>
           <h5>{step.title}</h5>
-          <p>{step.body}</p>
+          <div className={classes.paragraphWrapper}>
+            <p>{step.body}</p>
+          </div>
         </Container>
       </ImageContainer>
     );

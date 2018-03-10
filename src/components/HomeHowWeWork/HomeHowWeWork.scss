@@ -46,9 +46,12 @@
   }
 
   p {
-    height: 20rem;
     margin: 1rem auto 0;
     max-width: 25rem;
+  }
+
+  .paragraphWrapper {
+    height: 20rem;
   }
 }
 
