@@ -40,8 +40,11 @@ export class Donate extends Component {
       <div>
         <ImageContainer className={classes.imageContainer} src="/images/school-o.jpg">
           <Container className={classes.donate} title="Donate">
-            <h6>Congo is among the most destitute countries on Earth.</h6>
-            <p>You can help change that.</p>
+            <h6>Your donation is an investment in a real, long-term change</h6>
+            <p>
+              Begin the ripple effect: help us mobilize, prepare, and position women
+              entrepreneurs to have a positive, permanent effect on their communities and Congo.
+            </p>
           </Container>
         </ImageContainer>
 
