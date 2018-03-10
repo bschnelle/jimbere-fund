@@ -23,7 +23,7 @@ Container.propTypes = {
   fluid: PropTypes.bool,
   id: PropTypes.string,
   section: PropTypes.bool,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string
 };
 
 export default Container;
