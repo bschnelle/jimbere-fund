@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
+import debounce from 'lodash/debounce';
 import Vivus from 'vivus';
 import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
@@ -68,15 +69,45 @@ const steps = [
  * process section of root route
  */
 class DesktopHowWeWork extends Component {
+  constructor(props) {
+    super(props);
+    const { onScroll } = this;
+    this.onScroll = debounce(onScroll, 25);
+  }
   componentDidMount() {
     /* eslint-disable no-new */
-    new Vivus('how-we-work-step-1', { duration: 300, type: 'oneByOne' });
-    new Vivus('how-we-work-step-2', { duration: 300, type: 'oneByOne' });
-    new Vivus('how-we-work-step-3', { duration: 300, type: 'oneByOne' });
-    new Vivus('how-we-work-step-4', { duration: 300, type: 'oneByOne' });
-    new Vivus('how-we-work-step-5', { duration: 300, type: 'oneByOne' });
-    new Vivus('how-we-work-step-6', { duration: 300, type: 'oneByOne' });
+    const options = { duration: 150, type: 'oneByOne', start: 'manual' };
+    for (let i = 1; i <= 6; i++) {
+      this[`step${i}Vivus`] = new Vivus(`how-we-work-step-${i}`, options);
+    }
     /* eslint-enable no-new */
+
+    document.addEventListener('scroll', this.onScroll);
+  }
+
+  onScroll = () => {
+    let doneAnimating = true;
+    for (let i = 1; i <= 6; i++) {
+      if (!this[`step${i}Animated`]) {
+        doneAnimating = false;
+        const el = this[`step${i}Ref`];
+        const animate = (el.getBoundingClientRect().top - (el.offsetHeight / 1.25)) <= 0;
+        if (animate) {
+          /* eslint-disable no-new */
+          this[`step${i}Vivus`].play();
+          this[`step${i}Animated`] = true;
+          /* eslint-enable no-new */
+        }
+      }
+    }
+
+    if (doneAnimating) {
+      document.removeEventListener('scroll', this.onScroll);
+    }
+  }
+
+  setRef = (el, i) => {
+    this[`step${i}Ref`] = el;
   }
 
   render() {
@@ -106,6 +137,7 @@ class DesktopHowWeWork extends Component {
                 id={`how-we-work-step-${step}`}
                 type="image/svg+xml"
                 data={`/images/how-we-work-step-${step}.svg`}
+                ref={el => this.setRef(el, step)}
               />
             </Container>
           );
