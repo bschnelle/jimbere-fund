@@ -4,6 +4,15 @@ import ImageContainer from '../ImageContainer/ImageContainer';
 import secondaryTheme from '../../containers/secondaryTheme/secondaryTheme';
 import classes from './Work.scss';
 
+const theorySteps = [
+  `Three women form a business team and receive training and
+  grants from Jimbere Fund to launch a business`,
+  'Ten business teams for an Akiba (savings) group, and build a social support system',
+  'Women save and borrow from each other and withstand financial shocks',
+  'Sustainable livelihoods and increated income for women',
+  'Women\'s spending creates ripple effects, such as:',
+];
+
 /**
  * /work route component
  */
@@ -75,13 +84,28 @@ export const Work = (props) => (
       </p>
     </Container>
     <Container className={classes.theoryOfChange} fluid section title="Our Theory of Change">
-      <img alt="Theory of Change" src="/images/theory-of-change.png" />
+      {!props.isSmall ? (
+        <img alt="Theory of Change" src="/images/theory-of-change.png" />
+      ) : (
+        <div className={classes.mobileTheory}>
+          <ul>
+            {theorySteps.map((step, i) => (
+              <li key={i}>
+                <div className={classes.count}>
+                  <h2>0{i + 1}</h2>
+                </div>
+                <p>{step}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </Container>
   </div>
 );
 
 Work.propTypes = {
-  isMedium: PropTypes.bool.isRequired
+  isSmall: PropTypes.bool.isRequired
 };
 
 export default secondaryTheme(Work);

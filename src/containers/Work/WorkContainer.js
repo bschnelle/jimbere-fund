@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 import WorkComp from '../../components/Work/Work';
 
 export const WorkContainer = (props) => (
-  <WorkComp isMedium={props.isMedium} />
+  <WorkComp isSmall={props.isSmall} />
 );
 
 WorkContainer.propTypes = {
-  isMedium: PropTypes.bool.isRequired
+  isSmall: PropTypes.bool.isRequired
 };
 
 export const stateToProps = (state) => ({
-  isMedium: state.browser.lessThan.large
+  isSmall: state.browser.lessThan.medium
 });
 
 export default connect(stateToProps)(WorkContainer);
