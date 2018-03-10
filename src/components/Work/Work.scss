@@ -3,14 +3,48 @@
 .altSection {
   background-color: $primaryColor1;
   color: $alternateTextColor;
-  text-align: justify;
 }
 
 .mobileTheory {
   margin: 0 -1.5rem;
 
-  ul {
+  .mobileTheoryRippleHeader {
+    background-color: lighten($primaryColor1, 2.5%);
+    color: $alternateTextColor;
+    margin: 0;
+    padding: 3rem 0;
+    text-align: center;
+  }
+
+  .mobileTheoryRipple {
+    background-color: $primaryColor1;
     list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      align-items: center;
+      color: $alternateTextColor;
+      display: flex;
+
+      img, p {
+        margin: 3rem 2rem;
+      }
+
+      img {
+        margin-right: 0;
+        width: 3rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .mobileTheorySteps {
+    list-style: none;
+    margin: 0;
     padding: 0;
 
     li {
@@ -48,10 +82,6 @@
       margin: 0;
     }
   }
-}
-
-.section {
-  text-align: justify;
 }
 
 .theoryOfChange {

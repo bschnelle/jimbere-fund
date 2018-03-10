@@ -4,6 +4,14 @@ import ImageContainer from '../ImageContainer/ImageContainer';
 import secondaryTheme from '../../containers/secondaryTheme/secondaryTheme';
 import classes from './Work.scss';
 
+const rippleEffects = [
+  { icon: 'water', message: 'Enhanced living standards i.e. clean water, sanitation' },
+  { icon: 'food', message: 'Increased quantities and qualities of food' },
+  { icon: 'education', message: 'Better education for children (especially for girls)' },
+  { icon: 'healthcare', message: 'Improved access to healthcare' },
+  { icon: 'gender', message: 'Decreased gender inequality and increased self-sufficiency' },
+];
+
 const theorySteps = [
   `Three women form a business team and receive training and
   grants from Jimbere Fund to launch a business`,
@@ -88,13 +96,22 @@ export const Work = (props) => (
         <img alt="Theory of Change" src="/images/theory-of-change.png" />
       ) : (
         <div className={classes.mobileTheory}>
-          <ul>
+          <ul className={classes.mobileTheorySteps}>
             {theorySteps.map((step, i) => (
-              <li key={i}>
+              <li key={`step_${i}`}>
                 <div className={classes.count}>
                   <h2>0{i + 1}</h2>
                 </div>
                 <p>{step}</p>
+              </li>
+            ))}
+          </ul>
+          <h2 className={classes.mobileTheoryRippleHeader}>Ripple Effects</h2>
+          <ul className={classes.mobileTheoryRipple}>
+            {rippleEffects.map(({ icon, message }, i) => (
+              <li key={`ripple_${i}`}>
+                <img alt="ripple icon" src={`/images/icons/${icon}.png`} />
+                <p>{message}</p>
               </li>
             ))}
           </ul>
