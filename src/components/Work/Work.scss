@@ -1,19 +1,25 @@
 @import '../../styles/config';
 
-.difference {
+.altSection {
   background-color: $primaryColor1;
   color: $alternateTextColor;
   text-align: justify;
 }
 
-.priorityHeader {
-  margin-top: 6rem;
-  padding: 0 1.5rem;
-  text-align: center;
+.section {
+  text-align: justify;
 }
 
-.why {
-  text-align: justify;
+.theoryOfChange {
+  > div {
+    align-items: center;
+    display: flex;
+
+    img {
+      margin: auto;
+      max-width: 100%;
+    }
+  }
 }
 
 .work {
