@@ -1,0 +1,47 @@
+@import '../../styles/config';
+
+.content {
+  display: flex;
+  position: relative;
+
+  > div {
+    width: 35%;
+
+    h5 {
+      color: $accentColor1;
+      margin: 0;
+    }
+  }
+}
+
+.imgSection {
+  .content {
+    color: $alternateTextColor;
+    justify-content: flex-end;
+  }
+
+  h1 {
+    color: $alternateTextColor;
+  }
+}
+
+.imgSection, .section {
+  min-height: 45rem;
+  position: relative;
+}
+
+.landing {
+  .svg {
+    top: auto;
+    bottom: 0;
+  }
+}
+
+.svg {
+  position: absolute;
+  height: 45rem;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+}

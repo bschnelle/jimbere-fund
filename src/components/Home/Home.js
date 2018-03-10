@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import HomeApproach from '../HomeApproach/HomeApproach';
 import HomeGetInvolved from '../HomeGetInvolved/HomeGetInvolved';
+import HomeHowWeWork from '../HomeHowWeWork/HomeHowWeWork';
 import HomeLanding from '../HomeLanding/HomeLanding';
 import HomeWork from '../HomeWork/HomeWork';
 import secondaryTheme from '../../containers/secondaryTheme/secondaryTheme';
@@ -16,6 +17,7 @@ export const Home = (props) => {
     <div className={classes.home}>
       <HomeLanding isMedium={isMedium} />
       <HomeWork />
+      <HomeHowWeWork isSmall={isSmall} />
       <HomeApproach isSmall={isSmall} />
       <HomeGetInvolved />
     </div>
