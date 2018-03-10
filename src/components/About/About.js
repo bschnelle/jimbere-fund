@@ -1,7 +1,4 @@
 import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
-import classNames from 'classnames';
-import Button from '../Button/Button';
 import Container from '../Container/Container';
 import ImageContainer from '../ImageContainer/ImageContainer';
 import AboutFacts from '../AboutFacts/AboutFacts';
@@ -14,16 +11,16 @@ import classes from './About.scss';
  * root route component
  */
 export const About = (props) => {
-  const { isLarge, isSmall } = props;
+  const { isSmall } = props;
   return (
     <div className={classes.about}>
-      <ImageContainer src="/images/people-o.jpg">
+      <ImageContainer src="/images/about-o.jpg">
         <Container className={classes.landing} title="About Us">
           <h6>
-            At Jimbere Fund, we are on a mission to reach and revitalize the most
-            remote areas of Democratic Republic of Congo. Our goal is to provide
-            access to critical services, create jobs and lift people out of poverty
-            in a sustainable way.
+            Jimbere Fund provides women from some of the poorest households in Congo’s
+            rural communities with training and grants to launch businesses. We seek long
+            term solutions, working with women to ensure they have every opportunity
+            to succeed and transform their communities for good
           </h6>
         </Container>
       </ImageContainer>

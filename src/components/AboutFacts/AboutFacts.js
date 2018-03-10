@@ -8,14 +8,14 @@ import classes from './AboutFacts.scss';
  */
 const AboutFacts = (props) => {
   let facts = [
-    { body: 'of the population live below the national poverty line', header: '63.6%' },
+    { body: 'rank on Gender Inequality Index', header: '149th' },
     { body: 'people are food insecure', header: '6.7 Mil' },
-    { body: 'of burden of disease comes from treatable, communicable diseases', header: '75%' },
+    { body: 'average income for Congolese women', header: '$0.74' },
     { body: 'of children suffer from chronic malnutrition', header: '43%' },
     { body: 'of people lack access to electricity', header: '83.6%' },
     { body: 'of the population lack access to safe drinking water', header: '75%' },
     { body: 'of children are out of school', header: '28.9%' },
-    { body: 'rank on Gender Inequality Index', header: '149th' }
+    { body: 'of the population live below the national poverty line', header: '63.6%' },
   ];
   if (props.isSmall) facts = facts.slice(0, 4);
 
