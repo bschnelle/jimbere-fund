@@ -99,6 +99,40 @@ const members = {
         they ride their tandem bicycle everywhere around town and the Western
         states.
       `
+    },
+    {
+      name: 'Antoinette Bideri Masoso',
+      title: 'Community Coordinator',
+      image: 'antoinette-masoso.jpg',
+      bio: `
+        Masoso is a skilled trainer who works with women entrepreneurs to ensure they have
+        the necessary skills to run their businesses. She has worked in Eastern Congo over the
+        past several years in different capacities. She recently served as Coordinator for
+        Misericorde Association, a grassroots nonprofit that sponsors poor children to get
+        access to education and rebuilding dilapidated schools. From 2011 to 2013, she worked for
+        Compassion International as a teacher. From 2014 to 2015 she worked as a trainer in
+        Mama Shujaa center teaching women English and computer skills. Masoso holds a
+        Bachelor’s degree in Accounting from ULK and speaks Swahili, French, English and
+        Kinyamulenge.
+      `
+    },
+    {
+      name: 'Princesse Nabintu-Kabaya',
+      title: 'Director of Operations',
+      image: 'princesse-nabintu-kabaya.jpg',
+      bio: `
+        Princesse Nabintu-Kabaya is Director of Operations at Jimbere Fund, where she
+        focusses on planning, resourcing and monitoring key organizational objectives.
+        Princesse has extensive experience working with nonprofit organizations focusing on
+        poverty eradication. She advocates for human rights, women's education, and equal
+        opportunity among other things since being resettled in American in 2007. Princesse
+        has an B.A in Intercultural studies and International development from Houghton
+        College. She has worked with a number of nonprofits, including the Catholic Charities, in
+        upstate N.Y. Princesse was born in the South Kivu region of Democratic Republic of
+        Congo. In 2004, Princesse and her family survived the Gatumba massacre that left 166
+        people dead including her younger sister and left her mother and brothers severely
+        wounded. She is a co-curator of survivor traveling exhibition.
+      `
     }
   ],
   'US Board': [
