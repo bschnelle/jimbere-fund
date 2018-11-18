@@ -35,7 +35,7 @@ const DonateTiles = (props) => {
             </div>
           )
           : (
-            <Link hash={`#${tile.id}`} key={tile.id} to={`/donate/${tile.id}`}>
+            <Link key={tile.id} to={`/donate/${tile.id}`}>
               {tile.content}
             </Link>
           )

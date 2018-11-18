@@ -1,0 +1,65 @@
+@import '../../styles/config';
+
+.buttonMobile {
+  display: none;
+}
+
+.donate {
+  align-items: center;
+  padding-bottom: 6rem;
+  text-align: center;
+
+  h6 {
+    margin: 0;
+  }
+}
+
+.widget {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0 3rem;
+}
+
+.wrapper {
+  background-color: #fff;
+  display: flex;
+  padding-top: 6rem;
+
+  > div {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    text-align: start;
+
+    .content {
+      max-width: 500px;
+
+      h4 {
+        color: $primaryColor1;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: $small) {
+  .buttonDesktop {
+    display: none;
+  }
+
+  .buttonMobile {
+    display: block;
+    margin: auto;
+  }
+
+  .widget {
+    margin-top: 2rem;
+    padding: 0px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+}

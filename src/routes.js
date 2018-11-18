@@ -7,6 +7,8 @@ import BlogPostCont from './containers/BlogPost/BlogPostContainer';
 import BlogPostListCont from './containers/BlogPostList/BlogPostListContainer';
 import ContactCont from './containers/Contact/ContactContainer';
 import DonateCont from './containers/Donate/DonateContainer';
+import DonateOneTime from './components/DonateOneTime/DonateOneTime';
+import DonateVillageCollective from './components/DonateVillageCollective/DonateVillageCollective';
 import HomeCont from './containers/Home/HomeContainer';
 import GetInvolvedCont from './containers/GetInvolved/GetInvolvedContainer';
 import WorkCont from './containers/Work/WorkContainer';
@@ -25,6 +27,8 @@ const routes = (
       <Route path="/blog/:slug" component={BlogPostCont} />
     </Route>
     <Route path="/contact" component={ContactCont} />
+    <Route path="/donate/one-time" component={DonateOneTime} />
+    <Route path="/donate/the-village-collective" component={DonateVillageCollective} />
     <Route path="/donate" component={DonateCont} />
     <Route path="/get-involved" component={GetInvolvedCont} />
     <Route path="/work" component={WorkCont} />
