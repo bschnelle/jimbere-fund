@@ -1,64 +1,31 @@
 @import '../../styles/config';
 
-.donate {
-  align-items: center;
-  background-color: rgba(0,0,0,.4);
+.container {
+  background-color: rgba(0,0,0,.2);
   color: $alternateTextColor;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   padding-bottom: 6rem;
+  position: relative;
+
+  > div {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+  }
+}
+
+.header {
   text-align: center;
 
   h6 {
-    margin: 0;
+    margin-top: 0;
   }
 }
 
 .imageContainer {
-  background-color: #333;
-  flex: 1;
-}
-
-.widget {
-  background-color: #fff;
+  background-color: #8F867B;
   display: flex;
-  padding: 3rem;
-
-  > div {
-    align-items: center;
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    text-align: center;
-
-    .content {
-      max-width: 500px;
-
-      h4 {
-        color: $primaryColor1;
-        margin-top: 0;
-      }
-    }
-  }
-}
-
-.wrapper {
-  display: flex;
-}
-
-@media (max-width: $small) {
-  .donate > div > div {
-    &:nth-of-type(1) {
-      flex: 1 1 auto;
-    }
-
-    &:nth-of-type(2) {
-      flex: auto;
-    }
-  }
-
-  .widget {
-    padding: 3rem 0;
-    > div:first-of-type {
-      display: none;
-    }
-  }
+  flex-direction: column;
 }
