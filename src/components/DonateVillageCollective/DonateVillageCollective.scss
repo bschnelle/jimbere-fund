@@ -1,7 +1,12 @@
 @import '../../styles/config';
 
-.buttonMobile {
+.titleMobile, .introMobile {
   display: none;
+}
+
+.introMobile {
+  margin-top: 0px;
+  max-width: 500px;
 }
 
 .donate {
@@ -18,6 +23,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start !important;
   padding: 0 3rem;
 }
 
@@ -35,11 +41,6 @@
     .content {
       max-width: 500px;
 
-      h4 {
-        color: $primaryColor1;
-        margin-top: 0;
-      }
-
       ul {
         font-size: 1rem;
       }
@@ -47,23 +48,30 @@
   }
 }
 
+.titleDesktop, .titleMobile {
+  color: $primaryColor1;
+  margin-top: 0;
+}
+
 @media (max-width: $small) {
-  .buttonDesktop {
+  .noMarginTopMobile {
+    margin-top: 0px;
+  }
+
+  .titleDesktop, .introDesktop {
     display: none;
   }
 
-  .buttonMobile {
+  .titleMobile, .introMobile {
     display: block;
-    margin: auto;
   }
 
   .widget {
-    margin-top: 2rem;
     padding: 0px;
   }
 
   .wrapper {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding-top: 1rem;
   }
 }
