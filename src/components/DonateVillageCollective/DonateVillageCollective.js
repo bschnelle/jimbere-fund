@@ -6,6 +6,15 @@ import classes from './DonateVillageCollective.scss';
 /**
  * /donate route component
  */
+const intro = `
+  The Village Collective is a special group of our core, committed
+  monthly donors who sustain our work. When you join our Village
+  Collective monthly giving program, you will become part of
+  Jimbere Fund family and walk with us as we train and finance
+  15,000 women entrepreneurs in Eastern Congo by 2025. Your
+  commitment is to give a $25 per month or more over a year.
+`;
+
 class DonateVillageCollective extends Component {
   componentDidMount() {
     /* inject script */
@@ -22,16 +31,9 @@ class DonateVillageCollective extends Component {
         <div className={classes.wrapper}>
           <div>
             <div className={classes.content}>
-              <h4>The Village Collective</h4>
-              <p>
-                The Village Collective is a special group of our core, committed
-                monthly donors who sustain our work. When you join our Village
-                Collective monthly giving program, you will become part of
-                Jimbere Fund family and walk with us as we train and finance
-                15,000 women entrepreneurs in Eastern Congo by 2025. Your
-                commitment is to give a $25 per month or more over a year.
-              </p>
-              <p>
+              <h4 className={classes.titleDesktop}>The Village Collective</h4>
+              <p className={classes.introDesktop}>{intro}</p>
+              <p className={classes.noMarginTopMobile}>
                 All members of The Village Collective will:
                 <ul>
                   <li>
@@ -58,10 +60,12 @@ class DonateVillageCollective extends Component {
                 All donations made to Jimbere Fund are tax deductible with the
                 US Internal Revenue Service
               </p>
-              <Button className={classes.buttonDesktop} label="Go Back" to="/donate" nowrap />
+              <Button label="Go Back" to="/donate" nowrap />
             </div>
           </div>
           <div id="donorbox_donation_widget" className={classes.widget}>
+            <h4 className={classes.titleMobile}>The Village Collective</h4>
+            <p className={classes.introMobile}>{intro}</p>
             <iframe
               src="https://donorbox.org/embed/jimberefund"
               height="685px"
@@ -77,7 +81,6 @@ class DonateVillageCollective extends Component {
               scrolling="no"
               allowPaymentRequest
             />
-            <Button className={classes.buttonMobile} label="Go Back" to="/donate" nowrap />
           </div>
         </div>
       </Container>

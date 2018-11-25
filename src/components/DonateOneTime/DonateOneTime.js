@@ -22,7 +22,7 @@ class DonateOneTime extends Component {
         <div className={classes.wrapper}>
           <div>
             <div className={classes.content}>
-              <h4>One-Time Donation</h4>
+              <h4 className={classes.titleDesktop}>One-Time Donation</h4>
               <p>
                 By choosing to support Jimbere Fund, you are giving women
                 in Congo an opportunity to thrive and hope for a better tomorrow
@@ -32,10 +32,11 @@ class DonateOneTime extends Component {
                 All donations made to Jimbere Fund are tax deductible with the
                 US Internal Revenue Service
               </p>
-              <Button className={classes.buttonDesktop} label="Go Back" to="/donate" nowrap />
+              <Button label="Go Back" to="/donate" nowrap />
             </div>
           </div>
           <div id="donorbox_donation_widget" className={classes.widget}>
+            <h4 className={classes.titleMobile}>One-Time Donation</h4>
             <iframe
               src="https://donorbox.org/embed/jf-one-time-donation"
               height="685px"
@@ -51,7 +52,6 @@ class DonateOneTime extends Component {
               scrolling="no"
               allowPaymentRequest
             />
-            <Button className={classes.buttonMobile} label="Go Back" to="/donate" nowrap />
           </div>
         </div>
       </Container>
