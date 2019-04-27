@@ -92,9 +92,9 @@ const members = {
       bio: `
         Jill lives in Portland, Oregon, where she worked in urban planning for ten
         years, and has mentored several Somali refugees for the past seven
-        years.  Since she retired, she has volunteered thousands of hours in
+        years. Since she retired, she has volunteered thousands of hours in
         support of several African civil societies and individuals, connecting with
-        other volunteers around the globe.  Much to their mutual amazement, she
+        other volunteers around the globe. Much to their mutual amazement, she
         and her husband have managed not to kill each other or themselves as
         they ride their tandem bicycle everywhere around town and the Western
         states.
@@ -133,23 +133,23 @@ const members = {
         people dead including her younger sister and left her mother and brothers severely
         wounded. She is a co-curator of survivor traveling exhibition.
       `
+    },
+    {
+      name: 'Hubert Bizimana',
+      title: 'Agronomist',
+      image: 'hubert-bizimana.jpg',
+      bio: `
+        Hubert is our agronomist in charge of Project Mavuno, our project that aims at helping women
+        increase their beans yields by 40% and facilitate market linkages to enable them to increase their
+        incomes. Hubert has been working in agricultural sector for various nonprofits in Burundi,
+        Rwanda and Congo since 1992. He recently led an Oxfam-funded project on coffee in the area.
+        Prior to that, he worked for Concern Worldwide where he engaged farmers in adopting good
+        agronomic practices for staple foods including maize, beans and soja. He loves spending time in
+        the fields and believes in “learning by doing” approach while teaching farmers.
+      `
     }
   ],
   'US Board': [
-    {
-      name: 'Moses Nkosilathi Vuma',
-      title: 'Chair',
-      image: 'moses-vuma.jpg',
-      bio: `
-        Moses holds a Masters degree in Public Administration and Finance from New York
-        University. He founded Khuluma Center, a non-profit organization which creates
-        platforms for global cultural exchange. A committed public servant, he previously
-        worked for the Metropolitan Transportation Authority of New York City where he
-        accumulated extensive experience in public finance management and auditing. Prior
-        to that, Moses was an analyst with Pygma Consulting, focused on increasing investment
-        flows to Africa. He’s currently an entrepreneur in real estate market in New York.
-      `
-    },
     {
       name: 'Hemant Wandhwani',
       title: 'Treasurer',
@@ -242,6 +242,34 @@ const members = {
         `Paul is from the Bay Area and holds a B.F.A. from San Francisco State University.
         He currently lives in Los Angeles, is married, and the devoted father of two. `
       ]
+    },
+    {
+      name: 'Cara Zelas',
+      title: 'Member',
+      image: 'cara-zelas.jpg',
+      bio: `
+        Cara is an author and educator from Sydney, Australia. Holding degrees in elementary education
+        and Montessori early-childhood education, she runs the Kindness Learning Company and Big
+        World of Little Dude, an educational platform teaching young children social and emotional
+        skills. She is very passionate about supporting female entrepreneurs. Cara lives in New York
+        with her husband and daughter.
+      `
+    },
+    {
+      name: 'Cristina Gil White',
+      title: 'Member',
+      image: 'cristina-gil-white.jpg',
+      bio: `
+        Cristina has over two 15 years of experience in sustainability, corporate social responsibility and
+        nonprofit management. She currently serves as Director of Corporate Affairs at Mexichem, a
+        global company. Before that, Cristina worked mostly in the nonprofit sector, holding positions
+        such as Executive Director for Fundacion EDUCA, Deputy Executive Director at WorldFund,
+        Associate Director of Philanthropy at The Nature Conservancy, Program Manager at RARE, and
+        Communications Coordinator at Pronatura. Cristina has also served in boards, both of NGOs, as
+        well as in the private sector. She is passionate about empowering women, leveling the play field
+        so that every individual has access to the same opportunities, and looks forward to supporting
+        Jimbere Fund further its mission.
+      `
     },
     {
       name: 'Obadias Ndaba',
